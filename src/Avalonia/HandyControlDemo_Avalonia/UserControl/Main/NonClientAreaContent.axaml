@@ -1,0 +1,116 @@
+<UserControl x:Class="HandyControlDemo.UserControl.NonClientAreaContent"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Name="RootControl"
+             Height="29">
+    <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+            <Menu Margin="10,0,0,0" Background="Transparent" Name="MainMenu">
+                <MenuItem Name="MenuRepository" Header="{x:Static langs:Lang.Repository}">
+                    <MenuItem Name="MenuGitHub" Header="GitHub">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource GithubGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuNuGet" Header="NuGet">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource NugetGeometry}" Fill="#30a5dd" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuVsix" Header="{x:Static langs:Lang.Vsix}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource VisualStudioGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{x:Static langs:Lang.About}">
+                    <MenuItem Name="MenuContributors" Header="{x:Static langs:Lang.Contributors}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource ContributorsGeometry}" Fill="#ef6c00" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuEmail" Header="{x:Static langs:Lang.Email}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource EmailGeometry}" Fill="{DynamicResource WarningBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuChatroom" Header="{x:Static langs:Lang.Chatroom}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource LogoGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuBlog" Header="{x:Static langs:Lang.Blog}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource BlogGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{x:Static langs:Lang.Demo}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource CodeGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                        <MenuItem Name="MenuDemoGitHub" Header="AFei19911012 / HandyControl">
+                            <MenuItem.Icon>
+                                <Path Data="{StaticResource CodeGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="{x:Static langs:Lang.Documentation}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource DocGeometry}" Fill="{DynamicResource PrimaryBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                        <MenuItem Name="MenuWiki" Header="Wiki">
+                            <MenuItem.Icon>
+                                <Path Data="{StaticResource WikiGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuDocEn" Header="{x:Static langs:Lang.Doc_en}">
+                            <MenuItem.Icon>
+                                <Path Data="{StaticResource LogoGeometry}" Fill="#ef6c00" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuDocCn" Header="{x:Static langs:Lang.Doc_cn}">
+                            <MenuItem.Icon>
+                                <Path Data="{StaticResource LogoGeometry}" Fill="#ef6c00" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="{x:Static langs:Lang.Recommendation}">
+                    <MenuItem Name="MenuProject" Header="{x:Static langs:Lang.Project}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource ProjectGeometry}" Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuRecommendBlog" Header="{x:Static langs:Lang.Blog}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource BlogGeometry}" Fill="{DynamicResource PrimaryBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="MenuWebsite" Header="{x:Static langs:Lang.Website}">
+                        <MenuItem.Icon>
+                            <Path Data="{StaticResource WebsiteGeometry}" Fill="{DynamicResource WarningBrush}" Stretch="Uniform"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <Border Margin="10,0,0,0" VerticalAlignment="Center" CornerRadius="2" Padding="10,4" Background="{DynamicResource SecondaryRegionBrush}">
+                <TextBlock x:Name="VersionText" FontWeight="Bold" Foreground="{DynamicResource PrimaryTextBrush}" VerticalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+        <Button Name="ButtonConfig" Grid.Column="1" Click="ButtonConfig_OnClick" hc:IconElement.Geometry="{StaticResource ConfigGeometry}" Width="30" Height="26" Margin="6,0" Foreground="{DynamicResource PrimaryTextBrush}" Background="Transparent" BorderThickness="0">
+            <Button.Flyout>
+                <Flyout Placement="BottomEdgeAlignedRight">
+                    <Border Background="{DynamicResource SecondaryRegionBrush}" CornerRadius="4" Effect="{DynamicResource EffectShadow2}">
+                        <StackPanel Orientation="Horizontal">
+                            <hc:UniformSpacingPanel x:Name="LangPanel" Orientation="Vertical" Margin="10" Spacing="10" ChildWrapping="Wrap" MaxHeight="134"/>
+                            <hc:Divider LineStrokeDashArray="2,2" Orientation="Vertical" Margin="0,20" LineStrokeThickness="1"/>
+                            <StackPanel x:Name="SkinPanel" Margin="10,10,10,10"/>
+                        </StackPanel>
+                    </Border>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+    </Grid>
+</UserControl>

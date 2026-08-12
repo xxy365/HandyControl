@@ -106,5 +106,15 @@
       [ "ChatBubble", "ChatBubbleDemo", "Brush.Success", "", "DataDisplay" ],
       [ "TimeBar", "TimeBarDemo", "Brush.Time", "", "DataDisplay" ]
     ]
+  },
+  {
+    "title": "Tools",
+    "selectedIndex": 0,
+    "group": false,
+    "demoItemList": [
+      [ "HatchBrushGenerator", "HatchBrushGeneratorDemo", "Brush.DataGenerator", "", "" ],
+      [ "MorphingAnimation", "GeometryAnimationDemo", "Brush.Animation", "", "" ],
+      [ "Effects", "EffectsDemo", "Brush.Effects", "", "" ]
+    ]
   }
 ]

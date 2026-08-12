@@ -12,14 +12,12 @@ public partial class MainWindow : Avalonia.Controls.Window
     public MainWindow()
     {
         InitializeComponent();
-
         Dialog.SetToken(this, MessageToken.MainWindow);
     }
 
     protected override void OnLoaded(RoutedEventArgs e)
     {
         base.OnLoaded(e);
-
         DataContext = ViewModelLocator.Instance.Main;
         ControlMain.Content = new MainWindowContent();
     }
