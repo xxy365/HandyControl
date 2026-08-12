@@ -1,0 +1,124 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.RunningBlockDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <hc:UniformSpacingPanel Orientation="Vertical"
+                                    ItemHorizontalAlignment="Left"
+                                    Spacing="8"
+                                    Margin="32"
+                                    VerticalAlignment="Center">
+                <hc:RunningBlock Width="500"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock Width="500"
+                                 RunningDirection="StartToEnd"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock Width="500"
+                                 Runaway="False"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock HorizontalAlignment="Left"
+                                 Width="500"
+                                 Speed="50"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock HorizontalAlignment="Left"
+                                 Width="300"
+                                 FontSize="30"
+                                 Speed="50"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock HorizontalAlignment="Left"
+                                 AutoRun="True"
+                                 Width="100"
+                                 Runaway="False"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}"
+                                 Duration="0:0:2" />
+                <hc:RunningBlock HorizontalAlignment="Left"
+                                 AutoReverse="True"
+                                 AutoRun="True"
+                                 Width="100"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock HorizontalAlignment="Left"
+                                 AutoRun="True"
+                                 Width="200"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}" />
+                <hc:RunningBlock Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=10}"
+                                 FontSize="20"
+                                 FontWeight="Bold"
+                                 Foreground="OrangeRed"
+                                 Duration="0:0:10" />
+                <hc:RunningBlock AutoReverse="True"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=10}"
+                                 FontSize="20"
+                                 FontWeight="Bold"
+                                 Foreground="OrangeRed"
+                                 Duration="0:0:10" />
+                <hc:RunningBlock Orientation="Vertical"
+                                 Content="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=10}"
+                                 FontSize="20"
+                                 FontWeight="Bold"
+                                 Foreground="OrangeRed"
+                                 Duration="0:0:4" />
+                <hc:RunningBlock Duration="0:0:20"
+                                 IsRunning="{Binding $self.IsPointerOver}">
+                    <hc:UniformSpacingPanel Spacing="10"
+                                            ItemWidth="30"
+                                            ItemHeight="30">
+                        <TextBlock Text="1"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="2"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="3"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="4"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="5"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="6"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="7"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="8"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="9"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Text="10"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </hc:UniformSpacingPanel>
+                </hc:RunningBlock>
+            </hc:UniformSpacingPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>
+

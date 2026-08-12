@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.NotificationDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <StackPanel Margin="32"
+                    VerticalAlignment="Center">
+            <ComboBox x:Name="AnimationCombo"
+                      Width="220"
+                      HorizontalAlignment="Left" />
+            <hc:ButtonGroup Margin="0,16,0,0"
+                            HorizontalAlignment="Left">
+                <ToggleButton x:Name="StaysOpenToggle"
+                              Content="{x:Static langs:Lang.StaysOpen}" />
+                <Button Content="{x:Static langs:Lang.SendNotification}"
+                        Click="Send_OnClick" />
+            </hc:ButtonGroup>
+        </StackPanel>
+    </TransitioningContentControl>
+</UserControl>

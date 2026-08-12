@@ -1,0 +1,79 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+
+    <ControlTheme x:Key="{x:Type hc:ChatBubble}"
+                  TargetType="hc:ChatBubble">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="HorizontalAlignment"
+                Value="Right" />
+        <Setter Property="Background"
+                Value="{DynamicResource DarkPrimaryBrush}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource TextIconBrush}" />
+        <Setter Property="Padding"
+                Value="10" />
+        <Setter Property="Margin"
+                Value="10" />
+        <Setter Property="MinHeight"
+                Value="{StaticResource DefaultControlHeight}" />
+        <Setter Property="IsRead"
+                Value="{Binding IsSelected, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="MaxWidth"
+                Value="280" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:ChatBubble">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="12" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Path x:Name="Tail"
+                          Grid.Column="1"
+                          Data="{StaticResource BubbleTailGeometry}"
+                          Fill="{TemplateBinding Background}"
+                          HorizontalAlignment="Right"
+                          Stretch="Uniform"
+                          VerticalAlignment="Bottom"
+                          Width="15"
+                          Height="15"
+                          RenderTransformOrigin="0.5,0.5" />
+                    <Border x:Name="Body"
+                            Grid.Column="1"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="15"
+                            Margin="0,0,3,0">
+                        <Grid VerticalAlignment="Center"
+                              Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter x:Name="Presenter"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}" />
+                            <Path x:Name="Audio"
+                                  Grid.Column="1"
+                                  Data="{StaticResource AudioGeometry}"
+                                  Fill="{TemplateBinding Foreground}"
+                                  Width="16"
+                                  Height="16"
+                                  Margin="6,0,0,0"
+                                  IsVisible="False" />
+                        </Grid>
+                    </Border>
+                    <Ellipse x:Name="Dot"
+                             Grid.Column="0"
+                             VerticalAlignment="Top"
+                             Fill="{DynamicResource DangerBrush}"
+                             Width="6"
+                             Height="6"
+                             Margin="0,0,6,0"
+                             IsVisible="False" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

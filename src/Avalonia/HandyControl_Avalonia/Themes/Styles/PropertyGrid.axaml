@@ -1,0 +1,113 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="PropertyItemBaseStyle"
+                  TargetType="hc:PropertyItem">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="0,0,0,6" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:PropertyItem">
+                <Border Background="{DynamicResource RegionBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4"
+                        Padding="10,6">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <TextBlock Grid.Column="0"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,0"
+                                   Text="{TemplateBinding DisplayName}"
+                                   TextTrimming="CharacterEllipsis">
+                            <ToolTip.Tip>
+                                <ToolTip Content="{TemplateBinding Description}" />
+                            </ToolTip.Tip>
+                        </TextBlock>
+                        <ContentPresenter Grid.Column="1"
+                                          Content="{TemplateBinding EditorElement}"
+                                          VerticalAlignment="Center" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="PropertyGroupHeaderBaseStyle"
+                  TargetType="hc:PropertyGroupHeader">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="0,6,0,6" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:PropertyGroupHeader">
+                <TextBlock Text="{TemplateBinding Header}"
+                           FontWeight="Bold"
+                           Margin="2,0,0,0" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="PropertyItemsControlBaseStyle"
+                  TargetType="hc:PropertyItemsControl">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:PropertyItemsControl">
+                <ScrollViewer Focusable="False"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <ItemsPresenter />
+                </ScrollViewer>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="PropertyGridBaseStyle"
+                  TargetType="hc:PropertyGrid">
+        <Setter Property="MaxTitleWidth" Value="200" />
+        <Setter Property="MinTitleWidth" Value="120" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Background" Value="{DynamicResource RegionBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:PropertyGrid">
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <DockPanel Grid.Row="0" Margin="0,0,0,6">
+                            <hc:ButtonGroup DockPanel.Dock="Left"
+                                            Margin="0,0,6,0"
+                                            IsVisible="{Binding ShowSortButton, RelativeSource={RelativeSource TemplatedParent}}"
+                                            Theme="{StaticResource ButtonGroupSolid}">
+                                <RadioButton GroupName="PropertyGridSort"
+                                             IsChecked="True"
+                                             Command="{Binding $parent[hc:PropertyGrid].SortByCategory}">
+                                    <Path Width="16" Height="16"
+                                          Data="M 3,3 L 13,3 L 13,5 L 8,11 L 3,5 Z"
+                                          Fill="{DynamicResource PrimaryTextBrush}" />
+                                </RadioButton>
+                                <RadioButton GroupName="PropertyGridSort"
+                                             Command="{Binding $parent[hc:PropertyGrid].SortByName}">
+                                    <Path Width="16" Height="16"
+                                          Data="M 3,3 L 13,3 L 13,5 L 8,11 L 3,5 Z"
+                                          Fill="{DynamicResource PrimaryTextBrush}" />
+                                </RadioButton>
+                            </hc:ButtonGroup>
+                            <hc:SearchBar x:Name="PART_SearchBar"
+                                          IsRealTime="True"
+                                          hc:InfoElement.ShowClearButton="True"
+                                          Theme="{StaticResource SearchBarPlus}" />
+                        </DockPanel>
+                        <hc:PropertyItemsControl x:Name="PART_ItemsControl"
+                                                 Grid.Row="1"
+                                                 Theme="{StaticResource PropertyItemsControlBaseStyle}" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControl.Properties.Langs;assembly=HandyControl"
+             x:Class="HandyControlDemo.UserControl.EmptyDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <StackPanel Margin="32">
+            <hc:UniformSpacingPanel Spacing="32"
+                                    ChildWrapping="Wrap"
+                                    Orientation="Vertical">
+                <hc:Empty Width="400"
+                          HorizontalAlignment="Left"
+                          Description="No messages yet"
+                          Padding="32" />
+                <hc:Empty Width="400"
+                          HorizontalAlignment="Left"
+                          Description="{x:Static langs:Lang.NoData}">
+                    <Button Content="Retry"
+                            Padding="14,6" />
+                </hc:Empty>
+            </hc:UniformSpacingPanel>
+        </StackPanel>
+    </TransitioningContentControl>
+</UserControl>

@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.CheckComboBoxDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <StackPanel Margin="32" Spacing="24">
+            <TextBlock Text="{x:Static langs:Lang.CheckComboBox}"
+                       FontSize="24"
+                       HorizontalAlignment="Center" />
+            <hc:CheckComboBox x:Name="CbBasic"
+                              Width="380"
+                              HorizontalAlignment="Left"
+                              ShowSelectAllButton="True"
+                              MaxDropDownHeight="240" />
+            <hc:CheckComboBox x:Name="CbReadOnly"
+                              Width="380"
+                              HorizontalAlignment="Left"
+                              IsReadOnly="True"
+                              TagSpacing="6" />
+            <hc:CheckComboBox x:Name="CbDisabled"
+                              Width="380"
+                              HorizontalAlignment="Left"
+                              IsEnabled="False"
+                              ShowSelectAllButton="True" />
+            <hc:CheckComboBox x:Name="CbSmall"
+                              Width="380"
+                              HorizontalAlignment="Left"
+                              ShowSelectAllButton="True"
+                              Theme="{StaticResource CheckComboBox.Small}" />
+            <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
+                <Button Content="Select All"
+                        Click="ButtonSelectAll_OnClick" />
+                <Button Content="Clear"
+                        Click="ButtonClear_OnClick" />
+            </StackPanel>
+        </StackPanel>
+    </TransitioningContentControl>
+</UserControl>

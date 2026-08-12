@@ -1,0 +1,81 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.RibbonDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <Grid Margin="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <hc:Ribbon Grid.Row="0">
+                <hc:RibbonTab Header="开始">
+                    <hc:RibbonGroup Header="剪贴板">
+                        <Button Content="粘贴"
+                                Width="90" />
+                        <Button Content="剪切"
+                                Width="90" />
+                        <Button Content="复制"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                    <hc:RibbonGroup Header="字体"
+                                    ShowLauncherButton="True">
+                        <Button Content="加粗"
+                                Width="90" />
+                        <Button Content="斜体"
+                                Width="90" />
+                        <Button Content="下划线"
+                                Width="90" />
+                        <hc:RibbonGroup.LauncherPoptip>
+                            <hc:Poptip Content="字体设置"
+                                       hc:Poptip.PlacementType="Top"
+                                       hc:Poptip.HorizontalOffset="-30" />
+                        </hc:RibbonGroup.LauncherPoptip>
+                    </hc:RibbonGroup>
+                    <hc:RibbonGroup Header="段落">
+                        <Button Content="左对齐"
+                                Width="90" />
+                        <Button Content="居中"
+                                Width="90" />
+                        <Button Content="右对齐"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                </hc:RibbonTab>
+                <hc:RibbonTab Header="插入">
+                    <hc:RibbonGroup Header="插图">
+                        <Button Content="图片"
+                                Width="90" />
+                        <Button Content="图表"
+                                Width="90" />
+                        <Button Content="形状"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                    <hc:RibbonGroup Header="文本">
+                        <Button Content="文本框"
+                                Width="90" />
+                        <Button Content="艺术字"
+                                Width="90" />
+                        <Button Content="首字下沉"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                </hc:RibbonTab>
+                <hc:RibbonTab Header="视图">
+                    <hc:RibbonGroup Header="显示">
+                        <Button Content="标尺"
+                                Width="90" />
+                        <Button Content="网格线"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                    <hc:RibbonGroup Header="窗口"
+                                    ShowSplitter="False">
+                        <Button Content="新建窗口"
+                                Width="90" />
+                        <Button Content="切换窗口"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                </hc:RibbonTab>
+            </hc:Ribbon>
+        </Grid>
+    </TransitioningContentControl>
+</UserControl>

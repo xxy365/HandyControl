@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.DividerDemo"
+             Background="{DynamicResource RegionBrush}">
+    <ScrollViewer>
+        <hc:UniformSpacingPanel Margin="32"
+                                Spacing="32"
+                                ChildWrapping="Wrap">
+            <StackPanel Width="300">
+                <hc:Divider />
+                <hc:Divider Content="Title" />
+                <hc:Divider Padding="0">
+                    <Button Content="More"
+                            hc:IconElement.Geometry="{StaticResource DownGeometry}"
+                            hc:IconElement.Height="8" />
+                </hc:Divider>
+                <hc:Divider LineStrokeThickness="2"
+                            LineStroke="{DynamicResource DarkPrimaryBrush}" />
+                <hc:Divider LineStrokeDashArray="2,2" />
+            </StackPanel>
+            <StackPanel Width="300">
+                <hc:Divider Content="Title"
+                            HorizontalContentAlignment="Left" />
+                <hc:Divider Content="Title"
+                            Padding="10,0"
+                            HorizontalContentAlignment="Right" />
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Button" />
+                    <hc:Divider Orientation="Vertical"
+                                MaxHeight="16" />
+                    <Button Content="Button" />
+                    <hc:Divider Orientation="Vertical"
+                                MaxHeight="16" />
+                    <Button Content="Button" />
+                </StackPanel>
+                <StackPanel Margin="0,16,0,0"
+                            Orientation="Horizontal">
+                    <Button Content="Button" />
+                    <hc:Divider LineStrokeThickness="2"
+                                Orientation="Vertical"
+                                MaxHeight="16" />
+                    <Button Content="Button" />
+                    <hc:Divider LineStrokeThickness="2"
+                                Orientation="Vertical"
+                                MaxHeight="16" />
+                    <Button Content="Button" />
+                </StackPanel>
+                <StackPanel Margin="0,16,0,0"
+                            Orientation="Horizontal">
+                    <Button Content="Button" />
+                    <hc:Divider LineStrokeThickness="2"
+                                LineStroke="{DynamicResource DarkPrimaryBrush}"
+                                Orientation="Vertical"
+                                MaxHeight="16" />
+                    <Button Content="Button" />
+                    <hc:Divider LineStrokeThickness="2"
+                                LineStroke="{DynamicResource DarkPrimaryBrush}"
+                                Orientation="Vertical"
+                                MaxHeight="16" />
+                    <Button Content="Button" />
+                </StackPanel>
+            </StackPanel>
+        </hc:UniformSpacingPanel>
+    </ScrollViewer>
+</UserControl>

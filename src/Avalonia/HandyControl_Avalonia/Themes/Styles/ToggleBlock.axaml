@@ -1,0 +1,62 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="ToggleBlockBaseStyle"
+                  TargetType="hc:ToggleBlock">
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:ToggleBlock">
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <hc:SimplePanel Margin="{TemplateBinding Padding}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                        <ContentPresenter x:Name="ContentPresenterChecked"
+                                          Content="{TemplateBinding CheckedContent}"
+                                          IsVisible="False" />
+                        <ContentPresenter x:Name="ContentPresenterUnChecked"
+                                          Content="{TemplateBinding UnCheckedContent}" />
+                        <ContentPresenter x:Name="ContentPresenterIndeterminate"
+                                          Content="{TemplateBinding IndeterminateContent}"
+                                          IsVisible="False" />
+                    </hc:SimplePanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:ToggleBlock}"
+                  TargetType="hc:ToggleBlock"
+                  BasedOn="{StaticResource ToggleBlockBaseStyle}" />
+
+    <ControlTheme x:Key="ToggleBlockIcon"
+                  TargetType="hc:ToggleBlock"
+                  BasedOn="{StaticResource ToggleBlockBaseStyle}">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:ToggleBlock">
+                <ContentControl Margin="{TemplateBinding Padding}">
+                    <Path x:Name="PathIcon"
+                          Width="{TemplateBinding hc:IconElement.Width}"
+                          Height="{TemplateBinding hc:IconElement.Height}"
+                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                          Fill="{TemplateBinding Foreground}"
+                          Stretch="Uniform"
+                          Data="{TemplateBinding hc:IconSwitchElement.Geometry}" />
+                </ContentControl>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^[IsChecked=True] /template/ Path#PathIcon">
+            <Setter Property="Data"
+                    Value="{TemplateBinding hc:IconSwitchElement.GeometrySelected}" />
+        </Style>
+    </ControlTheme>
+
+</ResourceDictionary>

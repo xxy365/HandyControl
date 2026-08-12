@@ -1,0 +1,24 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="/Resources/Themes/Basic/Brushes.axaml" />
+                <MergeResourceInclude Source="/Resources/Themes/Basic/Geometries.axaml" />
+                <MergeResourceInclude Source="/Resources/Themes/Basic/Converters.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ControlTheme x:Key="MessageBoxCustom"
+                          TargetType="hc:MessageBox"
+                          BasedOn="{StaticResource {x:Type hc:MessageBox}}">
+                <Setter Property="NonClientAreaBackground" Value="#262e2f" />
+                <Setter Property="OtherButtonHoverBackground" Value="#888580" />
+                <Setter Property="OtherButtonForeground" Value="White" />
+                <Setter Property="OtherButtonHoverForeground" Value="White" />
+                <Setter Property="NonClientAreaForeground" Value="White" />
+                <Setter Property="CloseButtonForeground" Value="White" />
+            </ControlTheme>
+        </ResourceDictionary>
+    </Styles.Resources>
+</Styles>

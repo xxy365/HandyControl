@@ -1,0 +1,200 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+
+    <ControlTheme x:Key="{x:Type hc:ImageViewer}"
+                  TargetType="hc:ImageViewer">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource BorderBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:ImageViewer">
+                <Border BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <hc:SimplePanel x:Name="PART_PanelMain"
+                                        Grid.RowSpan="2"
+                                        ClipToBounds="True">
+                            <Border HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    Height="{TemplateBinding ImageHeight}"
+                                    Width="{TemplateBinding ImageWidth}"
+                                    Margin="{TemplateBinding ImageMargin}">
+                                <Image x:Name="PART_ImageMain"
+                                       Source="{TemplateBinding ImageSource}"
+                                       RenderTransformOrigin="50%,50%" />
+                            </Border>
+                        </hc:SimplePanel>
+
+                        <Border Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Width="252"
+                                Height="162"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="{DynamicResource DarkOpacityBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="1"
+                                IsVisible="{Binding ShowSmallImgInternal, RelativeSource={RelativeSource TemplatedParent}}">
+                            <Canvas x:Name="PART_CanvasSmallImg"
+                                    ClipToBounds="True"
+                                    MaxWidth="250"
+                                    MaxHeight="160">
+                                <Border x:Name="PART_BorderMove"
+                                        Background="Transparent"
+                                        Width="50"
+                                        Height="70"
+                                        BorderThickness="1"
+                                        BorderBrush="Black">
+                                    <Border BorderThickness="1"
+                                            BorderBrush="White" />
+                                </Border>
+                            </Canvas>
+                        </Border>
+
+                        <Border x:Name="PART_BorderBottom"
+                                Grid.Row="1"
+                                HorizontalAlignment="Center"
+                                Background="{DynamicResource DarkOpacityBrush}"
+                                CornerRadius="4,4,0,0"
+                                IsVisible="{Binding ShowToolBar, RelativeSource={RelativeSource TemplatedParent}}">
+                            <StackPanel Margin="30,10"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <Button x:Name="PART_ButtonSave"
+                                        Margin="6,0"
+                                        Padding="3"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        Foreground="{DynamicResource TextIconBrush}"
+                                        hc:IconElement.Geometry="{StaticResource SaveGeometry}" />
+                                <Button x:Name="PART_ButtonOpen"
+                                        Margin="6,0"
+                                        Padding="3"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        Foreground="{DynamicResource TextIconBrush}"
+                                        hc:IconElement.Geometry="{StaticResource WindowsGeometry}" />
+
+                                <Border Margin="10,2"
+                                        Background="White"
+                                        Theme="{StaticResource BorderVerticallySplitter}" />
+
+                                <Button x:Name="PART_ButtonReduce"
+                                        Margin="6,0"
+                                        Padding="3"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        Foreground="{DynamicResource TextIconBrush}"
+                                        hc:IconElement.Geometry="{StaticResource ReduceGeometry}" />
+                                <TextBlock Margin="6,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding ScaleStr, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Theme="{StaticResource TextBlockSubTitle}"
+                                           Foreground="{DynamicResource TextIconBrush}" />
+                                <Button x:Name="PART_ButtonEnlarge"
+                                        Margin="6,0"
+                                        Padding="3"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        Foreground="{DynamicResource TextIconBrush}"
+                                        hc:IconElement.Geometry="{StaticResource EnlargeGeometry}" />
+                                <Button x:Name="PART_ButtonRestore"
+                                        Margin="6,0"
+                                        Background="Transparent"
+                                        Theme="{StaticResource ButtonCustom}"
+                                        Foreground="{DynamicResource TextIconBrush}">
+                                    <Border BorderThickness="1"
+                                            BorderBrush="White"
+                                            Padding="2">
+                                        <TextBlock Text="1:1" />
+                                    </Border>
+                                </Button>
+
+                                <Border Margin="10,2"
+                                        Background="White"
+                                        Theme="{StaticResource BorderVerticallySplitter}" />
+
+                                <Button x:Name="PART_ButtonRotateLeft"
+                                        Margin="6,0"
+                                        Padding="3"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        Foreground="{DynamicResource TextIconBrush}"
+                                        hc:IconElement.Geometry="{StaticResource RotateLeftGeometry}" />
+                                <Button x:Name="PART_ButtonRotateRight"
+                                        Margin="6,0"
+                                        Padding="3"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        Foreground="{DynamicResource TextIconBrush}"
+                                        hc:IconElement.Geometry="{StaticResource RotateRightGeometry}" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:ImageBrowser}"
+                  TargetType="hc:ImageBrowser">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="MinWidth"
+                Value="400" />
+        <Setter Property="MinHeight"
+                Value="250" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="BorderBrush"
+                Value="Black" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:ImageBrowser">
+                <Border Background="{TemplateBinding Background}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <hc:ImageViewer x:Name="PART_ImageViewer"
+                                        Grid.Row="0"
+                                        ShowImgMap="True"
+                                        BorderThickness="0"
+                                        Background="#dd000000" />
+
+                        <hc:SimplePanel x:Name="PART_PanelTop"
+                                        Grid.Row="0"
+                                        VerticalAlignment="Top"
+                                        Background="{DynamicResource DarkOpacityBrush}"
+                                        IsVisible="{Binding ShowCloseButton, ElementName=PART_ImageViewer}">
+                            <StackPanel HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <TextBlock Margin="10,0,0,0"
+                                           Foreground="White"
+                                           Text="{Binding ImgPath, ElementName=PART_ImageViewer}" />
+                            </StackPanel>
+                            <Button x:Name="PART_ButtonClose"
+                                    Width="40"
+                                    Height="40"
+                                    Padding="14"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    Background="Red"
+                                    Theme="{StaticResource ButtonIcon}"
+                                    hc:IconElement.Geometry="{StaticResource DeleteGeometry}" />
+                        </hc:SimplePanel>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="RunningBlockBaseStyle"
+                  TargetType="hc:RunningBlock">
+        <Setter Property="hc:BorderElement.CornerRadius"
+                Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource BorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Padding"
+                Value="0,10" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:RunningBlock">
+                <hc:RunningBorder CornerRadius="{Binding $self.(hc:BorderElement.CornerRadius)}"
+                                  Padding="{TemplateBinding Padding}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  Background="{TemplateBinding Background}">
+                    <hc:SimplePanel ClipToBounds="True">
+                        <hc:SimplePanel HorizontalAlignment="Left"
+                                        x:Name="PART_Panel">
+                            <ContentPresenter x:Name="PART_ContentElement"
+                                              RenderTransformOrigin="50%,50%"
+                                              HorizontalAlignment="Left"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </hc:SimplePanel>
+                    </hc:SimplePanel>
+                </hc:RunningBorder>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^[Orientation=Vertical]">
+            <Setter Property="Padding"
+                    Value="10,0" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:RunningBlock}"
+                  TargetType="hc:RunningBlock"
+                  BasedOn="{StaticResource RunningBlockBaseStyle}" />
+
+</ResourceDictionary>

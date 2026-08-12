@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="https://handyorg.github.io/handycontrol">
+
+    <ControlTheme x:Key="DrawerBaseStyle"
+                  TargetType="hc:Drawer">
+        <Setter Property="MaskBrush"
+                Value="{DynamicResource DarkOpacityBrush}" />
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:Drawer}"
+                  TargetType="hc:Drawer"
+                  BasedOn="{StaticResource DrawerBaseStyle}" />
+
+    <ControlTheme x:Key="{x:Type hc:DrawerContainer}"
+                  TargetType="hc:DrawerContainer">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:DrawerContainer">
+                <Grid>
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    <Panel x:Name="PART_Overlay" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

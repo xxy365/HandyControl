@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.TabControlDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <hc:UniformSpacingPanel Margin="32" Spacing="32" ChildWrapping="Wrap" MaxWidth="832">
+                <TabControl SelectedIndex="0" Height="200" MaxWidth="800">
+                    <TabItem Header="TabItem1" IsSelected="True">
+                        <Border Background="{DynamicResource RegionBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <Border Background="{DynamicResource PrimaryBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem3">
+                        <Border Background="{DynamicResource SuccessBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem4">
+                        <Border Background="{DynamicResource DangerBrush}" Height="120"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Theme="{StaticResource TabControlCapsule}" Height="200" MaxWidth="800">
+                    <TabItem Header="TabItem1" IsSelected="True">
+                        <Border Background="{DynamicResource PrimaryBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <Border Background="{DynamicResource SuccessBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem3">
+                        <Border Background="{DynamicResource WarningBrush}" Height="120"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Theme="{StaticResource TabControlSliding}" Height="200" MaxWidth="800">
+                    <TabItem Header="TabItem1" IsSelected="True">
+                        <Border Background="{DynamicResource DangerBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <Border Background="{DynamicResource PrimaryBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem3">
+                        <Border Background="{DynamicResource SuccessBrush}" Height="120"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Theme="{StaticResource TabControlInLine}" TabStripPlacement="Right" Height="200" MaxWidth="800">
+                    <TabItem Header="TabItem1" IsSelected="True">
+                        <Border Background="{DynamicResource SuccessBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <Border Background="{DynamicResource WarningBrush}" Height="120"/>
+                    </TabItem>
+                    <TabItem Header="TabItem3">
+                        <Border Background="{DynamicResource DangerBrush}" Height="120"/>
+                    </TabItem>
+                </TabControl>
+            </hc:UniformSpacingPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

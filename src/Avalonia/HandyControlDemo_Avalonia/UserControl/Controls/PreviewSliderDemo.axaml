@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="HandyControlDemo.UserControl.PreviewSliderDemo"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             Background="{DynamicResource RegionBrush}">
+    <StackPanel Margin="64">
+        <hc:PreviewSlider Name="PreviewSliderHorizontal"
+                          Width="300"
+                          Value="500"
+                          Maximum="1000">
+            <hc:PreviewSlider.PreviewContent>
+                <Label Theme="{StaticResource LabelPrimary}"
+                       Content="{Binding Path=(hc:PreviewSlider.PreviewPosition),RelativeSource={RelativeSource Self}}"
+                       hc:ContentControlAttach.ContentStringFormat="#0.00" />
+            </hc:PreviewSlider.PreviewContent>
+        </hc:PreviewSlider>
+        <hc:PreviewSlider Name="PreviewSliderVertical"
+                          Height="300"
+                          Value="200"
+                          Maximum="1000"
+                          Orientation="Vertical"
+                          Margin="0,16,0,0"
+                          HorizontalAlignment="Center">
+            <hc:PreviewSlider.PreviewContent>
+                <Label Theme="{StaticResource LabelPrimary}"
+                       Content="{Binding Path=(hc:PreviewSlider.PreviewPosition),RelativeSource={RelativeSource Self}}"
+                       hc:ContentControlAttach.ContentStringFormat="#0.0" />
+            </hc:PreviewSlider.PreviewContent>
+        </hc:PreviewSlider>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,88 @@
+<UserControl x:Class="HandyControlDemo.UserControl.StepBarDemo"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <Grid Margin="32"
+                  RowDefinitions="Auto,Auto,Auto,*"
+                  ColumnDefinitions="*,*">
+                <hc:StepBar Grid.ColumnSpan="2"
+                            x:Name="StepBarTop"
+                            StepIndex="1">
+                    <hc:StepBarItem Content="{x:Static langs:Lang.Register}" />
+                    <hc:StepBarItem Content="{x:Static langs:Lang.BasicInfo}" />
+                    <hc:StepBarItem Content="{x:Static langs:Lang.UploadFile}" />
+                    <hc:StepBarItem Content="{x:Static langs:Lang.Complete}" />
+                </hc:StepBar>
+
+                <StackPanel Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Margin="0,32"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button Width="180"
+                            Content="{x:Static langs:Lang.Prev}"
+                            Theme="{StaticResource ButtonPrimary}"
+                            Click="Prev_OnClick" />
+                    <Button Width="180"
+                            Margin="16,0,0,0"
+                            Content="{x:Static langs:Lang.Next}"
+                            Theme="{StaticResource ButtonPrimary}"
+                            Click="Next_OnClick" />
+                </StackPanel>
+
+                <hc:StepBar Grid.Row="2"
+                            Grid.ColumnSpan="2"
+                            Margin="0,0,0,32"
+                            Dock="Bottom"
+                            IsMouseSelectable="True">
+                    <hc:StepBarItem Content="{x:Static langs:Lang.Register}" />
+                    <hc:StepBarItem Content="{x:Static langs:Lang.BasicInfo}" />
+                    <hc:StepBarItem Content="{x:Static langs:Lang.UploadFile}" />
+                    <hc:StepBarItem Content="{x:Static langs:Lang.Complete}" />
+                </hc:StepBar>
+
+                <hc:StepBar Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,0,16,0"
+                            Dock="Left"
+                            ItemsSource="{Binding DataList}">
+                    <hc:StepBar.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock FontSize="16"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding Header}" />
+                                <TextBlock Margin="0,4,0,0"
+                                           Text="{Binding Content}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </hc:StepBar.ItemTemplate>
+                </hc:StepBar>
+
+                <hc:StepBar Grid.Row="3"
+                            Grid.Column="1"
+                            Dock="Right"
+                            IsMouseSelectable="True"
+                            ItemsSource="{Binding DataList}">
+                    <hc:StepBar.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock FontSize="16"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding Header}" />
+                                <TextBlock Margin="0,4,0,0"
+                                           Text="{Binding Content}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </hc:StepBar.ItemTemplate>
+                </hc:StepBar>
+            </Grid>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

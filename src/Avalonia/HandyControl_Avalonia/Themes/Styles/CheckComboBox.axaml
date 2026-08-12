@@ -1,0 +1,186 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="Tag4CheckComboBoxStyle"
+                  BasedOn="{StaticResource TagBaseStyle}"
+                  TargetType="hc:Tag">
+        <Setter Property="Padding"
+                Value="6,2" />
+        <Setter Property="MinHeight"
+                Value="20" />
+        <Setter Property="ShowCloseButton"
+                Value="True" />
+    </ControlTheme>
+
+    <ControlTheme x:Key="CheckComboBoxItemBaseStyle"
+                  TargetType="hc:CheckComboBoxItem">
+        <Setter Property="Padding"
+                Value="{StaticResource DefaultControlPadding}" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="MinHeight"
+                Value="{StaticResource DefaultControlHeight}" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Left" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="CornerRadius"
+                Value="{Binding $self.(hc:BorderElement.CornerRadius)}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="Bd"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                              Foreground="{TemplateBinding Foreground}"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              HorizontalAlignment="Stretch"
+                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              MinHeight="{TemplateBinding MinHeight}"
+                              Padding="{TemplateBinding Padding}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover /template/ Border#Bd">
+            <Setter Property="Background"
+                    Value="{DynamicResource SecondaryRegionBrush}" />
+        </Style>
+        <Style Selector="^:selected /template/ Border#Bd">
+            <Setter Property="Background"
+                    Value="{DynamicResource SecondaryRegionBrush}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="CheckComboBoxBaseStyle"
+                  TargetType="hc:CheckComboBox">
+        <Setter Property="ItemContainerTheme"
+                Value="{StaticResource CheckComboBoxItemBaseStyle}" />
+        <Setter Property="hc:BorderElement.CornerRadius"
+                Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="CornerRadius"
+                Value="{Binding $self.(hc:BorderElement.CornerRadius)}" />
+        <Setter Property="MinHeight"
+                Value="{StaticResource DefaultControlHeight}" />
+        <Setter Property="Padding"
+                Value="{StaticResource DefaultInputPadding}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Left" />
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource BorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="MaxDropDownHeight"
+                Value="400" />
+        <Setter Property="TagSpacing"
+                Value="3" />
+        <Setter Property="TagStyle"
+                Value="{StaticResource Tag4CheckComboBoxStyle}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="*,Auto">
+                    <Border x:Name="border"
+                            Grid.ColumnSpan="2"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}" />
+                    <hc:UniformSpacingPanel x:Name="PART_Panel"
+                                            Grid.Column="0"
+                                            Margin="{TemplateBinding Padding}"
+                                            Spacing="{TemplateBinding TagSpacing}"
+                                            ChildWrapping="Wrap"
+                                            ItemVerticalAlignment="Center"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                    <ToggleButton Grid.Column="1"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch"
+                                  hc:IconElement.Width="14"
+                                  IsChecked="{Binding $parent[hc:CheckComboBox].IsDropDownOpen, Mode=TwoWay}"
+                                  Theme="{StaticResource ToggleButtonIconTransparent}"
+                                  IsVisible="{Binding $parent[hc:CheckComboBox].IsReadOnly, Converter={x:Static BoolConverters.Not}}"
+                                  Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
+                                  hc:IconSwitchElement.Geometry="{StaticResource DownGeometry}"
+                                  hc:IconSwitchElement.GeometrySelected="{StaticResource UpGeometry}"
+                                  Foreground="{Binding BorderBrush, ElementName=border}"
+                                  Focusable="False" />
+                    <Popup Grid.Column="0"
+                           Name="PART_Popup"
+                           WindowManagerAddShadowHint="False"
+                           IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+                           PlacementTarget="border"
+                           IsLightDismissEnabled="True"
+                           InheritsTransform="True">
+                        <Border x:Name="PopupBorder"
+                                Background="{DynamicResource RegionBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="0,1,0,0"
+                                MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                                MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                Margin="8,0,8,8"
+                                Effect="{StaticResource EffectShadow2}"
+                                HorizontalAlignment="Stretch"
+                                CornerRadius="{TemplateBinding CornerRadius}">
+                            <Grid RowDefinitions="Auto,*">
+                                <hc:CheckComboBoxItem x:Name="PART_SelectAll"
+                                                      Grid.Row="0"
+                                                      Theme="{StaticResource CheckComboBoxItemBaseStyle}"
+                                                      IsEnabled="{Binding $parent[hc:CheckComboBox].ShowSelectAllButton}"
+                                                      IsVisible="{Binding $parent[hc:CheckComboBox].ShowSelectAllButton}"
+                                                      Content="Select All"
+                                                      HorizontalContentAlignment="Stretch" />
+                                <ScrollViewer Grid.Row="1"
+                                              HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                                              VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+                                              Margin="2">
+                                    <ItemsPresenter Name="PART_ItemsPresenter"
+                                                    ItemsPanel="{TemplateBinding ItemsPanel}" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity"
+                    Value="0.4" />
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#border">
+            <Setter Property="BorderBrush"
+                    Value="{DynamicResource SecondaryBorderBrush}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="CheckComboBox.Small"
+                  BasedOn="{StaticResource CheckComboBoxBaseStyle}"
+                  TargetType="hc:CheckComboBox">
+        <Setter Property="TagSpacing"
+                Value="2" />
+        <Setter Property="MinHeight"
+                Value="20" />
+        <Setter Property="Padding"
+                Value="6,2" />
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:CheckComboBox}"
+                  BasedOn="{StaticResource CheckComboBoxBaseStyle}"
+                  TargetType="hc:CheckComboBox" />
+
+</ResourceDictionary>

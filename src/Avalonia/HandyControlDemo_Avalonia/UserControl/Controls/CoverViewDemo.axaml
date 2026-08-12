@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
+             xmlns:data="clr-namespace:HandyControlDemo.Data"
+             xmlns:cv="clr-namespace:HandyControlDemo.Tools.Converter"
+             x:Class="HandyControlDemo.UserControl.CoverViewDemo"
+             x:DataType="vm:CoverViewModel"
+             DataContext="{Binding CoverView, Source={x:Static vm:ViewModelLocator.Instance}}"
+             Background="{DynamicResource RegionBrush}">
+    <UserControl.Resources>
+        <cv:StringToBitmapConverter x:Key="StringToBitmap" />
+        <cv:StringToBrushConverter x:Key="StringToBrush" />
+    </UserControl.Resources>
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <hc:CoverView Margin="27"
+                          MaxWidth="880"
+                          ItemWidth="160"
+                          ItemHeight="160"
+                          ItemsSource="{Binding DataList}">
+                <hc:CoverView.ItemHeaderTemplate>
+                    <DataTemplate DataType="data:CoverViewDemoModel">
+                        <Image Source="{Binding ImgPath, Converter={StaticResource StringToBitmap}}" />
+                    </DataTemplate>
+                </hc:CoverView.ItemHeaderTemplate>
+                <hc:CoverView.ItemTemplate>
+                    <DataTemplate DataType="data:CoverViewDemoModel">
+                        <Border Margin="10"
+                                Height="300"
+                                Background="{Binding BackgroundToken, Converter={StaticResource StringToBrush}}">
+                            <TextBlock Text="CoverView"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Foreground="White" />
+                        </Border>
+                    </DataTemplate>
+                </hc:CoverView.ItemTemplate>
+            </hc:CoverView>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

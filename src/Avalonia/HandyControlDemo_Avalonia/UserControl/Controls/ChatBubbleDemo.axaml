@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.ChatBubbleDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="32">
+                <TextBlock Text="ChatBubble"
+                           Theme="{StaticResource TitleTextBlock}" />
+                <hc:ChatBubble Content="Hello! This is a Sender message bubble."
+                               Role="Sender"
+                               Margin="10,16,10,0" />
+                <hc:ChatBubble Content="Hi there! And this is a Receiver bubble."
+                               Role="Receiver"
+                               Margin="10,10,10,0" />
+                <hc:ChatBubble Content="Another sender message."
+                               Role="Sender"
+                               Margin="10,10,10,0" />
+                <hc:ChatBubble Content="Sender audio message."
+                               Role="Sender"
+                               Type="Audio"
+                               Margin="10,10,10,0" />
+            </StackPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

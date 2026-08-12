@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="WatermarkBaseStyle"
+                  TargetType="hc:Watermark">
+        <Setter Property="MarkBrush"
+                Value="{DynamicResource DarkMaskBrush}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource DarkMaskBrush}" />
+        <Setter Property="Angle"
+                Value="20" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:Watermark">
+                <Border Name="PART_Root">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:Watermark}"
+                  BasedOn="{StaticResource WatermarkBaseStyle}"
+                  TargetType="hc:Watermark" />
+
+</ResourceDictionary>

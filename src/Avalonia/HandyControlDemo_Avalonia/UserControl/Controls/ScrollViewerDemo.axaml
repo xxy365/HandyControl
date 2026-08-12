@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.ScrollViewerDemo"
+             Background="{DynamicResource RegionBrush}"
+             MaxWidth="550"
+             Height="600">
+    <TransitioningContentControl>
+        <Grid Margin="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="{DynamicResource PrimaryBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="1" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource PrimaryBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="2" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource PrimaryBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="3" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource PrimaryBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="4" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource PrimaryBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="5" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+            <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}" Margin="0,16,0,0">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <WrapPanel Orientation="Horizontal">
+                        <Border Background="{DynamicResource SuccessBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="1" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource SuccessBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="2" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource SuccessBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="3" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource SuccessBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="4" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Border Background="{DynamicResource SuccessBrush}" Width="200" Height="200" Margin="10,10,32,10">
+                            <TextBlock Text="5" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </WrapPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </TransitioningContentControl>
+</UserControl>

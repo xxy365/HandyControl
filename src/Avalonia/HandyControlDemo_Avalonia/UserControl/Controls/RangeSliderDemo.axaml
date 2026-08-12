@@ -1,0 +1,74 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="HandyControlDemo.UserControl.RangeSliderDemo"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             Background="{DynamicResource RegionBrush}">
+    <ScrollViewer>
+        <hc:UniformSpacingPanel Margin="32"
+                                Orientation="Horizontal"
+                                Spacing="32">
+            <hc:UniformSpacingPanel Orientation="Vertical"
+                                    Spacing="32">
+                <hc:RangeSlider Width="400"
+                                IsSnapToTickEnabled="True"
+                                TickFrequency="1"
+                                Maximum="10"
+                                ValueStart="2"
+                                ValueEnd="8" />
+                <hc:RangeSlider Width="400"
+                                IsSnapToTickEnabled="True"
+                                TickFrequency="1"
+                                Maximum="10"
+                                ValueEnd="3"
+                                IsEnabled="False" />
+                <hc:RangeSlider Width="400"
+                                hc:TipElement.IsVisible="True"
+                                hc:TipElement.Placement="Top"
+                                IsSnapToTickEnabled="True"
+                                Maximum="100"
+                                ValueEnd="60"
+                                TickFrequency="10"
+                                TickPlacement="BottomRight" />
+                <hc:RangeSlider Width="400"
+                                hc:TipElement.IsVisible="True"
+                                hc:TipElement.Placement="Bottom"
+                                hc:TipElement.StringFormat="#0.00"
+                                Maximum="10"
+                                ValueEnd="5"
+                                TickPlacement="TopLeft" />
+            </hc:UniformSpacingPanel>
+            <hc:UniformSpacingPanel Spacing="32">
+                <hc:RangeSlider Height="400"
+                                IsSnapToTickEnabled="True"
+                                TickFrequency="1"
+                                Maximum="10"
+                                ValueEnd="8"
+                                Orientation="Vertical" />
+                <hc:RangeSlider Height="400"
+                                IsSnapToTickEnabled="True"
+                                TickFrequency="1"
+                                Maximum="10"
+                                ValueEnd="3"
+                                IsEnabled="False"
+                                Orientation="Vertical" />
+                <hc:RangeSlider Height="400"
+                                hc:TipElement.IsVisible="True"
+                                hc:TipElement.Placement="Right"
+                                IsSnapToTickEnabled="True"
+                                Maximum="100"
+                                ValueEnd="60"
+                                TickFrequency="10"
+                                TickPlacement="BottomRight"
+                                Orientation="Vertical" />
+                <hc:RangeSlider Height="400"
+                                hc:TipElement.IsVisible="True"
+                                hc:TipElement.Placement="Left"
+                                hc:TipElement.StringFormat="#0.00"
+                                Maximum="10"
+                                ValueEnd="5"
+                                TickPlacement="TopLeft"
+                                Orientation="Vertical" />
+            </hc:UniformSpacingPanel>
+        </hc:UniformSpacingPanel>
+    </ScrollViewer>
+</UserControl>

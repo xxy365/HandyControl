@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.WindowDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <hc:UniformSpacingPanel Margin="32"
+                                    ChildWrapping="Wrap"
+                                    Spacing="16"
+                                    VerticalAlignment="Center"
+                                    MaxWidth="520">
+                <Button Click="ButtonCommonWindow_OnClick"
+                        Content="{x:Static langs:Lang.OpenCommonWindow}" />
+                <Button Click="ButtonBlurWindow_OnClick"
+                        Content="{x:Static langs:Lang.OpenBlurWindow}" />
+                <Button Click="ButtonCustomNonClientArea_OnClick"
+                        Content="{x:Static langs:Lang.OpenCustomNonClientAreaWindow}" />
+                <Button Click="ButtonMessage_OnClick"
+                        Content="{x:Static langs:Lang.OpenMessageWindow}" />
+                <Button Click="ButtonCustomMessage_OnClick"
+                        Content="{x:Static langs:Lang.OpenCustomMessageWindow}" />
+                <Button Click="ButtonCustomContent_OnClick"
+                        Content="{x:Static langs:Lang.OpenCustomContentWindow}" />
+                <Button x:Name="ButtonMouseFollow"
+                        Click="ButtonMouseFollow_OnClick"
+                        Content="{x:Static langs:Lang.OpenMouseFollowWindow}" />
+                <Button Click="ButtonNoNonClientArea_OnClick"
+                        Content="{x:Static langs:Lang.OpenNoNonClientAreaDragableWindow}" />
+            </hc:UniformSpacingPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

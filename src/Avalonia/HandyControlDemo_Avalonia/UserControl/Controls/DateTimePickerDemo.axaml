@@ -1,0 +1,136 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.DateTimePickerDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <hc:UniformSpacingPanel Spacing="32"
+                                    Margin="32"
+                                    ChildWrapping="Wrap">
+                <StackPanel Spacing="16">
+                    <hc:DateTimePicker hc:InfoElement.ShowClearButton="True" />
+                    <hc:DateTimePicker IsEnabled="False" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend}"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr1}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend}"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr2}"
+                                      hc:InfoElement.Necessary="True" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend}"
+                                      Width="380"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend}"
+                                      Width="380"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      hc:InfoElement.Necessary="True" />
+                </StackPanel>
+
+                <StackPanel Spacing="16">
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus}"
+                                      hc:InfoElement.ShowClearButton="True" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus}"
+                                      IsEnabled="False" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus}"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr1}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus}"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr2}"
+                                      hc:InfoElement.Necessary="True" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus}"
+                                      Width="380"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus}"
+                                      Width="380"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      hc:InfoElement.Necessary="True" />
+                </StackPanel>
+
+                <StackPanel Spacing="16">
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePicker.Small}"
+                                      hc:InfoElement.ShowClearButton="True" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePicker.Small}"
+                                      IsEnabled="False" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend.Small}"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr1}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend.Small}"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr2}"
+                                      hc:InfoElement.Necessary="True" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend.Small}"
+                                      Width="380"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerExtend.Small}"
+                                      Width="380"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      hc:InfoElement.Necessary="True" />
+                </StackPanel>
+
+                <StackPanel Spacing="16">
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus.Small}"
+                                      hc:InfoElement.ShowClearButton="True" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus.Small}"
+                                      IsEnabled="False" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus.Small}"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr1}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus.Small}"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr2}"
+                                      hc:InfoElement.Necessary="True" />
+
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus.Small}"
+                                      Width="380"
+                                      hc:InfoElement.ShowClearButton="True"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      Margin="0,16,0,0" />
+                    <hc:DateTimePicker Theme="{StaticResource DateTimePickerPlus.Small}"
+                                      Width="380"
+                                      hc:TitleElement.TitleWidth="140"
+                                      hc:TitleElement.TitlePlacement="Left"
+                                      Watermark="{x:Static langs:Lang.PlsEnterContent}"
+                                      hc:TitleElement.Title="{x:Static langs:Lang.TitleDemoStr3}"
+                                      hc:InfoElement.Necessary="True" />
+                </StackPanel>
+            </hc:UniformSpacingPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

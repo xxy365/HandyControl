@@ -1,0 +1,130 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="CarouselItemBaseStyle"
+                  TargetType="hc:CarouselItem">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      Margin="{TemplateBinding Padding}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="CarouselPateButton"
+                  TargetType="RadioButton">
+        <Setter Property="Margin"
+                Value="5,0" />
+        <Setter Property="Width"
+                Value="10" />
+        <Setter Property="Height"
+                Value="10" />
+        <Setter Property="Background"
+                Value="White" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border CornerRadius="5"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}" />
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover">
+            <Setter Property="Opacity"
+                    Value=".9" />
+        </Style>
+        <Style Selector="^:pressed">
+            <Setter Property="Opacity"
+                    Value=".6" />
+        </Style>
+        <Style Selector="^:checked">
+            <Setter Property="Background"
+                    Value="{DynamicResource PrimaryBrush}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:Carousel}"
+                  TargetType="hc:Carousel">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="PageButtonStyle"
+                Value="{StaticResource CarouselPateButton}" />
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource CarouselItemBaseStyle}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ClipToBounds="True"
+                      Background="Transparent">
+                    <StackPanel x:Name="PART_Panel"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left" />
+                    <Panel x:Name="PART_Overlay"
+                           Opacity="0">
+                        <Panel.Transitions>
+                            <Transitions>
+                                <DoubleTransition Property="Opacity"
+                                                  Duration="0:0:0.1" />
+                            </Transitions>
+                        </Panel.Transitions>
+                        <Button x:Name="PART_Prev"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Margin="30,0,0,0"
+                                Background="Transparent"
+                                BorderThickness="0">
+                            <Border Width="50"
+                                    Height="100"
+                                    Background="{DynamicResource DarkOpacityBrush}"
+                                    CornerRadius="4">
+                                <Path Margin="16"
+                                      Fill="White"
+                                      Theme="{StaticResource LeftPathStyle}" />
+                            </Border>
+                        </Button>
+                        <Button x:Name="PART_Next"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Margin="0,0,30,0"
+                                Background="Transparent"
+                                BorderThickness="0">
+                            <Border Width="50"
+                                    Height="100"
+                                    Background="{DynamicResource DarkOpacityBrush}"
+                                    CornerRadius="4">
+                                <Path Margin="16"
+                                      Fill="White"
+                                      Theme="{StaticResource RightPathStyle}" />
+                            </Border>
+                        </Button>
+                    </Panel>
+                    <StackPanel x:Name="PART_PanelPage"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Center"
+                                Margin="0,0,0,20" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:pointerover /template/ Panel#PART_Overlay">
+            <Setter Property="Opacity"
+                    Value="1" />
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

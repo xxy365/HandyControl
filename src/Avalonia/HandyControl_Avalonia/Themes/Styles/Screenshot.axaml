@@ -1,0 +1,154 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+    <ControlTheme x:Key="{x:Type hc:ScreenshotWindow}"
+                  TargetType="hc:ScreenshotWindow">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:ScreenshotWindow">
+                <hc:SimplePanel>
+                    <Panel x:Name="PART_Canvas"
+                           Background="Transparent" />
+                    <Rectangle x:Name="PART_MaskAreaLeft"
+                               Fill="{DynamicResource DarkOpacityBrush}"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+                    <Rectangle x:Name="PART_MaskAreaTop"
+                               Fill="{DynamicResource DarkOpacityBrush}"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+                    <Rectangle x:Name="PART_MaskAreaRight"
+                               Fill="{DynamicResource DarkOpacityBrush}"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+                    <Rectangle x:Name="PART_MaskAreaBottom"
+                               Fill="{DynamicResource DarkOpacityBrush}"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+                    <Border x:Name="PART_TargetArea"
+                            IsHitTestVisible="False"
+                            BorderThickness="5"
+                            BorderBrush="DodgerBlue"
+                            Background="Transparent"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <hc:SimplePanel>
+                            <Rectangle x:Name="PART_Snap1"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="-3,-3,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap2"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="0,-3,0,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Top"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap3"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="0,-3,-3,0"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Top"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap4"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="0,0,-3,0"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap5"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="0,0,-3,-3"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Bottom"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap6"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="0,0,0,-3"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap7"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="-3,0,0,-3"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Bottom"
+                                       IsVisible="False" />
+                            <Rectangle x:Name="PART_Snap8"
+                                       Width="5"
+                                       Height="5"
+                                       Fill="DodgerBlue"
+                                       Margin="-3,0,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       IsVisible="False" />
+                            <TextBlock Text="{TemplateBinding SizeStr}"
+                                       Background="#CC212121"
+                                       Foreground="White"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       Padding="8,2"
+                                       IsHitTestVisible="False" />
+                        </hc:SimplePanel>
+                    </Border>
+                    <Border x:Name="PART_Magnifier"
+                            IsHitTestVisible="False"
+                            IsVisible="False"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Width="122"
+                            Height="122"
+                            BorderThickness="1"
+                            BorderBrush="#FF333333"
+                            CornerRadius="1">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="2"
+                                              Opacity="0.2"
+                                              OffsetY="3" />
+                        </Border.Effect>
+                        <hc:SimplePanel>
+                            <Border Margin="0,0,0,32"
+                                    Background="{TemplateBinding PreviewBrush}"
+                                    BorderThickness="2"
+                                    BorderBrush="White">
+                                <hc:SimplePanel>
+                                    <Path Data="M56,0 L60,0 60,40 116,40 116,44 60,44 60,84 56,84 56,44 0,44 0,40 56,40 z"
+                                          Fill="#CC4CC6FF" />
+                                </hc:SimplePanel>
+                            </Border>
+                            <Border Height="32"
+                                    VerticalAlignment="Bottom"
+                                    Background="#CC000000">
+                                <StackPanel VerticalAlignment="Center"
+                                            Margin="5,0,0,0">
+                                    <TextBlock Foreground="White"
+                                               Text="{TemplateBinding SizeStr}" />
+                                </StackPanel>
+                            </Border>
+                        </hc:SimplePanel>
+                    </Border>
+                </hc:SimplePanel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

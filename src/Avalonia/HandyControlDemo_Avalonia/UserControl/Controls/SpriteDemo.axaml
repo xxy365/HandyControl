@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.SpriteDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <StackPanel Margin="32"
+                    VerticalAlignment="Center">
+            <Button Content="Show Sprite"
+                    Padding="14,6"
+                    HorizontalAlignment="Left"
+                    Click="Show_OnClick" />
+        </StackPanel>
+    </TransitioningContentControl>
+</UserControl>

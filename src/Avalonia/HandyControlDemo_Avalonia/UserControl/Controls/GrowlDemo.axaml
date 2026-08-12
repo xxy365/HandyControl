@@ -1,0 +1,91 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.GrowlDemo"
+             x:DataType="vm:GrowlDemoViewModel"
+             DataContext="{Binding GrowlDemo, Source={x:Static vm:ViewModelLocator.Instance}}"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <hc:UniformSpacingPanel Margin="32"
+                                    Orientation="Vertical"
+                                    Spacing="32">
+                <ComboBox HorizontalAlignment="Left"
+                          SelectedItem="{Binding TransitionMode}"
+                          ItemsSource="{Binding TransitionModes}" />
+                <StackPanel Spacing="8">
+                    <TextBlock Text="{x:Static langs:Lang.Window}"
+                               FontWeight="Bold" />
+                    <WrapPanel>
+                        <Button Command="{Binding InfoCommand}"
+                                Content="{x:Static langs:Lang.Info}"
+                                Margin="0,5,5,5"
+                                Theme="{StaticResource ButtonInfo}" />
+                        <Button Command="{Binding SuccessCommand}"
+                                Content="{x:Static langs:Lang.Success}"
+                                Margin="5"
+                                Theme="{StaticResource ButtonSuccess}" />
+                        <Button Command="{Binding WarningCommand}"
+                                Content="{x:Static langs:Lang.Warning}"
+                                Margin="5"
+                                Theme="{StaticResource ButtonWarning}" />
+                        <Button Command="{Binding ErrorCommand}"
+                                Content="{x:Static langs:Lang.Error}"
+                                Margin="5"
+                                Theme="{StaticResource ButtonDanger}" />
+                        <Button Command="{Binding AskCommand}"
+                                Content="{x:Static langs:Lang.Ask}"
+                                Margin="5"
+                                Background="BlueViolet"
+                                Foreground="White"
+                                BorderThickness="0" />
+                        <Button Command="{Binding FatalCommand}"
+                                Content="{x:Static langs:Lang.Fatal}"
+                                Margin="5,0" />
+                        <Button Command="{Binding ClearCommand}"
+                                Content="{x:Static langs:Lang.Clear}"
+                                Margin="5,0,0,0"
+                                Theme="{StaticResource ButtonPrimary}" />
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Desktop"
+                               FontWeight="Bold" />
+                    <WrapPanel>
+                        <Button Command="{Binding InfoGlobalCommand}"
+                                Content="{x:Static langs:Lang.Info}"
+                                Margin="0,5,5,5"
+                                Theme="{StaticResource ButtonInfo}" />
+                        <Button Command="{Binding SuccessGlobalCommand}"
+                                Content="{x:Static langs:Lang.Success}"
+                                Margin="5"
+                                Theme="{StaticResource ButtonSuccess}" />
+                        <Button Command="{Binding WarningGlobalCommand}"
+                                Content="{x:Static langs:Lang.Warning}"
+                                Margin="5"
+                                Theme="{StaticResource ButtonWarning}" />
+                        <Button Command="{Binding ErrorGlobalCommand}"
+                                Content="{x:Static langs:Lang.Error}"
+                                Margin="5"
+                                Theme="{StaticResource ButtonDanger}" />
+                        <Button Command="{Binding AskGlobalCommand}"
+                                Content="{x:Static langs:Lang.Ask}"
+                                Margin="5"
+                                Background="BlueViolet"
+                                Foreground="White"
+                                BorderThickness="0" />
+                        <Button Command="{Binding FatalGlobalCommand}"
+                                Content="{x:Static langs:Lang.Fatal}"
+                                Margin="5,0" />
+                        <Button Command="{Binding ClearGlobalCommand}"
+                                Content="{x:Static langs:Lang.Clear}"
+                                Margin="5,0,0,0"
+                                Theme="{StaticResource ButtonPrimary}" />
+                    </WrapPanel>
+                </StackPanel>
+            </hc:UniformSpacingPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Class="HandyControlDemo.UserControl.TransitioningContentControlDemo"
+             Background="{DynamicResource RegionBrush}"
+             MinWidth="320">
+    <UserControl.Resources>
+        <CrossFade x:Key="CrossFadeTransition" Duration="0:0:0.5"/>
+        <PageSlide x:Key="SlideHorizontal" Orientation="Horizontal" Duration="0:0:0.5"/>
+        <PageSlide x:Key="SlideVertical" Orientation="Vertical" Duration="0:0:0.5"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ToggleButton x:Name="ButtonVisibilitySwitch" HorizontalAlignment="Center" Margin="0,32,0,0" IsChecked="True"
+                      Theme="{StaticResource ToggleButtonSwitch}" Click="ButtonVisibilitySwitchOnClick"/>
+        <ScrollViewer Grid.Row="1">
+            <hc:UniformSpacingPanel MaxWidth="720" Margin="32" Spacing="32" ChildWrapping="Wrap">
+                <TransitioningContentControl x:Name="Tcc1" PageTransition="{StaticResource CrossFadeTransition}">
+                    <Border Background="{DynamicResource PrimaryBrush}" Width="160" Height="80">
+                        <TextBlock Text="First" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </TransitioningContentControl>
+                <TransitioningContentControl PageTransition="{StaticResource SlideHorizontal}">
+                    <Border Background="{DynamicResource SuccessBrush}" Width="160" Height="80">
+                        <TextBlock Text="Slide Horizontal" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </TransitioningContentControl>
+                <TransitioningContentControl PageTransition="{StaticResource SlideVertical}">
+                    <Border Background="{DynamicResource DangerBrush}" Width="160" Height="80">
+                        <TextBlock Text="Slide Vertical" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </TransitioningContentControl>
+                <TransitioningContentControl PageTransition="{StaticResource CrossFadeTransition}">
+                    <Border Background="{DynamicResource WarningBrush}" Width="160" Height="80">
+                        <TextBlock Text="Cross Fade" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </TransitioningContentControl>
+            </hc:UniformSpacingPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

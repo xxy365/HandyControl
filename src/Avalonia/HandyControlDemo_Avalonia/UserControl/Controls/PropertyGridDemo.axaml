@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
+             x:Class="HandyControlDemo.UserControl.PropertyGridDemo"
+             x:DataType="vm:PropertyGridViewModel"
+             DataContext="{Binding PropertyGrid, Source={x:Static vm:ViewModelLocator.Instance}}"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <StackPanel Margin="32" Spacing="16">
+                <hc:PropertyGrid x:Name="PropertyGrid"
+                                 SelectedObject="{Binding DemoModel}"
+                                 ShowSortButton="True"
+                                 MaxTitleWidth="200"
+                                 MinTitleWidth="120" />
+            </StackPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

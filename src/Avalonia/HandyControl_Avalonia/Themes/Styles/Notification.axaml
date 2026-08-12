@@ -1,0 +1,33 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+
+    <ControlTheme x:Key="{x:Type hc:Notification}"
+                  TargetType="hc:Notification">
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:Notification">
+                <Border Background="{TemplateBinding Background}"
+                        BorderThickness="1"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        CornerRadius="4"
+                        BoxShadow="0 4 12 0 #55000000">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:Sprite}"
+                  TargetType="hc:Sprite">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:Sprite">
+                <ContentPresenter Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

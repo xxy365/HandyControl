@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
+             x:Class="HandyControlDemo.UserControl.SideMenuDemo"
+             x:DataType="vm:SideMenuViewModel"
+             DataContext="{Binding SideMenu, Source={x:Static vm:ViewModelLocator.Instance}}"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <hc:SideMenu BorderThickness="1"
+                     Width="200"
+                     Margin="32">
+            <hc:SideMenuItem Header="Overview">
+                <hc:SideMenuItem Header="Summary" />
+                <hc:SideMenuItem Header="Dashboards" />
+                <hc:SideMenuItem Header="Wiki" />
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="Boards">
+                <hc:SideMenuItem Header="Work Items" />
+                <hc:SideMenuItem Header="Boards" />
+                <hc:SideMenuItem Header="Backlogs" />
+                <hc:SideMenuItem Header="Sprints" />
+                <hc:SideMenuItem Header="Queries" />
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="Repos">
+                <hc:SideMenuItem Header="Files" />
+                <hc:SideMenuItem Header="Commits" />
+                <hc:SideMenuItem Header="Branches" />
+                <hc:SideMenuItem Header="Tags" />
+                <hc:SideMenuItem Header="Pull requests" />
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="Pipelines">
+                <hc:SideMenuItem Header="Builds" />
+                <hc:SideMenuItem Header="Releases" />
+                <hc:SideMenuItem Header="Library" />
+                <hc:SideMenuItem Header="Task groups" />
+            </hc:SideMenuItem>
+            <hc:SideMenuItem Header="Test Plans">
+                <hc:SideMenuItem Header="Test Plans" />
+                <hc:SideMenuItem Header="Runs" />
+                <hc:SideMenuItem Header="Load test" />
+            </hc:SideMenuItem>
+        </hc:SideMenu>
+    </TransitioningContentControl>
+</UserControl>

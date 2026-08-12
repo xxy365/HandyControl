@@ -1,0 +1,152 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+
+    <ControlTheme x:Key="{x:Type hc:Window}"
+                  TargetType="hc:Window">
+        <Setter Property="Background"
+                Value="{DynamicResource SecondaryRegionBrush}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="BorderBrush"
+                Value="#262e2f" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="NonClientAreaBackground"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="NonClientAreaForeground"
+                Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="CloseButtonBackground"
+                Value="Transparent" />
+        <Setter Property="CloseButtonForeground"
+                Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="CloseButtonHoverBackground"
+                Value="#e81123" />
+        <Setter Property="CloseButtonHoverForeground"
+                Value="White" />
+        <Setter Property="OtherButtonBackground"
+                Value="Transparent" />
+        <Setter Property="OtherButtonForeground"
+                Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="OtherButtonHoverBackground"
+                Value="{DynamicResource DarkMaskBrush}" />
+        <Setter Property="OtherButtonHoverForeground"
+                Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:Window">
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <Grid Margin="{TemplateBinding Padding}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid x:Name="PART_NonClientArea"
+                              Grid.Row="0"
+                              Background="{TemplateBinding NonClientAreaBackground}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="TitleText"
+                                       Grid.Column="0"
+                                       Margin="12,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Text="{TemplateBinding Title}"
+                                       Foreground="{TemplateBinding NonClientAreaForeground}"
+                                       IsVisible="{TemplateBinding ShowTitle}" />
+
+                            <ContentPresenter Grid.Column="0"
+                                              Margin="12,0,0,0"
+                                              HorizontalAlignment="Right"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding NonClientAreaContent}" />
+
+                            <StackPanel Grid.Column="1"
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Top">
+                                <Button x:Name="ButtonMin"
+                                        Height="29"
+                                        Width="45"
+                                        Background="{TemplateBinding OtherButtonBackground}"
+                                        Foreground="{TemplateBinding OtherButtonForeground}"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        hc:IconElement.Geometry="{StaticResource WindowMinGeometry}"
+                                        hc:IconElement.Width="10"
+                                        hc:IconElement.Height="10"
+                                        BorderThickness="1,0,1,0">
+                                    <Button.Styles>
+                                        <Style Selector="Button:pointerover">
+                                            <Setter Property="Background" Value="{TemplateBinding OtherButtonHoverBackground}" />
+                                            <Setter Property="Foreground" Value="{TemplateBinding OtherButtonHoverForeground}" />
+                                        </Style>
+                                    </Button.Styles>
+                                </Button>
+                                <Button x:Name="ButtonMax"
+                                        Height="29"
+                                        Width="46"
+                                        Background="{TemplateBinding OtherButtonBackground}"
+                                        Foreground="{TemplateBinding OtherButtonForeground}"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        hc:IconElement.Geometry="{StaticResource WindowMaxGeometry}"
+                                        hc:IconElement.Width="10"
+                                        hc:IconElement.Height="10"
+                                        BorderThickness="1,0,1,0">
+                                    <Button.Styles>
+                                        <Style Selector="Button:pointerover">
+                                            <Setter Property="Background" Value="{TemplateBinding OtherButtonHoverBackground}" />
+                                            <Setter Property="Foreground" Value="{TemplateBinding OtherButtonHoverForeground}" />
+                                        </Style>
+                                    </Button.Styles>
+                                </Button>
+                                <Button x:Name="ButtonRestore"
+                                        Height="29"
+                                        Width="46"
+                                        Background="{TemplateBinding OtherButtonBackground}"
+                                        Foreground="{TemplateBinding OtherButtonForeground}"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        hc:IconElement.Geometry="{StaticResource WindowRestoreGeometry}"
+                                        hc:IconElement.Width="10"
+                                        hc:IconElement.Height="10"
+                                        BorderThickness="1,0,1,0">
+                                    <Button.Styles>
+                                        <Style Selector="Button:pointerover">
+                                            <Setter Property="Background" Value="{TemplateBinding OtherButtonHoverBackground}" />
+                                            <Setter Property="Foreground" Value="{TemplateBinding OtherButtonHoverForeground}" />
+                                        </Style>
+                                    </Button.Styles>
+                                </Button>
+                                <Button x:Name="ButtonClose"
+                                        Height="29"
+                                        Width="46"
+                                        Background="{TemplateBinding CloseButtonBackground}"
+                                        Foreground="{TemplateBinding CloseButtonForeground}"
+                                        Theme="{StaticResource ButtonIcon}"
+                                        hc:IconElement.Geometry="{StaticResource CloseGeometry}"
+                                        hc:IconElement.Width="10"
+                                        hc:IconElement.Height="10"
+                                        BorderThickness="1,0,0,0">
+                                    <Button.Styles>
+                                        <Style Selector="Button:pointerover">
+                                            <Setter Property="Background" Value="{TemplateBinding CloseButtonHoverBackground}" />
+                                            <Setter Property="Foreground" Value="{TemplateBinding CloseButtonHoverForeground}" />
+                                        </Style>
+                                    </Button.Styles>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <ContentPresenter Grid.Row="1"
+                                          ClipToBounds="True"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

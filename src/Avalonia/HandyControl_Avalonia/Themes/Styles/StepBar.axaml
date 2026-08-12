@@ -1,0 +1,221 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="StepBarItemBaseStyle"
+                  TargetType="hc:StepBarItem">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource ThirdlyTextBrush}" />
+
+        <Style Selector="^[Status=Complete]">
+            <Setter Property="Foreground"
+                    Value="{DynamicResource PrimaryTextBrush}" />
+        </Style>
+        <Style Selector="^[Status=UnderWay]">
+            <Setter Property="Foreground"
+                    Value="{DynamicResource PrimaryBrush}" />
+        </Style>
+        <Style Selector="^[Status=Waiting]">
+            <Setter Property="Foreground"
+                    Value="{DynamicResource ThirdlyTextBrush}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="StepBarItemHorizontalTop"
+                  BasedOn="{StaticResource StepBarItemBaseStyle}"
+                  TargetType="hc:StepBarItem">
+        <Setter Property="Margin"
+                Value="10,0" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:StepBarItem">
+                <Border Background="Transparent">
+                    <StackPanel>
+                        <Border Background="{DynamicResource RegionBrush}"
+                                HorizontalAlignment="Center"
+                                CornerRadius="12"
+                                BorderThickness="2"
+                                BorderBrush="{TemplateBinding Foreground}"
+                                Height="24"
+                                MinWidth="24">
+                            <TextBlock Foreground="{TemplateBinding Foreground}"
+                                       Theme="{StaticResource TextBlockDefaultThiLight}"
+                                       Text="{TemplateBinding Index}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                        </Border>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"
+                                          Margin="0,4,0,0" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="StepBarItemHorizontalBottom"
+                  BasedOn="{StaticResource StepBarItemBaseStyle}"
+                  TargetType="hc:StepBarItem">
+        <Setter Property="Margin"
+                Value="10,0" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:StepBarItem">
+                <StackPanel>
+                    <ContentPresenter HorizontalAlignment="Center"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      TextElement.Foreground="{TemplateBinding Foreground}"
+                                      Margin="0,0,0,4" />
+                    <Border Background="{DynamicResource RegionBrush}"
+                            HorizontalAlignment="Center"
+                            CornerRadius="12"
+                            BorderThickness="2"
+                            BorderBrush="{TemplateBinding Foreground}"
+                            Height="24"
+                            MinWidth="24">
+                        <TextBlock Foreground="{TemplateBinding Foreground}"
+                                   Theme="{StaticResource TextBlockDefaultThiLight}"
+                                   Text="{TemplateBinding Index}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="StepBarItemVertical"
+                  BasedOn="{StaticResource StepBarItemBaseStyle}"
+                  TargetType="hc:StepBarItem">
+        <Setter Property="Margin"
+                Value="0,10" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:StepBarItem">
+                <StackPanel Orientation="Horizontal">
+                    <Border Background="{DynamicResource RegionBrush}"
+                            HorizontalAlignment="Center"
+                            CornerRadius="12"
+                            BorderThickness="2"
+                            BorderBrush="{TemplateBinding Foreground}"
+                            Height="24"
+                            MinWidth="24">
+                        <TextBlock Foreground="{TemplateBinding Foreground}"
+                                   Theme="{StaticResource TextBlockDefaultThiLight}"
+                                   Text="{TemplateBinding Index}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                    </Border>
+                    <ContentPresenter HorizontalAlignment="Left"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      TextElement.Foreground="{TemplateBinding Foreground}"
+                                      Margin="10,4,0,0" />
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTemplate x:Key="StepBarHorizontalTopControlTemplate"
+                     TargetType="hc:StepBar">
+        <Panel>
+            <ProgressBar HorizontalAlignment="Center"
+                         Name="PART_ProgressBarBack"
+                         VerticalAlignment="Top"
+                         Margin="0,10,0,0"
+                         Theme="{StaticResource ProgressBarFlat}"
+                         Background="{DynamicResource ThirdlyTextBrush}" />
+            <ItemsPresenter Name="PART_ItemsPresenter"
+                            ItemsPanel="{TemplateBinding ItemsPanel}" />
+        </Panel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="StepBarHorizontalBottomControlTemplate"
+                     TargetType="hc:StepBar">
+        <Panel>
+            <ProgressBar HorizontalAlignment="Center"
+                         Name="PART_ProgressBarBack"
+                         VerticalAlignment="Bottom"
+                         Margin="0,0,0,10"
+                         Theme="{StaticResource ProgressBarFlat}"
+                         Background="{DynamicResource ThirdlyTextBrush}" />
+            <ItemsPresenter Name="PART_ItemsPresenter"
+                            VerticalAlignment="Bottom"
+                            ItemsPanel="{TemplateBinding ItemsPanel}" />
+        </Panel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="StepBarVerticalControlTemplate"
+                     TargetType="hc:StepBar">
+        <Panel>
+            <ProgressBar Orientation="Vertical"
+                         Width="4"
+                         HorizontalAlignment="Left"
+                         Name="PART_ProgressBarBack"
+                         VerticalAlignment="Center"
+                         Margin="10,0,0,0"
+                         Theme="{StaticResource ProgressBarFlat}"
+                         Background="{DynamicResource ThirdlyTextBrush}"
+                         RenderTransformOrigin="50%,50%">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="180" />
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <ItemsPresenter Name="PART_ItemsPresenter"
+                            ItemsPanel="{TemplateBinding ItemsPanel}" />
+        </Panel>
+    </ControlTemplate>
+
+    <ControlTheme x:Key="StepBarBaseStyle"
+                  TargetType="hc:StepBar">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="ItemContainerTheme"
+                Value="{StaticResource StepBarItemHorizontalTop}" />
+        <Setter Property="Template"
+                Value="{StaticResource StepBarHorizontalTopControlTemplate}" />
+        <Setter Property="ItemsPanel"
+                Value="{StaticResource UniformHorizontalItemsPanelTemplate}" />
+
+        <Style Selector="^[Dock=Left]">
+            <Setter Property="ItemContainerTheme"
+                    Value="{StaticResource StepBarItemVertical}" />
+            <Setter Property="Template"
+                    Value="{StaticResource StepBarVerticalControlTemplate}" />
+            <Setter Property="ItemsPanel"
+                    Value="{StaticResource UniformVerticalItemsPanelTemplate}" />
+        </Style>
+        <Style Selector="^[Dock=Bottom]">
+            <Setter Property="ItemContainerTheme"
+                    Value="{StaticResource StepBarItemHorizontalBottom}" />
+            <Setter Property="Template"
+                    Value="{StaticResource StepBarHorizontalBottomControlTemplate}" />
+            <Setter Property="ItemsPanel"
+                    Value="{StaticResource UniformHorizontalItemsPanelTemplate}" />
+        </Style>
+        <Style Selector="^[Dock=Right]">
+            <Setter Property="FlowDirection"
+                    Value="RightToLeft" />
+            <Setter Property="ItemContainerTheme"
+                    Value="{StaticResource StepBarItemVertical}" />
+            <Setter Property="Template"
+                    Value="{StaticResource StepBarVerticalControlTemplate}" />
+            <Setter Property="ItemsPanel"
+                    Value="{StaticResource UniformVerticalItemsPanelTemplate}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:StepBar}"
+                  BasedOn="{StaticResource StepBarBaseStyle}"
+                  TargetType="hc:StepBar" />
+
+    <ControlTheme x:Key="{x:Type hc:StepBarItem}"
+                  BasedOn="{StaticResource StepBarItemHorizontalTop}"
+                  TargetType="hc:StepBarItem" />
+
+</ResourceDictionary>

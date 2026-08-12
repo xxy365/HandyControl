@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.NotifyIconDemo"
+             Background="{DynamicResource RegionBrush}">
+    <UserControl.Resources>
+        <TrayIcon x:Key="TrayIcon1"
+                  Icon="/Resources/Img/icon.ico"
+                  ToolTipText="{x:Static langs:Lang.Notification}">
+            <TrayIcon.Menu>
+                <NativeMenu>
+                    <NativeMenuItem Header="HandyControl" Click="MenuHome_OnClick"/>
+                    <NativeMenuItem Header="{x:Static langs:Lang.Exit}" Click="MenuExit_OnClick"/>
+                </NativeMenu>
+            </TrayIcon.Menu>
+        </TrayIcon>
+    </UserControl.Resources>
+    <StackPanel Width="400" Spacing="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Width="40" Height="40">
+            <Path Data="{StaticResource InfoGeometry}" Fill="{DynamicResource PrimaryBrush}"/>
+        </Grid>
+        <TextBlock Text="{x:Static langs:Lang.Notification}"
+                   FontSize="16"
+                   Foreground="{DynamicResource PrimaryTextBrush}"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"/>
+        <TextBlock Text="{x:Static langs:Lang.SendNotification}"
+                   Foreground="{DynamicResource SecondaryTextBrush}"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap"/>
+    </StackPanel>
+</UserControl>

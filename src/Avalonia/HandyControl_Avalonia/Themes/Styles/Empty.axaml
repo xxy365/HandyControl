@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+
+    <ControlTheme x:Key="{x:Type hc:Empty}"
+                  TargetType="hc:Empty">
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="24" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:Empty">
+                <Border Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        CornerRadius="{Binding (hc:BorderElement.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                    <StackPanel Margin="{TemplateBinding Padding}"
+                                Orientation="Vertical"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                        <ContentPresenter Content="{Binding Logo, RelativeSource={RelativeSource TemplatedParent}}"
+                                          HorizontalAlignment="Center" />
+                        <ContentPresenter Content="{Binding Description, RelativeSource={RelativeSource TemplatedParent}}"
+                                          HorizontalAlignment="Center" />
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

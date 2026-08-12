@@ -1,0 +1,426 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls">
+
+    <ControlTheme x:Key="ColorPickerSliderRepeatButtonBaseStyle"
+                  TargetType="RepeatButton">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Rectangle Fill="{TemplateBinding Background}"
+                           Height="{TemplateBinding Height}"
+                           Width="{TemplateBinding Width}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="ColorPickerSliderThumbTemplate"
+                  TargetType="Thumb">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Width="13"
+                        Height="13"
+                        Background="White"
+                        CornerRadius="6.5"
+                        Effect="{StaticResource EffectShadow1}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="ColorPickerSlider"
+                  TargetType="Slider">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Foreground"
+                Value="Transparent" />
+
+        <Style Selector="^:horizontal">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Panel>
+                        <Border Margin="7,0"
+                                Background="{TemplateBinding Background}"
+                                MaxHeight="11"
+                                CornerRadius="2" />
+                        <Border Margin="7,0"
+                                Background="{TemplateBinding Foreground}"
+                                MaxHeight="11"
+                                CornerRadius="2">
+                            <Border.OpacityMask>
+                                <LinearGradientBrush EndPoint="0,0.5"
+                                                     StartPoint="1,0.5">
+                                    <GradientStop Color="Transparent"
+                                                  Offset="1" />
+                                    <GradientStop Color="White"
+                                                  Offset="0" />
+                                </LinearGradientBrush>
+                            </Border.OpacityMask>
+                        </Border>
+                        <Track Name="PART_Track"
+                               Minimum="{TemplateBinding Minimum}"
+                               Maximum="{TemplateBinding Maximum}"
+                               Value="{TemplateBinding Value}"
+                               IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                               Orientation="Horizontal">
+                            <Track.DecreaseButton>
+                                <RepeatButton Theme="{StaticResource ColorPickerSliderRepeatButtonBaseStyle}" />
+                            </Track.DecreaseButton>
+                            <Track.IncreaseButton>
+                                <RepeatButton Theme="{StaticResource ColorPickerSliderRepeatButtonBaseStyle}" />
+                            </Track.IncreaseButton>
+                            <Track.Thumb>
+                                <Thumb Name="Thumb"
+                                       Focusable="False"
+                                       Height="13"
+                                       Width="13"
+                                       VerticalAlignment="Center"
+                                       Theme="{StaticResource ColorPickerSliderThumbTemplate}" />
+                            </Track.Thumb>
+                        </Track>
+                    </Panel>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="^:vertical">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Panel>
+                        <Border Margin="0,7"
+                                Background="{TemplateBinding Background}"
+                                MaxWidth="11"
+                                CornerRadius="2" />
+                        <Border Margin="0,7"
+                                Background="{TemplateBinding Foreground}"
+                                MaxWidth="11"
+                                CornerRadius="2">
+                            <Border.OpacityMask>
+                                <LinearGradientBrush EndPoint="0,0.5"
+                                                     StartPoint="1,0.5">
+                                    <GradientStop Color="Transparent"
+                                                  Offset="1" />
+                                    <GradientStop Color="White"
+                                                  Offset="0" />
+                                </LinearGradientBrush>
+                            </Border.OpacityMask>
+                        </Border>
+                        <Track Name="PART_Track"
+                               Minimum="{TemplateBinding Minimum}"
+                               Maximum="{TemplateBinding Maximum}"
+                               Value="{TemplateBinding Value}"
+                               IsDirectionReversed="{TemplateBinding IsDirectionReversed}"
+                               Orientation="Vertical">
+                            <Track.DecreaseButton>
+                                <RepeatButton Theme="{StaticResource ColorPickerSliderRepeatButtonBaseStyle}" />
+                            </Track.DecreaseButton>
+                            <Track.IncreaseButton>
+                                <RepeatButton Theme="{StaticResource ColorPickerSliderRepeatButtonBaseStyle}" />
+                            </Track.IncreaseButton>
+                            <Track.Thumb>
+                                <Thumb Name="Thumb"
+                                       Focusable="False"
+                                       Height="13"
+                                       Width="13"
+                                       HorizontalAlignment="Center"
+                                       Theme="{StaticResource ColorPickerSliderThumbTemplate}" />
+                            </Track.Thumb>
+                        </Track>
+                    </Panel>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+    </ControlTheme>
+
+    <LinearGradientBrush x:Key="ColorPickerRainbowBrush">
+        <GradientStop Color="#ff0000" />
+        <GradientStop Color="#ff00ff"
+                      Offset="0.167" />
+        <GradientStop Color="#0000ff"
+                      Offset="0.334" />
+        <GradientStop Color="#00ffff"
+                      Offset="0.501" />
+        <GradientStop Color="#00ff00"
+                      Offset="0.668" />
+        <GradientStop Color="#ffff00"
+                      Offset="0.835" />
+        <GradientStop Color="#ff0000"
+                      Offset="1" />
+    </LinearGradientBrush>
+
+    <DrawingBrush x:Key="ColorPickerOpacityBrush"
+                  TileMode="Tile"
+                  SourceRect="0,0,12,11"
+                  DestinationRect="0,0,12,11"
+                  Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#d0cec7">
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <RectangleGeometry Rect="0,0,6,5" />
+                            <RectangleGeometry Rect="6,6,6,5" />
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="#e7e7e2">
+                    <GeometryDrawing.Geometry>
+                        <RectangleGeometry Rect="0,5,12,1" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+    <ControlTheme x:Key="{x:Type hc:ColorPicker}"
+                  TargetType="hc:ColorPicker">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Width"
+                Value="230" />
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="122" />
+                        <RowDefinition Height="110" />
+                        <RowDefinition Height="62" />
+                        <RowDefinition Height="62" />
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1"
+                            BorderBrush="{DynamicResource BorderBrush}"
+                            Grid.RowSpan="4"
+                            Background="{TemplateBinding Background}" />
+                    <Panel Margin="1"
+                           Grid.Row="0">
+                        <Border Background="{TemplateBinding BackColor}" />
+                        <Border>
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,0.5"
+                                                     StartPoint="1,0.5">
+                                    <GradientStop Color="White"
+                                                  Offset="1" />
+                                    <GradientStop Color="#80ffffff"
+                                                  Offset=".5" />
+                                    <GradientStop Color="#00ffffff" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border>
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1"
+                                                     StartPoint="0.5,0">
+                                    <GradientStop Color="Black"
+                                                  Offset="1" />
+                                    <GradientStop Color="#80000000"
+                                                  Offset=".5" />
+                                    <GradientStop Color="#00000000" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                    </Panel>
+                    <Border Name="PART_BorderColor"
+                            Grid.Row="0"
+                            CornerRadius="2,2,0,0"
+                            ClipToBounds="True">
+                        <Canvas Margin="-6">
+                            <Border Name="PART_BorderPicker"
+                                    Background="Transparent"
+                                    Height="12"
+                                    CornerRadius="6"
+                                    Width="12"
+                                    BorderThickness="1"
+                                    BorderBrush="White"
+                                    Effect="{StaticResource EffectShadow1}" />
+                        </Canvas>
+                    </Border>
+                    <Border Grid.Row="0"
+                            Background="Transparent"
+                            Name="PART_BorderDrag" />
+                    <Grid Margin="16,16,10,0"
+                          Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="28" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0"
+                                Grid.Column="1"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="{StaticResource ColorPickerOpacityBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="1" />
+                        <Border Grid.Row="0"
+                                Grid.Column="1"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="{TemplateBinding SelectedBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="1" />
+                        <Slider Name="PART_SliderColor"
+                                Maximum="6"
+                                Background="{StaticResource ColorPickerRainbowBrush}"
+                                Margin="2,1,0,0"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Grid.ColumnSpan="2"
+                                VerticalAlignment="Top"
+                                Theme="{StaticResource ColorPickerSlider}" />
+                        <Slider Name="PART_SliderOpacity"
+                                Maximum="255"
+                                Foreground="{TemplateBinding SelectedBrushWithoutOpacity}"
+                                Background="{StaticResource ColorPickerOpacityBrush}"
+                                Margin="2,0,0,0"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Grid.ColumnSpan="2"
+                                VerticalAlignment="Bottom"
+                                Theme="{StaticResource ColorPickerSlider}" />
+                        <StackPanel Name="PART_PanelHex"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    Margin="0,14,0,0"
+                                    VerticalAlignment="Top">
+                            <TextBox Name="PART_HexBox"
+                                     Padding="0"
+                                     HorizontalContentAlignment="Center"
+                                     Width="176"
+                                     FontSize="10"
+                                     MaxLength="9"
+                                     Height="24" />
+                            <TextBlock Foreground="{DynamicResource ThirdlyTextBrush}"
+                                       Margin="0,2,0,0"
+                                       FontSize="10"
+                                       Text="HEX"
+                                       HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <UniformGrid Name="PART_PanelRgb"
+                                     Rows="1"
+                                     Grid.Row="1"
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="3"
+                                     Margin="-2,14,-2,0"
+                                     VerticalAlignment="Top"
+                                     IsVisible="False">
+                            <StackPanel Margin="2,0">
+                                <NumericUpDown Name="PART_RgbR"
+                                               Tag="R"
+                                               HorizontalContentAlignment="Center"
+                                               Padding="2,0"
+                                               ShowButtonSpinner="False"
+                                               Maximum="255"
+                                               Minimum="0"
+                                               FontSize="10"
+                                               Height="24" />
+                                <TextBlock Foreground="{DynamicResource ThirdlyTextBrush}"
+                                           Margin="0,2,0,0"
+                                           FontSize="10"
+                                           Text="R"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Margin="2,0">
+                                <NumericUpDown Name="PART_RgbG"
+                                               Tag="G"
+                                               HorizontalContentAlignment="Center"
+                                               Padding="0"
+                                               ShowButtonSpinner="False"
+                                               Maximum="255"
+                                               Minimum="0"
+                                               FontSize="10"
+                                               Height="24" />
+                                <TextBlock Foreground="{DynamicResource ThirdlyTextBrush}"
+                                           Margin="0,2,0,0"
+                                           FontSize="10"
+                                           Text="G"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Margin="2,0">
+                                <NumericUpDown Name="PART_RgbB"
+                                               Tag="B"
+                                               HorizontalContentAlignment="Center"
+                                               Padding="0"
+                                               ShowButtonSpinner="False"
+                                               Maximum="255"
+                                               Minimum="0"
+                                               FontSize="10"
+                                               Height="24" />
+                                <TextBlock Foreground="{DynamicResource ThirdlyTextBrush}"
+                                           Margin="0,2,0,0"
+                                           FontSize="10"
+                                           Text="B"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Margin="2,0">
+                                <NumericUpDown Name="PART_RgbA"
+                                               Tag="A"
+                                               HorizontalContentAlignment="Center"
+                                               Padding="0"
+                                               ShowButtonSpinner="False"
+                                               Maximum="255"
+                                               Minimum="0"
+                                               FontSize="10"
+                                               Height="24" />
+                                <TextBlock Foreground="{DynamicResource ThirdlyTextBrush}"
+                                           Margin="0,2,0,0"
+                                           FontSize="10"
+                                           Text="A"
+                                           HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </UniformGrid>
+                        <Button Name="PART_Switch"
+                                Padding="6"
+                                FontSize="8"
+                                BorderThickness="0"
+                                HorizontalAlignment="Right"
+                                Height="24"
+                                Width="20"
+                                Grid.Column="3"
+                                Grid.Row="1">
+                            <Path Fill="#323534"
+                                  Theme="{StaticResource UpDownPathStyle}" />
+                        </Button>
+                    </Grid>
+                    <Border Grid.Row="2"
+                            BorderThickness="0,1,0,0"
+                            BorderBrush="{DynamicResource BorderBrush}">
+                        <WrapPanel Name="PART_PanelColor"
+                                   Margin="6"
+                                   HorizontalAlignment="Center" />
+                    </Border>
+                    <Border Grid.Row="3"
+                            BorderThickness="0,1,0,0"
+                            BorderBrush="{DynamicResource BorderBrush}">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <Button Name="PART_Cancel"
+                                    Content="取消"
+                                    Width="80"
+                                    Margin="0,0,16,0" />
+                            <Button Name="PART_Confirm"
+                                    Content="确定"
+                                    Width="80"
+                                    Theme="{StaticResource ButtonPrimary}" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

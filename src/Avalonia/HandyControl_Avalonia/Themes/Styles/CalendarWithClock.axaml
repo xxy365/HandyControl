@@ -1,0 +1,73 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls"
+                    xmlns:langs="clr-namespace:HandyControl.Properties.Langs">
+
+    <ControlTheme x:Key="CalendarWithClockBaseStyle"
+                  TargetType="hc:CalendarWithClock">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource BorderBrush}" />
+        <Setter Property="hc:TitleElement.Background"
+                Value="{DynamicResource TitleBrush}" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="8,0" />
+        <Setter Property="hc:BorderElement.CornerRadius"
+                Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel Margin="0,4,0,8"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+                    <Border CornerRadius="{TemplateBinding hc:BorderElement.CornerRadius}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Effect="{StaticResource EffectShadow2}" />
+                    <Grid ColumnDefinitions="Auto,Auto"
+                          RowDefinitions="Auto,*,Auto">
+                        <Border Grid.ColumnSpan="2"
+                                Margin="4"
+                                Height="42"
+                                VerticalAlignment="Top"
+                                CornerRadius="{TemplateBinding hc:BorderElement.CornerRadius}"
+                                Background="{TemplateBinding hc:TitleElement.Background}" />
+                        <ContentPresenter Grid.Column="0"
+                                          Grid.Row="0"
+                                          Grid.RowSpan="2"
+                                          Margin="-8,-4,-8,-8"
+                                          Name="PART_CalendarPresenter" />
+                        <ContentPresenter Grid.Column="1"
+                                          Grid.Row="0"
+                                          Grid.RowSpan="2"
+                                          Margin="-8,-4,-8,-8"
+                                          Name="PART_ClockPresenter" />
+                        <Button Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                IsVisible="{TemplateBinding ShowConfirmButton}"
+                                Name="PART_ButtonConfirm"
+                                Content="{x:Static langs:Lang.Confirm}"
+                                HorizontalAlignment="Center"
+                                Margin="0,0,0,19"
+                                Width="180"
+                                VerticalAlignment="Bottom"
+                                Theme="{StaticResource ButtonPrimary}" />
+                    </Grid>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:CalendarWithClock}"
+                  BasedOn="{StaticResource CalendarWithClockBaseStyle}"
+                  TargetType="hc:CalendarWithClock" />
+</ResourceDictionary>

@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="HandyControlDemo.UserControl.CompareSliderDemo"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             Background="{DynamicResource RegionBrush}">
+    <ScrollViewer>
+        <hc:UniformSpacingPanel Margin="32"
+                                Orientation="Horizontal"
+                                Spacing="32"
+                                ChildWrapping="Wrap">
+            <hc:CompareSlider Value="5"
+                              Width="600"
+                              Height="352">
+                <hc:CompareSlider.TargetContent>
+                    <Border>
+                        <Border.Background>
+                            <ImageBrush Source="avares://HandyControlDemo/Resources/Img/b1.jpg"
+                                        Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                </hc:CompareSlider.TargetContent>
+                <hc:CompareSlider.SourceContent>
+                    <Border>
+                        <Border.Background>
+                            <ImageBrush Source="avares://HandyControlDemo/Resources/Img/b2.jpg"
+                                        Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                </hc:CompareSlider.SourceContent>
+            </hc:CompareSlider>
+            <hc:CompareSlider Orientation="Vertical"
+                              Value="5"
+                              Width="600"
+                              Height="352">
+                <hc:CompareSlider.TargetContent>
+                    <Border>
+                        <Border.Background>
+                            <ImageBrush Source="avares://HandyControlDemo/Resources/Img/b1.jpg"
+                                        Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                </hc:CompareSlider.TargetContent>
+                <hc:CompareSlider.SourceContent>
+                    <Border>
+                        <Border.Background>
+                            <ImageBrush Source="avares://HandyControlDemo/Resources/Img/b2.jpg"
+                                        Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                </hc:CompareSlider.SourceContent>
+            </hc:CompareSlider>
+        </hc:UniformSpacingPanel>
+    </ScrollViewer>
+</UserControl>

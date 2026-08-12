@@ -1,0 +1,144 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal"
+                    xmlns:hc="clr-namespace:HandyControl.Controls"
+                    xmlns:data="clr-namespace:HandyControl.Data">
+
+    <ControlTheme x:Key="SideMenuItemBaseStyle"
+                  TargetType="hc:SideMenuItem">
+        <Setter Property="Role"
+                Value="Item" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="MinHeight"
+                Value="40" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="BorderRoot"
+                        Background="{TemplateBinding Background}">
+                    <Panel>
+                        <Rectangle Width="4"
+                                   Fill="{TemplateBinding BorderBrush}"
+                                   HorizontalAlignment="Left" />
+                        <ContentControl Margin="4,0,0,0">
+                            <DockPanel Margin="{TemplateBinding Padding}">
+                                <ContentControl Name="PresenterIcon"
+                                                Width="40"
+                                                Content="{TemplateBinding Icon}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center" />
+                                <ContentPresenter Name="PresenterHeader"
+                                                  Content="{TemplateBinding Header}"
+                                                  Margin="6,0,0,0"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                            </DockPanel>
+                        </ContentControl>
+                    </Panel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^[IsSelected=True]">
+            <Setter Property="BorderBrush"
+                    Value="{DynamicResource PrimaryBrush}" />
+            <Setter Property="Background"
+                    Value="{DynamicResource SecondaryRegionBrush}" />
+        </Style>
+        <Style Selector="^[IsSelected=True] /template/ ContentPresenter#PresenterHeader">
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+        </Style>
+        <Style Selector="^:pointerover">
+            <Setter Property="Background"
+                    Value="{DynamicResource SecondaryRegionBrush}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="SideMenuItemHeaderBaseStyle"
+                  TargetType="hc:SideMenuItem">
+        <Setter Property="Role"
+                Value="Header" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource SideMenuItemBaseStyle}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="BorderRoot"
+                        Background="{TemplateBinding Background}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition MinHeight="48" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border Name="BorderBack"
+                                Background="{TemplateBinding Background}" />
+                        <ContentControl Grid.Row="0"
+                                        Margin="4,0,0,0">
+                            <DockPanel Name="PanelHeader"
+                                       Margin="{TemplateBinding Padding}"
+                                       Background="Transparent">
+                                <ContentControl Name="PresenterIcon"
+                                                Width="40"
+                                                Content="{TemplateBinding Icon}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center" />
+                                <ContentPresenter Name="PresenterHeader"
+                                                  Content="{TemplateBinding Header}"
+                                                  Margin="6,0,0,0"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                            </DockPanel>
+                        </ContentControl>
+                        <StackPanel Name="PART_Panel"
+                                    Grid.Row="1"
+                                    Height="{Binding PanelAreaLength, RelativeSource={RelativeSource AncestorType=hc:SideMenu}}"
+                                    IsVisible="False" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^[IsSelected=True] /template/ Border#BorderBack">
+            <Setter Property="BorderThickness"
+                    Value="4,0,0,0" />
+            <Setter Property="BorderBrush"
+                    Value="{DynamicResource BorderBrush}" />
+        </Style>
+        <Style Selector="^[IsSelected=True] /template/ ContentPresenter#PresenterHeader">
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+        </Style>
+        <Style Selector="^ /template/ DockPanel#PanelHeader:pointerover /template/ Border#BorderBack">
+            <Setter Property="Background"
+                    Value="{DynamicResource SecondaryRegionBrush}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type hc:SideMenu}"
+                  TargetType="hc:SideMenu">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource BorderBrush}" />
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource SideMenuItemHeaderBaseStyle}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="BorderRoot"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}">
+                    <ScrollViewer>
+                        <StackPanel Name="PART_Panel" />
+                    </ScrollViewer>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

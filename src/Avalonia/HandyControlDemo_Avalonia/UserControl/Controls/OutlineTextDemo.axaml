@@ -1,0 +1,56 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.OutlineTextDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <ScrollViewer>
+            <StackPanel Margin="32" Width="400">
+                <hc:OutlineText TextWrapping="Wrap"
+                                Fill="{DynamicResource PrimaryTextBrush}"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=20}"/>
+                <hc:OutlineText FontSize="30"
+                                Fill="{DynamicResource SuccessBrush}"
+                                Margin="0,16,0,0"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=8}"/>
+                <hc:OutlineText Fill="{DynamicResource PrimaryTextBrush}"
+                                FontSize="30"
+                                FontStyle="Italic"
+                                Margin="0,16,0,0"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=8}"/>
+                <hc:OutlineText TextWrapping="Wrap"
+                                TextTrimming="CharacterEllipsis"
+                                FontSize="50"
+                                StrokeThickness="2"
+                                Fill="{DynamicResource DangerBrush}"
+                                Stroke="{DynamicResource PrimaryBrush}"
+                                Margin="0,16,0,0"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=5}"/>
+                <hc:OutlineText FontSize="80"
+                                FontWeight="Bold"
+                                StrokeThickness="4"
+                                Fill="{DynamicResource PrimaryBrush}"
+                                Stroke="{DynamicResource DangerBrush}"
+                                Margin="0,16,0,0"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=2}"/>
+                <hc:OutlineText StrokePosition="Outside"
+                                FontSize="80"
+                                FontWeight="Bold"
+                                StrokeThickness="4"
+                                Fill="{DynamicResource PrimaryBrush}"
+                                Stroke="{DynamicResource DangerBrush}"
+                                Margin="0,16,0,0"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=2}"/>
+                <hc:OutlineText StrokePosition="Inside"
+                                FontSize="80"
+                                FontWeight="Bold"
+                                StrokeThickness="4"
+                                Fill="{DynamicResource PrimaryBrush}"
+                                Stroke="{DynamicResource DangerBrush}"
+                                Margin="0,16,0,0"
+                                Text="{Binding ., Source={x:Static langs:Lang.Text}, Converter={StaticResource StringRepeatConverter}, ConverterParameter=2}"/>
+            </StackPanel>
+        </ScrollViewer>
+    </TransitioningContentControl>
+</UserControl>

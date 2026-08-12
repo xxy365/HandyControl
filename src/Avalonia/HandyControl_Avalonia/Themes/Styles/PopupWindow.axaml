@@ -1,0 +1,98 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl"
+                    xmlns:langs="clr-namespace:HandyControl.Properties.Langs;assembly=HandyControl">
+
+    <ControlTheme x:Key="{x:Type hc:PopupWindow}"
+                  TargetType="hc:PopupWindow">
+        <Setter Property="Background"
+                Value="{DynamicResource RegionBrush}" />
+        <Setter Property="ShowInTaskbar"
+                Value="False" />
+        <Setter Property="CanResize"
+                Value="False" />
+        <Setter Property="MinHeight"
+                Value="220" />
+        <Setter Property="MinWidth"
+                Value="300" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="hc:PopupWindow">
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        BoxShadow="0 6 20 0 #66000000">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid x:Name="TitleGrid"
+                              Grid.Row="0"
+                              Height="30"
+                              Background="{DynamicResource TitleBrush}"
+                              IsVisible="{TemplateBinding ShowTitle}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="PART_TitleBlock"
+                                       Margin="12,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{TemplateBinding Title}"
+                                       TextWrapping="Wrap" />
+
+                            <Button x:Name="ButtonClose"
+                                    Grid.Column="1"
+                                    Height="28"
+                                    Width="44"
+                                    Margin="0,0,1,0"
+                                    Background="Transparent"
+                                    Foreground="White"
+                                    Theme="{StaticResource ButtonCustom}"
+                                    hc:BackgroundSwitchElement.MouseHoverBackground="Red"
+                                    hc:IconElement.Geometry="{StaticResource CloseGeometry}"
+                                    hc:IconElement.Width="10"
+                                    hc:IconElement.Height="10" />
+                        </Grid>
+
+                        <Border x:Name="PART_MainBorder"
+                                Grid.Row="1"
+                                BorderBrush="{DynamicResource TitleBrush}">
+                            <StackPanel>
+                                <TextBlock x:Name="MyTextBlock"
+                                           MinHeight="110"
+                                           MaxWidth="300"
+                                           Padding="32"
+                                           TextAlignment="Center"
+                                           Text="{TemplateBinding ContentStr}"
+                                           TextWrapping="Wrap"
+                                           TextTrimming="CharacterEllipsis"
+                                           Foreground="{DynamicResource PrimaryTextBrush}"
+                                           Background="{TemplateBinding Background}" />
+                                <StackPanel Margin="0,0,0,32"
+                                            HorizontalAlignment="Center"
+                                            Orientation="Horizontal"
+                                            Background="{DynamicResource RegionBrush}">
+                                    <Button x:Name="ButtonCancel"
+                                            MinWidth="80"
+                                            Margin="0,0,16,0"
+                                            Content="{x:Static langs:Lang.Cancel}"
+                                            IsVisible="{TemplateBinding ShowCancel}" />
+                                    <Button x:Name="ButtonOk"
+                                            MinWidth="80"
+                                            Theme="{StaticResource ButtonPrimary}"
+                                            Content="{x:Static langs:Lang.Confirm}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             x:Class="HandyControlDemo.UserControl.TimeBarDemo"
+             Background="{DynamicResource RegionBrush}">
+    <TransitioningContentControl>
+        <StackPanel Margin="32" Spacing="24">
+            <TextBlock Text="{x:Static langs:Lang.TimeBar}"
+                       FontSize="24"
+                       HorizontalAlignment="Center" />
+            <hc:TimeBar x:Name="TimeBarControl" Height="80" />
+            <StackPanel Orientation="Horizontal" Spacing="16" HorizontalAlignment="Center">
+                <TextBlock Text="{x:Static langs:Lang.SelectedTime}"
+                           VerticalAlignment="Center" />
+                <TextBlock x:Name="SelectedTimeText"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center" />
+            </StackPanel>
+            <hc:ButtonGroup HorizontalAlignment="Center">
+                <Button Content="09:00"
+                        Click="Button_OnClick" />
+                <Button Content="12:00"
+                        Click="Button_OnClick" />
+                <Button Content="15:00"
+                        Click="Button_OnClick" />
+                <Button Content="18:00"
+                        Click="Button_OnClick" />
+                <Button Content="21:00"
+                        Click="Button_OnClick" />
+            </hc:ButtonGroup>
+            <TextBlock Text="{x:Static langs:Lang.MouseWheelTip}"
+                       FontSize="12"
+                       Opacity="0.6"
+                       HorizontalAlignment="Center" />
+        </StackPanel>
+    </TransitioningContentControl>
+</UserControl>
