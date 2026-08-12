@@ -1,3 +1,9 @@
+## AI-Generated Avalonia Port
+
+> **Note:** The Avalonia port in this repository (`src/Avalonia`) was generated with the assistance of AI. The original WPF HandyControl is written by HandyOrg.
+>
+> **说明：** 本仓库中的 Avalonia 移植版本（`src/Avalonia`）由 AI 辅助生成。原始 WPF HandyControl 由 HandyOrg 编写。
+
 ## Blogroll
 
 [SimpleFactoryGenerator](https://github.com/DingpingZhang/SimpleFactoryGenerator) - A simple factory source generator that enables the pattern to not violate the open-close principle.
