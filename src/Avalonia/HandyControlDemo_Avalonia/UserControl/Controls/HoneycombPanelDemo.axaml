@@ -19,8 +19,8 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <hc:ButtonGroup Margin="0,0,0,16">
-                <Button Command="{Binding AddItemCommand}" Content="{x:Static langs:Lang.AddItem}" />
-                <Button Command="{Binding RemoveItemCommand}" Content="{x:Static langs:Lang.RemoveItem}" />
+                <Button Command="{Binding AddItemCommand}" Content="{Binding AddItem, Source={x:Static langs:LangProvider.Instance}}" />
+                <Button Command="{Binding RemoveItemCommand}" Content="{Binding RemoveItem, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:ButtonGroup>
             <Border Grid.Row="1" Padding="0" Theme="{StaticResource BorderRegion}">
                 <ListBox Background="Transparent"

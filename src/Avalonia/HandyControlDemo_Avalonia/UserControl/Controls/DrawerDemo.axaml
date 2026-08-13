@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.DrawerDemo"
              Background="{DynamicResource RegionBrush}"
@@ -25,7 +26,7 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <TextBlock Margin="10,0,0,0"
-                                           Text="Header"
+                                           Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                            Theme="{StaticResource TextBlockTitle}"
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
@@ -50,7 +51,7 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <TextBlock Margin="10,0,0,0"
-                                           Text="Header"
+                                           Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                            Theme="{StaticResource TextBlockTitle}"
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
@@ -74,7 +75,7 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <TextBlock Margin="10,0,0,0"
-                                           Text="Header"
+                                           Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                            Theme="{StaticResource TextBlockTitle}"
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
@@ -99,7 +100,7 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <TextBlock Margin="10,0,0,0"
-                                           Text="Header"
+                                           Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                            Theme="{StaticResource TextBlockTitle}"
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
@@ -135,7 +136,7 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <TextBlock Margin="10,0,0,0"
-                                                   Text="Header"
+                                                   Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                                    Theme="{StaticResource TextBlockTitle}"
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
@@ -159,7 +160,7 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <TextBlock Margin="10,0,0,0"
-                                                   Text="Header"
+                                                   Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                                    Theme="{StaticResource TextBlockTitle}"
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
@@ -182,7 +183,7 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <TextBlock Margin="10,0,0,0"
-                                                   Text="Header"
+                                                   Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                                    Theme="{StaticResource TextBlockTitle}"
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
@@ -207,7 +208,7 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <TextBlock Margin="10,0,0,0"
-                                                   Text="Header"
+                                                   Text="{Binding Header, Source={x:Static langs:LangProvider.Instance}}"
                                                    Theme="{StaticResource TextBlockTitle}"
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"

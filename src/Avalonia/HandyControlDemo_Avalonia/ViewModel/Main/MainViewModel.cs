@@ -68,6 +68,15 @@ public class MainViewModel : DemoViewModelBase<DemoDataModel>
 
         WeakReferenceMessenger.Default.Register<object, string>(this, MessageToken.LangUpdated, (_, _) =>
         {
+            foreach (var info in DemoInfoCollection)
+            {
+                info.RefreshDisplay();
+                foreach (var item in info.DemoItemList)
+                {
+                    item.RefreshDisplay();
+                }
+            }
+
             if (DemoItemCurrent == null)
             {
                 return;

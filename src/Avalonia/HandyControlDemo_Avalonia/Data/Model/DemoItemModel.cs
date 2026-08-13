@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using HandyControlDemo.Properties.Langs;
 
 namespace HandyControlDemo.Data;
 
@@ -8,6 +9,10 @@ public class DemoItemModel : ObservableObject
     private string _queriesText = string.Empty;
 
     public string Name { get; set; } = string.Empty;
+
+    public string DisplayName => LangProvider.Instance[Name];
+
+    public void RefreshDisplay() => OnPropertyChanged(nameof(DisplayName));
 
     public string GroupName { get; set; } = string.Empty;
 

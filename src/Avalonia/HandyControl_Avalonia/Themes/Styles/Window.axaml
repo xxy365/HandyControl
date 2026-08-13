@@ -9,12 +9,18 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource PrimaryTextBrush}" />
         <Setter Property="BorderBrush"
-                Value="#262e2f" />
+                Value="{DynamicResource BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
-        <Setter Property="NonClientAreaBackground"
+        <Setter Property="WindowDecorations"
+                Value="BorderOnly" />
+        <Setter Property="ExtendClientAreaToDecorationsHint"
+                Value="True" />
+        <Setter Property="ExtendClientAreaTitleBarHeightHint"
+                Value="29" />
+        <Setter Property="CustomTitleBarBackground"
                 Value="{DynamicResource RegionBrush}" />
-        <Setter Property="NonClientAreaForeground"
+        <Setter Property="CustomTitleBarForeground"
                 Value="{DynamicResource PrimaryTextBrush}" />
         <Setter Property="CloseButtonBackground"
                 Value="Transparent" />
@@ -43,37 +49,39 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <Grid x:Name="PART_NonClientArea"
+                        <Grid x:Name="PART_CustomTitleBar"
                               Grid.Row="0"
-                              Background="{TemplateBinding NonClientAreaBackground}">
+                              Background="{TemplateBinding CustomTitleBarBackground}"
+                              WindowDecorationProperties.ElementRole="TitleBar">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
                             <ContentPresenter Grid.Column="0"
-                                              Grid.ColumnSpan="2"
                                               HorizontalAlignment="Stretch"
                                               VerticalAlignment="Stretch"
-                                              Content="{TemplateBinding NonClientAreaContent}" />
+                                              Content="{TemplateBinding CustomTitleBarContent}"
+                                              WindowDecorationProperties.ElementRole="User" />
 
                             <TextBlock x:Name="TitleText"
                                        Grid.Column="0"
                                        Margin="12,0,0,0"
                                        VerticalAlignment="Center"
                                        Text="{TemplateBinding Title}"
-                                       Foreground="{TemplateBinding NonClientAreaForeground}"
+                                       Foreground="{TemplateBinding CustomTitleBarForeground}"
                                        IsVisible="{TemplateBinding ShowTitle}" />
 
                             <StackPanel Grid.Column="1"
                                         Orientation="Horizontal"
-                                        VerticalAlignment="Top">
+                                        VerticalAlignment="Center">
                                 <Button x:Name="ButtonMin"
-                                        Height="29"
+                                        Height="26"
                                         Width="45"
                                         Background="{TemplateBinding OtherButtonBackground}"
                                         Foreground="{TemplateBinding OtherButtonForeground}"
                                         Theme="{StaticResource ButtonIcon}"
+                                        WindowDecorationProperties.ElementRole="MinimizeButton"
                                         hc:IconElement.Geometry="{StaticResource WindowMinGeometry}"
                                         hc:IconElement.Width="10"
                                         hc:IconElement.Height="10"
@@ -86,11 +94,12 @@
                                     </Button.Styles>
                                 </Button>
                                 <Button x:Name="ButtonMax"
-                                        Height="29"
+                                        Height="26"
                                         Width="46"
                                         Background="{TemplateBinding OtherButtonBackground}"
                                         Foreground="{TemplateBinding OtherButtonForeground}"
                                         Theme="{StaticResource ButtonIcon}"
+                                        WindowDecorationProperties.ElementRole="MaximizeButton"
                                         hc:IconElement.Geometry="{StaticResource WindowMaxGeometry}"
                                         hc:IconElement.Width="10"
                                         hc:IconElement.Height="10"
@@ -103,11 +112,12 @@
                                     </Button.Styles>
                                 </Button>
                                 <Button x:Name="ButtonRestore"
-                                        Height="29"
+                                        Height="26"
                                         Width="46"
                                         Background="{TemplateBinding OtherButtonBackground}"
                                         Foreground="{TemplateBinding OtherButtonForeground}"
                                         Theme="{StaticResource ButtonIcon}"
+                                        WindowDecorationProperties.ElementRole="MaximizeButton"
                                         hc:IconElement.Geometry="{StaticResource WindowRestoreGeometry}"
                                         hc:IconElement.Width="10"
                                         hc:IconElement.Height="10"
@@ -120,11 +130,12 @@
                                     </Button.Styles>
                                 </Button>
                                 <Button x:Name="ButtonClose"
-                                        Height="29"
+                                        Height="26"
                                         Width="46"
                                         Background="{TemplateBinding CloseButtonBackground}"
                                         Foreground="{TemplateBinding CloseButtonForeground}"
                                         Theme="{StaticResource ButtonIcon}"
+                                        WindowDecorationProperties.ElementRole="CloseButton"
                                         hc:IconElement.Geometry="{StaticResource CloseGeometry}"
                                         hc:IconElement.Width="10"
                                         hc:IconElement.Height="10"

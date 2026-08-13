@@ -3,11 +3,12 @@
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:data="clr-namespace:HandyControlDemo.Data"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              Margin="16,16,0,16"
              CornerRadius="10"
              Effect="{StaticResource EffectShadow4}">
     <DockPanel>
-        <Button Content="Practical demos"
+        <Button Content="{Binding PracticalDemos, Source={x:Static langs:LangProvider.Instance}}"
                 DockPanel.Dock="Top"
                 HorizontalAlignment="Stretch"
                 Margin="10,10,10,4"
@@ -21,7 +22,7 @@
                     SelectedIndex="0">
             <TabControl.ItemTemplate>
                 <DataTemplate DataType="data:DemoInfoModel">
-                    <TextBlock Text="{Binding Title}" />
+                    <TextBlock Text="{Binding DisplayTitle}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
@@ -41,7 +42,7 @@
                                                    Fill="{Binding ImageBrush}" />
                                         <TextBlock Margin="6,0,0,0"
                                                    VerticalAlignment="Center"
-                                                   Text="{Binding Name}" />
+                                                   Text="{Binding DisplayName}" />
                                         <Path IsVisible="{Binding IsNew}"
                                               VerticalAlignment="Center"
                                               Data="{StaticResource NewGeometry}"

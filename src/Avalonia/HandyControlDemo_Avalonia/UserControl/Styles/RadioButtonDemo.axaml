@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.RadioButtonDemo"
              xmlns:hc="https://handyorg.github.io/handycontrol">
     <ScrollViewer>
@@ -12,67 +13,67 @@
                     <StackPanel>
                         <RadioButton GroupName="Demo1"
                                      IsChecked="True"
-                                     Content="Default"
+                                     Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDefault}" />
                         <RadioButton GroupName="Demo1"
                                      IsEnabled="False"
-                                     Content="Default"
+                                     Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDefault}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo1"
-                                     Content="Primary"
+                                     Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary}" />
                         <RadioButton GroupName="Demo1"
                                      IsEnabled="False"
-                                     Content="Primary"
+                                     Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo1"
-                                     Content="Success"
+                                     Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonSuccess}" />
                         <RadioButton GroupName="Demo1"
                                      IsEnabled="False"
-                                     Content="Success"
+                                     Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonSuccess}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo1"
-                                     Content="Info"
+                                     Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonInfo}" />
                         <RadioButton GroupName="Demo1"
                                      IsEnabled="False"
-                                     Content="Info"
+                                     Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonInfo}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo1"
-                                     Content="Warning"
+                                     Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonWarning}" />
                         <RadioButton GroupName="Demo1"
                                      IsEnabled="False"
-                                     Content="Warning"
+                                     Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonWarning}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo1"
-                                     Content="Danger"
+                                     Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDanger}" />
                         <RadioButton GroupName="Demo1"
                                      IsEnabled="False"
-                                     Content="Danger"
+                                     Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDanger}" />
                     </StackPanel>
@@ -81,12 +82,12 @@
                     <StackPanel>
                         <RadioButton GroupName="Demo2"
                                      IsChecked="True"
-                                     Content="Clock"
+                                     Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                      Theme="{StaticResource RadioButtonSameAsButtonDefault}" />
                         <RadioButton GroupName="Demo2"
-                                     Content="Clock"
+                                     Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                      IsEnabled="False"
                                      Margin="5"
                                      hc:IconElement.Geometry="{StaticResource ClockGeometry}"
@@ -94,12 +95,12 @@
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo2"
-                                     Content="Calendar"
+                                     Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary}"
                                      hc:IconElement.Geometry="{StaticResource CalendarGeometry}" />
                         <RadioButton GroupName="Demo2"
-                                     Content="Calendar"
+                                     Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                      IsEnabled="False"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary}"
@@ -154,67 +155,67 @@
                     <StackPanel>
                         <RadioButton GroupName="Demo3"
                                      IsChecked="True"
-                                     Content="Default"
+                                     Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDefault.Small}" />
                         <RadioButton GroupName="Demo3"
                                      IsEnabled="False"
-                                     Content="Default"
+                                     Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDefault.Small}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo3"
-                                     Content="Primary"
+                                     Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary.Small}" />
                         <RadioButton GroupName="Demo3"
                                      IsEnabled="False"
-                                     Content="Primary"
+                                     Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary.Small}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo3"
-                                     Content="Success"
+                                     Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonSuccess.Small}" />
                         <RadioButton GroupName="Demo3"
                                      IsEnabled="False"
-                                     Content="Success"
+                                     Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonSuccess.Small}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo3"
-                                     Content="Info"
+                                     Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonInfo.Small}" />
                         <RadioButton GroupName="Demo3"
                                      IsEnabled="False"
-                                     Content="Info"
+                                     Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonInfo.Small}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo3"
-                                     Content="Warning"
+                                     Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonWarning.Small}" />
                         <RadioButton GroupName="Demo3"
                                      IsEnabled="False"
-                                     Content="Warning"
+                                     Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonWarning.Small}" />
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo3"
-                                     Content="Danger"
+                                     Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDanger.Small}" />
                         <RadioButton GroupName="Demo3"
                                      IsEnabled="False"
-                                     Content="Danger"
+                                     Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonDanger.Small}" />
                     </StackPanel>
@@ -223,12 +224,12 @@
                     <StackPanel>
                         <RadioButton GroupName="Demo4"
                                      IsChecked="True"
-                                     Content="Clock"
+                                     Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                      Theme="{StaticResource RadioButtonSameAsButtonDefault.Small}" />
                         <RadioButton GroupName="Demo4"
-                                     Content="Clock"
+                                     Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                      IsEnabled="False"
                                      Margin="5"
                                      hc:IconElement.Geometry="{StaticResource ClockGeometry}"
@@ -236,12 +237,12 @@
                     </StackPanel>
                     <StackPanel>
                         <RadioButton GroupName="Demo4"
-                                     Content="Calendar"
+                                     Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary.Small}"
                                      hc:IconElement.Geometry="{StaticResource CalendarGeometry}" />
                         <RadioButton GroupName="Demo4"
-                                     Content="Calendar"
+                                     Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                      IsEnabled="False"
                                      Margin="5"
                                      Theme="{StaticResource RadioButtonSameAsButtonPrimary.Small}"
@@ -298,11 +299,11 @@
                 <hc:UniformSpacingPanel Spacing="10"
                                         Orientation="Vertical">
                     <RadioButton IsChecked="True"
-                                 Content="RadioButton" />
-                    <RadioButton Content="RadioButton"
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
+                    <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"
                                  IsEnabled="False" />
-                    <RadioButton Content="RadioButton" />
-                    <RadioButton Content="RadioButton"
+                    <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
+                    <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"
                                  IsEnabled="False" />
                 </hc:UniformSpacingPanel>
                 <hc:UniformSpacingPanel Spacing="10"
@@ -310,32 +311,32 @@
                     <RadioButton Background="{DynamicResource SecondaryRegionBrush}"
                                  hc:IconElement.Geometry="{StaticResource CalendarGeometry}"
                                  Theme="{StaticResource RadioButtonIcon}"
-                                 Content="RadioButton" />
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
                     <RadioButton Background="{DynamicResource SecondaryRegionBrush}"
                                  Theme="{StaticResource RadioButtonIcon}"
-                                 Content="RadioButton"
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"
                                  IsChecked="True" />
                     <RadioButton hc:IconElement.Geometry="{StaticResource CalendarGeometry}"
                                  Theme="{StaticResource RadioButtonIcon}"
-                                 Content="RadioButton" />
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
                     <RadioButton Theme="{StaticResource RadioButtonIcon}"
-                                 Content="RadioButton" />
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
                 </hc:UniformSpacingPanel>
                 <hc:UniformSpacingPanel Spacing="10"
                                         Orientation="Vertical">
                     <RadioButton Background="{DynamicResource SecondaryRegionBrush}"
                                  hc:IconElement.Geometry="{StaticResource CalendarGeometry}"
                                  Theme="{StaticResource RadioButtonIcon.Small}"
-                                 Content="RadioButton" />
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
                     <RadioButton Background="{DynamicResource SecondaryRegionBrush}"
                                  Theme="{StaticResource RadioButtonIcon.Small}"
-                                 Content="RadioButton"
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"
                                  IsChecked="True" />
                     <RadioButton hc:IconElement.Geometry="{StaticResource CalendarGeometry}"
                                  Theme="{StaticResource RadioButtonIcon.Small}"
-                                 Content="RadioButton" />
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
                     <RadioButton Theme="{StaticResource RadioButtonIcon.Small}"
-                                 Content="RadioButton" />
+                                 Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" />
                 </hc:UniformSpacingPanel>
             </hc:UniformSpacingPanel>
         </hc:UniformSpacingPanel>

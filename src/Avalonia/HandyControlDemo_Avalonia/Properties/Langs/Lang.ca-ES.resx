@@ -600,7 +600,7 @@
   <data name="ChangeLangAsk" xml:space="preserve">
     <value>Si es reinicia per canviar l'idioma?</value>
   </data>
-  <data name="OpenNoNonClientAreaDragableWindow" xml:space="preserve">
+  <data name="OpenNoCustomTitleBarDragableWindow" xml:space="preserve">
     <value>Obriu una finestra sense NonClientArea que es pot arrossegar</value>
   </data>
   <data name="OpenCustomMessageWindow" xml:space="preserve">
@@ -726,7 +726,7 @@
   <data name="Prev" xml:space="preserve">
     <value>Anterior</value>
   </data>
-  <data name="OpenCustomNonClientAreaWindow" xml:space="preserve">
+  <data name="OpenCustomTitleBarWindow" xml:space="preserve">
     <value>obre la finestra personalitzada de Non-client Area</value>
   </data>
   <data name="PracticalDemos" xml:space="preserve">
@@ -810,4 +810,366 @@
   <data name="HyperlinkButton" xml:space="preserve">
     <value>HyperlinkButton</value>
   </data>
-</root>
+<data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+  <data name="CalendarDatePicker" xml:space="preserve">
+    <value>Selector de data de calendari</value>
+  </data>
+  <data name="ConfettiCannon" xml:space="preserve">
+    <value>Canó de confeti</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Contingut</value>
+  </data>
+  <data name="DropDownButton" xml:space="preserve">
+    <value>Botó de desplegable</value>
+  </data>
+  <data name="HandyControl" xml:space="preserve">
+    <value>HandyControl</value>
+  </data>
+  <data name="ImageViewer" xml:space="preserve">
+    <value>Visor d'imatges</value>
+  </data>
+  <data name="Item1" xml:space="preserve">
+    <value>Element 1</value>
+  </data>
+  <data name="Item2" xml:space="preserve">
+    <value>Element 2</value>
+  </data>
+  <data name="Item3" xml:space="preserve">
+    <value>Element 3</value>
+  </data>
+  <data name="MaskedTextBox" xml:space="preserve">
+    <value>Quadre de text emmascarat</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Nou</value>
+  </data>
+  <data name="NextWeek" xml:space="preserve">
+    <value>Setmana vinent</value>
+  </data>
+  <data name="OptionA" xml:space="preserve">
+    <value>Opció A</value>
+  </data>
+  <data name="OptionB" xml:space="preserve">
+    <value>Opció B</value>
+  </data>
+  <data name="Ribbon" xml:space="preserve">
+    <value>Cinta</value>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>Petit</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>Commutar</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Avui</value>
+  </data>
+  <data name="ToggleSwitch" xml:space="preserve">
+    <value>Interruptor de commutació</value>
+  </data>
+  <data name="Tomorrow" xml:space="preserve">
+    <value>Demà</value>
+  </data>
+  <data name="AddItem2" xml:space="preserve">
+    <value>Afegeix un element</value>
+  </data>
+  <data name="AnotherSenderMessage" xml:space="preserve">
+    <value>Un altre missatge del remitent.</value>
+  </data>
+  <data name="Backlogs" xml:space="preserve">
+    <value>Pendents</value>
+  </data>
+  <data name="BasicCannon" xml:space="preserve">
+    <value>Canó bàsic</value>
+  </data>
+  <data name="Boards" xml:space="preserve">
+    <value>Taulers</value>
+  </data>
+  <data name="BottomLeft" xml:space="preserve">
+    <value>Inferior esquerre</value>
+  </data>
+  <data name="BottomRight" xml:space="preserve">
+    <value>Inferior dret</value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>Rams</value>
+  </data>
+  <data name="Builds" xml:space="preserve">
+    <value>Compilacions</value>
+  </data>
+  <data name="Commits" xml:space="preserve">
+    <value>Commits</value>
+  </data>
+  <data name="CrossFade" xml:space="preserve">
+    <value>Encreuament</value>
+  </data>
+  <data name="CurrentPageData" xml:space="preserve">
+    <value>Dades de la pàgina actual</value>
+  </data>
+  <data name="CustomCanvas" xml:space="preserve">
+    <value>Llenç personalitzat</value>
+  </data>
+  <data name="Dashboards" xml:space="preserve">
+    <value>Taulers de control</value>
+  </data>
+  <data name="Desktop" xml:space="preserve">
+    <value>Escriptori</value>
+  </data>
+  <data name="EffectsComingSoon" xml:space="preserve">
+    <value>Efectes - Properament</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Fitxers</value>
+  </data>
+  <data name="Fireworks" xml:space="preserve">
+    <value>Focs artificials</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Primer</value>
+  </data>
+  <data name="GitHub" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Bé</value>
+  </data>
+  <data name="HatchBrushGeneratorComingSoon" xml:space="preserve">
+    <value>Generador de pinzells ratllats - Properament</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Capçalera</value>
+  </data>
+  <data name="HelloSenderBubble" xml:space="preserve">
+    <value>Hola! Això és una bombolla de missatge del remitent.</value>
+  </data>
+  <data name="HiReceiverBubble" xml:space="preserve">
+    <value>Hola! I això és una bombolla del receptor.</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Biblioteca</value>
+  </data>
+  <data name="LoadTest" xml:space="preserve">
+    <value>Prova de càrrega</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Més</value>
+  </data>
+  <data name="MorphingAnimationComingSoon" xml:space="preserve">
+    <value>Animació de morfisme - Properament</value>
+  </data>
+  <data name="NoMessagesYet" xml:space="preserve">
+    <value>Encara no hi ha missatges</value>
+  </data>
+  <data name="NuGet" xml:space="preserve">
+    <value>NuGet</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Visió general</value>
+  </data>
+  <data name="Pipelines" xml:space="preserve">
+    <value>Canalitzacions</value>
+  </data>
+  <data name="PullRequests" xml:space="preserve">
+    <value>Sol·licituds d'extracció</value>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>Consultes</value>
+  </data>
+  <data name="RandomDirection" xml:space="preserve">
+    <value>Direcció aleatòria</value>
+  </data>
+  <data name="RealisticLook" xml:space="preserve">
+    <value>Aspecte realista</value>
+  </data>
+  <data name="Releases" xml:space="preserve">
+    <value>Versions</value>
+  </data>
+  <data name="RepeatButtonCustom" xml:space="preserve">
+    <value>Botó de repetició personalitzat</value>
+  </data>
+  <data name="Repos" xml:space="preserve">
+    <value>Repositoris</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Reintenta</value>
+  </data>
+  <data name="RibbonAlignLeft" xml:space="preserve">
+    <value>Alinea a l'esquerra</value>
+  </data>
+  <data name="RibbonAlignRight" xml:space="preserve">
+    <value>Alinea a la dreta</value>
+  </data>
+  <data name="RibbonBold" xml:space="preserve">
+    <value>Negreta</value>
+  </data>
+  <data name="RibbonCenter" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="RibbonChart" xml:space="preserve">
+    <value>Gràfic</value>
+  </data>
+  <data name="RibbonClipboard" xml:space="preserve">
+    <value>Porta-retalls</value>
+  </data>
+  <data name="RibbonCopy" xml:space="preserve">
+    <value>Copia</value>
+  </data>
+  <data name="RibbonCut" xml:space="preserve">
+    <value>Retalla</value>
+  </data>
+  <data name="RibbonDropCap" xml:space="preserve">
+    <value>Lletra capitular</value>
+  </data>
+  <data name="RibbonFont" xml:space="preserve">
+    <value>Tipus de lletra</value>
+  </data>
+  <data name="RibbonFontSettings" xml:space="preserve">
+    <value>Configuració de la lletra</value>
+  </data>
+  <data name="RibbonGridlines" xml:space="preserve">
+    <value>Línies de quadrícula</value>
+  </data>
+  <data name="RibbonIllustrations" xml:space="preserve">
+    <value>Il·lustracions</value>
+  </data>
+  <data name="RibbonInsert" xml:space="preserve">
+    <value>Insereix</value>
+  </data>
+  <data name="RibbonItalic" xml:space="preserve">
+    <value>Cursiva</value>
+  </data>
+  <data name="RibbonNewWindow" xml:space="preserve">
+    <value>Nova finestra</value>
+  </data>
+  <data name="RibbonParagraph" xml:space="preserve">
+    <value>Paràgraf</value>
+  </data>
+  <data name="RibbonPaste" xml:space="preserve">
+    <value>Enganxa</value>
+  </data>
+  <data name="RibbonPicture" xml:space="preserve">
+    <value>Imatge</value>
+  </data>
+  <data name="RibbonRuler" xml:space="preserve">
+    <value>Regle</value>
+  </data>
+  <data name="RibbonShape" xml:space="preserve">
+    <value>Forma</value>
+  </data>
+  <data name="RibbonShow" xml:space="preserve">
+    <value>Mostra</value>
+  </data>
+  <data name="RibbonStart" xml:space="preserve">
+    <value>Inici</value>
+  </data>
+  <data name="RibbonSwitchWindow" xml:space="preserve">
+    <value>Canvia de finestra</value>
+  </data>
+  <data name="RibbonText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="RibbonTextBox" xml:space="preserve">
+    <value>Quadre de text</value>
+  </data>
+  <data name="RibbonUnderline" xml:space="preserve">
+    <value>Subratllat</value>
+  </data>
+  <data name="RibbonView" xml:space="preserve">
+    <value>Visualitza</value>
+  </data>
+  <data name="RibbonWindow" xml:space="preserve">
+    <value>Finestra</value>
+  </data>
+  <data name="RibbonWordArt" xml:space="preserve">
+    <value>WordArt</value>
+  </data>
+  <data name="Runs" xml:space="preserve">
+    <value>Execucions</value>
+  </data>
+  <data name="SchoolPride" xml:space="preserve">
+    <value>Orgull de l'escola</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Selecciona-ho tot</value>
+  </data>
+  <data name="SenderAudioMessage" xml:space="preserve">
+    <value>Missatge d'àudio del remitent.</value>
+  </data>
+  <data name="ShowImageBrowser" xml:space="preserve">
+    <value>Mostra el visor d'imatges</value>
+  </data>
+  <data name="ShowSprite" xml:space="preserve">
+    <value>Mostra l'sprite</value>
+  </data>
+  <data name="SlideHorizontal" xml:space="preserve">
+    <value>Lliscament horitzontal</value>
+  </data>
+  <data name="SlideVertical" xml:space="preserve">
+    <value>Lliscament vertical</value>
+  </data>
+  <data name="Snow" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="Sprints" xml:space="preserve">
+    <value>Sprints</value>
+  </data>
+  <data name="Stars" xml:space="preserve">
+    <value>Estrelles</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Resum</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Etiquetes</value>
+  </data>
+  <data name="TaskGroups" xml:space="preserve">
+    <value>Grups de tasques</value>
+  </data>
+  <data name="TestPlans" xml:space="preserve">
+    <value>Plans de prova</value>
+  </data>
+  <data name="TextText" xml:space="preserve">
+    <value>TextText</value>
+  </data>
+  <data name="TextTextText" xml:space="preserve">
+    <value>TextTextText</value>
+  </data>
+  <data name="TextTextTextText" xml:space="preserve">
+    <value>TextTextTextText</value>
+  </data>
+  <data name="TextTextTextTextText" xml:space="preserve">
+    <value>TextTextTextTextText</value>
+  </data>
+  <data name="ThisIsTheContent" xml:space="preserve">
+    <value>Aquest és el contingut</value>
+  </data>
+  <data name="TitlePlaceholder" xml:space="preserve">
+    <value>TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</value>
+  </data>
+  <data name="TopLeft" xml:space="preserve">
+    <value>Superior esquerre</value>
+  </data>
+  <data name="TopRight" xml:space="preserve">
+    <value>Superior dret</value>
+  </data>
+  <data name="Wiki" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="WorkItems" xml:space="preserve">
+    <value>Elements de treball</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Tanca</value>
+  </data>
+  <data name="CustomTitleBarWindow" xml:space="preserve">
+    <value>Finestra amb barra de títol personalitzada</value>
+  </data>
+  <data name="DragMe" xml:space="preserve">
+    <value>Arrossega'm</value>
+  </data>
+  <data name="NotificationCardText" xml:space="preserve">
+    <value>Aquesta és una targeta de notificació. Passa el cursor per sobre per pausar el temporitzador.</value>
+  </data></root>

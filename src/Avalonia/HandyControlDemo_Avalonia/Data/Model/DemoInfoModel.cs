@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
+using HandyControlDemo.Properties.Langs;
 
 namespace HandyControlDemo.Data;
 
@@ -14,6 +15,10 @@ public class DemoInfoModel : ObservableObject
         get => _title;
         set => SetProperty(ref _title, value);
     }
+
+    public string DisplayTitle => LangProvider.Instance[Key];
+
+    public void RefreshDisplay() => OnPropertyChanged(nameof(DisplayTitle));
 
     private int _selectedIndex;
 

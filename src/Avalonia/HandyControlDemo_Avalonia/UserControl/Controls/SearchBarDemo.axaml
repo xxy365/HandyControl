@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
              x:Class="HandyControlDemo.UserControl.SearchBarDemo"
@@ -15,27 +16,27 @@
                     <hc:SearchBar IsEnabled="False" />
 
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend}"
-                                  hc:TitleElement.Title="This is the title"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted"
                                   Margin="0,16,0,0" />
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend}"
-                                  PlaceholderText="Please enter content"
-                                  hc:TitleElement.Title="This item must be filled in"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend}"
                                   Width="380"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
-                                  PlaceholderText="Please enter content"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend}"
                                   Width="380"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
-                                  PlaceholderText="Please enter content"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                 </StackPanel>
@@ -49,27 +50,27 @@
 
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus}"
                                   hc:InfoElement.ShowClearButton="True"
-                                  hc:TitleElement.Title="This is the title"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus}"
-                                  PlaceholderText="please enter email"
+                                  PlaceholderText="{Binding PlsEnterEmail, Source={x:Static langs:LangProvider.Instance}}"
                                   Text="{Binding Email1, UpdateSourceTrigger=PropertyChanged}"
-                                  hc:TitleElement.Title="This item must be filled in"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus}"
                                   Width="380"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus}"
                                   Width="380"
                                   hc:InfoElement.ShowClearButton="True"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
-                                  PlaceholderText="Please enter content"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                 </StackPanel>
@@ -81,26 +82,26 @@
                                   IsEnabled="False" />
 
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend.Small}"
-                                  hc:TitleElement.Title="This is the title"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend.Small}"
-                                  PlaceholderText="Please enter content"
-                                  hc:TitleElement.Title="This item must be filled in"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend.Small}"
                                   Width="380"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
-                                  PlaceholderText="Please enter content"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarExtend.Small}"
                                   Width="380"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
-                                  PlaceholderText="Please enter content"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                 </StackPanel>
@@ -114,27 +115,27 @@
 
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus.Small}"
                                   hc:InfoElement.ShowClearButton="True"
-                                  hc:TitleElement.Title="This is the title"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus.Small}"
-                                  PlaceholderText="please enter email"
+                                  PlaceholderText="{Binding PlsEnterEmail, Source={x:Static langs:LangProvider.Instance}}"
                                   Text="{Binding Email2, UpdateSourceTrigger=PropertyChanged}"
-                                  hc:TitleElement.Title="This item must be filled in"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus.Small}"
                                   Width="380"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                     <hc:SearchBar Theme="{StaticResource SearchBarPlus.Small}"
                                   Width="380"
                                   hc:InfoElement.ShowClearButton="True"
                                   hc:TitleElement.TitleWidth="120"
                                   hc:TitleElement.TitlePlacement="Left"
-                                  hc:TitleElement.Title="The title is on the left"
-                                  PlaceholderText="Please enter content"
+                                  hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
+                                  PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
                                   hc:InfoElement.Necessary="True"
                                   SearchStarted="SearchBar_OnSearchStarted" />
                 </StackPanel>

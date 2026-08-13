@@ -6,6 +6,7 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using HandyControl.Controls;
 using HandyControl.Data;
+using HandyControlDemo.Properties.Langs;
 using MessageBox = HandyControl.Controls.MessageBox;
 
 namespace HandyControlDemo.UserControl;
@@ -41,22 +42,22 @@ public partial class WindowDemo : Avalonia.Controls.UserControl
         ShowWindow(window);
     }
 
-    private void ButtonCustomNonClientArea_OnClick(object? sender, RoutedEventArgs e)
+    private void ButtonCustomTitleBar_OnClick(object? sender, RoutedEventArgs e)
     {
         var window = new HandyControl.Controls.Window
         {
             Title = Properties.Langs.Lang.Title,
             Width = 800,
             Height = 450,
-            NonClientAreaContent = new TextBlock
+            CustomTitleBarContent = new TextBlock
             {
-                Text = "Drag me",
+                Text = LangProvider.Instance.DragMe,
                 Foreground = Brushes.White,
                 VerticalAlignment = VerticalAlignment.Center
             },
             Content = new TextBlock
             {
-                Text = "Custom NonClientArea window",
+                Text = LangProvider.Instance.CustomTitleBarWindow,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
             }
@@ -85,7 +86,7 @@ public partial class WindowDemo : Avalonia.Controls.UserControl
 
     private void ButtonCustomContent_OnClick(object? sender, RoutedEventArgs e)
     {
-        var picker = new ColorPicker();
+        var picker = new HandyControl.Controls.ColorPicker();
         var window = new PopupWindow
         {
             PopupElement = picker,
@@ -98,7 +99,7 @@ public partial class WindowDemo : Avalonia.Controls.UserControl
 
     private void ButtonMouseFollow_OnClick(object? sender, RoutedEventArgs e)
     {
-        var picker = new ColorPicker();
+        var picker = new HandyControl.Controls.ColorPicker();
         var window = new PopupWindow
         {
             PopupElement = picker
@@ -108,15 +109,15 @@ public partial class WindowDemo : Avalonia.Controls.UserControl
         window.Show(ButtonMouseFollow, false);
     }
 
-    private void ButtonNoNonClientArea_OnClick(object? sender, RoutedEventArgs e)
+    private void ButtonNoCustomTitleBar_OnClick(object? sender, RoutedEventArgs e)
     {
         var window = new HandyControl.Controls.Window
         {
-            Title = Properties.Langs.Lang.OpenNoNonClientAreaDragableWindow,
+            Title = Properties.Langs.Lang.OpenNoCustomTitleBarDragableWindow,
             Width = 800,
             Height = 450,
             ShowTitle = true,
-            ShowNonClientArea = false,
+            ShowCustomTitleBar = false,
             Content = new TextBlock
             {
                 Text = Properties.Langs.Lang.DragHere,

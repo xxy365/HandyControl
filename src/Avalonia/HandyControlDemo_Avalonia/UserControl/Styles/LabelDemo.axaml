@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.LabelDemo">
     <hc:UniformSpacingPanel Margin="32"
@@ -7,31 +8,31 @@
                             ChildWrapping="Wrap">
         <hc:UniformSpacingPanel Spacing="5"
                                 Orientation="Vertical">
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}" />
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelDanger}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelInfo}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelPrimary}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelSuccess}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelWarning}" />
         </hc:UniformSpacingPanel>
         <hc:UniformSpacingPanel Spacing="5"
                                 Orientation="Vertical">
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelDefault.Small}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelDanger.Small}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelInfo.Small}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelPrimary.Small}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelSuccess.Small}" />
-            <Label Content="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle"
+            <Label Content="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}"
                    Theme="{StaticResource LabelWarning.Small}" />
         </hc:UniformSpacingPanel>
     </hc:UniformSpacingPanel>

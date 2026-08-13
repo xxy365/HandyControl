@@ -36,9 +36,9 @@ public class MessageToken
 
     public static readonly string BlurWindow = nameof(BlurWindow);
 
-    public static readonly string CustomNonClientAreaWindow = nameof(CustomNonClientAreaWindow);
+    public static readonly string CustomTitleBarWindow = nameof(CustomTitleBarWindow);
 
-    public static readonly string NoNonClientAreaDragableWindow = nameof(NoNonClientAreaDragableWindow);
+    public static readonly string NoCustomTitleBarDragableWindow = nameof(NoCustomTitleBarDragableWindow);
 
     public static readonly string QQGroupView = nameof(QQGroupView);
 

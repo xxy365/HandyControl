@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
              x:Class="HandyControlDemo.UserControl.SideMenuDemo"
@@ -10,35 +11,35 @@
         <hc:SideMenu BorderThickness="1"
                      Width="200"
                      Margin="32">
-            <hc:SideMenuItem Header="Overview">
-                <hc:SideMenuItem Header="Summary" />
-                <hc:SideMenuItem Header="Dashboards" />
-                <hc:SideMenuItem Header="Wiki" />
+            <hc:SideMenuItem Header="{Binding Overview, Source={x:Static langs:LangProvider.Instance}}">
+                <hc:SideMenuItem Header="{Binding Summary, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Dashboards, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Wiki, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:SideMenuItem>
-            <hc:SideMenuItem Header="Boards">
-                <hc:SideMenuItem Header="Work Items" />
-                <hc:SideMenuItem Header="Boards" />
-                <hc:SideMenuItem Header="Backlogs" />
-                <hc:SideMenuItem Header="Sprints" />
-                <hc:SideMenuItem Header="Queries" />
+            <hc:SideMenuItem Header="{Binding Boards, Source={x:Static langs:LangProvider.Instance}}">
+                <hc:SideMenuItem Header="{Binding WorkItems, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Boards, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Backlogs, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Sprints, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Queries, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:SideMenuItem>
-            <hc:SideMenuItem Header="Repos">
-                <hc:SideMenuItem Header="Files" />
-                <hc:SideMenuItem Header="Commits" />
-                <hc:SideMenuItem Header="Branches" />
-                <hc:SideMenuItem Header="Tags" />
-                <hc:SideMenuItem Header="Pull requests" />
+            <hc:SideMenuItem Header="{Binding Repos, Source={x:Static langs:LangProvider.Instance}}">
+                <hc:SideMenuItem Header="{Binding Files, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Commits, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Branches, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Tags, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding PullRequests, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:SideMenuItem>
-            <hc:SideMenuItem Header="Pipelines">
-                <hc:SideMenuItem Header="Builds" />
-                <hc:SideMenuItem Header="Releases" />
-                <hc:SideMenuItem Header="Library" />
-                <hc:SideMenuItem Header="Task groups" />
+            <hc:SideMenuItem Header="{Binding Pipelines, Source={x:Static langs:LangProvider.Instance}}">
+                <hc:SideMenuItem Header="{Binding Builds, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Releases, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Library, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding TaskGroups, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:SideMenuItem>
-            <hc:SideMenuItem Header="Test Plans">
-                <hc:SideMenuItem Header="Test Plans" />
-                <hc:SideMenuItem Header="Runs" />
-                <hc:SideMenuItem Header="Load test" />
+            <hc:SideMenuItem Header="{Binding TestPlans, Source={x:Static langs:LangProvider.Instance}}">
+                <hc:SideMenuItem Header="{Binding TestPlans, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding Runs, Source={x:Static langs:LangProvider.Instance}}" />
+                <hc:SideMenuItem Header="{Binding LoadTest, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:SideMenuItem>
         </hc:SideMenu>
     </TransitioningContentControl>

@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.NativeScrollViewerDemo"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              MaxWidth="550"
@@ -17,7 +18,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -28,7 +29,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -39,7 +40,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -50,7 +51,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -61,7 +62,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -81,7 +82,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -92,7 +93,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -103,7 +104,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -114,7 +115,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />
@@ -125,7 +126,7 @@
                             Height="200"
                             Margin="10,10,32,10">
                         <Border Background="{DynamicResource PrimaryBrush}">
-                            <TextBlock Text="Content"
+                            <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />

@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.DropDownButtonDemo"
              Background="{DynamicResource RegionBrush}">
@@ -11,102 +12,102 @@
                                     Spacing="32">
                 <WrapPanel>
                     <StackPanel>
-                        <DropDownButton Content="Default"
+                        <DropDownButton Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
-                                    <MenuItem Header="Item 3" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item3, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Default"
+                                        Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Primary"
+                        <DropDownButton Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonPrimary}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
-                                    <MenuItem Header="Item 3" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item3, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Primary"
+                                        Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonPrimary}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Success"
+                        <DropDownButton Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonSuccess}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
-                                    <MenuItem Header="Item 3" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item3, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Success"
+                                        Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonSuccess}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Info"
+                        <DropDownButton Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonInfo}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
-                                    <MenuItem Header="Item 3" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item3, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Info"
+                                        Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonInfo}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Warning"
+                        <DropDownButton Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonWarning}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
-                                    <MenuItem Header="Item 3" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item3, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Warning"
+                                        Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonWarning}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Danger"
+                        <DropDownButton Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonDanger}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
-                                    <MenuItem Header="Item 3" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item3, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Danger"
+                                        Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonDanger}" />
                     </StackPanel>
@@ -114,28 +115,28 @@
 
                 <WrapPanel>
                     <StackPanel>
-                        <DropDownButton Content="Calendar"
+                        <DropDownButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         hc:IconElement.Geometry="{StaticResource CalendarGeometry}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Today" />
-                                    <MenuItem Header="Tomorrow" />
-                                    <MenuItem Header="Next Week" />
+                                    <MenuItem Header="{Binding Today, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Tomorrow, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding NextWeek, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Calendar"
+                        <DropDownButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonPrimary}"
                                         hc:IconElement.Geometry="{StaticResource CalendarGeometry}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Today" />
-                                    <MenuItem Header="Tomorrow" />
-                                    <MenuItem Header="Next Week" />
+                                    <MenuItem Header="{Binding Today, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Tomorrow, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding NextWeek, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
@@ -147,98 +148,98 @@
                                     Spacing="32">
                 <WrapPanel>
                     <StackPanel>
-                        <DropDownButton Content="Default"
+                        <DropDownButton Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButton.Small}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Default"
+                                        Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButton.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Primary"
+                        <DropDownButton Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonPrimary.Small}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Primary"
+                                        Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonPrimary.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Success"
+                        <DropDownButton Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonSuccess.Small}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Success"
+                                        Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonSuccess.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Info"
+                        <DropDownButton Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonInfo.Small}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Info"
+                                        Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonInfo.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Warning"
+                        <DropDownButton Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonWarning.Small}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Warning"
+                                        Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonWarning.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <DropDownButton Content="Danger"
+                        <DropDownButton Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonDanger.Small}">
                             <DropDownButton.Flyout>
                                 <MenuFlyout>
-                                    <MenuItem Header="Item 1" />
-                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="{Binding Item1, Source={x:Static langs:LangProvider.Instance}}" />
+                                    <MenuItem Header="{Binding Item2, Source={x:Static langs:LangProvider.Instance}}" />
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>
                         <DropDownButton IsEnabled="False"
-                                        Content="Danger"
+                                        Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                         Margin="5"
                                         Theme="{StaticResource DropDownButtonDanger.Small}" />
                     </StackPanel>

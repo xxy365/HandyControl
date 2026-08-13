@@ -16,71 +16,71 @@
                           SelectedItem="{Binding TransitionMode}"
                           ItemsSource="{Binding TransitionModes}" />
                 <StackPanel Spacing="8">
-                    <TextBlock Text="{x:Static langs:Lang.Window}"
+                    <TextBlock Text="{Binding Window, Source={x:Static langs:LangProvider.Instance}}"
                                FontWeight="Bold" />
                     <WrapPanel>
                         <Button Command="{Binding InfoCommand}"
-                                Content="{x:Static langs:Lang.Info}"
+                                Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="0,5,5,5"
                                 Theme="{StaticResource ButtonInfo}" />
                         <Button Command="{Binding SuccessCommand}"
-                                Content="{x:Static langs:Lang.Success}"
+                                Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource ButtonSuccess}" />
                         <Button Command="{Binding WarningCommand}"
-                                Content="{x:Static langs:Lang.Warning}"
+                                Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource ButtonWarning}" />
                         <Button Command="{Binding ErrorCommand}"
-                                Content="{x:Static langs:Lang.Error}"
+                                Content="{Binding Error, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource ButtonDanger}" />
                         <Button Command="{Binding AskCommand}"
-                                Content="{x:Static langs:Lang.Ask}"
+                                Content="{Binding Ask, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Background="BlueViolet"
                                 Foreground="White"
                                 BorderThickness="0" />
                         <Button Command="{Binding FatalCommand}"
-                                Content="{x:Static langs:Lang.Fatal}"
+                                Content="{Binding Fatal, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5,0" />
                         <Button Command="{Binding ClearCommand}"
-                                Content="{x:Static langs:Lang.Clear}"
+                                Content="{Binding Clear, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5,0,0,0"
                                 Theme="{StaticResource ButtonPrimary}" />
                     </WrapPanel>
                 </StackPanel>
                 <StackPanel Spacing="8">
-                    <TextBlock Text="Desktop"
+                    <TextBlock Text="{Binding Desktop, Source={x:Static langs:LangProvider.Instance}}"
                                FontWeight="Bold" />
                     <WrapPanel>
                         <Button Command="{Binding InfoGlobalCommand}"
-                                Content="{x:Static langs:Lang.Info}"
+                                Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="0,5,5,5"
                                 Theme="{StaticResource ButtonInfo}" />
                         <Button Command="{Binding SuccessGlobalCommand}"
-                                Content="{x:Static langs:Lang.Success}"
+                                Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource ButtonSuccess}" />
                         <Button Command="{Binding WarningGlobalCommand}"
-                                Content="{x:Static langs:Lang.Warning}"
+                                Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource ButtonWarning}" />
                         <Button Command="{Binding ErrorGlobalCommand}"
-                                Content="{x:Static langs:Lang.Error}"
+                                Content="{Binding Error, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource ButtonDanger}" />
                         <Button Command="{Binding AskGlobalCommand}"
-                                Content="{x:Static langs:Lang.Ask}"
+                                Content="{Binding Ask, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Background="BlueViolet"
                                 Foreground="White"
                                 BorderThickness="0" />
                         <Button Command="{Binding FatalGlobalCommand}"
-                                Content="{x:Static langs:Lang.Fatal}"
+                                Content="{Binding Fatal, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5,0" />
                         <Button Command="{Binding ClearGlobalCommand}"
-                                Content="{x:Static langs:Lang.Clear}"
+                                Content="{Binding Clear, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5,0,0,0"
                                 Theme="{StaticResource ButtonPrimary}" />
                     </WrapPanel>

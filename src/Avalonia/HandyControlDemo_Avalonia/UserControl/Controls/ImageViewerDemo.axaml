@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8,8 +9,8 @@
              d:DesignWidth="789"
              d:DesignHeight="550">
     <StackPanel>
-        <TextBlock Margin="16,8" Text="ImageViewer" Theme="{StaticResource TitleTextBlock}" />
-        <Button Content="Show ImageBrowser"
+        <TextBlock Margin="16,8" Text="{Binding ImageViewer, Source={x:Static langs:LangProvider.Instance}}" Theme="{StaticResource TitleTextBlock}" />
+        <Button Content="{Binding ShowImageBrowser, Source={x:Static langs:LangProvider.Instance}}"
                 Margin="16,8"
                 Padding="12,6"
                 HorizontalAlignment="Left"

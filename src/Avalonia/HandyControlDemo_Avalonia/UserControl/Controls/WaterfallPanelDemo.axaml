@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.WaterfallPanelDemo">
     <Grid Margin="32">
@@ -14,7 +15,7 @@
                        Maximum="3"
                        Width="200"
                        Theme="{StaticResource NumericUpDownExtend}"
-                       hc:TitleElement.Title="Groups"
+                       hc:TitleElement.Title="{Binding Groups, Source={x:Static langs:LangProvider.Instance}}"
                        hc:TitleElement.TitleWidth="50"
                        hc:TitleElement.TitlePlacement="Left"/>
         <hc:UniformSpacingPanel Grid.Row="1"
@@ -29,7 +30,7 @@
                             Background="{DynamicResource PrimaryBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -38,7 +39,7 @@
                             Background="{DynamicResource DangerBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -47,7 +48,7 @@
                             Background="{DynamicResource SuccessBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -56,7 +57,7 @@
                             Background="{DynamicResource InfoBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -65,7 +66,7 @@
                             Background="{DynamicResource WarningBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -84,7 +85,7 @@
                             Background="{DynamicResource PrimaryBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -93,7 +94,7 @@
                             Background="{DynamicResource DangerBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -102,7 +103,7 @@
                             Background="{DynamicResource SuccessBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -111,7 +112,7 @@
                             Background="{DynamicResource InfoBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>
@@ -120,7 +121,7 @@
                             Background="{DynamicResource WarningBrush}"
                             Effect="{StaticResource EffectShadow1}"
                             Margin="5">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"/>

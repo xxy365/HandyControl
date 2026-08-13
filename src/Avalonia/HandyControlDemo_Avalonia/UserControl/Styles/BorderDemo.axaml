@@ -1,5 +1,6 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.BorderDemo">
     <ScrollViewer>
@@ -14,7 +15,7 @@
                                     HorizontalAlignment="Center">
                 <Border Theme="{StaticResource BorderRegion}">
                     <Border Background="{DynamicResource PrimaryBrush}">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White" />
@@ -23,7 +24,7 @@
                 <Border Theme="{StaticResource BorderRegion}"
                         Effect="{StaticResource EffectShadow1}">
                     <Border Background="{DynamicResource InfoBrush}">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White" />
@@ -32,7 +33,7 @@
                 <Border Theme="{StaticResource BorderRegion}"
                         Effect="{StaticResource EffectShadow2}">
                     <Border Background="{DynamicResource WarningBrush}">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White" />
@@ -41,7 +42,7 @@
                 <Border Theme="{StaticResource BorderRegion}"
                         Effect="{StaticResource EffectShadow3}">
                     <Border Background="{DynamicResource DangerBrush}">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White" />
@@ -50,7 +51,7 @@
                 <Border Theme="{StaticResource BorderRegion}"
                         Effect="{StaticResource EffectShadow4}">
                     <Border Background="{DynamicResource AccentBrush}">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White" />
@@ -59,7 +60,7 @@
                 <Border Theme="{StaticResource BorderRegion}"
                         Effect="{StaticResource EffectShadow5}">
                     <Border Background="{DynamicResource BorderBrush}">
-                        <TextBlock Text="Content"
+                        <TextBlock Text="{Binding Content, Source={x:Static langs:LangProvider.Instance}}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center" />
                     </Border>
@@ -68,19 +69,19 @@
             <hc:UniformSpacingPanel Orientation="Vertical"
                                     Spacing="10">
                 <Border Theme="{StaticResource BorderTipPrimary}">
-                    <TextBlock Text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" />
+                    <TextBlock Text="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}" />
                 </Border>
                 <Border Theme="{StaticResource BorderTipDanger}">
-                    <TextBlock Text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" />
+                    <TextBlock Text="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}" />
                 </Border>
                 <Border Theme="{StaticResource BorderTipWarning}">
-                    <TextBlock Text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" />
+                    <TextBlock Text="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}" />
                 </Border>
                 <Border Theme="{StaticResource BorderTipInfo}">
-                    <TextBlock Text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" />
+                    <TextBlock Text="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}" />
                 </Border>
                 <Border Theme="{StaticResource BorderTipSuccess}">
-                    <TextBlock Text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" />
+                    <TextBlock Text="{Binding TitlePlaceholder, Source={x:Static langs:LangProvider.Instance}}" />
                 </Border>
             </hc:UniformSpacingPanel>
         </hc:UniformSpacingPanel>

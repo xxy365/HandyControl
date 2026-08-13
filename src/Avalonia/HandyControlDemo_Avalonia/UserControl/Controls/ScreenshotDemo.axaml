@@ -5,7 +5,7 @@
              x:Class="HandyControlDemo.UserControl.ScreenshotDemo"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
-        <Button Content="{x:Static langs:Lang.StartScreenshot}"
+        <Button Content="{Binding StartScreenshot, Source={x:Static langs:LangProvider.Instance}}"
                 Click="StartScreenshot_OnClick" />
     </TransitioningContentControl>
 </UserControl>

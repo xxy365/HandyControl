@@ -1,5 +1,6 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.RepeatButtonDemo"
              xmlns:hc="https://handyorg.github.io/handycontrol">
     <ScrollViewer>
@@ -10,130 +11,130 @@
                                     Spacing="32">
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Default"
+                        <RepeatButton Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5" />
                         <RepeatButton IsEnabled="False"
-                                Content="Default"
+                                Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Primary"
+                        <RepeatButton Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Primary"
+                                Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Success"
+                        <RepeatButton Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonSuccess}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Success"
+                                Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonSuccess}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Info"
+                        <RepeatButton Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonInfo}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Info"
+                                Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonInfo}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Warning"
+                        <RepeatButton Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonWarning}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Warning"
+                                Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonWarning}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Danger"
+                        <RepeatButton Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDanger}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Danger"
+                                Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDanger}" />
                     </StackPanel>
                 </WrapPanel>
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Default"
+                        <RepeatButton Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashed}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Default"
+                                Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashed}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Primary"
+                        <RepeatButton Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Primary"
+                                Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Success"
+                        <RepeatButton Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedSuccess}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Success"
+                                Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedSuccess}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Info"
+                        <RepeatButton Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedInfo}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Info"
+                                Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedInfo}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Warning"
+                        <RepeatButton Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedWarning}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Warning"
+                                Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedWarning}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Danger"
+                        <RepeatButton Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedDanger}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Danger"
+                                Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedDanger}" />
                     </StackPanel>
                 </WrapPanel>
                 <WrapPanel>
                     <StackPanel hc:BorderElement.CornerRadius="10">
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}" />
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary}"
                                 hc:IconElement.Geometry="{StaticResource CalendarGeometry}" />
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary}"
@@ -178,22 +179,22 @@
                 </WrapPanel>
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                 Theme="{StaticResource RepeatButtonDashed}" />
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                 Theme="{StaticResource RepeatButtonDashed}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary}"
                                 hc:IconElement.Geometry="{StaticResource CalendarGeometry}" />
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary}"
@@ -262,7 +263,7 @@
                                 Padding="10,0"
                                 Background="#24292e"
                                 Foreground="White"
-                                Content="RepeatButtonCustom"
+                                Content="{Binding RepeatButtonCustom, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource RepeatButtonCustom}"
                                 hc:BackgroundSwitchElement.MouseHoverBackground="{DynamicResource DangerBrush}"
                                 hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed" />
@@ -273,7 +274,7 @@
                                 Padding="10,0"
                                 Background="#24292e"
                                 Foreground="White"
-                                Content="RepeatButtonCustom"
+                                Content="{Binding RepeatButtonCustom, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource RepeatButtonCustom}"
                                 hc:BackgroundSwitchElement.MouseHoverBackground="{DynamicResource DangerBrush}"
                                 hc:BackgroundSwitchElement.MouseDownBackground="PaleVioletRed" />
@@ -284,134 +285,134 @@
                                     Spacing="32">
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Default"
+                        <RepeatButton Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDefault.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Default"
+                                Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDefault.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Primary"
+                        <RepeatButton Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Primary"
+                                Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Success"
+                        <RepeatButton Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonSuccess.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Success"
+                                Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonSuccess.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Info"
+                        <RepeatButton Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonInfo.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Info"
+                                Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonInfo.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Warning"
+                        <RepeatButton Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonWarning.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Warning"
+                                Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonWarning.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Danger"
+                        <RepeatButton Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDanger.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Danger"
+                                Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDanger.Small}" />
                     </StackPanel>
                 </WrapPanel>
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Default"
+                        <RepeatButton Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashed.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Default"
+                                Content="{Binding Default, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashed.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Primary"
+                        <RepeatButton Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Primary"
+                                Content="{Binding Primary, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Success"
+                        <RepeatButton Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedSuccess.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Success"
+                                Content="{Binding Success, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedSuccess.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Info"
+                        <RepeatButton Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedInfo.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Info"
+                                Content="{Binding Info, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedInfo.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Warning"
+                        <RepeatButton Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedWarning.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Warning"
+                                Content="{Binding Warning, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedWarning.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Danger"
+                        <RepeatButton Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedDanger.Small}" />
                         <RepeatButton IsEnabled="False"
-                                Content="Danger"
+                                Content="{Binding Danger, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedDanger.Small}" />
                     </StackPanel>
                 </WrapPanel>
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                 Theme="{StaticResource RepeatButtonDefault.Small}" />
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                 Theme="{StaticResource RepeatButtonDefault.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary.Small}"
                                 hc:IconElement.Geometry="{StaticResource CalendarGeometry}" />
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonPrimary.Small}"
@@ -456,22 +457,22 @@
                 </WrapPanel>
                 <WrapPanel>
                     <StackPanel>
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                 Theme="{StaticResource RepeatButtonDashed.Small}" />
-                        <RepeatButton Content="Clock"
+                        <RepeatButton Content="{Binding Clock, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 hc:IconElement.Geometry="{StaticResource ClockGeometry}"
                                 Theme="{StaticResource RepeatButtonDashed.Small}" />
                     </StackPanel>
                     <StackPanel>
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary.Small}"
                                 hc:IconElement.Geometry="{StaticResource CalendarGeometry}" />
-                        <RepeatButton Content="Calendar"
+                        <RepeatButton Content="{Binding Calendar, Source={x:Static langs:LangProvider.Instance}}"
                                 IsEnabled="False"
                                 Margin="5"
                                 Theme="{StaticResource RepeatButtonDashedPrimary.Small}"

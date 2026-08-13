@@ -330,7 +330,7 @@
   <data name="OpenCommonWindow" xml:space="preserve">
     <value>通常のウインドウを開く</value>
   </data>
-  <data name="OpenCustomNonClientAreaWindow" xml:space="preserve">
+  <data name="OpenCustomTitleBarWindow" xml:space="preserve">
     <value>カスタム非クライアント領域ウインドウを開く</value>
   </data>
   <data name="OpenMouseFollowWindow" xml:space="preserve">
@@ -459,7 +459,7 @@
   <data name="PlsEnterKey" xml:space="preserve">
     <value>検索ワードを入力</value>
   </data>
-  <data name="OpenNoNonClientAreaDragableWindow" xml:space="preserve">
+  <data name="OpenNoCustomTitleBarDragableWindow" xml:space="preserve">
     <value>非クライアント領域の無いドラッグ可能ウインドウを開く</value>
   </data>
   <data name="DragHere" xml:space="preserve">
@@ -810,4 +810,366 @@
   <data name="HyperlinkButton" xml:space="preserve">
     <value>HyperlinkButton</value>
   </data>
-</root>
+<data name="NoData" xml:space="preserve">
+    <value>データなし</value>
+  </data>
+  <data name="CalendarDatePicker" xml:space="preserve">
+    <value>カレンダーの日付ピッカー</value>
+  </data>
+  <data name="ConfettiCannon" xml:space="preserve">
+    <value>紙吹雪キャノン</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="DropDownButton" xml:space="preserve">
+    <value>ドロップダウンボタン</value>
+  </data>
+  <data name="HandyControl" xml:space="preserve">
+    <value>HandyControl</value>
+  </data>
+  <data name="ImageViewer" xml:space="preserve">
+    <value>画像ビューア</value>
+  </data>
+  <data name="Item1" xml:space="preserve">
+    <value>項目 1</value>
+  </data>
+  <data name="Item2" xml:space="preserve">
+    <value>項目 2</value>
+  </data>
+  <data name="Item3" xml:space="preserve">
+    <value>項目 3</value>
+  </data>
+  <data name="MaskedTextBox" xml:space="preserve">
+    <value>マスク付きテキストボックス</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>新規</value>
+  </data>
+  <data name="NextWeek" xml:space="preserve">
+    <value>来週</value>
+  </data>
+  <data name="OptionA" xml:space="preserve">
+    <value>オプション A</value>
+  </data>
+  <data name="OptionB" xml:space="preserve">
+    <value>オプション B</value>
+  </data>
+  <data name="Ribbon" xml:space="preserve">
+    <value>リボン</value>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>小</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>切り替え</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>今日</value>
+  </data>
+  <data name="ToggleSwitch" xml:space="preserve">
+    <value>トグルスイッチ</value>
+  </data>
+  <data name="Tomorrow" xml:space="preserve">
+    <value>明日</value>
+  </data>
+  <data name="AddItem2" xml:space="preserve">
+    <value>項目を追加</value>
+  </data>
+  <data name="AnotherSenderMessage" xml:space="preserve">
+    <value>別の送信者メッセージ。</value>
+  </data>
+  <data name="Backlogs" xml:space="preserve">
+    <value>バックログ</value>
+  </data>
+  <data name="BasicCannon" xml:space="preserve">
+    <value>ベーシックキャノン</value>
+  </data>
+  <data name="Boards" xml:space="preserve">
+    <value>ボード</value>
+  </data>
+  <data name="BottomLeft" xml:space="preserve">
+    <value>左下</value>
+  </data>
+  <data name="BottomRight" xml:space="preserve">
+    <value>右下</value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>ブランチ</value>
+  </data>
+  <data name="Builds" xml:space="preserve">
+    <value>ビルド</value>
+  </data>
+  <data name="Commits" xml:space="preserve">
+    <value>コミット</value>
+  </data>
+  <data name="CrossFade" xml:space="preserve">
+    <value>クロスフェード</value>
+  </data>
+  <data name="CurrentPageData" xml:space="preserve">
+    <value>現在のページのデータ</value>
+  </data>
+  <data name="CustomCanvas" xml:space="preserve">
+    <value>カスタムキャンバス</value>
+  </data>
+  <data name="Dashboards" xml:space="preserve">
+    <value>ダッシュボード</value>
+  </data>
+  <data name="Desktop" xml:space="preserve">
+    <value>デスクトップ</value>
+  </data>
+  <data name="EffectsComingSoon" xml:space="preserve">
+    <value>エフェクト - 近日公開</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Fireworks" xml:space="preserve">
+    <value>花火</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>最初</value>
+  </data>
+  <data name="GitHub" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>良い</value>
+  </data>
+  <data name="HatchBrushGeneratorComingSoon" xml:space="preserve">
+    <value>ハッチブラシジェネレーター - 近日公開</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>ヘッダー</value>
+  </data>
+  <data name="HelloSenderBubble" xml:space="preserve">
+    <value>こんにちは！これは送信者のメッセージバブルです。</value>
+  </data>
+  <data name="HiReceiverBubble" xml:space="preserve">
+    <value>やあ！これは受信者のバブルです。</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>ライブラリ</value>
+  </data>
+  <data name="LoadTest" xml:space="preserve">
+    <value>負荷テスト</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>もっと</value>
+  </data>
+  <data name="MorphingAnimationComingSoon" xml:space="preserve">
+    <value>モーフィングアニメーション - 近日公開</value>
+  </data>
+  <data name="NoMessagesYet" xml:space="preserve">
+    <value>まだメッセージはありません</value>
+  </data>
+  <data name="NuGet" xml:space="preserve">
+    <value>NuGet</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>概要</value>
+  </data>
+  <data name="Pipelines" xml:space="preserve">
+    <value>パイプライン</value>
+  </data>
+  <data name="PullRequests" xml:space="preserve">
+    <value>プルリクエスト</value>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>クエリ</value>
+  </data>
+  <data name="RandomDirection" xml:space="preserve">
+    <value>ランダム方向</value>
+  </data>
+  <data name="RealisticLook" xml:space="preserve">
+    <value>リアルな外観</value>
+  </data>
+  <data name="Releases" xml:space="preserve">
+    <value>リリース</value>
+  </data>
+  <data name="RepeatButtonCustom" xml:space="preserve">
+    <value>カスタムリピートボタン</value>
+  </data>
+  <data name="Repos" xml:space="preserve">
+    <value>リポジトリ</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>再試行</value>
+  </data>
+  <data name="RibbonAlignLeft" xml:space="preserve">
+    <value>左揃え</value>
+  </data>
+  <data name="RibbonAlignRight" xml:space="preserve">
+    <value>右揃え</value>
+  </data>
+  <data name="RibbonBold" xml:space="preserve">
+    <value>太字</value>
+  </data>
+  <data name="RibbonCenter" xml:space="preserve">
+    <value>中央揃え</value>
+  </data>
+  <data name="RibbonChart" xml:space="preserve">
+    <value>グラフ</value>
+  </data>
+  <data name="RibbonClipboard" xml:space="preserve">
+    <value>クリップボード</value>
+  </data>
+  <data name="RibbonCopy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="RibbonCut" xml:space="preserve">
+    <value>切り取り</value>
+  </data>
+  <data name="RibbonDropCap" xml:space="preserve">
+    <value>ドロップキャップ</value>
+  </data>
+  <data name="RibbonFont" xml:space="preserve">
+    <value>フォント</value>
+  </data>
+  <data name="RibbonFontSettings" xml:space="preserve">
+    <value>フォント設定</value>
+  </data>
+  <data name="RibbonGridlines" xml:space="preserve">
+    <value>グリッド線</value>
+  </data>
+  <data name="RibbonIllustrations" xml:space="preserve">
+    <value>図</value>
+  </data>
+  <data name="RibbonInsert" xml:space="preserve">
+    <value>挿入</value>
+  </data>
+  <data name="RibbonItalic" xml:space="preserve">
+    <value>斜体</value>
+  </data>
+  <data name="RibbonNewWindow" xml:space="preserve">
+    <value>新しいウィンドウ</value>
+  </data>
+  <data name="RibbonParagraph" xml:space="preserve">
+    <value>段落</value>
+  </data>
+  <data name="RibbonPaste" xml:space="preserve">
+    <value>貼り付け</value>
+  </data>
+  <data name="RibbonPicture" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="RibbonRuler" xml:space="preserve">
+    <value>ルーラー</value>
+  </data>
+  <data name="RibbonShape" xml:space="preserve">
+    <value>図形</value>
+  </data>
+  <data name="RibbonShow" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="RibbonStart" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="RibbonSwitchWindow" xml:space="preserve">
+    <value>ウィンドウの切り替え</value>
+  </data>
+  <data name="RibbonText" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="RibbonTextBox" xml:space="preserve">
+    <value>テキストボックス</value>
+  </data>
+  <data name="RibbonUnderline" xml:space="preserve">
+    <value>下線</value>
+  </data>
+  <data name="RibbonView" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="RibbonWindow" xml:space="preserve">
+    <value>ウィンドウ</value>
+  </data>
+  <data name="RibbonWordArt" xml:space="preserve">
+    <value>ワードアート</value>
+  </data>
+  <data name="Runs" xml:space="preserve">
+    <value>実行</value>
+  </data>
+  <data name="SchoolPride" xml:space="preserve">
+    <value>学校の誇り</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>すべて選択</value>
+  </data>
+  <data name="SenderAudioMessage" xml:space="preserve">
+    <value>送信者の音声メッセージ。</value>
+  </data>
+  <data name="ShowImageBrowser" xml:space="preserve">
+    <value>画像ブラウザを表示</value>
+  </data>
+  <data name="ShowSprite" xml:space="preserve">
+    <value>スプライトを表示</value>
+  </data>
+  <data name="SlideHorizontal" xml:space="preserve">
+    <value>水平スライド</value>
+  </data>
+  <data name="SlideVertical" xml:space="preserve">
+    <value>垂直スライド</value>
+  </data>
+  <data name="Snow" xml:space="preserve">
+    <value>雪</value>
+  </data>
+  <data name="Sprints" xml:space="preserve">
+    <value>スプリント</value>
+  </data>
+  <data name="Stars" xml:space="preserve">
+    <value>星</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>概要</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>タグ</value>
+  </data>
+  <data name="TaskGroups" xml:space="preserve">
+    <value>タスクグループ</value>
+  </data>
+  <data name="TestPlans" xml:space="preserve">
+    <value>テスト計画</value>
+  </data>
+  <data name="TextText" xml:space="preserve">
+    <value>TextText</value>
+  </data>
+  <data name="TextTextText" xml:space="preserve">
+    <value>TextTextText</value>
+  </data>
+  <data name="TextTextTextText" xml:space="preserve">
+    <value>TextTextTextText</value>
+  </data>
+  <data name="TextTextTextTextText" xml:space="preserve">
+    <value>TextTextTextTextText</value>
+  </data>
+  <data name="ThisIsTheContent" xml:space="preserve">
+    <value>これはコンテンツです</value>
+  </data>
+  <data name="TitlePlaceholder" xml:space="preserve">
+    <value>TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</value>
+  </data>
+  <data name="TopLeft" xml:space="preserve">
+    <value>左上</value>
+  </data>
+  <data name="TopRight" xml:space="preserve">
+    <value>右上</value>
+  </data>
+  <data name="Wiki" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="WorkItems" xml:space="preserve">
+    <value>作業項目</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="CustomTitleBarWindow" xml:space="preserve">
+    <value>カスタムタイトルバーウィンドウ</value>
+  </data>
+  <data name="DragMe" xml:space="preserve">
+    <value>ドラッグして</value>
+  </data>
+  <data name="NotificationCardText" xml:space="preserve">
+    <value>これは通知カードです。ホバーすると閉じるタイマーが一時停止します。</value>
+  </data></root>

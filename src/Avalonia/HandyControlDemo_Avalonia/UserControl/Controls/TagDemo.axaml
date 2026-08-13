@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.TagDemo"
              Background="{DynamicResource RegionBrush}">
@@ -24,25 +25,25 @@
                         hc:TitleElement.Background="{DynamicResource PrimaryBrush}"
                         Margin="5"
                         ShowCloseButton="False"
-                        Content="TextText" />
+                        Content="{Binding TextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
                         Selectable="True"
-                        Content="TextTextText" />
+                        Content="{Binding TextTextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
                         ShowCloseButton="False"
-                        Content="TextTextTextText" />
+                        Content="{Binding TextTextTextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
-                        Content="TextTextTextTextText" />
+                        Content="{Binding TextTextTextTextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
                         IsSelected="True"
                         Selectable="True"
                         ShowCloseButton="False"
-                        Content="TextTextTextText" />
+                        Content="{Binding TextTextTextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
-                        Content="TextTextText" />
+                        Content="{Binding TextTextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
                         ShowCloseButton="False"
-                        Content="TextText">
+                        Content="{Binding TextText, Source={x:Static langs:LangProvider.Instance}}">
                     <hc:Tag.Header>
                         <Image Source="/Resources/Img/Album/1.jpg" />
                     </hc:Tag.Header>
@@ -50,16 +51,16 @@
                 <hc:Tag Margin="5"
                         IsSelected="True"
                         Selectable="True"
-                        Content="TextTextText">
+                        Content="{Binding TextTextText, Source={x:Static langs:LangProvider.Instance}}">
                     <hc:Tag.Header>
                         <Image Source="/Resources/Img/Avatar/avatar2.png" />
                     </hc:Tag.Header>
                 </hc:Tag>
                 <hc:Tag Margin="5"
                         ShowCloseButton="False"
-                        Content="TextTextTextText" />
+                        Content="{Binding TextTextTextText, Source={x:Static langs:LangProvider.Instance}}" />
                 <hc:Tag Margin="5"
-                        Content="TextTextTextTextText" />
+                        Content="{Binding TextTextTextTextText, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:TagContainer>
             <hc:TagContainer Name="BoundContainer"
                              Margin="11"
@@ -71,7 +72,7 @@
                 <Button Name="AddButton"
                         Margin="10,0,0,0"
                         DockPanel.Dock="Right"
-                        Content="Add an item" />
+                        Content="{Binding AddItem2, Source={x:Static langs:LangProvider.Instance}}" />
                 <TextBox Name="TagNameBox" />
             </DockPanel>
         </StackPanel>

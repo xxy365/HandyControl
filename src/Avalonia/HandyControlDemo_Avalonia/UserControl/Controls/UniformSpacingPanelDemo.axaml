@@ -8,31 +8,31 @@
         <ScrollViewer>
             <StackPanel Margin="32" Spacing="10">
                 <hc:UniformSpacingPanel Spacing="10">
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
                 </hc:UniformSpacingPanel>
                 <Separator/>
                 <hc:UniformSpacingPanel Spacing="10" Orientation="Vertical">
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
                 </hc:UniformSpacingPanel>
                 <Separator/>
                 <hc:UniformSpacingPanel Spacing="10" Width="300" ChildWrapping="Wrap" HorizontalAlignment="Left">
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
                 </hc:UniformSpacingPanel>
                 <Separator/>
                 <hc:UniformSpacingPanel Spacing="10" Orientation="Vertical" Height="70" ChildWrapping="Wrap" HorizontalAlignment="Left">
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
-                    <Button Content="{x:Static langs:Lang.ContentDemoStr}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
+                    <Button Content="{Binding ContentDemoStr, Source={x:Static langs:LangProvider.Instance}}"/>
                 </hc:UniformSpacingPanel>
             </StackPanel>
         </ScrollViewer>

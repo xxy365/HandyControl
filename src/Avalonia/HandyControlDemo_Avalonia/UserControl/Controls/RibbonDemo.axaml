@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.RibbonDemo"
              Background="{DynamicResource RegionBrush}">
@@ -10,68 +11,68 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <hc:Ribbon Grid.Row="0">
-                <hc:RibbonTab Header="开始">
-                    <hc:RibbonGroup Header="剪贴板">
-                        <Button Content="粘贴"
+                <hc:RibbonTab Header="{Binding RibbonStart, Source={x:Static langs:LangProvider.Instance}}">
+                    <hc:RibbonGroup Header="{Binding RibbonClipboard, Source={x:Static langs:LangProvider.Instance}}">
+                        <Button Content="{Binding RibbonPaste, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="剪切"
+                        <Button Content="{Binding RibbonCut, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="复制"
+                        <Button Content="{Binding RibbonCopy, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
                     </hc:RibbonGroup>
-                    <hc:RibbonGroup Header="字体"
+                    <hc:RibbonGroup Header="{Binding RibbonFont, Source={x:Static langs:LangProvider.Instance}}"
                                     ShowLauncherButton="True">
-                        <Button Content="加粗"
+                        <Button Content="{Binding RibbonBold, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="斜体"
+                        <Button Content="{Binding RibbonItalic, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="下划线"
+                        <Button Content="{Binding RibbonUnderline, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
                         <hc:RibbonGroup.LauncherPoptip>
-                            <hc:Poptip Content="字体设置"
+                            <hc:Poptip Content="{Binding RibbonFontSettings, Source={x:Static langs:LangProvider.Instance}}"
                                        hc:Poptip.PlacementType="Top"
                                        hc:Poptip.HorizontalOffset="-30" />
                         </hc:RibbonGroup.LauncherPoptip>
                     </hc:RibbonGroup>
-                    <hc:RibbonGroup Header="段落">
-                        <Button Content="左对齐"
+                    <hc:RibbonGroup Header="{Binding RibbonParagraph, Source={x:Static langs:LangProvider.Instance}}">
+                        <Button Content="{Binding RibbonAlignLeft, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="居中"
+                        <Button Content="{Binding RibbonCenter, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="右对齐"
-                                Width="90" />
-                    </hc:RibbonGroup>
-                </hc:RibbonTab>
-                <hc:RibbonTab Header="插入">
-                    <hc:RibbonGroup Header="插图">
-                        <Button Content="图片"
-                                Width="90" />
-                        <Button Content="图表"
-                                Width="90" />
-                        <Button Content="形状"
-                                Width="90" />
-                    </hc:RibbonGroup>
-                    <hc:RibbonGroup Header="文本">
-                        <Button Content="文本框"
-                                Width="90" />
-                        <Button Content="艺术字"
-                                Width="90" />
-                        <Button Content="首字下沉"
+                        <Button Content="{Binding RibbonAlignRight, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
                     </hc:RibbonGroup>
                 </hc:RibbonTab>
-                <hc:RibbonTab Header="视图">
-                    <hc:RibbonGroup Header="显示">
-                        <Button Content="标尺"
+                <hc:RibbonTab Header="{Binding RibbonInsert, Source={x:Static langs:LangProvider.Instance}}">
+                    <hc:RibbonGroup Header="{Binding RibbonIllustrations, Source={x:Static langs:LangProvider.Instance}}">
+                        <Button Content="{Binding RibbonPicture, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="网格线"
+                        <Button Content="{Binding RibbonChart, Source={x:Static langs:LangProvider.Instance}}"
+                                Width="90" />
+                        <Button Content="{Binding RibbonShape, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
                     </hc:RibbonGroup>
-                    <hc:RibbonGroup Header="窗口"
+                    <hc:RibbonGroup Header="{Binding RibbonText, Source={x:Static langs:LangProvider.Instance}}">
+                        <Button Content="{Binding RibbonTextBox, Source={x:Static langs:LangProvider.Instance}}"
+                                Width="90" />
+                        <Button Content="{Binding RibbonWordArt, Source={x:Static langs:LangProvider.Instance}}"
+                                Width="90" />
+                        <Button Content="{Binding RibbonDropCap, Source={x:Static langs:LangProvider.Instance}}"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                </hc:RibbonTab>
+                <hc:RibbonTab Header="{Binding RibbonView, Source={x:Static langs:LangProvider.Instance}}">
+                    <hc:RibbonGroup Header="{Binding RibbonShow, Source={x:Static langs:LangProvider.Instance}}">
+                        <Button Content="{Binding RibbonRuler, Source={x:Static langs:LangProvider.Instance}}"
+                                Width="90" />
+                        <Button Content="{Binding RibbonGridlines, Source={x:Static langs:LangProvider.Instance}}"
+                                Width="90" />
+                    </hc:RibbonGroup>
+                    <hc:RibbonGroup Header="{Binding RibbonWindow, Source={x:Static langs:LangProvider.Instance}}"
                                     ShowSplitter="False">
-                        <Button Content="新建窗口"
+                        <Button Content="{Binding RibbonNewWindow, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
-                        <Button Content="切换窗口"
+                        <Button Content="{Binding RibbonSwitchWindow, Source={x:Static langs:LangProvider.Instance}}"
                                 Width="90" />
                     </hc:RibbonGroup>
                 </hc:RibbonTab>

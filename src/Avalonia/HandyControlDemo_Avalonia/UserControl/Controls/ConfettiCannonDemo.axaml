@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.ConfettiCannonDemo"
              hc:ConfettiCannon.Token="ConfettiCannonDemo"
@@ -9,21 +10,21 @@
             <hc:UniformSpacingPanel Margin="32"
                                     Orientation="Vertical"
                                     Spacing="16">
-                <Button Content="Basic Cannon"
+                <Button Content="{Binding BasicCannon, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonBasicCannonOnClick" />
-                <Button Content="Random Direction"
+                <Button Content="{Binding RandomDirection, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonRandomDirectionOnClick" />
-                <Button Content="Realistic Look"
+                <Button Content="{Binding RealisticLook, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonRealisticLookClick" />
-                <Button Content="Fireworks"
+                <Button Content="{Binding Fireworks, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonFireworksOnClick" />
-                <Button Content="Stars"
+                <Button Content="{Binding Stars, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonStarsOnClick" />
-                <Button Content="Snow"
+                <Button Content="{Binding Snow, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonSnowOnClick" />
-                <Button Content="School Pride"
+                <Button Content="{Binding SchoolPride, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonSchoolPrideOnClick" />
-                <Button Content="Custom Canvas"
+                <Button Content="{Binding CustomCanvas, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonCustomCanvasOnClick" />
                 <hc:ConfettiCannonContainer>
                     <Border MinWidth="500"

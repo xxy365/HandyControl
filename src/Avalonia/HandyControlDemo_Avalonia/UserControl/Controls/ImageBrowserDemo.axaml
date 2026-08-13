@@ -8,7 +8,7 @@
         <StackPanel Margin="32">
             <hc:ImageViewer x:Name="ImageViewerDemo" Background="{DynamicResource SecondaryRegionBrush}" MaxWidth="600" Height="330"/>
             <Button Margin="0,32,0,0"
-                    Content="{x:Static langs:Lang.OpenImageBrowser}"
+                    Content="{Binding OpenImageBrowser, Source={x:Static langs:LangProvider.Instance}}"
                     Theme="{StaticResource ButtonPrimary}"
                     HorizontalAlignment="Center"
                     Click="OpenBrowser_OnClick"/>

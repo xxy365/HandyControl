@@ -1,10 +1,11 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.EffectsDemo"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <Border Margin="32" Padding="40" CornerRadius="10" Background="{DynamicResource SecondaryRegionBrush}">
-            <TextBlock Text="Effects - Coming Soon" FontSize="18" Foreground="{DynamicResource PrimaryTextBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding EffectsComingSoon, Source={x:Static langs:LangProvider.Instance}}" FontSize="18" Foreground="{DynamicResource PrimaryTextBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
     </TransitioningContentControl>
 </UserControl>

@@ -9,62 +9,62 @@
             <hc:UniformSpacingPanel Margin="32" Spacing="32" ChildWrapping="Wrap" VerticalAlignment="Center">
                 <hc:UniformSpacingPanel Spacing="32" Orientation="Vertical">
                     <hc:ButtonGroup>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}" IsChecked="True"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
                     </hc:ButtonGroup>
                     <hc:ButtonGroup>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
                     </hc:ButtonGroup>
                     <hc:ButtonGroup Theme="{StaticResource ButtonGroupSolid}">
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}" IsChecked="True"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
                     </hc:ButtonGroup>
                     <hc:ButtonGroup>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}" IsChecked="True"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}" IsChecked="True"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
                     </hc:ButtonGroup>
                 </hc:UniformSpacingPanel>
                 <hc:UniformSpacingPanel Spacing="32" ChildWrapping="Wrap">
                     <hc:ButtonGroup Orientation="Vertical">
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}" IsChecked="True"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
                     </hc:ButtonGroup>
                     <hc:ButtonGroup Orientation="Vertical">
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
                     </hc:ButtonGroup>
                     <hc:ButtonGroup Theme="{StaticResource ButtonGroupSolid}" Orientation="Vertical">
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}" IsChecked="True"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
                     </hc:ButtonGroup>
                     <hc:ButtonGroup Orientation="Vertical">
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}" IsChecked="True"/>
-                        <RadioButton Content="{x:Static langs:Lang.RadioButton}"/>
-                        <Button Content="{x:Static langs:Lang.Button}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}"/>
-                        <ToggleButton Content="{x:Static langs:Lang.ToggleButton}" IsChecked="True"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
+                        <RadioButton Content="{Binding RadioButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <Button Content="{Binding Button, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}"/>
+                        <ToggleButton Content="{Binding ToggleButton, Source={x:Static langs:LangProvider.Instance}}" IsChecked="True"/>
                     </hc:ButtonGroup>
                 </hc:UniformSpacingPanel>
             </hc:UniformSpacingPanel>

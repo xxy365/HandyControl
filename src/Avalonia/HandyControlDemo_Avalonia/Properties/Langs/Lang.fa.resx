@@ -330,7 +330,7 @@
   <data name="OpenCommonWindow" xml:space="preserve">
     <value>باز کردن پنجره عادی</value>
   </data>
-  <data name="OpenCustomNonClientAreaWindow" xml:space="preserve">
+  <data name="OpenCustomTitleBarWindow" xml:space="preserve">
     <value>پنجره منطقه سفارشی تایتل بار باز شود</value>
   </data>
   <data name="OpenMouseFollowWindow" xml:space="preserve">
@@ -459,7 +459,7 @@
   <data name="PlsEnterKey" xml:space="preserve">
     <value>لطفاً یک کلمه کلیدی را وارد کنید</value>
   </data>
-  <data name="OpenNoNonClientAreaDragableWindow" xml:space="preserve">
+  <data name="OpenNoCustomTitleBarDragableWindow" xml:space="preserve">
     <value>پنجره قابل کشش ناحیه بدون تایتل بار باز شود</value>
   </data>
   <data name="DragHere" xml:space="preserve">
@@ -810,4 +810,366 @@
   <data name="HyperlinkButton" xml:space="preserve">
     <value>HyperlinkButton</value>
   </data>
-</root>
+<data name="NoData" xml:space="preserve">
+    <value>No Data</value>
+  </data>
+  <data name="CalendarDatePicker" xml:space="preserve">
+    <value>انتخاب تاریخ تقویم</value>
+  </data>
+  <data name="ConfettiCannon" xml:space="preserve">
+    <value>توپ کاغذرنگی</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>محتوا</value>
+  </data>
+  <data name="DropDownButton" xml:space="preserve">
+    <value>دکمه کشویی</value>
+  </data>
+  <data name="HandyControl" xml:space="preserve">
+    <value>HandyControl</value>
+  </data>
+  <data name="ImageViewer" xml:space="preserve">
+    <value>نمایشگر تصویر</value>
+  </data>
+  <data name="Item1" xml:space="preserve">
+    <value>مورد ۱</value>
+  </data>
+  <data name="Item2" xml:space="preserve">
+    <value>مورد ۲</value>
+  </data>
+  <data name="Item3" xml:space="preserve">
+    <value>مورد ۳</value>
+  </data>
+  <data name="MaskedTextBox" xml:space="preserve">
+    <value>جعبه متن ماسک‌دار</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>جدید</value>
+  </data>
+  <data name="NextWeek" xml:space="preserve">
+    <value>هفته آینده</value>
+  </data>
+  <data name="OptionA" xml:space="preserve">
+    <value>گزینه A</value>
+  </data>
+  <data name="OptionB" xml:space="preserve">
+    <value>گزینه B</value>
+  </data>
+  <data name="Ribbon" xml:space="preserve">
+    <value>روبان</value>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>کوچک</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>تغییر</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>امروز</value>
+  </data>
+  <data name="ToggleSwitch" xml:space="preserve">
+    <value>سوئیچ کلیدی</value>
+  </data>
+  <data name="Tomorrow" xml:space="preserve">
+    <value>فردا</value>
+  </data>
+  <data name="AddItem2" xml:space="preserve">
+    <value>افزودن مورد</value>
+  </data>
+  <data name="AnotherSenderMessage" xml:space="preserve">
+    <value>پیام دیگری از فرستنده.</value>
+  </data>
+  <data name="Backlogs" xml:space="preserve">
+    <value>پشته کارها</value>
+  </data>
+  <data name="BasicCannon" xml:space="preserve">
+    <value>توپ پایه</value>
+  </data>
+  <data name="Boards" xml:space="preserve">
+    <value>تابلوها</value>
+  </data>
+  <data name="BottomLeft" xml:space="preserve">
+    <value>پایین چپ</value>
+  </data>
+  <data name="BottomRight" xml:space="preserve">
+    <value>پایین راست</value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>شاخه‌ها</value>
+  </data>
+  <data name="Builds" xml:space="preserve">
+    <value>ساخت‌ها</value>
+  </data>
+  <data name="Commits" xml:space="preserve">
+    <value>کامیت‌ها</value>
+  </data>
+  <data name="CrossFade" xml:space="preserve">
+    <value>محوشدگی متقاطع</value>
+  </data>
+  <data name="CurrentPageData" xml:space="preserve">
+    <value>داده‌های صفحه فعلی</value>
+  </data>
+  <data name="CustomCanvas" xml:space="preserve">
+    <value>بوم سفارشی</value>
+  </data>
+  <data name="Dashboards" xml:space="preserve">
+    <value>داشبوردها</value>
+  </data>
+  <data name="Desktop" xml:space="preserve">
+    <value>دسکتاپ</value>
+  </data>
+  <data name="EffectsComingSoon" xml:space="preserve">
+    <value>جلوه‌ها - به زودی</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>فایل‌ها</value>
+  </data>
+  <data name="Fireworks" xml:space="preserve">
+    <value>آتش‌بازی</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>اول</value>
+  </data>
+  <data name="GitHub" xml:space="preserve">
+    <value>گیت‌هاب</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>خوب</value>
+  </data>
+  <data name="HatchBrushGeneratorComingSoon" xml:space="preserve">
+    <value>تولیدکننده قلم‌مو هاشور - به زودی</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>سربرگ</value>
+  </data>
+  <data name="HelloSenderBubble" xml:space="preserve">
+    <value>سلام! این حباب پیام فرستنده است.</value>
+  </data>
+  <data name="HiReceiverBubble" xml:space="preserve">
+    <value>سلام! و این حباب گیرنده است.</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>کتابخانه</value>
+  </data>
+  <data name="LoadTest" xml:space="preserve">
+    <value>آزمون بار</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>بیشتر</value>
+  </data>
+  <data name="MorphingAnimationComingSoon" xml:space="preserve">
+    <value>انیمیشن مرف - به زودی</value>
+  </data>
+  <data name="NoMessagesYet" xml:space="preserve">
+    <value>هنوز پیامی نیست</value>
+  </data>
+  <data name="NuGet" xml:space="preserve">
+    <value>نوگت</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>مرور</value>
+  </data>
+  <data name="Pipelines" xml:space="preserve">
+    <value>خطوط لوله</value>
+  </data>
+  <data name="PullRequests" xml:space="preserve">
+    <value>درخواست‌های کشیدن</value>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>پرسش‌ها</value>
+  </data>
+  <data name="RandomDirection" xml:space="preserve">
+    <value>جهت تصادفی</value>
+  </data>
+  <data name="RealisticLook" xml:space="preserve">
+    <value>ظاهر واقعی</value>
+  </data>
+  <data name="Releases" xml:space="preserve">
+    <value>نسخه‌ها</value>
+  </data>
+  <data name="RepeatButtonCustom" xml:space="preserve">
+    <value>دکمه تکرار سفارشی</value>
+  </data>
+  <data name="Repos" xml:space="preserve">
+    <value>مخزن‌ها</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>تلاش مجدد</value>
+  </data>
+  <data name="RibbonAlignLeft" xml:space="preserve">
+    <value>تراز چپ</value>
+  </data>
+  <data name="RibbonAlignRight" xml:space="preserve">
+    <value>تراز راست</value>
+  </data>
+  <data name="RibbonBold" xml:space="preserve">
+    <value>پررنگ</value>
+  </data>
+  <data name="RibbonCenter" xml:space="preserve">
+    <value>وسط‌چین</value>
+  </data>
+  <data name="RibbonChart" xml:space="preserve">
+    <value>نمودار</value>
+  </data>
+  <data name="RibbonClipboard" xml:space="preserve">
+    <value>کلیپ‌بورد</value>
+  </data>
+  <data name="RibbonCopy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="RibbonCut" xml:space="preserve">
+    <value>برش</value>
+  </data>
+  <data name="RibbonDropCap" xml:space="preserve">
+    <value>حرف آغازین</value>
+  </data>
+  <data name="RibbonFont" xml:space="preserve">
+    <value>قلم</value>
+  </data>
+  <data name="RibbonFontSettings" xml:space="preserve">
+    <value>تنظیمات قلم</value>
+  </data>
+  <data name="RibbonGridlines" xml:space="preserve">
+    <value>خطوط شبکه</value>
+  </data>
+  <data name="RibbonIllustrations" xml:space="preserve">
+    <value>تصویرسازی‌ها</value>
+  </data>
+  <data name="RibbonInsert" xml:space="preserve">
+    <value>درج</value>
+  </data>
+  <data name="RibbonItalic" xml:space="preserve">
+    <value>کج</value>
+  </data>
+  <data name="RibbonNewWindow" xml:space="preserve">
+    <value>پنجره جدید</value>
+  </data>
+  <data name="RibbonParagraph" xml:space="preserve">
+    <value>پاراگراف</value>
+  </data>
+  <data name="RibbonPaste" xml:space="preserve">
+    <value>چسباندن</value>
+  </data>
+  <data name="RibbonPicture" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="RibbonRuler" xml:space="preserve">
+    <value>خط‌کش</value>
+  </data>
+  <data name="RibbonShape" xml:space="preserve">
+    <value>شکل</value>
+  </data>
+  <data name="RibbonShow" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="RibbonStart" xml:space="preserve">
+    <value>خانه</value>
+  </data>
+  <data name="RibbonSwitchWindow" xml:space="preserve">
+    <value>تغییر پنجره</value>
+  </data>
+  <data name="RibbonText" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="RibbonTextBox" xml:space="preserve">
+    <value>جعبه متن</value>
+  </data>
+  <data name="RibbonUnderline" xml:space="preserve">
+    <value>زیرخط</value>
+  </data>
+  <data name="RibbonView" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="RibbonWindow" xml:space="preserve">
+    <value>پنجره</value>
+  </data>
+  <data name="RibbonWordArt" xml:space="preserve">
+    <value>ووردآرت</value>
+  </data>
+  <data name="Runs" xml:space="preserve">
+    <value>اجراها</value>
+  </data>
+  <data name="SchoolPride" xml:space="preserve">
+    <value>افتخار مدرسه</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>انتخاب همه</value>
+  </data>
+  <data name="SenderAudioMessage" xml:space="preserve">
+    <value>پیام صوتی فرستنده.</value>
+  </data>
+  <data name="ShowImageBrowser" xml:space="preserve">
+    <value>نمایش مرورگر تصویر</value>
+  </data>
+  <data name="ShowSprite" xml:space="preserve">
+    <value>نمایش اسپرایت</value>
+  </data>
+  <data name="SlideHorizontal" xml:space="preserve">
+    <value>لغزش افقی</value>
+  </data>
+  <data name="SlideVertical" xml:space="preserve">
+    <value>لغزش عمودی</value>
+  </data>
+  <data name="Snow" xml:space="preserve">
+    <value>برف</value>
+  </data>
+  <data name="Sprints" xml:space="preserve">
+    <value>اسپرینت‌ها</value>
+  </data>
+  <data name="Stars" xml:space="preserve">
+    <value>ستاره‌ها</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>خلاصه</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>برچسب‌ها</value>
+  </data>
+  <data name="TaskGroups" xml:space="preserve">
+    <value>گروه‌های کار</value>
+  </data>
+  <data name="TestPlans" xml:space="preserve">
+    <value>برنامه‌های آزمون</value>
+  </data>
+  <data name="TextText" xml:space="preserve">
+    <value>TextText</value>
+  </data>
+  <data name="TextTextText" xml:space="preserve">
+    <value>TextTextText</value>
+  </data>
+  <data name="TextTextTextText" xml:space="preserve">
+    <value>TextTextTextText</value>
+  </data>
+  <data name="TextTextTextTextText" xml:space="preserve">
+    <value>TextTextTextTextText</value>
+  </data>
+  <data name="ThisIsTheContent" xml:space="preserve">
+    <value>این محتوا است</value>
+  </data>
+  <data name="TitlePlaceholder" xml:space="preserve">
+    <value>TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</value>
+  </data>
+  <data name="TopLeft" xml:space="preserve">
+    <value>بالا چپ</value>
+  </data>
+  <data name="TopRight" xml:space="preserve">
+    <value>بالا راست</value>
+  </data>
+  <data name="Wiki" xml:space="preserve">
+    <value>ویکی</value>
+  </data>
+  <data name="WorkItems" xml:space="preserve">
+    <value>موردهای کاری</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="CustomTitleBarWindow" xml:space="preserve">
+    <value>پنجره با نوار عنوان سفارشی</value>
+  </data>
+  <data name="DragMe" xml:space="preserve">
+    <value>من را بکش</value>
+  </data>
+  <data name="NotificationCardText" xml:space="preserve">
+    <value>این یک کارت اطلاع‌رسانی است. برای توقف موقت تایمر، نشانگر را روی آن ببرید.</value>
+  </data></root>

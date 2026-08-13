@@ -6,12 +6,12 @@
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <StackPanel Margin="32" Spacing="24">
-            <TextBlock Text="{x:Static langs:Lang.TimeBar}"
+            <TextBlock Text="{Binding TimeBar, Source={x:Static langs:LangProvider.Instance}}"
                        FontSize="24"
                        HorizontalAlignment="Center" />
             <hc:TimeBar x:Name="TimeBarControl" Height="80" />
             <StackPanel Orientation="Horizontal" Spacing="16" HorizontalAlignment="Center">
-                <TextBlock Text="{x:Static langs:Lang.SelectedTime}"
+                <TextBlock Text="{Binding SelectedTime, Source={x:Static langs:LangProvider.Instance}}"
                            VerticalAlignment="Center" />
                 <TextBlock x:Name="SelectedTimeText"
                            FontWeight="SemiBold"
@@ -29,7 +29,7 @@
                 <Button Content="21:00"
                         Click="Button_OnClick" />
             </hc:ButtonGroup>
-            <TextBlock Text="{x:Static langs:Lang.MouseWheelTip}"
+            <TextBlock Text="{Binding MouseWheelTip, Source={x:Static langs:LangProvider.Instance}}"
                        FontSize="12"
                        Opacity="0.6"
                        HorizontalAlignment="Center" />

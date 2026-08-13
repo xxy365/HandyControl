@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              x:Class="HandyControlDemo.UserControl.DatePickerDemo"
@@ -16,11 +17,11 @@
                                 SelectedDate="{x:Static system:DateTimeOffset.Now}" />
 
                     <DatePicker SelectedDate="{x:Static system:DateTimeOffset.Now}"
-                                hc:TitleElement.Title="This is the title"
+                                hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource DatePickerExtend}"
                                 Margin="0,32,0,0" />
                     <DatePicker SelectedDate="{x:Static system:DateTimeOffset.Now}"
-                                hc:TitleElement.Title="This item must be filled in"
+                                hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource DatePickerExtend}"
                                 hc:InfoElement.Necessary="True"
                                 Margin="0,16,0,0" />
@@ -28,7 +29,7 @@
                     <DatePicker SelectedDate="{x:Static system:DateTimeOffset.Now}"
                                 hc:TitleElement.TitleWidth="140"
                                 hc:TitleElement.TitlePlacement="Left"
-                                hc:TitleElement.Title="The title is on the left"
+                                hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource DatePickerExtend}"
                                 Margin="0,32,0,0" />
                 </StackPanel>
@@ -41,11 +42,11 @@
                                 Theme="{StaticResource DatePicker.Small}" />
 
                     <DatePicker SelectedDate="{x:Static system:DateTimeOffset.Now}"
-                                hc:TitleElement.Title="This is the title"
+                                hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource DatePickerExtend.Small}"
                                 Margin="0,32,0,0" />
                     <DatePicker SelectedDate="{x:Static system:DateTimeOffset.Now}"
-                                hc:TitleElement.Title="This item must be filled in"
+                                hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource DatePickerExtend.Small}"
                                 hc:InfoElement.Necessary="True"
                                 Margin="0,16,0,0" />
@@ -53,7 +54,7 @@
                     <DatePicker SelectedDate="{x:Static system:DateTimeOffset.Now}"
                                 hc:TitleElement.TitleWidth="140"
                                 hc:TitleElement.TitlePlacement="Left"
-                                hc:TitleElement.Title="The title is on the left"
+                                hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                 Theme="{StaticResource DatePickerExtend.Small}"
                                 Margin="0,32,0,0" />
                 </StackPanel>

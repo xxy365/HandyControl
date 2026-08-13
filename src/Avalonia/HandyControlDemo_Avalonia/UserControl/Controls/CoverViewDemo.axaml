@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
              xmlns:data="clr-namespace:HandyControlDemo.Data"
@@ -29,7 +30,7 @@
                         <Border Margin="10"
                                 Height="300"
                                 Background="{Binding BackgroundToken, Converter={StaticResource StringToBrush}}">
-                            <TextBlock Text="CoverView"
+                            <TextBlock Text="{Binding CoverView, Source={x:Static langs:LangProvider.Instance}}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White" />

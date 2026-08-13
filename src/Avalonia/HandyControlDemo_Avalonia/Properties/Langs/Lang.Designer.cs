@@ -636,6 +636,15 @@ namespace HandyControlDemo.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 暂无数据.
+        /// </summary>
+        public static string NoData {
+            get {
+                return ResourceManager.GetString("NoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 错误.
         /// </summary>
         public static string Error {
@@ -1232,9 +1241,9 @@ namespace HandyControlDemo.Properties.Langs {
         /// <summary>
         ///   Looks up a localized string similar to 点击打开自定义非客户端区域窗口.
         /// </summary>
-        public static string OpenCustomNonClientAreaWindow {
+        public static string OpenCustomTitleBarWindow {
             get {
-                return ResourceManager.GetString("OpenCustomNonClientAreaWindow", resourceCulture);
+                return ResourceManager.GetString("OpenCustomTitleBarWindow", resourceCulture);
             }
         }
         
@@ -1295,9 +1304,9 @@ namespace HandyControlDemo.Properties.Langs {
         /// <summary>
         ///   Looks up a localized string similar to 打开无非客户端区域可拖拽窗口.
         /// </summary>
-        public static string OpenNoNonClientAreaDragableWindow {
+        public static string OpenNoCustomTitleBarDragableWindow {
             get {
-                return ResourceManager.GetString("OpenNoNonClientAreaDragableWindow", resourceCulture);
+                return ResourceManager.GetString("OpenNoCustomTitleBarDragableWindow", resourceCulture);
             }
         }
         
@@ -1622,6 +1631,15 @@ namespace HandyControlDemo.Properties.Langs {
         public static string ResponsiveLayout {
             get {
                 return ResourceManager.GetString("ResponsiveLayout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 功能区.
+        /// </summary>
+        public static string Ribbon {
+            get {
+                return ResourceManager.GetString("Ribbon", resourceCulture);
             }
         }
         
@@ -2155,5 +2173,978 @@ namespace HandyControlDemo.Properties.Langs {
                 return ResourceManager.GetString("Window", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 日历日期选择器.
+        /// </summary>
+        public static string CalendarDatePicker {
+            get {
+                return ResourceManager.GetString("CalendarDatePicker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 五彩纸屑加农炮.
+        /// </summary>
+        public static string ConfettiCannon {
+            get {
+                return ResourceManager.GetString("ConfettiCannon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 下拉按钮.
+        /// </summary>
+        public static string DropDownButton {
+            get {
+                return ResourceManager.GetString("DropDownButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 图片查看器.
+        /// </summary>
+        public static string ImageViewer {
+            get {
+                return ResourceManager.GetString("ImageViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 掩码文本框.
+        /// </summary>
+        public static string MaskedTextBox {
+            get {
+                return ResourceManager.GetString("MaskedTextBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 开关.
+        /// </summary>
+        public static string ToggleSwitch {
+            get {
+                return ResourceManager.GetString("ToggleSwitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 项目 1.
+        /// </summary>
+        public static string Item1 {
+            get {
+                return ResourceManager.GetString("Item1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 项目 2.
+        /// </summary>
+        public static string Item2 {
+            get {
+                return ResourceManager.GetString("Item2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 项目 3.
+        /// </summary>
+        public static string Item3 {
+            get {
+                return ResourceManager.GetString("Item3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 今天.
+        /// </summary>
+        public static string Today {
+            get {
+                return ResourceManager.GetString("Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 明天.
+        /// </summary>
+        public static string Tomorrow {
+            get {
+                return ResourceManager.GetString("Tomorrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 下周.
+        /// </summary>
+        public static string NextWeek {
+            get {
+                return ResourceManager.GetString("NextWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 选项 A.
+        /// </summary>
+        public static string OptionA {
+            get {
+                return ResourceManager.GetString("OptionA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 选项 B.
+        /// </summary>
+        public static string OptionB {
+            get {
+                return ResourceManager.GetString("OptionB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 内容.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 新建.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 切换.
+        /// </summary>
+        public static string Switch {
+            get {
+                return ResourceManager.GetString("Switch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 小.
+        /// </summary>
+        public static string Small {
+            get {
+                return ResourceManager.GetString("Small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HandyControl.
+        /// </summary>
+        public static string HandyControl {
+            get {
+                return ResourceManager.GetString("HandyControl", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 添加项目.
+        /// </summary>
+        public static string AddItem2 {
+            get {
+                return ResourceManager.GetString("AddItem2", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 另一条发送者消息。.
+        /// </summary>
+        public static string AnotherSenderMessage {
+            get {
+                return ResourceManager.GetString("AnotherSenderMessage", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 待办积压.
+        /// </summary>
+        public static string Backlogs {
+            get {
+                return ResourceManager.GetString("Backlogs", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 基础加农炮.
+        /// </summary>
+        public static string BasicCannon {
+            get {
+                return ResourceManager.GetString("BasicCannon", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 看板.
+        /// </summary>
+        public static string Boards {
+            get {
+                return ResourceManager.GetString("Boards", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 左下.
+        /// </summary>
+        public static string BottomLeft {
+            get {
+                return ResourceManager.GetString("BottomLeft", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 右下.
+        /// </summary>
+        public static string BottomRight {
+            get {
+                return ResourceManager.GetString("BottomRight", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 分支.
+        /// </summary>
+        public static string Branches {
+            get {
+                return ResourceManager.GetString("Branches", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 生成.
+        /// </summary>
+        public static string Builds {
+            get {
+                return ResourceManager.GetString("Builds", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 提交.
+        /// </summary>
+        public static string Commits {
+            get {
+                return ResourceManager.GetString("Commits", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 交叉淡化.
+        /// </summary>
+        public static string CrossFade {
+            get {
+                return ResourceManager.GetString("CrossFade", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 当前页数据.
+        /// </summary>
+        public static string CurrentPageData {
+            get {
+                return ResourceManager.GetString("CurrentPageData", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 自定义画布.
+        /// </summary>
+        public static string CustomCanvas {
+            get {
+                return ResourceManager.GetString("CustomCanvas", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 仪表板.
+        /// </summary>
+        public static string Dashboards {
+            get {
+                return ResourceManager.GetString("Dashboards", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 桌面.
+        /// </summary>
+        public static string Desktop {
+            get {
+                return ResourceManager.GetString("Desktop", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 特效 - 敬请期待.
+        /// </summary>
+        public static string EffectsComingSoon {
+            get {
+                return ResourceManager.GetString("EffectsComingSoon", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 文件.
+        /// </summary>
+        public static string Files {
+            get {
+                return ResourceManager.GetString("Files", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 烟花.
+        /// </summary>
+        public static string Fireworks {
+            get {
+                return ResourceManager.GetString("Fireworks", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 第一.
+        /// </summary>
+        public static string First {
+            get {
+                return ResourceManager.GetString("First", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to GitHub.
+        /// </summary>
+        public static string GitHub {
+            get {
+                return ResourceManager.GetString("GitHub", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 好.
+        /// </summary>
+        public static string Good {
+            get {
+                return ResourceManager.GetString("Good", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 影线画刷生成器 - 敬请期待.
+        /// </summary>
+        public static string HatchBrushGeneratorComingSoon {
+            get {
+                return ResourceManager.GetString("HatchBrushGeneratorComingSoon", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 标题.
+        /// </summary>
+        public static string Header {
+            get {
+                return ResourceManager.GetString("Header", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 你好！这是一条发送者的消息气泡。.
+        /// </summary>
+        public static string HelloSenderBubble {
+            get {
+                return ResourceManager.GetString("HelloSenderBubble", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 嗨！这是一条接收者的气泡。.
+        /// </summary>
+        public static string HiReceiverBubble {
+            get {
+                return ResourceManager.GetString("HiReceiverBubble", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 库.
+        /// </summary>
+        public static string Library {
+            get {
+                return ResourceManager.GetString("Library", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 压力测试.
+        /// </summary>
+        public static string LoadTest {
+            get {
+                return ResourceManager.GetString("LoadTest", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 更多.
+        /// </summary>
+        public static string More {
+            get {
+                return ResourceManager.GetString("More", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 形变动画 - 敬请期待.
+        /// </summary>
+        public static string MorphingAnimationComingSoon {
+            get {
+                return ResourceManager.GetString("MorphingAnimationComingSoon", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 暂无消息.
+        /// </summary>
+        public static string NoMessagesYet {
+            get {
+                return ResourceManager.GetString("NoMessagesYet", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to NuGet.
+        /// </summary>
+        public static string NuGet {
+            get {
+                return ResourceManager.GetString("NuGet", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 概览.
+        /// </summary>
+        public static string Overview {
+            get {
+                return ResourceManager.GetString("Overview", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 管道.
+        /// </summary>
+        public static string Pipelines {
+            get {
+                return ResourceManager.GetString("Pipelines", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 拉取请求.
+        /// </summary>
+        public static string PullRequests {
+            get {
+                return ResourceManager.GetString("PullRequests", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 查询.
+        /// </summary>
+        public static string Queries {
+            get {
+                return ResourceManager.GetString("Queries", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 随机方向.
+        /// </summary>
+        public static string RandomDirection {
+            get {
+                return ResourceManager.GetString("RandomDirection", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 真实外观.
+        /// </summary>
+        public static string RealisticLook {
+            get {
+                return ResourceManager.GetString("RealisticLook", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 发布.
+        /// </summary>
+        public static string Releases {
+            get {
+                return ResourceManager.GetString("Releases", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 自定义重复按钮.
+        /// </summary>
+        public static string RepeatButtonCustom {
+            get {
+                return ResourceManager.GetString("RepeatButtonCustom", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 仓库.
+        /// </summary>
+        public static string Repos {
+            get {
+                return ResourceManager.GetString("Repos", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 重试.
+        /// </summary>
+        public static string Retry {
+            get {
+                return ResourceManager.GetString("Retry", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 左对齐.
+        /// </summary>
+        public static string RibbonAlignLeft {
+            get {
+                return ResourceManager.GetString("RibbonAlignLeft", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 右对齐.
+        /// </summary>
+        public static string RibbonAlignRight {
+            get {
+                return ResourceManager.GetString("RibbonAlignRight", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 加粗.
+        /// </summary>
+        public static string RibbonBold {
+            get {
+                return ResourceManager.GetString("RibbonBold", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 居中.
+        /// </summary>
+        public static string RibbonCenter {
+            get {
+                return ResourceManager.GetString("RibbonCenter", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 图表.
+        /// </summary>
+        public static string RibbonChart {
+            get {
+                return ResourceManager.GetString("RibbonChart", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 剪贴板.
+        /// </summary>
+        public static string RibbonClipboard {
+            get {
+                return ResourceManager.GetString("RibbonClipboard", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 复制.
+        /// </summary>
+        public static string RibbonCopy {
+            get {
+                return ResourceManager.GetString("RibbonCopy", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 剪切.
+        /// </summary>
+        public static string RibbonCut {
+            get {
+                return ResourceManager.GetString("RibbonCut", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 首字下沉.
+        /// </summary>
+        public static string RibbonDropCap {
+            get {
+                return ResourceManager.GetString("RibbonDropCap", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 字体.
+        /// </summary>
+        public static string RibbonFont {
+            get {
+                return ResourceManager.GetString("RibbonFont", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 字体设置.
+        /// </summary>
+        public static string RibbonFontSettings {
+            get {
+                return ResourceManager.GetString("RibbonFontSettings", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 网格线.
+        /// </summary>
+        public static string RibbonGridlines {
+            get {
+                return ResourceManager.GetString("RibbonGridlines", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 插图.
+        /// </summary>
+        public static string RibbonIllustrations {
+            get {
+                return ResourceManager.GetString("RibbonIllustrations", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 插入.
+        /// </summary>
+        public static string RibbonInsert {
+            get {
+                return ResourceManager.GetString("RibbonInsert", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 斜体.
+        /// </summary>
+        public static string RibbonItalic {
+            get {
+                return ResourceManager.GetString("RibbonItalic", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 新建窗口.
+        /// </summary>
+        public static string RibbonNewWindow {
+            get {
+                return ResourceManager.GetString("RibbonNewWindow", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 段落.
+        /// </summary>
+        public static string RibbonParagraph {
+            get {
+                return ResourceManager.GetString("RibbonParagraph", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 粘贴.
+        /// </summary>
+        public static string RibbonPaste {
+            get {
+                return ResourceManager.GetString("RibbonPaste", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 图片.
+        /// </summary>
+        public static string RibbonPicture {
+            get {
+                return ResourceManager.GetString("RibbonPicture", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 标尺.
+        /// </summary>
+        public static string RibbonRuler {
+            get {
+                return ResourceManager.GetString("RibbonRuler", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 形状.
+        /// </summary>
+        public static string RibbonShape {
+            get {
+                return ResourceManager.GetString("RibbonShape", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 显示.
+        /// </summary>
+        public static string RibbonShow {
+            get {
+                return ResourceManager.GetString("RibbonShow", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 开始.
+        /// </summary>
+        public static string RibbonStart {
+            get {
+                return ResourceManager.GetString("RibbonStart", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 切换窗口.
+        /// </summary>
+        public static string RibbonSwitchWindow {
+            get {
+                return ResourceManager.GetString("RibbonSwitchWindow", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 文本.
+        /// </summary>
+        public static string RibbonText {
+            get {
+                return ResourceManager.GetString("RibbonText", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 文本框.
+        /// </summary>
+        public static string RibbonTextBox {
+            get {
+                return ResourceManager.GetString("RibbonTextBox", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 下划线.
+        /// </summary>
+        public static string RibbonUnderline {
+            get {
+                return ResourceManager.GetString("RibbonUnderline", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 视图.
+        /// </summary>
+        public static string RibbonView {
+            get {
+                return ResourceManager.GetString("RibbonView", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 窗口.
+        /// </summary>
+        public static string RibbonWindow {
+            get {
+                return ResourceManager.GetString("RibbonWindow", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 艺术字.
+        /// </summary>
+        public static string RibbonWordArt {
+            get {
+                return ResourceManager.GetString("RibbonWordArt", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 运行.
+        /// </summary>
+        public static string Runs {
+            get {
+                return ResourceManager.GetString("Runs", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 校队荣耀.
+        /// </summary>
+        public static string SchoolPride {
+            get {
+                return ResourceManager.GetString("SchoolPride", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 全选.
+        /// </summary>
+        public static string SelectAll {
+            get {
+                return ResourceManager.GetString("SelectAll", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 发送者音频消息。.
+        /// </summary>
+        public static string SenderAudioMessage {
+            get {
+                return ResourceManager.GetString("SenderAudioMessage", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 显示图片浏览器.
+        /// </summary>
+        public static string ShowImageBrowser {
+            get {
+                return ResourceManager.GetString("ShowImageBrowser", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 显示精灵图.
+        /// </summary>
+        public static string ShowSprite {
+            get {
+                return ResourceManager.GetString("ShowSprite", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 水平滑动.
+        /// </summary>
+        public static string SlideHorizontal {
+            get {
+                return ResourceManager.GetString("SlideHorizontal", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 垂直滑动.
+        /// </summary>
+        public static string SlideVertical {
+            get {
+                return ResourceManager.GetString("SlideVertical", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 雪花.
+        /// </summary>
+        public static string Snow {
+            get {
+                return ResourceManager.GetString("Snow", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 冲刺.
+        /// </summary>
+        public static string Sprints {
+            get {
+                return ResourceManager.GetString("Sprints", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 星星.
+        /// </summary>
+        public static string Stars {
+            get {
+                return ResourceManager.GetString("Stars", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 摘要.
+        /// </summary>
+        public static string Summary {
+            get {
+                return ResourceManager.GetString("Summary", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 标签.
+        /// </summary>
+        public static string Tags {
+            get {
+                return ResourceManager.GetString("Tags", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 任务组.
+        /// </summary>
+        public static string TaskGroups {
+            get {
+                return ResourceManager.GetString("TaskGroups", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 测试计划.
+        /// </summary>
+        public static string TestPlans {
+            get {
+                return ResourceManager.GetString("TestPlans", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to TextText.
+        /// </summary>
+        public static string TextText {
+            get {
+                return ResourceManager.GetString("TextText", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to TextTextText.
+        /// </summary>
+        public static string TextTextText {
+            get {
+                return ResourceManager.GetString("TextTextText", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to TextTextTextText.
+        /// </summary>
+        public static string TextTextTextText {
+            get {
+                return ResourceManager.GetString("TextTextTextText", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to TextTextTextTextText.
+        /// </summary>
+        public static string TextTextTextTextText {
+            get {
+                return ResourceManager.GetString("TextTextTextTextText", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 这是内容。.
+        /// </summary>
+        public static string ThisIsTheContent {
+            get {
+                return ResourceManager.GetString("ThisIsTheContent", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle.
+        /// </summary>
+        public static string TitlePlaceholder {
+            get {
+                return ResourceManager.GetString("TitlePlaceholder", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 左上.
+        /// </summary>
+        public static string TopLeft {
+            get {
+                return ResourceManager.GetString("TopLeft", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 右上.
+        /// </summary>
+        public static string TopRight {
+            get {
+                return ResourceManager.GetString("TopRight", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to Wiki.
+        /// </summary>
+        public static string Wiki {
+            get {
+                return ResourceManager.GetString("Wiki", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 工作项.
+        /// </summary>
+        public static string WorkItems {
+            get {
+                return ResourceManager.GetString("WorkItems", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 关闭.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 自定义标题栏窗口.
+        /// </summary>
+        public static string CustomTitleBarWindow {
+            get {
+                return ResourceManager.GetString("CustomTitleBarWindow", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 拖动我.
+        /// </summary>
+        public static string DragMe {
+            get {
+                return ResourceManager.GetString("DragMe", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to 这是一张通知卡片。悬停可暂停关闭计时。.
+        /// </summary>
+        public static string NotificationCardText {
+            get {
+                return ResourceManager.GetString("NotificationCardText", resourceCulture);
+            }
+        }
+
     }
 }

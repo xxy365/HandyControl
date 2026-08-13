@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              x:Class="HandyControlDemo.UserControl.CalendarDatePickerDemo"
@@ -18,12 +19,12 @@
 
                     <CalendarDatePicker hc:InfoElement.ShowClearButton="True"
                                         SelectedDate="{x:Static system:DateTime.Now}"
-                                        hc:TitleElement.Title="This is the title"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                         Theme="{StaticResource CalendarDatePickerExtend}"
                                         Margin="0,32,0,0" />
                     <CalendarDatePicker SelectedDate="{x:Static system:DateTime.Now}"
-                                        PlaceholderText="Please enter content"
-                                        hc:TitleElement.Title="This item must be filled in"
+                                        PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                         Theme="{StaticResource CalendarDatePickerExtend}"
                                         hc:InfoElement.Necessary="True"
                                         Margin="0,16,0,0" />
@@ -33,14 +34,14 @@
                                         Width="380"
                                         hc:TitleElement.TitleWidth="140"
                                         hc:TitleElement.TitlePlacement="Left"
-                                        hc:TitleElement.Title="The title is on the left"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                         Theme="{StaticResource CalendarDatePickerExtend}"
                                         Margin="0,32,0,0" />
                     <CalendarDatePicker Width="380"
                                         hc:TitleElement.TitleWidth="140"
                                         hc:TitleElement.TitlePlacement="Left"
-                                        PlaceholderText="Please enter content"
-                                        hc:TitleElement.Title="The title is on the left"
+                                        PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                         hc:InfoElement.Necessary="True"
                                         Theme="{StaticResource CalendarDatePickerExtend}"
                                         Margin="0,16,0,0" />
@@ -56,12 +57,12 @@
 
                     <CalendarDatePicker hc:InfoElement.ShowClearButton="True"
                                         SelectedDate="{x:Static system:DateTime.Now}"
-                                        hc:TitleElement.Title="This is the title"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr1, Source={x:Static langs:LangProvider.Instance}}"
                                         Theme="{StaticResource CalendarDatePickerExtend.Small}"
                                         Margin="0,32,0,0" />
                     <CalendarDatePicker SelectedDate="{x:Static system:DateTime.Now}"
-                                        PlaceholderText="Please enter content"
-                                        hc:TitleElement.Title="This item must be filled in"
+                                        PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr2, Source={x:Static langs:LangProvider.Instance}}"
                                         Theme="{StaticResource CalendarDatePickerExtend.Small}"
                                         hc:InfoElement.Necessary="True"
                                         Margin="0,16,0,0" />
@@ -71,14 +72,14 @@
                                         Width="380"
                                         hc:TitleElement.TitleWidth="140"
                                         hc:TitleElement.TitlePlacement="Left"
-                                        hc:TitleElement.Title="The title is on the left"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                         Theme="{StaticResource CalendarDatePickerExtend.Small}"
                                         Margin="0,32,0,0" />
                     <CalendarDatePicker Width="380"
                                         hc:TitleElement.TitleWidth="140"
                                         hc:TitleElement.TitlePlacement="Left"
-                                        PlaceholderText="Please enter content"
-                                        hc:TitleElement.Title="The title is on the left"
+                                        PlaceholderText="{Binding PlsEnterContent, Source={x:Static langs:LangProvider.Instance}}"
+                                        hc:TitleElement.Title="{Binding TitleDemoStr3, Source={x:Static langs:LangProvider.Instance}}"
                                         hc:InfoElement.Necessary="True"
                                         Theme="{StaticResource CalendarDatePickerExtend.Small}"
                                         Margin="0,16,0,0" />

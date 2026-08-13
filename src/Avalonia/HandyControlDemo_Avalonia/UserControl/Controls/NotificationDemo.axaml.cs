@@ -5,6 +5,7 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using HandyControl.Controls;
 using HandyControl.Data;
+using HandyControlDemo.Properties.Langs;
 
 namespace HandyControlDemo.UserControl;
 
@@ -37,14 +38,14 @@ public partial class NotificationDemo : Avalonia.Controls.UserControl
                 {
                     new TextBlock
                     {
-                        Text = "HandyControl",
+                        Text = LangProvider.Instance.HandyControl,
                         FontSize = 24,
                         Foreground = new SolidColorBrush(Color.Parse("#FF3E7FF2")),
                         HorizontalAlignment = HorizontalAlignment.Center
                     },
                     new TextBlock
                     {
-                        Text = "This is a notification card. Hover to pause the close timer.",
+                        Text = LangProvider.Instance.NotificationCardText,
                         TextWrapping = Avalonia.Media.TextWrapping.Wrap,
                         Foreground = new SolidColorBrush(Colors.Gray),
                         Margin = new Thickness(0, 12, 0, 0)
@@ -55,7 +56,7 @@ public partial class NotificationDemo : Avalonia.Controls.UserControl
 
         var closeButton = new Button
         {
-            Content = "Close",
+            Content = LangProvider.Instance.Close,
             HorizontalAlignment = HorizontalAlignment.Stretch,
             Margin = new Thickness(0, 16, 0, 0)
         };

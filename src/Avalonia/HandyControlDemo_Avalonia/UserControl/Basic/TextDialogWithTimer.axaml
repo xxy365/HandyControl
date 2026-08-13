@@ -1,6 +1,7 @@
 <Border x:Class="HandyControlDemo.UserControl.TextDialogWithTimer"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         CornerRadius="10"
         Width="400"
@@ -13,7 +14,7 @@
                  VerticalAlignment="Center">
             <TextBlock TextWrapping="Wrap"
                        Theme="{StaticResource TextBlockLargeBold}"
-                       Text="Please wait..." />
+                       Text="{Binding PleaseWait, Source={x:Static langs:LangProvider.Instance}}" />
         </Viewbox>
         <Button x:Name="CloseButton"
                 Width="22"

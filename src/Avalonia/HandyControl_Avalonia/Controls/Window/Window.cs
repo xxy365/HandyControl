@@ -6,37 +6,40 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.Styling;
 
 namespace HandyControl.Controls
 {
     /// <summary>
-    /// ÎÞ±ß¿ò×Ô¶¨Òå´°¿Ú£¨µÈ¼Û WPF HandyControl µÄ Window / WindowChrome Win10 ·ç¸ñ£©¡£
+    /// ï¿½Þ±ß¿ï¿½ï¿½Ô¶ï¿½ï¿½å´°ï¿½Ú£ï¿½ï¿½È¼ï¿½ WPF HandyControl ï¿½ï¿½ Window / WindowChrome Win10 ï¿½ï¿½ñ£©¡ï¿½
     /// </summary>
     public class Window : Avalonia.Controls.Window
     {
-        private const string ElementNonClientArea = "PART_NonClientArea";
+        protected override Type StyleKeyOverride => typeof(Window);
 
-        private Control? _nonClientArea;
+        private const string ElementCustomTitleBar = "PART_CustomTitleBar";
+
+        private Control? _customTitleBar;
         private Button? _buttonMin;
         private Button? _buttonMax;
         private Button? _buttonRestore;
         private Button? _buttonClose;
 
-        private bool _showNonClientArea = true;
+        private bool _showCustomTitleBar = true;
         private bool _isFullScreen;
-        private double _tempNonClientAreaHeight;
+        private double _tempCustomTitleBarHeight;
         private Thickness _actualBorderThickness;
         private WindowState _tempWindowState;
 
         #region props
 
-        public static readonly StyledProperty<object?> NonClientAreaContentProperty =
-            AvaloniaProperty.Register<Window, object?>(nameof(NonClientAreaContent));
+        public static readonly StyledProperty<object?> CustomTitleBarContentProperty =
+            AvaloniaProperty.Register<Window, object?>(nameof(CustomTitleBarContent));
 
-        public object? NonClientAreaContent
+        public object? CustomTitleBarContent
         {
-            get => GetValue(NonClientAreaContentProperty);
-            set => SetValue(NonClientAreaContentProperty, value);
+            get => GetValue(CustomTitleBarContentProperty);
+            set => SetValue(CustomTitleBarContentProperty, value);
         }
 
         public static readonly StyledProperty<IBrush?> CloseButtonHoverBackgroundProperty =
@@ -111,40 +114,40 @@ namespace HandyControl.Controls
             set => SetValue(OtherButtonHoverForegroundProperty, value);
         }
 
-        public static readonly StyledProperty<IBrush?> NonClientAreaBackgroundProperty =
-            AvaloniaProperty.Register<Window, IBrush?>(nameof(NonClientAreaBackground));
+        public static readonly StyledProperty<IBrush?> CustomTitleBarBackgroundProperty =
+            AvaloniaProperty.Register<Window, IBrush?>(nameof(CustomTitleBarBackground));
 
-        public IBrush? NonClientAreaBackground
+        public IBrush? CustomTitleBarBackground
         {
-            get => GetValue(NonClientAreaBackgroundProperty);
-            set => SetValue(NonClientAreaBackgroundProperty, value);
+            get => GetValue(CustomTitleBarBackgroundProperty);
+            set => SetValue(CustomTitleBarBackgroundProperty, value);
         }
 
-        public static readonly StyledProperty<IBrush?> NonClientAreaForegroundProperty =
-            AvaloniaProperty.Register<Window, IBrush?>(nameof(NonClientAreaForeground));
+        public static readonly StyledProperty<IBrush?> CustomTitleBarForegroundProperty =
+            AvaloniaProperty.Register<Window, IBrush?>(nameof(CustomTitleBarForeground));
 
-        public IBrush? NonClientAreaForeground
+        public IBrush? CustomTitleBarForeground
         {
-            get => GetValue(NonClientAreaForegroundProperty);
-            set => SetValue(NonClientAreaForegroundProperty, value);
+            get => GetValue(CustomTitleBarForegroundProperty);
+            set => SetValue(CustomTitleBarForegroundProperty, value);
         }
 
-        public static readonly StyledProperty<double> NonClientAreaHeightProperty =
-            AvaloniaProperty.Register<Window, double>(nameof(NonClientAreaHeight), 22.0);
+        public static readonly StyledProperty<double> CustomTitleBarHeightProperty =
+            AvaloniaProperty.Register<Window, double>(nameof(CustomTitleBarHeight), 22.0);
 
-        public double NonClientAreaHeight
+        public double CustomTitleBarHeight
         {
-            get => GetValue(NonClientAreaHeightProperty);
-            set => SetValue(NonClientAreaHeightProperty, value);
+            get => GetValue(CustomTitleBarHeightProperty);
+            set => SetValue(CustomTitleBarHeightProperty, value);
         }
 
-        public static readonly StyledProperty<bool> ShowNonClientAreaProperty =
-            AvaloniaProperty.Register<Window, bool>(nameof(ShowNonClientArea), true);
+        public static readonly StyledProperty<bool> ShowCustomTitleBarProperty =
+            AvaloniaProperty.Register<Window, bool>(nameof(ShowCustomTitleBar), true);
 
-        public bool ShowNonClientArea
+        public bool ShowCustomTitleBar
         {
-            get => GetValue(ShowNonClientAreaProperty);
-            set => SetValue(ShowNonClientAreaProperty, value);
+            get => GetValue(ShowCustomTitleBarProperty);
+            set => SetValue(ShowCustomTitleBarProperty, value);
         }
 
         public static readonly StyledProperty<bool> ShowTitleProperty =
@@ -178,13 +181,12 @@ namespace HandyControl.Controls
 
         public Window()
         {
-            WindowDecorations = WindowDecorations.None;
         }
 
         static Window()
         {
             IsFullScreenProperty.Changed.AddClassHandler<Window>(OnIsFullScreenChanged);
-            ShowNonClientAreaProperty.Changed.AddClassHandler<Window>(OnShowNonClientAreaChanged);
+            ShowCustomTitleBarProperty.Changed.AddClassHandler<Window>(OnShowCustomTitleBarChanged);
             WindowStateProperty.Changed.AddClassHandler<Window>(OnWindowStateChanged);
         }
 
@@ -194,18 +196,7 @@ namespace HandyControl.Controls
         {
             base.OnApplyTemplate(e);
 
-            if (_nonClientArea != null)
-            {
-                _nonClientArea.PointerPressed -= NonClientArea_OnPointerPressed;
-                _nonClientArea.DoubleTapped -= NonClientArea_OnDoubleTapped;
-            }
-
-            _nonClientArea = e.NameScope.Find<Control>(ElementNonClientArea);
-            if (_nonClientArea != null)
-            {
-                _nonClientArea.PointerPressed += NonClientArea_OnPointerPressed;
-                _nonClientArea.DoubleTapped += NonClientArea_OnDoubleTapped;
-            }
+            _customTitleBar = e.NameScope.Find<Control>(ElementCustomTitleBar);
 
             if (_buttonMin != null) _buttonMin.Click -= ButtonMin_OnClick;
             if (_buttonMax != null) _buttonMax.Click -= ButtonMax_OnClick;
@@ -224,28 +215,10 @@ namespace HandyControl.Controls
 
             UpdateChromeButtons();
 
-            _tempNonClientAreaHeight = NonClientAreaHeight;
+            _tempCustomTitleBarHeight = CustomTitleBarHeight;
 
             SwitchIsFullScreen(IsFullScreen);
-            SwitchShowNonClientArea(ShowNonClientArea);
-        }
-
-        private void NonClientArea_OnPointerPressed(object? sender, PointerPressedEventArgs e)
-        {
-            if (e.GetCurrentPoint(_nonClientArea).Properties.IsLeftButtonPressed && e.Source is not Button)
-            {
-                BeginMoveDrag(e);
-            }
-        }
-
-        private void NonClientArea_OnDoubleTapped(object? sender, TappedEventArgs e)
-        {
-            if (e.Source is Button) return;
-
-            if (CanResize)
-            {
-                WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-            }
+            SwitchShowCustomTitleBar(ShowCustomTitleBar);
         }
 
         private void ButtonMin_OnClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
@@ -278,19 +251,19 @@ namespace HandyControl.Controls
             {
                 w._actualBorderThickness = w.BorderThickness;
                 w.BorderThickness = new Thickness();
-                w._tempNonClientAreaHeight = w.NonClientAreaHeight;
-                w.NonClientAreaHeight += 8;
+                w._tempCustomTitleBarHeight = w.CustomTitleBarHeight;
+                w.CustomTitleBarHeight += 8;
             }
             else if (newState != WindowState.Maximized && oldState == WindowState.Maximized)
             {
                 w.BorderThickness = w._actualBorderThickness;
-                w.NonClientAreaHeight = w._tempNonClientAreaHeight;
+                w.CustomTitleBarHeight = w._tempCustomTitleBarHeight;
             }
         }
 
-        private static void OnShowNonClientAreaChanged(Window w, AvaloniaPropertyChangedEventArgs e)
+        private static void OnShowCustomTitleBarChanged(Window w, AvaloniaPropertyChangedEventArgs e)
         {
-            w.SwitchShowNonClientArea((bool)(e.NewValue ?? false));
+            w.SwitchShowCustomTitleBar((bool)(e.NewValue ?? false));
         }
 
         private static void OnIsFullScreenChanged(Window w, AvaloniaPropertyChangedEventArgs e)
@@ -298,10 +271,10 @@ namespace HandyControl.Controls
             w.SwitchIsFullScreen((bool)(e.NewValue ?? false));
         }
 
-        private void SwitchShowNonClientArea(bool showNonClientArea)
+        private void SwitchShowCustomTitleBar(bool showCustomTitleBar)
         {
-            _showNonClientArea = showNonClientArea;
-            SetNonClientAreaVisible(showNonClientArea && !_isFullScreen);
+            _showCustomTitleBar = showCustomTitleBar;
+            SetCustomTitleBarVisible(showCustomTitleBar && !_isFullScreen);
         }
 
         private void SwitchIsFullScreen(bool isFullScreen)
@@ -311,27 +284,27 @@ namespace HandyControl.Controls
 
             if (isFullScreen)
             {
-                _tempNonClientAreaHeight = NonClientAreaHeight;
-                if (_nonClientArea != null) _nonClientArea.IsVisible = false;
-                NonClientAreaHeight = 0;
+                _tempCustomTitleBarHeight = CustomTitleBarHeight;
+                if (_customTitleBar != null) _customTitleBar.IsVisible = false;
+                CustomTitleBarHeight = 0;
 
                 _tempWindowState = WindowState;
                 WindowState = WindowState.FullScreen;
             }
             else
             {
-                SetNonClientAreaVisible(ShowNonClientArea);
-                NonClientAreaHeight = _tempNonClientAreaHeight;
+                SetCustomTitleBarVisible(ShowCustomTitleBar);
+                CustomTitleBarHeight = _tempCustomTitleBarHeight;
 
                 WindowState = _tempWindowState;
             }
         }
 
-        private void SetNonClientAreaVisible(bool visible)
+        private void SetCustomTitleBarVisible(bool visible)
         {
-            if (_nonClientArea != null) _nonClientArea.IsVisible = visible;
-            _tempNonClientAreaHeight = NonClientAreaHeight;
-            NonClientAreaHeight = visible ? _tempNonClientAreaHeight : 0;
+            if (_customTitleBar != null) _customTitleBar.IsVisible = visible;
+            _tempCustomTitleBarHeight = CustomTitleBarHeight;
+            CustomTitleBarHeight = visible ? _tempCustomTitleBarHeight : 0;
         }
 
         #endregion

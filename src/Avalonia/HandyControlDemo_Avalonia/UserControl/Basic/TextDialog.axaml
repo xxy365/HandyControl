@@ -1,6 +1,7 @@
 <Border x:Class="HandyControlDemo.UserControl.TextDialog"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         CornerRadius="10"
         Width="400"
@@ -10,7 +11,7 @@
         <TextBlock Theme="{StaticResource TextBlockLargeBold}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Text="Please wait..." />
+                   Text="{Binding PleaseWait, Source={x:Static langs:LangProvider.Instance}}" />
         <Button x:Name="CloseButton"
                 Width="22"
                 Height="22"

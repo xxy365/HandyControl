@@ -7,39 +7,39 @@
     <TransitioningContentControl>
         <StackPanel Margin="24,32" Spacing="16" MaxWidth="640" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Spacing="8">
-                <Button x:Name="btnTopLeft" Content="TopLeft" MinWidth="130" Height="40"/>
+                <Button x:Name="btnTopLeft" Content="{Binding TopLeft, Source={x:Static langs:LangProvider.Instance}}" MinWidth="130" Height="40"/>
                 <Button x:Name="btnTop" Content="Top" MinWidth="130" Height="40"/>
-                <Button x:Name="btnTopRight" Content="TopRight" MinWidth="130" Height="40"/>
-                <hc:Poptip Target="{Binding #btnTopLeft}" PlacementType="TopLeft" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnTop}" PlacementType="Top" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnTopRight}" PlacementType="TopRight" Content="{x:Static langs:Lang.Text}"/>
+                <Button x:Name="btnTopRight" Content="{Binding TopRight, Source={x:Static langs:LangProvider.Instance}}" MinWidth="130" Height="40"/>
+                <hc:Poptip Target="{Binding #btnTopLeft}" PlacementType="TopLeft" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnTop}" PlacementType="Top" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnTopRight}" PlacementType="TopRight" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
                 <ToggleButton x:Name="btnRightTop" Content="RightTop" MinWidth="130" Height="40"/>
                 <ToggleButton x:Name="btnRight" Content="Right" MinWidth="130" Height="40"/>
                 <ToggleButton x:Name="btnRightBottom" Content="RightBottom" MinWidth="130" Height="40"/>
-                <hc:Poptip Target="{Binding #btnRightTop}" PlacementType="RightTop" HitMode="None" IsOpen="{Binding IsChecked, ElementName=btnRightTop}" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnRight}" PlacementType="Right" HitMode="None" IsOpen="{Binding IsChecked, ElementName=btnRight}" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnRightBottom}" PlacementType="RightBottom" HitMode="None" IsOpen="{Binding IsChecked, ElementName=btnRightBottom}" Content="{x:Static langs:Lang.Text}"/>
+                <hc:Poptip Target="{Binding #btnRightTop}" PlacementType="RightTop" HitMode="None" IsOpen="{Binding IsChecked, ElementName=btnRightTop}" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnRight}" PlacementType="Right" HitMode="None" IsOpen="{Binding IsChecked, ElementName=btnRight}" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnRightBottom}" PlacementType="RightBottom" HitMode="None" IsOpen="{Binding IsChecked, ElementName=btnRightBottom}" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Spacing="8">
-                <Button x:Name="btnBottomLeft" Content="BottomLeft" MinWidth="130" Height="40"/>
+                <Button x:Name="btnBottomLeft" Content="{Binding BottomLeft, Source={x:Static langs:LangProvider.Instance}}" MinWidth="130" Height="40"/>
                 <Button x:Name="btnBottom" Content="Bottom" MinWidth="130" Height="40"/>
-                <Button x:Name="btnBottomRight" Content="BottomRight" MinWidth="130" Height="40"/>
-                <hc:Poptip Target="{Binding #btnBottomLeft}" PlacementType="BottomLeft" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnBottom}" PlacementType="Bottom" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnBottomRight}" PlacementType="BottomRight" Content="{x:Static langs:Lang.Text}"/>
+                <Button x:Name="btnBottomRight" Content="{Binding BottomRight, Source={x:Static langs:LangProvider.Instance}}" MinWidth="130" Height="40"/>
+                <hc:Poptip Target="{Binding #btnBottomLeft}" PlacementType="BottomLeft" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnBottom}" PlacementType="Bottom" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnBottomRight}" PlacementType="BottomRight" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Spacing="8">
                 <Button x:Name="btnLeftTop" Content="LeftTop" MinWidth="130" Height="40"/>
                 <Button x:Name="btnLeft" Content="Left" MinWidth="130" Height="40"/>
                 <Button x:Name="btnLeftBottom" Content="LeftBottom" MinWidth="130" Height="40"/>
-                <hc:Poptip Target="{Binding #btnLeftTop}" PlacementType="LeftTop" HitMode="Focus" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnLeft}" PlacementType="Left" HitMode="Focus" Content="{x:Static langs:Lang.Text}"/>
-                <hc:Poptip Target="{Binding #btnLeftBottom}" PlacementType="LeftBottom" HitMode="Focus" Content="{x:Static langs:Lang.Text}"/>
+                <hc:Poptip Target="{Binding #btnLeftTop}" PlacementType="LeftTop" HitMode="Focus" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnLeft}" PlacementType="Left" HitMode="Focus" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
+                <hc:Poptip Target="{Binding #btnLeftBottom}" PlacementType="LeftBottom" HitMode="Focus" Content="{Binding Text, Source={x:Static langs:LangProvider.Instance}}"/>
             </StackPanel>
         </StackPanel>
     </TransitioningContentControl>

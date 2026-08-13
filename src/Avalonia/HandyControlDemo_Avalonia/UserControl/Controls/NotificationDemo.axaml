@@ -13,8 +13,8 @@
             <hc:ButtonGroup Margin="0,16,0,0"
                             HorizontalAlignment="Left">
                 <ToggleButton x:Name="StaysOpenToggle"
-                              Content="{x:Static langs:Lang.StaysOpen}" />
-                <Button Content="{x:Static langs:Lang.SendNotification}"
+                              Content="{Binding StaysOpen, Source={x:Static langs:LangProvider.Instance}}" />
+                <Button Content="{Binding SendNotification, Source={x:Static langs:LangProvider.Instance}}"
                         Click="Send_OnClick" />
             </hc:ButtonGroup>
         </StackPanel>

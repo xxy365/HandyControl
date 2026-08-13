@@ -6,7 +6,7 @@
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <StackPanel Margin="32" Spacing="24">
-            <TextBlock Text="{x:Static langs:Lang.CheckComboBox}"
+            <TextBlock Text="{Binding CheckComboBox, Source={x:Static langs:LangProvider.Instance}}"
                        FontSize="24"
                        HorizontalAlignment="Center" />
             <hc:CheckComboBox x:Name="CbBasic"
@@ -30,9 +30,9 @@
                               ShowSelectAllButton="True"
                               Theme="{StaticResource CheckComboBox.Small}" />
             <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
-                <Button Content="Select All"
+                <Button Content="{Binding SelectAll, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonSelectAll_OnClick" />
-                <Button Content="Clear"
+                <Button Content="{Binding Clear, Source={x:Static langs:LangProvider.Instance}}"
                         Click="ButtonClear_OnClick" />
             </StackPanel>
         </StackPanel>

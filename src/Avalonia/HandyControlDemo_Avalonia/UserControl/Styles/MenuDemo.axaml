@@ -1,5 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.MenuDemo">
     <hc:UniformSpacingPanel Spacing="16"
@@ -23,9 +24,9 @@
             <TextBlock Foreground="{DynamicResource BorderBrush}"
                        Theme="{StaticResource TextBlockTitle}"
                        TextAlignment="Center">
-                <Run Text="Right click here" />
+                <Run Text="{Binding RightClickHere, Source={x:Static langs:LangProvider.Instance}}" />
                 <LineBreak />
-                <Run Text="Default" />
+                <Run Text="{Binding Default, Source={x:Static langs:LangProvider.Instance}}" />
             </TextBlock>
         </hc:DashedBorder>
         <hc:DashedBorder Width="200"
@@ -48,9 +49,9 @@
             <TextBlock Foreground="{DynamicResource BorderBrush}"
                        Theme="{StaticResource TextBlockTitle}"
                        TextAlignment="Center">
-                <Run Text="Right click here" />
+                <Run Text="{Binding RightClickHere, Source={x:Static langs:LangProvider.Instance}}" />
                 <LineBreak />
-                <Run Text="Small" />
+                <Run Text="{Binding Small, Source={x:Static langs:LangProvider.Instance}}" />
             </TextBlock>
         </hc:DashedBorder>
     </hc:UniformSpacingPanel>

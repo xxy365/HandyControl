@@ -12,11 +12,11 @@
             <ControlTheme x:Key="MessageBoxCustom"
                           TargetType="hc:MessageBox"
                           BasedOn="{StaticResource {x:Type hc:MessageBox}}">
-                <Setter Property="NonClientAreaBackground" Value="#262e2f" />
+                <Setter Property="CustomTitleBarBackground" Value="#262e2f" />
                 <Setter Property="OtherButtonHoverBackground" Value="#888580" />
                 <Setter Property="OtherButtonForeground" Value="White" />
                 <Setter Property="OtherButtonHoverForeground" Value="White" />
-                <Setter Property="NonClientAreaForeground" Value="White" />
+                <Setter Property="CustomTitleBarForeground" Value="White" />
                 <Setter Property="CloseButtonForeground" Value="White" />
             </ControlTheme>
         </ResourceDictionary>

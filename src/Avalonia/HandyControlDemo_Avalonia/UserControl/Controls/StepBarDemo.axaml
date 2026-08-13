@@ -12,10 +12,10 @@
                 <hc:StepBar Grid.ColumnSpan="2"
                             x:Name="StepBarTop"
                             StepIndex="1">
-                    <hc:StepBarItem Content="{x:Static langs:Lang.Register}" />
-                    <hc:StepBarItem Content="{x:Static langs:Lang.BasicInfo}" />
-                    <hc:StepBarItem Content="{x:Static langs:Lang.UploadFile}" />
-                    <hc:StepBarItem Content="{x:Static langs:Lang.Complete}" />
+                    <hc:StepBarItem Content="{Binding Register, Source={x:Static langs:LangProvider.Instance}}" />
+                    <hc:StepBarItem Content="{Binding BasicInfo, Source={x:Static langs:LangProvider.Instance}}" />
+                    <hc:StepBarItem Content="{Binding UploadFile, Source={x:Static langs:LangProvider.Instance}}" />
+                    <hc:StepBarItem Content="{Binding Complete, Source={x:Static langs:LangProvider.Instance}}" />
                 </hc:StepBar>
 
                 <StackPanel Grid.Row="1"
@@ -24,12 +24,12 @@
                             HorizontalAlignment="Center"
                             Orientation="Horizontal">
                     <Button Width="180"
-                            Content="{x:Static langs:Lang.Prev}"
+                            Content="{Binding Prev, Source={x:Static langs:LangProvider.Instance}}"
                             Theme="{StaticResource ButtonPrimary}"
                             Click="Prev_OnClick" />
                     <Button Width="180"
                             Margin="16,0,0,0"
-                            Content="{x:Static langs:Lang.Next}"
+                            Content="{Binding Next, Source={x:Static langs:LangProvider.Instance}}"
                             Theme="{StaticResource ButtonPrimary}"
                             Click="Next_OnClick" />
                 </StackPanel>
@@ -39,10 +39,10 @@
                             Margin="0,0,0,32"
                             Dock="Bottom"
                             IsMouseSelectable="True">
-                    <hc:StepBarItem Content="{x:Static langs:Lang.Register}" />
-                    <hc:StepBarItem Content="{x:Static langs:Lang.BasicInfo}" />
-                    <hc:StepBarItem Content="{x:Static langs:Lang.UploadFile}" />
-                    <hc:StepBarItem Content="{x:Static langs:Lang.Complete}" />
+                    <hc:StepBarItem Content="{Binding Register, Source={x:Static langs:LangProvider.Instance}}" />
+                    <hc:StepBarItem Content="{Binding BasicInfo, Source={x:Static langs:LangProvider.Instance}}" />
+                    <hc:StepBarItem Content="{Binding UploadFile, Source={x:Static langs:LangProvider.Instance}}" />
+                    <hc:StepBarItem Content="{Binding Complete, Source={x:Static langs:LangProvider.Instance}}" />
                 </hc:StepBar>
 
                 <hc:StepBar Grid.Row="3"

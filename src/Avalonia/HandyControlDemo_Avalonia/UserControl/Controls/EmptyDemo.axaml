@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:langs="clr-namespace:HandyControl.Properties.Langs;assembly=HandyControl"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.EmptyDemo"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
@@ -11,12 +11,12 @@
                                     Orientation="Vertical">
                 <hc:Empty Width="400"
                           HorizontalAlignment="Left"
-                          Description="No messages yet"
+                          Description="{Binding NoMessagesYet, Source={x:Static langs:LangProvider.Instance}}"
                           Padding="32" />
                 <hc:Empty Width="400"
                           HorizontalAlignment="Left"
-                          Description="{x:Static langs:Lang.NoData}">
-                    <Button Content="Retry"
+                          Description="{Binding NoData, Source={x:Static langs:LangProvider.Instance}}">
+                    <Button Content="{Binding Retry, Source={x:Static langs:LangProvider.Instance}}"
                             Padding="14,6" />
                 </hc:Empty>
             </hc:UniformSpacingPanel>

@@ -5,22 +5,19 @@
              BorderBrush="{DynamicResource BorderBrush}"
              Background="{StaticResource CloudDrawingBrush}"
              x:Class="HandyControlDemo.UserControl.MainWindowContent">
-    <Grid RowDefinitions="Auto,*">
-        <controls:NonClientAreaContent Grid.Row="0" />
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="240"
-                                  MinWidth="240"
-                                  MaxWidth="400" />
-                <ColumnDefinition MinWidth="200" />
-            </Grid.ColumnDefinitions>
-            <controls:MainContent Grid.Column="1" />
-            <controls:LeftMainContent Grid.Column="0" />
-            <GridSplitter Margin="0,26,0,26"
-                          Grid.Column="0"
-                          HorizontalAlignment="Right"
-                          Width="4"
-                          Background="Transparent" />
-        </Grid>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"
+                              MinWidth="240"
+                              MaxWidth="400" />
+            <ColumnDefinition MinWidth="200" />
+        </Grid.ColumnDefinitions>
+        <controls:MainContent Grid.Column="1" />
+        <controls:LeftMainContent Grid.Column="0" />
+        <GridSplitter Margin="0,26,0,26"
+                      Grid.Column="0"
+                      HorizontalAlignment="Right"
+                      Width="4"
+                      Background="Transparent" />
     </Grid>
 </UserControl>

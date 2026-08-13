@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.TransitioningContentControlDemo"
              Background="{DynamicResource RegionBrush}"
@@ -20,22 +21,22 @@
             <hc:UniformSpacingPanel MaxWidth="720" Margin="32" Spacing="32" ChildWrapping="Wrap">
                 <TransitioningContentControl x:Name="Tcc1" PageTransition="{StaticResource CrossFadeTransition}">
                     <Border Background="{DynamicResource PrimaryBrush}" Width="160" Height="80">
-                        <TextBlock Text="First" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding First, Source={x:Static langs:LangProvider.Instance}}" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </TransitioningContentControl>
                 <TransitioningContentControl PageTransition="{StaticResource SlideHorizontal}">
                     <Border Background="{DynamicResource SuccessBrush}" Width="160" Height="80">
-                        <TextBlock Text="Slide Horizontal" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding SlideHorizontal, Source={x:Static langs:LangProvider.Instance}}" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </TransitioningContentControl>
                 <TransitioningContentControl PageTransition="{StaticResource SlideVertical}">
                     <Border Background="{DynamicResource DangerBrush}" Width="160" Height="80">
-                        <TextBlock Text="Slide Vertical" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding SlideVertical, Source={x:Static langs:LangProvider.Instance}}" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </TransitioningContentControl>
                 <TransitioningContentControl PageTransition="{StaticResource CrossFadeTransition}">
                     <Border Background="{DynamicResource WarningBrush}" Width="160" Height="80">
-                        <TextBlock Text="Cross Fade" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding CrossFade, Source={x:Static langs:LangProvider.Instance}}" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </TransitioningContentControl>
             </hc:UniformSpacingPanel>

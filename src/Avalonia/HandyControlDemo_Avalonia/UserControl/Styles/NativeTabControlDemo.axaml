@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.NativeTabControlDemo"
              xmlns:hc="https://handyorg.github.io/handycontrol">
     <ScrollViewer>
@@ -14,7 +15,7 @@
                 <TabItem Header="Title1">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="1" />
                         </TextBlock>
                     </Border>
@@ -22,7 +23,7 @@
                 <TabItem Header="Title22">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="2" />
                         </TextBlock>
                     </Border>
@@ -30,7 +31,7 @@
                 <TabItem Header="Title333">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="3" />
                         </TextBlock>
                     </Border>
@@ -38,7 +39,7 @@
                 <TabItem Header="Title4444">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="4" />
                         </TextBlock>
                     </Border>
@@ -46,7 +47,7 @@
                 <TabItem Header="Title55555">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="5" />
                         </TextBlock>
                     </Border>
@@ -57,7 +58,7 @@
                 <TabItem Header="Title1">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="1" />
                         </TextBlock>
                     </Border>
@@ -66,7 +67,7 @@
                          IsEnabled="False">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="2" />
                         </TextBlock>
                     </Border>
@@ -74,7 +75,7 @@
                 <TabItem Header="Title333">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="3" />
                         </TextBlock>
                     </Border>
@@ -82,7 +83,7 @@
                 <TabItem Header="Title4444">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="4" />
                         </TextBlock>
                     </Border>
@@ -90,7 +91,7 @@
                 <TabItem Header="Title55555">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="5" />
                         </TextBlock>
                     </Border>
@@ -100,7 +101,7 @@
                 <TabItem Header="Title1">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="1" />
                         </TextBlock>
                     </Border>
@@ -109,7 +110,7 @@
                          IsEnabled="False">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="2" />
                         </TextBlock>
                     </Border>
@@ -117,7 +118,7 @@
                 <TabItem Header="Title3">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="3" />
                         </TextBlock>
                     </Border>
@@ -125,7 +126,7 @@
                 <TabItem Header="Title4">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="4" />
                         </TextBlock>
                     </Border>
@@ -133,7 +134,7 @@
                 <TabItem Header="Title5">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="5" />
                         </TextBlock>
                     </Border>
@@ -143,7 +144,7 @@
                 <TabItem Header="Title1">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="1" />
                         </TextBlock>
                     </Border>
@@ -151,7 +152,7 @@
                 <TabItem Header="Title2">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="2" />
                         </TextBlock>
                     </Border>
@@ -159,7 +160,7 @@
                 <TabItem Header="Title3">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="3" />
                         </TextBlock>
                     </Border>
@@ -167,7 +168,7 @@
                 <TabItem Header="Title4">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="4" />
                         </TextBlock>
                     </Border>
@@ -176,7 +177,7 @@
                          IsSelected="True">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="5" />
                         </TextBlock>
                     </Border>
@@ -187,7 +188,7 @@
                 <TabItem Header="Title1">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="1" />
                         </TextBlock>
                     </Border>
@@ -196,7 +197,7 @@
                          Header="Title2">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="2" />
                         </TextBlock>
                     </Border>
@@ -204,7 +205,7 @@
                 <TabItem Header="Title3">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="3" />
                         </TextBlock>
                     </Border>
@@ -212,7 +213,7 @@
                 <TabItem Header="Title4">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="4" />
                         </TextBlock>
                     </Border>
@@ -220,7 +221,7 @@
                 <TabItem Header="Title5">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="5" />
                         </TextBlock>
                     </Border>
@@ -231,7 +232,7 @@
                 <TabItem Header="Title1">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="1" />
                         </TextBlock>
                     </Border>
@@ -240,7 +241,7 @@
                          Header="Title2">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="2" />
                         </TextBlock>
                     </Border>
@@ -248,7 +249,7 @@
                 <TabItem Header="Title3">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="3" />
                         </TextBlock>
                     </Border>
@@ -257,7 +258,7 @@
                          Header="Title4">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="4" />
                         </TextBlock>
                     </Border>
@@ -265,7 +266,7 @@
                 <TabItem Header="Title5">
                     <Border>
                         <TextBlock Theme="{StaticResource TextBlockLargeBold}">
-                            <Run Text="Text" />
+                            <Run Text="{Binding Text, Source={x:Static langs:LangProvider.Instance}}" />
                             <Run Text="5" />
                         </TextBlock>
                     </Border>

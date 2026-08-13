@@ -12,22 +12,22 @@
                                     VerticalAlignment="Center"
                                     MaxWidth="520">
                 <Button Click="ButtonCommonWindow_OnClick"
-                        Content="{x:Static langs:Lang.OpenCommonWindow}" />
+                        Content="{Binding OpenCommonWindow, Source={x:Static langs:LangProvider.Instance}}" />
                 <Button Click="ButtonBlurWindow_OnClick"
-                        Content="{x:Static langs:Lang.OpenBlurWindow}" />
-                <Button Click="ButtonCustomNonClientArea_OnClick"
-                        Content="{x:Static langs:Lang.OpenCustomNonClientAreaWindow}" />
+                        Content="{Binding OpenBlurWindow, Source={x:Static langs:LangProvider.Instance}}" />
+                <Button Click="ButtonCustomTitleBar_OnClick"
+                        Content="{Binding OpenCustomTitleBarWindow, Source={x:Static langs:LangProvider.Instance}}" />
                 <Button Click="ButtonMessage_OnClick"
-                        Content="{x:Static langs:Lang.OpenMessageWindow}" />
+                        Content="{Binding OpenMessageWindow, Source={x:Static langs:LangProvider.Instance}}" />
                 <Button Click="ButtonCustomMessage_OnClick"
-                        Content="{x:Static langs:Lang.OpenCustomMessageWindow}" />
+                        Content="{Binding OpenCustomMessageWindow, Source={x:Static langs:LangProvider.Instance}}" />
                 <Button Click="ButtonCustomContent_OnClick"
-                        Content="{x:Static langs:Lang.OpenCustomContentWindow}" />
+                        Content="{Binding OpenCustomContentWindow, Source={x:Static langs:LangProvider.Instance}}" />
                 <Button x:Name="ButtonMouseFollow"
                         Click="ButtonMouseFollow_OnClick"
-                        Content="{x:Static langs:Lang.OpenMouseFollowWindow}" />
-                <Button Click="ButtonNoNonClientArea_OnClick"
-                        Content="{x:Static langs:Lang.OpenNoNonClientAreaDragableWindow}" />
+                        Content="{Binding OpenMouseFollowWindow, Source={x:Static langs:LangProvider.Instance}}" />
+                <Button Click="ButtonNoCustomTitleBar_OnClick"
+                        Content="{Binding OpenNoCustomTitleBarDragableWindow, Source={x:Static langs:LangProvider.Instance}}" />
             </hc:UniformSpacingPanel>
         </ScrollViewer>
     </TransitioningContentControl>
