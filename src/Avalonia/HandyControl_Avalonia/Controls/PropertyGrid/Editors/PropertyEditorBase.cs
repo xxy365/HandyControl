@@ -10,7 +10,7 @@ public abstract class PropertyEditorBase
     public abstract Control CreateElement(PropertyItem propertyItem);
 
     public virtual void CreateBinding(PropertyItem propertyItem, Control element) =>
-        element.Bind(GetDependencyProperty(),
+        element.Bind(GetAvaloniaProperty(),
             new Binding(propertyItem.PropertyName ?? string.Empty)
             {
                 Source = propertyItem.Value,
@@ -19,7 +19,7 @@ public abstract class PropertyEditorBase
                 Converter = GetConverter(propertyItem)
             });
 
-    public abstract AvaloniaProperty GetDependencyProperty();
+    public abstract AvaloniaProperty GetAvaloniaProperty();
 
     public virtual BindingMode GetBindingMode(PropertyItem propertyItem) =>
         propertyItem.IsReadOnly ? BindingMode.OneWay : BindingMode.TwoWay;

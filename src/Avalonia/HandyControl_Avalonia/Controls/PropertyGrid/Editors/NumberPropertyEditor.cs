@@ -32,7 +32,7 @@ public class NumberPropertyEditor : PropertyEditorBase
         return numericUpDown;
     }
 
-    public override AvaloniaProperty GetDependencyProperty() => NumericUpDown.ValueProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => NumericUpDown.ValueProperty;
 
     private static decimal ToDecimal(double value)
     {

@@ -15,5 +15,5 @@ public class VerticalAlignmentPropertyEditor : PropertyEditorBase
         HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => SelectingItemsControl.SelectedValueProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => SelectingItemsControl.SelectedValueProperty;
 }

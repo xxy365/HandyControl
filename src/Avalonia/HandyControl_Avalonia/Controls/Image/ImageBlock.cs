@@ -3,7 +3,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using Avalonia.Threading;
 
 namespace HandyControl.Controls;
 
@@ -14,8 +13,8 @@ namespace HandyControl.Controls;
 /// </summary>
 public class ImageBlock : Control
 {
-    private readonly DispatcherTimer _dispatcherTimer;
     private IImage? _source;
+    private bool _renderingHooked;
     private int _indexMax;
     private int _indexMin;
     private int _currentIndex;
@@ -24,23 +23,10 @@ public class ImageBlock : Control
     private bool _isDisposed;
     private int _columns = 1;
 
-    public ImageBlock()
-    {
-        _dispatcherTimer = new DispatcherTimer
-        {
-            Interval = Interval
-        };
-        _dispatcherTimer.Tick += DispatcherTimer_Tick;
-    }
-
     ~ImageBlock() => Dispose();
 
     public void Dispose()
     {
-        if (_isDisposed) return;
-
-        _dispatcherTimer.Tick -= DispatcherTimer_Tick;
-        _dispatcherTimer.Stop();
         _isDisposed = true;
 
         GC.SuppressFinalize(this);
@@ -60,8 +46,6 @@ public class ImageBlock : Control
             _blockHeight = bitmap.PixelSize.Height / Rows;
         }
     }
-
-    private void DispatcherTimer_Tick(object? sender, EventArgs e) => InvalidateVisual();
 
     // ── Dependency Properties ──
 
@@ -191,29 +175,71 @@ public class ImageBlock : Control
     {
         if (e.GetNewValue<bool>() && IsVisible)
         {
-            _dispatcherTimer.Start();
+            StartRendering();
         }
         else
         {
-            _dispatcherTimer.Stop();
+            StopRendering();
         }
     }
 
     private void OnIntervalChanged(AvaloniaPropertyChangedEventArgs e)
     {
-        _dispatcherTimer.Interval = e.GetNewValue<TimeSpan>();
+        // Interval is honored on the next rendered frame boundary; no extra work needed.
     }
 
     private void OnIsVisibleChanged(AvaloniaPropertyChangedEventArgs e)
     {
         if (IsVisible && IsPlaying)
         {
-            _dispatcherTimer.Start();
+            StartRendering();
         }
         else
         {
-            _dispatcherTimer.Stop();
+            StopRendering();
         }
+    }
+
+    private void StartRendering()
+    {
+        if (_renderingHooked || !IsVisible)
+        {
+            return;
+        }
+
+        var topLevel = TopLevel.GetTopLevel(this);
+        if (topLevel is null)
+        {
+            return;
+        }
+
+        _renderingHooked = true;
+        topLevel.RequestAnimationFrame(OnRenderingFrame);
+    }
+
+    private void StopRendering()
+    {
+        _renderingHooked = false;
+    }
+
+    private void OnRenderingFrame(TimeSpan time)
+    {
+        if (_isDisposed || !IsVisible || !IsPlaying)
+        {
+            _renderingHooked = false;
+            return;
+        }
+
+        InvalidateVisual();
+
+        var topLevel = TopLevel.GetTopLevel(this);
+        if (topLevel is null)
+        {
+            _renderingHooked = false;
+            return;
+        }
+
+        topLevel.RequestAnimationFrame(OnRenderingFrame);
     }
 
     // ── Render ──

@@ -26,7 +26,10 @@
                         TickFrequency="5"
                         Maximum="100"
                         TickPlacement="TopLeft"
-                        Value="10" />
+                        Value="10"
+                        hc:SliderElement.IsSelectionRangeEnabled="True"
+                        hc:SliderElement.SelectionStart="10"
+                        hc:SliderElement.SelectionEnd="80" />
                 <Slider Width="400"
                         hc:TipElement.IsVisible="True"
                         hc:TipElement.Placement="Top"
@@ -64,6 +67,9 @@
                         Maximum="100"
                         TickPlacement="TopLeft"
                         Value="10"
+                        hc:SliderElement.IsSelectionRangeEnabled="True"
+                        hc:SliderElement.SelectionStart="20"
+                        hc:SliderElement.SelectionEnd="80"
                         Orientation="Vertical" />
                 <Slider Height="400"
                         hc:TipElement.IsVisible="True"

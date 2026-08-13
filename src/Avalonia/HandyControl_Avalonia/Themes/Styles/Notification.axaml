@@ -1,6 +1,6 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl" x:ClassModifier="internal">
 
     <ControlTheme x:Key="{x:Type hc:Notification}"
                   TargetType="hc:Notification">

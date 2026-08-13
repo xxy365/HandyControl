@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Threading;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -150,6 +151,50 @@ namespace HandyControl.Controls
                 info.DefaultResult, info.IconKey, info.Icon, info.IconBrushKey, info.IconBrush, info.StyleKey, info.Style);
         }
 
+        public static Task<MessageBoxResult> SuccessAsync(string messageBoxText, string? caption = null) =>
+            ShowCoreAsync(null, messageBoxText, caption, MessageBoxButton.OK, MessageBoxImage.None, MessageBoxResult.OK,
+                iconKey: ResourceToken.SuccessGeometry, iconBrushKey: ResourceToken.SuccessBrush);
+
+        public static Task<MessageBoxResult> InfoAsync(string messageBoxText, string? caption = null) =>
+            ShowCoreAsync(null, messageBoxText, caption, MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK,
+                iconKey: ResourceToken.InfoGeometry, iconBrushKey: ResourceToken.InfoBrush);
+
+        public static Task<MessageBoxResult> WarningAsync(string messageBoxText, string? caption = null) =>
+            ShowCoreAsync(null, messageBoxText, caption, MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK,
+                iconKey: ResourceToken.WarningGeometry, iconBrushKey: ResourceToken.WarningBrush);
+
+        public static Task<MessageBoxResult> ErrorAsync(string messageBoxText, string? caption = null) =>
+            ShowCoreAsync(null, messageBoxText, caption, MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK,
+                iconKey: ResourceToken.ErrorGeometry, iconBrushKey: ResourceToken.DangerBrush);
+
+        public static Task<MessageBoxResult> FatalAsync(string messageBoxText, string? caption = null) =>
+            ShowCoreAsync(null, messageBoxText, caption, MessageBoxButton.OK, MessageBoxImage.None, MessageBoxResult.OK,
+                iconKey: ResourceToken.FatalGeometry, iconBrushKey: ResourceToken.PrimaryTextBrush);
+
+        public static Task<MessageBoxResult> AskAsync(string messageBoxText, string? caption = null) =>
+            ShowCoreAsync(null, messageBoxText, caption, MessageBoxButton.OKCancel, MessageBoxImage.Question, MessageBoxResult.Cancel,
+                iconKey: ResourceToken.AskGeometry, iconBrushKey: ResourceToken.AccentBrush);
+
+        public static Task<MessageBoxResult> ShowAsync(string messageBoxText, string? caption = null,
+            MessageBoxButton button = MessageBoxButton.OK, MessageBoxImage icon = MessageBoxImage.None,
+            MessageBoxResult defaultResult = MessageBoxResult.None)
+        {
+            return ShowCoreAsync(null, messageBoxText, caption, button, icon, defaultResult);
+        }
+
+        public static Task<MessageBoxResult> ShowAsync(Avalonia.Controls.Window? owner, string messageBoxText, string? caption = null,
+            MessageBoxButton button = MessageBoxButton.OK, MessageBoxImage icon = MessageBoxImage.None,
+            MessageBoxResult defaultResult = MessageBoxResult.None)
+        {
+            return ShowCoreAsync(owner, messageBoxText, caption, button, icon, defaultResult);
+        }
+
+        public static Task<MessageBoxResult> ShowAsync(MessageBoxInfo info)
+        {
+            return ShowCoreAsync(info.Owner, info.Message ?? string.Empty, info.Caption, info.Button, MessageBoxImage.None,
+                info.DefaultResult, info.IconKey, info.Icon, info.IconBrushKey, info.IconBrush, info.StyleKey, info.Style);
+        }
+
         private static MessageBoxResult ShowCore(
             Avalonia.Controls.Window? owner,
             string messageBoxText,
@@ -209,6 +254,73 @@ namespace HandyControl.Controls
             });
 
             return messageBox!._messageBoxResult;
+        }
+
+        private static async Task<MessageBoxResult> ShowCoreAsync(
+            Avalonia.Controls.Window? owner,
+            string messageBoxText,
+            string? caption,
+            MessageBoxButton button,
+            MessageBoxImage icon,
+            MessageBoxResult defaultResult,
+            string? iconKey = null,
+            Geometry? iconGeometry = null,
+            string? iconBrushKey = null,
+            IBrush? iconBrush = null,
+            string? styleKey = null,
+            ControlTheme? style = null)
+        {
+            if (!IsValidMessageBoxButton(button))
+            {
+                throw new InvalidEnumArgumentException(nameof(button), (int)button, typeof(MessageBoxButton));
+            }
+
+            if (!IsValidMessageBoxImage(icon))
+            {
+                throw new InvalidEnumArgumentException(nameof(icon), (int)icon, typeof(MessageBoxImage));
+            }
+
+            if (!IsValidMessageBoxResult(defaultResult))
+            {
+                throw new InvalidEnumArgumentException(nameof(defaultResult), (int)defaultResult, typeof(MessageBoxResult));
+            }
+
+            MessageBox? messageBox = null;
+            Avalonia.Controls.Window? ownerWindow = null;
+
+            await Dispatcher.UIThread.InvokeAsync(() =>
+            {
+                ownerWindow = owner ?? WindowHelper.GetActiveWindow();
+                var ownerIsNull = ownerWindow is null;
+
+                messageBox = new MessageBox
+                {
+                    Message = messageBoxText,
+                    Owner = ownerWindow,
+                    WindowStartupLocation = ownerIsNull ? WindowStartupLocation.CenterScreen : WindowStartupLocation.CenterOwner,
+                    ShowTitle = true,
+                    Title = caption ?? string.Empty,
+                    Topmost = ownerIsNull,
+                    _messageBoxResult = defaultResult
+                };
+
+                SetButtonStatus(messageBox, button, defaultResult);
+                SetImage(messageBox, icon, iconKey, iconGeometry, iconBrushKey, iconBrush);
+
+                if (!string.IsNullOrEmpty(styleKey))
+                {
+                    messageBox.Theme = ResourceHelper.GetResource<ControlTheme>(styleKey) ?? style;
+                }
+            });
+
+            if (ownerWindow == null)
+            {
+                messageBox!.Show();
+                return messageBox.MessageBoxResult;
+            }
+
+            await messageBox!.ShowDialog(ownerWindow);
+            return messageBox.MessageBoxResult;
         }
 
         private static void SetButtonStatus(MessageBox messageBox, MessageBoxButton messageBoxButton, MessageBoxResult defaultResult)
@@ -315,7 +427,6 @@ namespace HandyControl.Controls
                 }
             }
         }
-
         private static bool IsValidMessageBoxButton(MessageBoxButton value) =>
             value is MessageBoxButton.OK or MessageBoxButton.OKCancel or MessageBoxButton.YesNo or MessageBoxButton.YesNoCancel;
 

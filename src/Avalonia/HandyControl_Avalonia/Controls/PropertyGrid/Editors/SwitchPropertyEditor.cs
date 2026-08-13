@@ -17,5 +17,5 @@ public class SwitchPropertyEditor : PropertyEditorBase
         IsEnabled = !propertyItem.IsReadOnly
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => ToggleButton.IsCheckedProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => ToggleButton.IsCheckedProperty;
 }

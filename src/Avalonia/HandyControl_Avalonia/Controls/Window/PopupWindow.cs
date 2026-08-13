@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -198,6 +199,31 @@ namespace HandyControl.Controls
             _showBackground = showBackground;
             _targetElement = element;
             ShowDialogCore();
+        }
+
+        public async Task ShowDialogAsync(Control element, bool showBackground = true)
+        {
+            _isDialog = true;
+
+            if (!showBackground)
+            {
+                Opacity = 0;
+                ShowTitle = false;
+                MinWidth = 0;
+                MinHeight = 0;
+            }
+
+            _showBackground = showBackground;
+            _targetElement = element;
+
+            if (Owner is Avalonia.Controls.Window owner)
+            {
+                await base.ShowDialog(owner);
+            }
+            else
+            {
+                Show();
+            }
         }
 
         public void Show(Avalonia.Controls.Window element, Point point)

@@ -44,7 +44,7 @@ public class TimeBar : TemplatedControl
 
     private Point _mousePoint = new(double.NaN, double.NaN);
 
-    private bool _borderTopIsMouseLeftButtonDown;
+    private bool _borderTopIsPointerPressed;
 
     private bool _isDragging;
 
@@ -143,7 +143,7 @@ public class TimeBar : TemplatedControl
             _textBlockSelected.Text = time.ToString(TimeFormat);
         }
 
-        if (!(_isDragging || _borderTopIsMouseLeftButtonDown))
+        if (!(_isDragging || _borderTopIsPointerPressed))
         {
             _totalOffsetX = (_starTime - SelectedTime).TotalMilliseconds / _timeSpeList[_speIndex] * _itemWidth;
         }
@@ -381,7 +381,7 @@ public class TimeBar : TemplatedControl
     protected override void OnPointerWheelChanged(PointerWheelEventArgs e)
     {
         base.OnPointerWheelChanged(e);
-        if (_borderTopIsMouseLeftButtonDown)
+        if (_borderTopIsPointerPressed)
         {
             return;
         }
@@ -405,7 +405,7 @@ public class TimeBar : TemplatedControl
             return;
         }
 
-        _borderTopIsMouseLeftButtonDown = true;
+        _borderTopIsPointerPressed = true;
         _isDragging = false;
         _mouseDownTime = SelectedTime;
         _dragStartX = e.GetPosition(this).X;
@@ -419,7 +419,7 @@ public class TimeBar : TemplatedControl
         var p = e.GetPosition(this);
         _mousePoint = p;
 
-        if (_borderTopIsMouseLeftButtonDown)
+        if (_borderTopIsPointerPressed)
         {
             _isDragging = true;
             var offset = p.X - _dragStartX;
@@ -433,7 +433,7 @@ public class TimeBar : TemplatedControl
 
     private void BorderTop_OnPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (!_borderTopIsMouseLeftButtonDown)
+        if (!_borderTopIsPointerPressed)
         {
             return;
         }
@@ -460,7 +460,7 @@ public class TimeBar : TemplatedControl
             RaiseTimeChanged();
         }
 
-        _borderTopIsMouseLeftButtonDown = false;
+        _borderTopIsPointerPressed = false;
         e.Pointer.Capture(null);
         e.Handled = true;
     }

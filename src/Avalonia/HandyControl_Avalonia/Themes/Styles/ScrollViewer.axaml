@@ -52,7 +52,7 @@
             </ControlTemplate>
         </Setter>
 
-        <Style Selector="^:pointerover /template/ Rectangle">
+        <Style Selector="^:pointerover /template/ Rectangle, ^:pressed /template/ Rectangle">
             <Setter Property="Width"
                     Value="8" />
             <Setter Property="RadiusX"
@@ -99,7 +99,7 @@
             </ControlTemplate>
         </Setter>
 
-        <Style Selector="^:pointerover /template/ Rectangle">
+        <Style Selector="^:pointerover /template/ Rectangle, ^:pressed /template/ Rectangle">
             <Setter Property="Height"
                     Value="8" />
             <Setter Property="RadiusX"
@@ -126,6 +126,8 @@
                 Value="8" />
         <Setter Property="MinWidth"
                 Value="8" />
+        <Setter Property="hc:ScrollBarAttach.KeepVisibleOnDrag"
+                Value="True" />
         <Setter Property="Transitions">
             <Transitions>
                 <DoubleTransition Property="Opacity"

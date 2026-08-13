@@ -3,6 +3,7 @@ using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
 using HandyControl.Data;
 
 namespace HandyControl.Controls;
@@ -18,7 +19,12 @@ public class SideMenu : HeaderedSimpleItemsControl
     public SideMenu()
     {
         AddHandler(SideMenuItem.SelectedEvent, SideMenuItemSelected);
-        Loaded += (s, e) => Init();
+    }
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        Init();
     }
 
     protected override void Refresh()

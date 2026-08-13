@@ -13,5 +13,5 @@ public class EnumPropertyEditor : PropertyEditorBase
         ItemsSource = Enum.GetValues(propertyItem.PropertyType!)
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => SelectingItemsControl.SelectedValueProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => SelectingItemsControl.SelectedValueProperty;
 }

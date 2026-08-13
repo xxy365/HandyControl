@@ -1,9 +1,12 @@
 using System;
 using System.Linq;
+using System.Threading;
 using Avalonia;
+using Avalonia.Animation;
+using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Threading;
+using Avalonia.Styling;
 using Avalonia.VisualTree;
 
 namespace HandyControl.Controls;
@@ -26,8 +29,7 @@ public class GotoTop : Button
         AvaloniaProperty.Register<GotoTop, bool>(nameof(AutoHiding), true);
 
     private ScrollViewer? _scrollViewer;
-    private DispatcherTimer? _animationTimer;
-    private DateTime _animationStartTime;
+    private CancellationTokenSource? _scrollCts;
     private double _animationStartOffset;
 
     static GotoTop()
@@ -39,7 +41,12 @@ public class GotoTop : Button
 
     public GotoTop()
     {
-        Loaded += (_, _) => CreateGotoAction(Target);
+    }
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        CreateGotoAction(Target);
     }
 
     public Control? Target
@@ -81,9 +88,9 @@ public class GotoTop : Button
             _scrollViewer.ScrollChanged -= ScrollViewerOnScrollChanged;
         }
 
-        if (_animationTimer != null)
+        if (_scrollCts != null)
         {
-            _animationTimer.Stop();
+            _scrollCts.Cancel();
         }
     }
 
@@ -161,33 +168,33 @@ public class GotoTop : Button
             return;
         }
 
-        _animationStartTime = DateTime.Now;
+        _scrollCts?.Cancel();
+        _scrollCts = new CancellationTokenSource();
+        var token = _scrollCts.Token;
 
-        _animationTimer ??= new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
-        _animationTimer.Tick -= AnimationTimerOnTick;
-        _animationTimer.Tick += AnimationTimerOnTick;
-        _animationTimer.Start();
-    }
+        var start = _scrollViewer.Offset;
+        var end = new Vector(_scrollViewer.Offset.X, 0d);
 
-    private void AnimationTimerOnTick(object? sender, EventArgs e)
-    {
-        if (_scrollViewer == null)
+        var animation = new Animation
         {
-            _animationTimer?.Stop();
-            return;
-        }
+            Duration = TimeSpan.FromMilliseconds(AnimationTime),
+            Easing = new CubicEaseOut(),
+            FillMode = FillMode.Forward,
+            Children =
+            {
+                new KeyFrame
+                {
+                    Cue = new Cue(0d),
+                    Setters = { new Setter(ScrollViewer.OffsetProperty, start) }
+                },
+                new KeyFrame
+                {
+                    Cue = new Cue(1d),
+                    Setters = { new Setter(ScrollViewer.OffsetProperty, end) }
+                }
+            }
+        };
 
-        var total = Math.Max(AnimationTime, 1d);
-        var elapsed = (DateTime.Now - _animationStartTime).TotalMilliseconds;
-        var progress = Math.Clamp(elapsed / total, 0d, 1d);
-
-        var current = _animationStartOffset * (1d - progress);
-        _scrollViewer.Offset = new Vector(_scrollViewer.Offset.X, current);
-
-        if (progress >= 1d)
-        {
-            _animationTimer?.Stop();
-            _scrollViewer.Offset = new Vector(_scrollViewer.Offset.X, 0d);
-        }
+        _ = animation.RunAsync(_scrollViewer, token);
     }
 }

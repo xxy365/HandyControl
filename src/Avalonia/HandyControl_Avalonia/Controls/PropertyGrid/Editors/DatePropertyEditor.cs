@@ -10,5 +10,5 @@ public class DatePropertyEditor : PropertyEditorBase
         IsEnabled = !propertyItem.IsReadOnly
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => DateTimePicker.SelectedDateTimeProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => DateTimePicker.SelectedDateTimeProperty;
 }

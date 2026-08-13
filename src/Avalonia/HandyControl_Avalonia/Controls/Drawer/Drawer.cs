@@ -44,17 +44,16 @@ public class Drawer : Control
     public Drawer()
     {
         CloseCommand = new CloseDrawerCommand(this);
-        Loaded += Drawer_Loaded;
     }
 
-    private void Drawer_Loaded(object? sender, RoutedEventArgs e)
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
+        base.OnAttachedToVisualTree(e);
+
         if (IsOpen)
         {
             OnIsOpenChanged(true);
         }
-
-        Loaded -= Drawer_Loaded;
     }
 
     public static readonly RoutedEvent<RoutedEventArgs> OpenedEvent =

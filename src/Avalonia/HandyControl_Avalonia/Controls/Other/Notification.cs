@@ -1,7 +1,11 @@
-using System;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Avalonia;
+using Avalonia.Animation;
+using Avalonia.Animation.Easings;
 using Avalonia.Controls;
+using Avalonia.Styling;
 using Avalonia.Threading;
 using HandyControl.Data;
 
@@ -18,6 +22,8 @@ public sealed class Notification : Avalonia.Controls.Window
     private int _tickCount;
 
     private DispatcherTimer? _timerClose;
+
+    private readonly CancellationTokenSource _animationCts = new();
 
     private ShowAnimation ShowAnimation { get; set; }
 
@@ -161,26 +167,62 @@ public sealed class Notification : Avalonia.Controls.Window
 
     private void RunPositionAnimation(Point from, Point to, Action? onComplete = null)
     {
-        Animate(progress =>
+        _ = AnimatePositionAsync(from, to, onComplete);
+    }
+
+    private async Task AnimatePositionAsync(Point from, Point to, Action? onComplete)
+    {
+        for (var frame = 1; frame <= TotalFrames; frame++)
         {
-            var x = from.X + (to.X - from.X) * progress;
-            var y = from.Y + (to.Y - from.Y) * progress;
-            Position = new PixelPoint((int)x, (int)y);
-        }, () => onComplete?.Invoke());
+            if (_animationCts.IsCancellationRequested)
+            {
+                return;
+            }
+
+            await Task.Delay(FrameIntervalMs);
+            var progress = frame / (double)TotalFrames;
+            Position = new PixelPoint(
+                (int)(from.X + (to.X - from.X) * progress),
+                (int)(from.Y + (to.Y - from.Y) * progress));
+        }
+
+        onComplete?.Invoke();
     }
 
     private void RunOpacityAnimation(double to, Action? onComplete = null)
     {
         var from = Opacity;
-        Animate(progress => Opacity = from + (to - from) * progress, () => onComplete?.Invoke());
+        var animation = new Animation
+        {
+            Duration = TimeSpan.FromMilliseconds(TotalFrames * FrameIntervalMs),
+            Easing = new CubicEaseOut(),
+            FillMode = FillMode.Forward,
+            Children =
+            {
+                new KeyFrame
+                {
+                    Cue = new Cue(0d),
+                    Setters = { new Setter(Visual.OpacityProperty, from) }
+                },
+                new KeyFrame
+                {
+                    Cue = new Cue(1d),
+                    Setters = { new Setter(Visual.OpacityProperty, to) }
+                }
+            }
+        };
+
+        _ = RunAnimation(animation, onComplete);
     }
 
-    private static async void Animate(Action<double> apply, Action? onComplete)
+    private async Task RunAnimation(Animation animation, Action? onComplete)
     {
-        for (var frame = 1; frame <= TotalFrames; frame++)
+        try
         {
-            await Task.Delay(FrameIntervalMs);
-            apply.Invoke(frame / (double)TotalFrames);
+            await animation.RunAsync(this, _animationCts.Token);
+        }
+        catch (OperationCanceledException)
+        {
         }
 
         onComplete?.Invoke();

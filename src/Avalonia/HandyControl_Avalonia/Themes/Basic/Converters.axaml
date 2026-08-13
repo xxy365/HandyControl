@@ -13,6 +13,7 @@
     <hc:Double2GridLengthConverter x:Key="Double2GridLengthConverter" />
     <hc:ThicknessSplitConverter x:Key="ThicknessSplitConverter" />
     <hc:Object2StringConverter x:Key="Object2StringConverter" />
+    <hc:SelectionRangeConverter x:Key="SelectionRangeConverter" />
     <avalonia:StringFormatConverter x:Key="StringFormatConverter" />
     <avalonia:PlatformKeyGestureConverter x:Key="PlatformKeyGestureConverter" />
     <avalonia:MarginMultiplierConverter x:Key="LeftMarginConverter"

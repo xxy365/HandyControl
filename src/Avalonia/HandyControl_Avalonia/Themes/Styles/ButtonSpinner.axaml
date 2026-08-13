@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls"
@@ -36,7 +36,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{TemplateBinding CornerRadius}" />
-                        <DockPanel Margin="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='1,0,1,0'}">
+                        <DockPanel Margin="{TemplateBinding BorderThickness, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='1,0,1,0'}">
                             <UniformGrid Name="PART_SpinnerPanel"
                                          TabIndex="2"
                                          DockPanel.Dock="Right"
@@ -50,7 +50,7 @@
                                               Theme="{StaticResource RepeatButtonIcon}"
                                               VerticalContentAlignment="Bottom"
                                               VerticalAlignment="Stretch"
-                                              Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
+                                              Padding="{TemplateBinding Padding, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
                                               hc:IconElement.Geometry="{StaticResource UpGeometry}"
                                               hc:IconElement.Height="6"
                                               hc:IconElement.Width="{x:Static system:Double.NaN}" />
@@ -62,7 +62,7 @@
                                               Theme="{StaticResource RepeatButtonIcon}"
                                               VerticalContentAlignment="Top"
                                               VerticalAlignment="Stretch"
-                                              Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
+                                              Padding="{TemplateBinding Padding, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
                                               hc:IconElement.Geometry="{StaticResource DownGeometry}"
                                               hc:IconElement.Height="6"
                                               hc:IconElement.Width="{x:Static system:Double.NaN}" />
@@ -108,7 +108,7 @@
                                                   Theme="{StaticResource RepeatButtonIcon}"
                                                   VerticalContentAlignment="Bottom"
                                                   VerticalAlignment="Stretch"
-                                                  Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='1,0,0,0'}"
+                                                  Padding="{TemplateBinding Padding, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='1,0,0,0'}"
                                                   hc:IconElement.Geometry="{StaticResource UpGeometry}"
                                                   hc:IconElement.Height="6"
                                                   hc:IconElement.Width="{x:Static system:Double.NaN}" />
@@ -120,7 +120,7 @@
                                                   Theme="{StaticResource RepeatButtonIcon}"
                                                   VerticalContentAlignment="Top"
                                                   VerticalAlignment="Stretch"
-                                                  Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='1,0,0,0'}"
+                                                  Padding="{TemplateBinding Padding, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='1,0,0,0'}"
                                                   hc:IconElement.Geometry="{StaticResource DownGeometry}"
                                                   hc:IconElement.Height="6"
                                                   hc:IconElement.Width="{x:Static system:Double.NaN}" />

@@ -280,7 +280,7 @@ public class ImageViewer : TemplatedControl, IDisposable
             if (_showBorderBottom == value) return;
             if (_borderBottom != null)
             {
-                BeginAnimation(_borderBottom, OpacityProperty, value ? 1d : 0d, value ? 100 : 400);
+                AnimateTo(_borderBottom, OpacityProperty, value ? 1d : 0d, value ? 100 : 400);
             }
             _showBorderBottom = value;
         }
@@ -423,10 +423,10 @@ public class ImageViewer : TemplatedControl, IDisposable
 
     private void ButtonActual_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        BeginAnimation(this, ImageScaleProperty, 1d, 200);
+        AnimateTo(this, ImageScaleProperty, 1d, 200);
         _imgActualScale = 1;
         var thickness = new Thickness((Bounds.Width - ImageOriWidth) / 2, (Bounds.Height - ImageOriHeight) / 2, 0, 0);
-        BeginAnimation(this, ImageMarginProperty, thickness, 200);
+        AnimateTo(this, ImageMarginProperty, thickness, 200);
         _imgActualMargin = thickness;
         _canMoveX = ImageWidth > Bounds.Width;
         _canMoveY = ImageHeight > Bounds.Height;
@@ -710,7 +710,7 @@ public class ImageViewer : TemplatedControl, IDisposable
         Init();
         InitBorderSmall();
 
-        BeginAnimation(this, ImageRotateProperty, rotate, 300);
+        AnimateTo(this, ImageRotateProperty, rotate, 300);
     }
 
     private void MoveImg(PointerEventArgs e)
@@ -860,7 +860,7 @@ public class ImageViewer : TemplatedControl, IDisposable
         Init();
     }
 
-    private static void BeginAnimation(Control target, AvaloniaProperty property, object to, double milliseconds)
+    private static void AnimateTo(Control target, AvaloniaProperty property, object to, double milliseconds)
     {
         var animation = new Animation
         {

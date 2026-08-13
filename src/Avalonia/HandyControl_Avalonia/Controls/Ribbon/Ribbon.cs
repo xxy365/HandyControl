@@ -283,7 +283,7 @@ public class Ribbon : ItemsControl
         }
     }
 
-    private void OnPreviewMouseButton(PointerEventArgs e)
+    private void OnPreviewPointerButton(PointerEventArgs e)
     {
         var properties = e.GetCurrentPoint(this).Properties;
         if (!properties.IsLeftButtonPressed && !properties.IsRightButtonPressed)
@@ -326,9 +326,9 @@ public class Ribbon : ItemsControl
         }
     }
 
-    private void Window_PreviewPointerPressed(object? sender, PointerPressedEventArgs e) => OnPreviewMouseButton(e);
+    private void Window_PreviewPointerPressed(object? sender, PointerPressedEventArgs e) => OnPreviewPointerButton(e);
 
-    private void Window_PreviewPointerReleased(object? sender, PointerReleasedEventArgs e) => OnPreviewMouseButton(e);
+    private void Window_PreviewPointerReleased(object? sender, PointerReleasedEventArgs e) => OnPreviewPointerButton(e);
 
     private void Window_Deactivated(object? sender, EventArgs e)
     {

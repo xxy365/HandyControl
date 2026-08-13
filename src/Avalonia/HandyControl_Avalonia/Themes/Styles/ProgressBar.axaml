@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls"
@@ -50,7 +50,7 @@
                         <Border Name="PART_Indicator"
                                 Theme="{StaticResource BorderClip}"
                                 Background="{TemplateBinding Foreground}"
-                                CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
+                                CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}"
                                 IsVisible="{Binding !IsIndeterminate, RelativeSource={RelativeSource TemplatedParent}}">
                             <Border x:Name="BorderClip"
                                     Width="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
@@ -64,7 +64,7 @@
                         </Border>
                         <Border Name="PART_IndeterminateIndicator"
                                 Background="{TemplateBinding Foreground}"
-                                IsVisible="{Binding IsIndeterminate, RelativeSource={RelativeSource TemplatedParent}}" />
+                                IsVisible="{TemplateBinding IsIndeterminate}" />
                     </Panel>
                 </Border>
             </ControlTemplate>
@@ -201,21 +201,21 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Border Theme="{StaticResource BorderClip}"
-                        CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
+                        CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}">
                     <Panel>
                         <Border x:Name="PART_Indicator"
                                 Theme="{StaticResource BorderClip}"
-                                CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
+                                CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}"
                                 IsVisible="{Binding !IsIndeterminate, RelativeSource={RelativeSource TemplatedParent}}">
                             <Border x:Name="BorderStripe"
                                     Background="{TemplateBinding Foreground}" />
                         </Border>
                         <Border x:Name="PART_IndeterminateIndicator"
                                 Background="{TemplateBinding Foreground}"
-                                IsVisible="{Binding IsIndeterminate, RelativeSource={RelativeSource TemplatedParent}}" />
+                                IsVisible="{TemplateBinding IsIndeterminate}" />
                     </Panel>
                 </Border>
             </ControlTemplate>
@@ -572,11 +572,11 @@
                     <Border Name="PART_Indicator"
                             Theme="{StaticResource BorderClip}"
                             Background="{TemplateBinding Foreground}"
-                            CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
+                            CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}"
                             IsVisible="{Binding !IsIndeterminate, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Border Name="PART_IndeterminateIndicator"
                             Background="{TemplateBinding Foreground}"
-                            IsVisible="{Binding IsIndeterminate, RelativeSource={RelativeSource TemplatedParent}}" />
+                            IsVisible="{TemplateBinding IsIndeterminate}" />
                 </Panel>
             </ControlTemplate>
         </Setter>

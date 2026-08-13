@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls"
@@ -14,19 +14,19 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition MinHeight="{Binding Path=(hc:InfoElement.MinContentHeight), RelativeSource={RelativeSource TemplatedParent}}"
-                                   Height="{Binding Path=(hc:InfoElement.ContentHeight), RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource Double2GridLengthConverter}}" />
+                    <RowDefinition MinHeight="{TemplateBinding (hc:InfoElement.MinContentHeight)}"
+                                   Height="{TemplateBinding (hc:InfoElement.ContentHeight),Converter={StaticResource Double2GridLengthConverter}}" />
                 </Grid.RowDefinitions>
                 <DockPanel LastChildFill="True"
                            IsHitTestVisible="False"
                            IsVisible="{TemplateBinding Header, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                           HorizontalAlignment="{Binding Path=(hc:TitleElement.HorizontalAlignment), RelativeSource={RelativeSource TemplatedParent}}"
-                           Margin="{Binding Path=(hc:TitleElement.MarginOnTheTop), RelativeSource={RelativeSource TemplatedParent}}">
+                           HorizontalAlignment="{TemplateBinding (hc:TitleElement.HorizontalAlignment)}"
+                           Margin="{TemplateBinding (hc:TitleElement.MarginOnTheTop)}">
                     <ContentPresenter DockPanel.Dock="Right"
                                       TextElement.Foreground="{DynamicResource DangerBrush}"
                                       Margin="4,0,0,0"
-                                      Content="{Binding Path=(hc:InfoElement.Symbol), RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsVisible="{Binding Path=(hc:InfoElement.Necessary), RelativeSource={RelativeSource TemplatedParent}}" />
+                                      Content="{TemplateBinding (hc:InfoElement.Symbol)}"
+                                      IsVisible="{TemplateBinding (hc:InfoElement.Necessary)}" />
                     <ContentPresenter Name="PART_HeaderPresenter"
                                       Content="{TemplateBinding Header}">
                         <ContentPresenter.DataTemplates>
@@ -65,23 +65,23 @@
                 CornerRadius="{TemplateBinding CornerRadius}"
                 Background="{TemplateBinding Background}"
                 Padding="{TemplateBinding Padding}">
-            <Grid MinHeight="{Binding Path=(hc:InfoElement.MinContentHeight), RelativeSource={RelativeSource TemplatedParent}}"
-                  Height="{Binding Path=(hc:InfoElement.ContentHeight), RelativeSource={RelativeSource TemplatedParent}}">
+            <Grid MinHeight="{TemplateBinding (hc:InfoElement.MinContentHeight)}"
+                  Height="{TemplateBinding (hc:InfoElement.ContentHeight)}">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{Binding Path=(hc:TitleElement.TitleWidth), RelativeSource={RelativeSource TemplatedParent}}" />
+                    <ColumnDefinition Width="{TemplateBinding (hc:TitleElement.TitleWidth)}" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <DockPanel LastChildFill="True"
                            IsHitTestVisible="False"
                            IsVisible="{TemplateBinding Header, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                           HorizontalAlignment="{Binding Path=(hc:TitleElement.HorizontalAlignment), RelativeSource={RelativeSource TemplatedParent}}"
-                           VerticalAlignment="{Binding Path=(hc:TitleElement.VerticalAlignment), RelativeSource={RelativeSource TemplatedParent}}"
-                           Margin="{Binding Path=(hc:TitleElement.MarginOnTheLeft), RelativeSource={RelativeSource TemplatedParent}}">
+                           HorizontalAlignment="{TemplateBinding (hc:TitleElement.HorizontalAlignment)}"
+                           VerticalAlignment="{TemplateBinding (hc:TitleElement.VerticalAlignment)}"
+                           Margin="{TemplateBinding (hc:TitleElement.MarginOnTheLeft)}">
                     <ContentPresenter DockPanel.Dock="Right"
                                       TextElement.Foreground="{DynamicResource DangerBrush}"
                                       Margin="4,0,0,0"
-                                      Content="{Binding Path=(hc:InfoElement.Symbol), RelativeSource={RelativeSource TemplatedParent}}"
-                                      IsVisible="{Binding Path=(hc:InfoElement.Necessary), RelativeSource={RelativeSource TemplatedParent}}" />
+                                      Content="{TemplateBinding (hc:InfoElement.Symbol)}"
+                                      IsVisible="{TemplateBinding (hc:InfoElement.Necessary)}" />
                     <ContentPresenter Name="PART_HeaderPresenter"
                                       Content="{TemplateBinding Header}">
                         <ContentPresenter.DataTemplates>

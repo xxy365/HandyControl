@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls">
@@ -28,7 +28,7 @@
                             Grid.RowSpan="2"
                             Effect="{DynamicResource EffectShadow2}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="{Binding (hc:BorderElement.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                            CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}" />
                     <Path Grid.Row="0"
                           Grid.Column="0"
                           VerticalAlignment="Top"
@@ -43,12 +43,12 @@
                                 VerticalAlignment="Center"
                                 Margin="0,10,10,10">
                         <TextBlock Text="{TemplateBinding Message}"
-                                   Theme="{DynamicResource TextBlockDefault}"
+                                   Theme="{StaticResource TextBlockDefault}"
                                    HorizontalAlignment="Left"
                                    TextWrapping="Wrap" />
                         <TextBlock IsVisible="{TemplateBinding ShowDateTime}"
                                    Text="{TemplateBinding Time}"
-                                   Theme="{DynamicResource TextBlockDefault}"
+                                   Theme="{StaticResource TextBlockDefault}"
                                    Foreground="{DynamicResource SecondaryTextBrush}"
                                    HorizontalAlignment="Left"
                                    Margin="0,4,0,0">
@@ -65,7 +65,7 @@
                             x:Name="PART_ButtonClose"
                             Grid.Column="2"
                             Background="Transparent"
-                            Theme="{DynamicResource ButtonCustom}"
+                            Theme="{StaticResource ButtonCustom}"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Width="18"
@@ -83,7 +83,7 @@
                                  Height="28"
                                  Grid.Column="0">
                         <Button x:Name="PART_ButtonCancel"
-                                Theme="{DynamicResource ButtonCustom}"
+                                Theme="{StaticResource ButtonCustom}"
                                 HorizontalAlignment="Stretch"
                                 Background="Transparent">
                             <TextBlock Text="{TemplateBinding CancelStr}"
@@ -91,7 +91,7 @@
                                        Foreground="{DynamicResource DangerBrush}" />
                         </Button>
                         <Button x:Name="PART_ButtonConfirm"
-                                Theme="{DynamicResource ButtonCustom}"
+                                Theme="{StaticResource ButtonCustom}"
                                 HorizontalAlignment="Stretch"
                                 Background="Transparent">
                             <TextBlock Text="{TemplateBinding ConfirmStr}"

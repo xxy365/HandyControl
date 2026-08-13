@@ -409,14 +409,14 @@
                         VerticalAlignment="Center"
                         Padding="{TemplateBinding Padding}"
                         Background="{TemplateBinding Background}"
-                        CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}">
+                        CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}">
                     <Panel>
                         <Border x:Name="PART_Sliding"
-                                CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}"
+                                CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}"
                                 Width="0"
                                 Height="0"
                                 Effect="{StaticResource EffectShadow1}"
-                                Background="{Binding Path=(hc:TitleElement.Background),RelativeSource={RelativeSource TemplatedParent}}"
+                                Background="{TemplateBinding (hc:TitleElement.Background)}"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top" />
                         <ContentPresenter Content="{TemplateBinding Content}" />

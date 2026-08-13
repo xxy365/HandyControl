@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls">
@@ -177,14 +177,14 @@
                             <Path Height="{TemplateBinding hc:IconElement.Height}"
                                   Width="{TemplateBinding hc:IconElement.Width}"
                                   Fill="{TemplateBinding Foreground}"
-                                  IsVisible="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                  IsVisible="{TemplateBinding (hc:IconElement.Geometry), Converter={x:Static ObjectConverters.IsNotNull}}"
                                   Stretch="Uniform"
                                   Data="{TemplateBinding hc:IconElement.Geometry}" />
                             <ContentPresenter RecognizesAccessKey="True"
                                               VerticalAlignment="Center"
                                               Content="{TemplateBinding Content}"
                                               ContentTemplate="{TemplateBinding ContentTemplate}"
-                                              Margin="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
+                                              Margin="{TemplateBinding (hc:IconElement.Geometry), Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
                         </StackPanel>
                     </Border>
                     <Border x:Name="BorderHighlight"
@@ -197,7 +197,7 @@
 
         <Style Selector="^:checked /template/ Border#BorderHighlight">
             <Setter Property="BorderBrush"
-                    Value="{Binding Path=(hc:VisualElement.HighlightBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                    Value="{TemplateBinding (hc:VisualElement.HighlightBrush)}" />
         </Style>
     </ControlTheme>
 
@@ -257,7 +257,7 @@
                               Width="{TemplateBinding hc:IconElement.Width}"
                               Height="{TemplateBinding hc:IconElement.Height}"
                               Fill="{Binding $parent[RadioButton].Foreground}"
-                              IsVisible="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"
+                              IsVisible="{TemplateBinding (hc:IconElement.Geometry), Converter={x:Static ObjectConverters.IsNotNull}}"
                               Stretch="Uniform"
                               Data="{TemplateBinding hc:IconElement.Geometry}" />
                         <ContentPresenter x:Name="contentPresenter"
@@ -266,7 +266,7 @@
                                           Content="{TemplateBinding Content}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
                                           IsVisible="{Binding $self.Content, Converter={x:Static ObjectConverters.IsNotNull}}"
-                                          Margin="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
+                                          Margin="{TemplateBinding (hc:IconElement.Geometry), Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
                     </StackPanel>
                 </Border>
             </ControlTemplate>

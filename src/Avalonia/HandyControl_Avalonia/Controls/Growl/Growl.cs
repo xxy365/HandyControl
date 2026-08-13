@@ -721,10 +721,10 @@ public class Growl : ContentControl
         _timerClose?.Stop();
         ZIndex = int.MinValue;
         await StartTransitionAsync(true);
-        OnStoryboardCompleted();
+        OnCloseTransitionCompleted();
     }
 
-    private void OnStoryboardCompleted()
+    private void OnCloseTransitionCompleted()
     {
         if (Parent is not Panel panel)
         {
@@ -834,7 +834,7 @@ public class Growl : ContentControl
             _gridMain.Opacity = isClose ? 1 : 0;
         }
 
-        var animation = new Animation
+        var translateAnimation = new Animation
         {
             Duration = TimeSpan.FromMilliseconds(TransitionMilliseconds),
             Easing = new CubicEaseInOut(),
@@ -847,8 +847,7 @@ public class Growl : ContentControl
                     Setters =
                     {
                         new Setter(TranslateTransform.XProperty, orientation == Orientation.Horizontal ? transformLength : 0d),
-                        new Setter(TranslateTransform.YProperty, orientation == Orientation.Vertical ? transformLength : 0d),
-                        new Setter(Visual.OpacityProperty, GetStartOpacity(isClose, transitionMode))
+                        new Setter(TranslateTransform.YProperty, orientation == Orientation.Vertical ? transformLength : 0d)
                     }
                 },
                 new KeyFrame
@@ -857,16 +856,40 @@ public class Growl : ContentControl
                     Setters =
                     {
                         new Setter(TranslateTransform.XProperty, 0d),
-                        new Setter(TranslateTransform.YProperty, 0d),
-                        new Setter(Visual.OpacityProperty, GetEndOpacity(isClose, transitionMode))
+                        new Setter(TranslateTransform.YProperty, 0d)
                     }
+                }
+            }
+        };
+
+        var opacityAnimation = new Animation
+        {
+            Duration = TimeSpan.FromMilliseconds(TransitionMilliseconds),
+            Easing = new CubicEaseInOut(),
+            FillMode = FillMode.Forward,
+            Children =
+            {
+                new KeyFrame
+                {
+                    Cue = new Cue(0d),
+                    Setters = { new Setter(Visual.OpacityProperty, GetStartOpacity(isClose, transitionMode)) }
+                },
+                new KeyFrame
+                {
+                    Cue = new Cue(1d),
+                    Setters = { new Setter(Visual.OpacityProperty, GetEndOpacity(isClose, transitionMode)) }
                 }
             }
         };
 
         try
         {
-            await animation.RunAsync(_gridMain, token);
+            var tasks = new List<Task>
+            {
+                translateAnimation.RunAsync(translate, token),
+                opacityAnimation.RunAsync(_gridMain, token)
+            };
+            await Task.WhenAll(tasks);
         }
         catch (OperationCanceledException)
         {

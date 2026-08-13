@@ -14,7 +14,7 @@ public class ImagePropertyEditor : PropertyEditorBase
         HorizontalAlignment = HorizontalAlignment.Left
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => ImageSelector.HasValueProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => ImageSelector.HasValueProperty;
 
     public override void CreateBinding(PropertyItem propertyItem, Control element)
     {

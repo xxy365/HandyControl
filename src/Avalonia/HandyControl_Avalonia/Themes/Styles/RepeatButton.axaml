@@ -43,7 +43,7 @@
                             <Path Width="{TemplateBinding hc:IconElement.Width}"
                                   Height="{TemplateBinding hc:IconElement.Height}"
                                   Fill="{TemplateBinding Foreground}"
-                                  IsVisible="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                  IsVisible="{TemplateBinding (hc:IconElement.Geometry), Converter={x:Static ObjectConverters.IsNotNull}}"
                                   Stretch="Uniform"
                                   Data="{TemplateBinding hc:IconElement.Geometry}" />
                             <ContentPresenter RecognizesAccessKey="True"
@@ -51,7 +51,7 @@
                                               Content="{TemplateBinding Content}"
                                               ContentTemplate="{TemplateBinding ContentTemplate}"
                                               IsVisible="{Binding $self.Content, Converter={x:Static ObjectConverters.IsNotNull}}"
-                                              Margin="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
+                                              Margin="{TemplateBinding (hc:IconElement.Geometry), Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
                         </StackPanel>
                     </Border>
                 </Panel>
@@ -225,7 +225,7 @@
                         <Path Width="{TemplateBinding hc:IconElement.Width}"
                               Height="{TemplateBinding hc:IconElement.Height}"
                               Fill="{TemplateBinding Foreground}"
-                              IsVisible="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}"
+                              IsVisible="{TemplateBinding (hc:IconElement.Geometry), Converter={x:Static ObjectConverters.IsNotNull}}"
                               Stretch="Uniform"
                               Data="{TemplateBinding hc:IconElement.Geometry}" />
                         <ContentPresenter RecognizesAccessKey="True"
@@ -233,7 +233,7 @@
                                           Content="{TemplateBinding Content}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
                                           IsVisible="{Binding $self.Content, Converter={x:Static ObjectConverters.IsNotNull}}"
-                                          Margin="{Binding Path=(hc:IconElement.Geometry), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
+                                          Margin="{TemplateBinding (hc:IconElement.Geometry), Converter={StaticResource GeometrySpacingConverter}, ConverterParameter='6,0,0,0'}" />
                     </StackPanel>
                 </hc:DashedBorder>
             </ControlTemplate>

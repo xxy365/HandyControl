@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls">
@@ -432,8 +432,8 @@
                            IsHitTestVisible="False"
                            IsVisible="False"
                            Canvas.Bottom="28"
-                           hc:ContentControlAttach.Content="{Binding Content,RelativeSource={RelativeSource AncestorType=hc:RangeThumb}}"
-                           hc:ContentControlAttach.ContentStringFormat="{Binding Path=(hc:TipElement.StringFormat),RelativeSource={RelativeSource AncestorType=hc:RangeSlider}}" />
+                           hc:ContentControlAttach.Content="{Binding $parent[hc:RangeThumb].Content}"
+                           hc:ContentControlAttach.ContentStringFormat="{Binding $parent[hc:RangeSlider].(hc:TipElement.StringFormat)}" />
                     <Border Name="BorderDotBorder"
                             Canvas.Bottom="0"
                             Effect="{StaticResource EffectShadow1}"
@@ -451,7 +451,7 @@
             <Setter Property="Effect"
                     Value="{StaticResource EffectShadow2}" />
         </Style>
-        <Style Selector="^:pointerover /template/ Label#LabelValue">
+        <Style Selector="^:pointerover /template/ Label#LabelValue, ^:pressed /template/ Label#LabelValue">
             <Setter Property="IsVisible"
                     Value="True" />
         </Style>
@@ -467,8 +467,8 @@
                            IsVisible="False"
                            Canvas.Top="28"
                            Theme="{StaticResource LabelPrimary}"
-                           hc:ContentControlAttach.Content="{Binding Content,RelativeSource={RelativeSource AncestorType=hc:RangeThumb}}"
-                           hc:ContentControlAttach.ContentStringFormat="{Binding Path=(hc:TipElement.StringFormat),RelativeSource={RelativeSource AncestorType=hc:RangeSlider}}" />
+                           hc:ContentControlAttach.Content="{Binding $parent[hc:RangeThumb].Content}"
+                           hc:ContentControlAttach.ContentStringFormat="{Binding $parent[hc:RangeSlider].(hc:TipElement.StringFormat)}" />
                     <Border Name="BorderDotBorder"
                             Canvas.Bottom="0"
                             Effect="{StaticResource EffectShadow1}"
@@ -486,7 +486,7 @@
             <Setter Property="Effect"
                     Value="{StaticResource EffectShadow2}" />
         </Style>
-        <Style Selector="^:pointerover /template/ Label#LabelValue">
+        <Style Selector="^:pointerover /template/ Label#LabelValue, ^:pressed /template/ Label#LabelValue">
             <Setter Property="IsVisible"
                     Value="True" />
         </Style>
@@ -502,8 +502,8 @@
                            IsVisible="False"
                            Canvas.Right="28"
                            Theme="{StaticResource LabelPrimary}"
-                           hc:ContentControlAttach.Content="{Binding Content,RelativeSource={RelativeSource AncestorType=hc:RangeThumb}}"
-                           hc:ContentControlAttach.ContentStringFormat="{Binding Path=(hc:TipElement.StringFormat),RelativeSource={RelativeSource AncestorType=hc:RangeSlider}}" />
+                           hc:ContentControlAttach.Content="{Binding $parent[hc:RangeThumb].Content}"
+                           hc:ContentControlAttach.ContentStringFormat="{Binding $parent[hc:RangeSlider].(hc:TipElement.StringFormat)}" />
                     <Border Name="BorderDotBorder"
                             Canvas.Right="0"
                             Effect="{StaticResource EffectShadow1}"
@@ -521,7 +521,7 @@
             <Setter Property="Effect"
                     Value="{StaticResource EffectShadow2}" />
         </Style>
-        <Style Selector="^:pointerover /template/ Label#LabelValue">
+        <Style Selector="^:pointerover /template/ Label#LabelValue, ^:pressed /template/ Label#LabelValue">
             <Setter Property="IsVisible"
                     Value="True" />
         </Style>
@@ -537,8 +537,8 @@
                            IsVisible="False"
                            Canvas.Left="28"
                            Theme="{StaticResource LabelPrimary}"
-                           hc:ContentControlAttach.Content="{Binding Content,RelativeSource={RelativeSource AncestorType=hc:RangeThumb}}"
-                           hc:ContentControlAttach.ContentStringFormat="{Binding Path=(hc:TipElement.StringFormat),RelativeSource={RelativeSource AncestorType=hc:RangeSlider}}" />
+                           hc:ContentControlAttach.Content="{Binding $parent[hc:RangeThumb].Content}"
+                           hc:ContentControlAttach.ContentStringFormat="{Binding $parent[hc:RangeSlider].(hc:TipElement.StringFormat)}" />
                     <Border Name="BorderDotBorder"
                             Canvas.Right="0"
                             Effect="{StaticResource EffectShadow1}"
@@ -556,7 +556,7 @@
             <Setter Property="Effect"
                     Value="{StaticResource EffectShadow2}" />
         </Style>
-        <Style Selector="^:pointerover /template/ Label#LabelValue">
+        <Style Selector="^:pointerover /template/ Label#LabelValue, ^:pressed /template/ Label#LabelValue">
             <Setter Property="IsVisible"
                     Value="True" />
         </Style>

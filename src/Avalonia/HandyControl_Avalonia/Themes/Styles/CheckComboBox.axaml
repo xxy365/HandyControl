@@ -1,6 +1,6 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:hc="clr-namespace:HandyControl.Controls">
+                    xmlns:hc="clr-namespace:HandyControl.Controls" x:ClassModifier="internal">
 
     <ControlTheme x:Key="Tag4CheckComboBoxStyle"
                   BasedOn="{StaticResource TagBaseStyle}"
@@ -38,7 +38,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                    <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                    <CheckBox IsChecked="{TemplateBinding IsSelected, Mode=TwoWay}"
                               Foreground="{TemplateBinding Foreground}"
                               Content="{TemplateBinding Content}"
                               ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -115,7 +115,7 @@
                                   IsChecked="{Binding $parent[hc:CheckComboBox].IsDropDownOpen, Mode=TwoWay}"
                                   Theme="{StaticResource ToggleButtonIconTransparent}"
                                   IsVisible="{Binding $parent[hc:CheckComboBox].IsReadOnly, Converter={x:Static BoolConverters.Not}}"
-                                  Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
+                                  Padding="{TemplateBinding Padding, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}"
                                   hc:IconSwitchElement.Geometry="{StaticResource DownGeometry}"
                                   hc:IconSwitchElement.GeometrySelected="{StaticResource UpGeometry}"
                                   Foreground="{Binding BorderBrush, ElementName=border}"

@@ -10,5 +10,5 @@ public class TimePropertyEditor : PropertyEditorBase
         IsEnabled = !propertyItem.IsReadOnly
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => TimePicker.SelectedTimeProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => TimePicker.SelectedTimeProperty;
 }

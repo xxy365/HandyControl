@@ -17,9 +17,6 @@
       [ "ScrollViewer", "NativeScrollViewerDemo", "Brush.ScrollBox", "", "" ],
       [ "ScrollViewer", "ScrollViewerDemo", "Brush.ScrollBox", "", "" ],
       [ "Slider", "SliderDemo", "Brush.Slider", "", "" ],
-      [ "CompareSlider", "CompareSliderDemo", "Brush.Slider", "", "" ],
-      [ "PreviewSlider", "PreviewSliderDemo", "Brush.Slider", "", "" ],
-      [ "RangeSlider", "RangeSliderDemo", "Brush.Slider", "", "" ],
       [ "TextBlock", "TextBlockDemo", "Brush.TextBlock", "", "" ],
       [ "NumericUpDown", "NumericUpDownDemo", "Brush.NumericListBox", "", "" ],
       [ "TextBox", "TextBoxDemo", "Brush.TextBox", "", "" ],
@@ -104,6 +101,9 @@
       [ "Watermark", "WatermarkDemo", "Brush.GridLight", "", "" ],
       [ "Empty", "EmptyDemo", "Brush.GridLight", "", "DataDisplay" ],
       [ "ChatBubble", "ChatBubbleDemo", "Brush.Success", "", "DataDisplay" ],
+      [ "CompareSlider", "CompareSliderDemo", "Brush.Slider", "", "Interacting" ],
+      [ "PreviewSlider", "PreviewSliderDemo", "Brush.Slider", "", "DataEntry" ],
+      [ "RangeSlider", "RangeSliderDemo", "Brush.Slider", "", "DataEntry" ],
       [ "TimeBar", "TimeBarDemo", "Brush.Time", "", "DataDisplay" ]
     ]
   },

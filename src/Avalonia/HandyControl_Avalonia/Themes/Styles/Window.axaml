@@ -1,6 +1,58 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl" x:ClassModifier="internal">
+
+    <ControlTheme x:Key="WindowCaptionButtonOther"
+                  BasedOn="{StaticResource ButtonIcon}"
+                  TargetType="Button">
+        <Setter Property="Height"
+                Value="26" />
+        <Setter Property="Width"
+                Value="46" />
+        <Setter Property="Background"
+                Value="{Binding $parent[hc:Window].OtherButtonBackground}" />
+        <Setter Property="Foreground"
+                Value="{Binding $parent[hc:Window].OtherButtonForeground}" />
+        <Setter Property="BorderThickness"
+                Value="1,0,1,0" />
+        <Setter Property="hc:IconElement.Width"
+                Value="10" />
+        <Setter Property="hc:IconElement.Height"
+                Value="10" />
+
+        <Style Selector="^:pointerover">
+            <Setter Property="Background"
+                    Value="{Binding $parent[hc:Window].OtherButtonHoverBackground}" />
+            <Setter Property="Foreground"
+                    Value="{Binding $parent[hc:Window].OtherButtonHoverForeground}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="WindowCaptionButtonClose"
+                  BasedOn="{StaticResource ButtonIcon}"
+                  TargetType="Button">
+        <Setter Property="Height"
+                Value="26" />
+        <Setter Property="Width"
+                Value="46" />
+        <Setter Property="Background"
+                Value="{Binding $parent[hc:Window].CloseButtonBackground}" />
+        <Setter Property="Foreground"
+                Value="{Binding $parent[hc:Window].CloseButtonForeground}" />
+        <Setter Property="BorderThickness"
+                Value="1,0,0,0" />
+        <Setter Property="hc:IconElement.Width"
+                Value="10" />
+        <Setter Property="hc:IconElement.Height"
+                Value="10" />
+
+        <Style Selector="^:pointerover">
+            <Setter Property="Background"
+                    Value="{Binding $parent[hc:Window].CloseButtonHoverBackground}" />
+            <Setter Property="Foreground"
+                    Value="{Binding $parent[hc:Window].CloseButtonHoverForeground}" />
+        </Style>
+    </ControlTheme>
 
     <ControlTheme x:Key="{x:Type hc:Window}"
                   TargetType="hc:Window">
@@ -76,77 +128,21 @@
                                         Orientation="Horizontal"
                                         VerticalAlignment="Center">
                                 <Button x:Name="ButtonMin"
-                                        Height="26"
-                                        Width="45"
-                                        Background="{TemplateBinding OtherButtonBackground}"
-                                        Foreground="{TemplateBinding OtherButtonForeground}"
-                                        Theme="{StaticResource ButtonIcon}"
+                                        Theme="{StaticResource WindowCaptionButtonOther}"
                                         WindowDecorationProperties.ElementRole="MinimizeButton"
-                                        hc:IconElement.Geometry="{StaticResource WindowMinGeometry}"
-                                        hc:IconElement.Width="10"
-                                        hc:IconElement.Height="10"
-                                        BorderThickness="1,0,1,0">
-                                    <Button.Styles>
-                                        <Style Selector="Button:pointerover">
-                                            <Setter Property="Background" Value="{TemplateBinding OtherButtonHoverBackground}" />
-                                            <Setter Property="Foreground" Value="{TemplateBinding OtherButtonHoverForeground}" />
-                                        </Style>
-                                    </Button.Styles>
-                                </Button>
+                                        hc:IconElement.Geometry="{StaticResource WindowMinGeometry}" />
                                 <Button x:Name="ButtonMax"
-                                        Height="26"
-                                        Width="46"
-                                        Background="{TemplateBinding OtherButtonBackground}"
-                                        Foreground="{TemplateBinding OtherButtonForeground}"
-                                        Theme="{StaticResource ButtonIcon}"
+                                        Theme="{StaticResource WindowCaptionButtonOther}"
                                         WindowDecorationProperties.ElementRole="MaximizeButton"
-                                        hc:IconElement.Geometry="{StaticResource WindowMaxGeometry}"
-                                        hc:IconElement.Width="10"
-                                        hc:IconElement.Height="10"
-                                        BorderThickness="1,0,1,0">
-                                    <Button.Styles>
-                                        <Style Selector="Button:pointerover">
-                                            <Setter Property="Background" Value="{TemplateBinding OtherButtonHoverBackground}" />
-                                            <Setter Property="Foreground" Value="{TemplateBinding OtherButtonHoverForeground}" />
-                                        </Style>
-                                    </Button.Styles>
-                                </Button>
+                                        hc:IconElement.Geometry="{StaticResource WindowMaxGeometry}" />
                                 <Button x:Name="ButtonRestore"
-                                        Height="26"
-                                        Width="46"
-                                        Background="{TemplateBinding OtherButtonBackground}"
-                                        Foreground="{TemplateBinding OtherButtonForeground}"
-                                        Theme="{StaticResource ButtonIcon}"
+                                        Theme="{StaticResource WindowCaptionButtonOther}"
                                         WindowDecorationProperties.ElementRole="MaximizeButton"
-                                        hc:IconElement.Geometry="{StaticResource WindowRestoreGeometry}"
-                                        hc:IconElement.Width="10"
-                                        hc:IconElement.Height="10"
-                                        BorderThickness="1,0,1,0">
-                                    <Button.Styles>
-                                        <Style Selector="Button:pointerover">
-                                            <Setter Property="Background" Value="{TemplateBinding OtherButtonHoverBackground}" />
-                                            <Setter Property="Foreground" Value="{TemplateBinding OtherButtonHoverForeground}" />
-                                        </Style>
-                                    </Button.Styles>
-                                </Button>
+                                        hc:IconElement.Geometry="{StaticResource WindowRestoreGeometry}" />
                                 <Button x:Name="ButtonClose"
-                                        Height="26"
-                                        Width="46"
-                                        Background="{TemplateBinding CloseButtonBackground}"
-                                        Foreground="{TemplateBinding CloseButtonForeground}"
-                                        Theme="{StaticResource ButtonIcon}"
+                                        Theme="{StaticResource WindowCaptionButtonClose}"
                                         WindowDecorationProperties.ElementRole="CloseButton"
-                                        hc:IconElement.Geometry="{StaticResource CloseGeometry}"
-                                        hc:IconElement.Width="10"
-                                        hc:IconElement.Height="10"
-                                        BorderThickness="1,0,0,0">
-                                    <Button.Styles>
-                                        <Style Selector="Button:pointerover">
-                                            <Setter Property="Background" Value="{TemplateBinding CloseButtonHoverBackground}" />
-                                            <Setter Property="Foreground" Value="{TemplateBinding CloseButtonHoverForeground}" />
-                                        </Style>
-                                    </Button.Styles>
-                                </Button>
+                                        hc:IconElement.Geometry="{StaticResource CloseGeometry}" />
                             </StackPanel>
                         </Grid>
 

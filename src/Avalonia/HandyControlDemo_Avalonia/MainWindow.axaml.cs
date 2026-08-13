@@ -95,6 +95,8 @@ public partial class MainWindow : HandyControl.Controls.Window
                 var lang = (string)((Button)btn).Tag!;
                 ButtonConfig.Flyout?.Hide();
                 Properties.Langs.LangProvider.Culture = new CultureInfo(lang);
+                AppSettings.Language = lang;
+                AppSettings.Save();
                 CommunityToolkit.Mvvm.Messaging.WeakReferenceMessenger.Default.Send(
                     new CommunityToolkit.Mvvm.Messaging.Messages.ValueChangedMessage<bool>(true),
                     MessageToken.LangUpdated);
@@ -156,6 +158,8 @@ public partial class MainWindow : HandyControl.Controls.Window
                 var v = (ThemeVariant?)((Button)btn).Tag;
                 ButtonConfig.Flyout?.Hide();
                 Application.Current!.RequestedThemeVariant = v;
+                AppSettings.ThemeVariant = v == ThemeVariant.Dark ? "Dark" : v == ThemeVariant.Light ? "Light" : "Default";
+                AppSettings.Save();
             };
             SkinPanel.Children.Add(btn);
         }

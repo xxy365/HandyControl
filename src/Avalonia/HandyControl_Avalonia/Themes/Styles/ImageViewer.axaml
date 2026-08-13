@@ -1,6 +1,6 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
+                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl" x:ClassModifier="internal">
 
     <ControlTheme x:Key="{x:Type hc:ImageViewer}"
                   TargetType="hc:ImageViewer">
@@ -46,7 +46,7 @@
                                 Background="{DynamicResource DarkOpacityBrush}"
                                 BorderBrush="{DynamicResource BorderBrush}"
                                 BorderThickness="1"
-                                IsVisible="{Binding ShowSmallImgInternal, RelativeSource={RelativeSource TemplatedParent}}">
+                                IsVisible="{TemplateBinding ShowSmallImgInternal}">
                             <Canvas x:Name="PART_CanvasSmallImg"
                                     ClipToBounds="True"
                                     MaxWidth="250"
@@ -68,7 +68,7 @@
                                 HorizontalAlignment="Center"
                                 Background="{DynamicResource DarkOpacityBrush}"
                                 CornerRadius="4,4,0,0"
-                                IsVisible="{Binding ShowToolBar, RelativeSource={RelativeSource TemplatedParent}}">
+                                IsVisible="{TemplateBinding ShowToolBar}">
                             <StackPanel Margin="30,10"
                                         VerticalAlignment="Center"
                                         Orientation="Horizontal">
@@ -97,7 +97,7 @@
                                         hc:IconElement.Geometry="{StaticResource ReduceGeometry}" />
                                 <TextBlock Margin="6,0"
                                            VerticalAlignment="Center"
-                                           Text="{Binding ScaleStr, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Text="{TemplateBinding ScaleStr}"
                                            Theme="{StaticResource TextBlockSubTitle}"
                                            Foreground="{DynamicResource TextIconBrush}" />
                                 <Button x:Name="PART_ButtonEnlarge"

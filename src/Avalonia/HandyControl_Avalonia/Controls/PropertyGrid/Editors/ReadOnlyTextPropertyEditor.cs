@@ -13,7 +13,7 @@ public class ReadOnlyTextPropertyEditor : PropertyEditorBase
         IsReadOnly = true
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => TextBox.TextProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => TextBox.TextProperty;
 
     public override BindingMode GetBindingMode(PropertyItem propertyItem) => BindingMode.OneWay;
 

@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls"
@@ -41,9 +41,9 @@
                         <Border IsVisible="{TemplateBinding Header, Converter={x:Static ObjectConverters.IsNotNull}}"
                                 Width="{Binding $self.Bounds.Height}"
                                 Theme="{StaticResource BorderCircularClip}"
-                                BorderBrush="{Binding Path=(hc:TitleElement.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"
-                                Background="{Binding Path=(hc:TitleElement.Background), RelativeSource={RelativeSource TemplatedParent}}">
-                            <ContentPresenter TextElement.Foreground="{Binding Path=(hc:TitleElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderBrush="{TemplateBinding (hc:TitleElement.BorderBrush)}"
+                                Background="{TemplateBinding (hc:TitleElement.Background)}">
+                            <ContentPresenter TextElement.Foreground="{TemplateBinding (hc:TitleElement.Foreground)}"
                                               Content="{TemplateBinding Header}"
                                               ContentTemplate="{TemplateBinding HeaderTemplate}"
                                               VerticalAlignment="Center"
@@ -127,7 +127,7 @@
         </Setter>
         <Setter Property="Template">
             <ControlTemplate TargetType="hc:TagContainer">
-                <Border CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                <Border CornerRadius="{TemplateBinding (hc:BorderElement.CornerRadius)}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}">

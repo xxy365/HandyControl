@@ -66,7 +66,7 @@ public class MainViewModel : DemoViewModelBase<DemoDataModel>
             }
         });
 
-        WeakReferenceMessenger.Default.Register<object, string>(this, MessageToken.LangUpdated, (_, _) =>
+        WeakReferenceMessenger.Default.Register<ValueChangedMessage<bool>, string>(this, MessageToken.LangUpdated, (_, _) =>
         {
             foreach (var info in DemoInfoCollection)
             {

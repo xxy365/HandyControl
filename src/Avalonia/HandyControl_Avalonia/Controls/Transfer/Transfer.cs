@@ -6,6 +6,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
 using HandyControl.Collections;
 
 namespace HandyControl.Controls;
@@ -39,11 +40,11 @@ public class Transfer : ListBox
 
     public Transfer()
     {
-        Loaded += OnLoaded;
     }
 
-    private void OnLoaded(object? sender, RoutedEventArgs e)
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
+        base.OnAttachedToVisualTree(e);
         SelectItems();
     }
 

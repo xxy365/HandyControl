@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
                     xmlns:hc="clr-namespace:HandyControl.Controls">
@@ -33,12 +33,12 @@
                                 CornerRadius="15"
                                 BorderThickness="0">
                             <Panel>
-                                <Path IsVisible="{Binding HasValue, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static BoolConverters.Not}}"
+                                <Path IsVisible="{TemplateBinding HasValue, Converter={x:Static BoolConverters.Not}}"
                                       Data="{StaticResource AddGeometry}"
                                       Width="16"
                                       Height="16"
                                       Fill="{DynamicResource PrimaryBrush}" />
-                                <Path IsVisible="{Binding HasValue, RelativeSource={RelativeSource TemplatedParent}}"
+                                <Path IsVisible="{TemplateBinding HasValue}"
                                       Data="{StaticResource RemoveGeometry}"
                                       Width="12"
                                       Height="12"

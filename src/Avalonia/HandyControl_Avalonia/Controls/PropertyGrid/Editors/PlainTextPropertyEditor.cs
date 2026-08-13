@@ -10,5 +10,5 @@ public class PlainTextPropertyEditor : PropertyEditorBase
         IsReadOnly = propertyItem.IsReadOnly
     };
 
-    public override AvaloniaProperty GetDependencyProperty() => TextBox.TextProperty;
+    public override AvaloniaProperty GetAvaloniaProperty() => TextBox.TextProperty;
 }
