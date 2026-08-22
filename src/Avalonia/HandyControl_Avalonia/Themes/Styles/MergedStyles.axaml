@@ -1,8 +1,8 @@
-<!-- ReSharper disable once Xaml.RedundantNamespaceAlias -->
+﻿<!-- ReSharper disable once Xaml.RedundantNamespaceAlias -->
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:ClassModifier="internal"
-        xmlns:hc="clr-namespace:HandyControl.Controls">
+        xmlns:hc="using:HandyControl.Controls">
 
     <Styles.Resources>
         <ResourceDictionary>
@@ -73,6 +73,7 @@
                 <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/CalendarDatePicker.axaml" />
                 <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/DatePicker.axaml" />
                 <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/Dialog.axaml" />
+                <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/SimpleItemsControl.axaml" />
                 <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/Clock.axaml" />
                 <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/TimePicker.axaml" />
                 <MergeResourceInclude Source="avares://HandyControl/Themes/Styles/DateTimePicker.axaml" />

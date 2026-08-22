@@ -1,6 +1,6 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:controls="clr-namespace:HandyControlDemo.UserControl"
+             xmlns:controls="using:HandyControlDemo.UserControl"
              BorderThickness="0,1,0,0"
              BorderBrush="{DynamicResource BorderBrush}"
              Background="{StaticResource CloudDrawingBrush}"

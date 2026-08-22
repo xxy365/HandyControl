@@ -1,13 +1,13 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
-             xmlns:data="clr-namespace:HandyControlDemo.Data"
-             xmlns:cv="clr-namespace:HandyControlDemo.Tools.Converter"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:data="using:HandyControlDemo.Data"
+             xmlns:cv="using:HandyControlDemo.Tools.Converter"
              x:Class="HandyControlDemo.UserControl.CoverViewDemo"
              x:DataType="vm:CoverViewModel"
-             DataContext="{Binding CoverView, Source={x:Static vm:ViewModelLocator.Instance}}"
+             DataContext="{ReflectionBinding CoverView, Source={x:Static vm:ViewModelLocator.Instance}}"
              Background="{DynamicResource RegionBrush}">
     <UserControl.Resources>
         <cv:StringToBitmapConverter x:Key="StringToBitmap" />

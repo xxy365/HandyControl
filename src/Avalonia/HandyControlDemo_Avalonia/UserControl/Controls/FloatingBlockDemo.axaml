@@ -1,6 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.FloatingBlockDemo"
              Background="{DynamicResource RegionBrush}">

@@ -1,0 +1,702 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>HandyControlDemoCode</AssemblyName>
+    <RootNamespace>HandyControlDemoCode</RootNamespace>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/App.axaml">
+      <Link>App.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/App.axaml.cs">
+      <Link>App.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/MainWindow.axaml">
+      <Link>MainWindow.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/MainWindow.axaml.cs">
+      <Link>MainWindow.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/Resources/Themes/Basic/Brushes.axaml">
+      <Link>Resources/Themes/Basic/Brushes.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/Resources/Themes/Basic/Converters.axaml">
+      <Link>Resources/Themes/Basic/Converters.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/Resources/Themes/Basic/Geometries.axaml">
+      <Link>Resources/Themes/Basic/Geometries.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/Resources/Themes/Theme.axaml">
+      <Link>Resources/Themes/Theme.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Basic/InteractiveDialog.axaml">
+      <Link>UserControl/Basic/InteractiveDialog.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Basic/InteractiveDialog.axaml.cs">
+      <Link>UserControl/Basic/InteractiveDialog.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Basic/TextDialog.axaml">
+      <Link>UserControl/Basic/TextDialog.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Basic/TextDialog.axaml.cs">
+      <Link>UserControl/Basic/TextDialog.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Basic/TextDialogWithTimer.axaml">
+      <Link>UserControl/Basic/TextDialogWithTimer.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Basic/TextDialogWithTimer.axaml.cs">
+      <Link>UserControl/Basic/TextDialogWithTimer.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/AnimationPathDemo.axaml">
+      <Link>UserControl/Controls/AnimationPathDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/AnimationPathDemo.axaml.cs">
+      <Link>UserControl/Controls/AnimationPathDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/BadgeDemo.axaml">
+      <Link>UserControl/Controls/BadgeDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/BadgeDemo.axaml.cs">
+      <Link>UserControl/Controls/BadgeDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ButtonGroupDemo.axaml">
+      <Link>UserControl/Controls/ButtonGroupDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ButtonGroupDemo.axaml.cs">
+      <Link>UserControl/Controls/ButtonGroupDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CalendarWithClockDemo.axaml">
+      <Link>UserControl/Controls/CalendarWithClockDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CalendarWithClockDemo.axaml.cs">
+      <Link>UserControl/Controls/CalendarWithClockDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CardDemo.axaml">
+      <Link>UserControl/Controls/CardDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CardDemo.axaml.cs">
+      <Link>UserControl/Controls/CardDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CarouselDemo.axaml">
+      <Link>UserControl/Controls/CarouselDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CarouselDemo.axaml.cs">
+      <Link>UserControl/Controls/CarouselDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ChatBubbleDemo.axaml">
+      <Link>UserControl/Controls/ChatBubbleDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ChatBubbleDemo.axaml.cs">
+      <Link>UserControl/Controls/ChatBubbleDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CheckComboBoxDemo.axaml">
+      <Link>UserControl/Controls/CheckComboBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CheckComboBoxDemo.axaml.cs">
+      <Link>UserControl/Controls/CheckComboBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CirclePanelDemo.axaml">
+      <Link>UserControl/Controls/CirclePanelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CirclePanelDemo.axaml.cs">
+      <Link>UserControl/Controls/CirclePanelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ClockDemo.axaml">
+      <Link>UserControl/Controls/ClockDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ClockDemo.axaml.cs">
+      <Link>UserControl/Controls/ClockDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ColorPickerDemo.axaml">
+      <Link>UserControl/Controls/ColorPickerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ColorPickerDemo.axaml.cs">
+      <Link>UserControl/Controls/ColorPickerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CompareSliderDemo.axaml">
+      <Link>UserControl/Controls/CompareSliderDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CompareSliderDemo.axaml.cs">
+      <Link>UserControl/Controls/CompareSliderDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ConfettiCannonDemo.axaml">
+      <Link>UserControl/Controls/ConfettiCannonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ConfettiCannonDemo.axaml.cs">
+      <Link>UserControl/Controls/ConfettiCannonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CoverViewDemo.axaml">
+      <Link>UserControl/Controls/CoverViewDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/CoverViewDemo.axaml.cs">
+      <Link>UserControl/Controls/CoverViewDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DateTimePickerDemo.axaml">
+      <Link>UserControl/Controls/DateTimePickerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DateTimePickerDemo.axaml.cs">
+      <Link>UserControl/Controls/DateTimePickerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DialogDemo.axaml">
+      <Link>UserControl/Controls/DialogDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DialogDemo.axaml.cs">
+      <Link>UserControl/Controls/DialogDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DividerDemo.axaml">
+      <Link>UserControl/Controls/DividerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DividerDemo.axaml.cs">
+      <Link>UserControl/Controls/DividerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DrawerDemo.axaml">
+      <Link>UserControl/Controls/DrawerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/DrawerDemo.axaml.cs">
+      <Link>UserControl/Controls/DrawerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/EffectsDemo.axaml">
+      <Link>UserControl/Controls/EffectsDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/EffectsDemo.axaml.cs">
+      <Link>UserControl/Controls/EffectsDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ElementGroupDemo.axaml">
+      <Link>UserControl/Controls/ElementGroupDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ElementGroupDemo.axaml.cs">
+      <Link>UserControl/Controls/ElementGroupDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/EmptyDemo.axaml">
+      <Link>UserControl/Controls/EmptyDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/EmptyDemo.axaml.cs">
+      <Link>UserControl/Controls/EmptyDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/FlexPanelDemo.axaml">
+      <Link>UserControl/Controls/FlexPanelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/FlexPanelDemo.axaml.cs">
+      <Link>UserControl/Controls/FlexPanelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/FloatingBlockDemo.axaml">
+      <Link>UserControl/Controls/FloatingBlockDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/FloatingBlockDemo.axaml.cs">
+      <Link>UserControl/Controls/FloatingBlockDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GeometryAnimationDemo.axaml">
+      <Link>UserControl/Controls/GeometryAnimationDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GeometryAnimationDemo.axaml.cs">
+      <Link>UserControl/Controls/GeometryAnimationDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GotoTopDemo.axaml">
+      <Link>UserControl/Controls/GotoTopDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GotoTopDemo.axaml.cs">
+      <Link>UserControl/Controls/GotoTopDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GravatarDemo.axaml">
+      <Link>UserControl/Controls/GravatarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GravatarDemo.axaml.cs">
+      <Link>UserControl/Controls/GravatarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GridDemo.axaml">
+      <Link>UserControl/Controls/GridDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GridDemo.axaml.cs">
+      <Link>UserControl/Controls/GridDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GrowlDemo.axaml">
+      <Link>UserControl/Controls/GrowlDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/GrowlDemo.axaml.cs">
+      <Link>UserControl/Controls/GrowlDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/HatchBrushGeneratorDemo.axaml">
+      <Link>UserControl/Controls/HatchBrushGeneratorDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/HatchBrushGeneratorDemo.axaml.cs">
+      <Link>UserControl/Controls/HatchBrushGeneratorDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/HoneycombPanelDemo.axaml">
+      <Link>UserControl/Controls/HoneycombPanelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/HoneycombPanelDemo.axaml.cs">
+      <Link>UserControl/Controls/HoneycombPanelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageBlockDemo.axaml">
+      <Link>UserControl/Controls/ImageBlockDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageBlockDemo.axaml.cs">
+      <Link>UserControl/Controls/ImageBlockDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageBrowserDemo.axaml">
+      <Link>UserControl/Controls/ImageBrowserDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageBrowserDemo.axaml.cs">
+      <Link>UserControl/Controls/ImageBrowserDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageSelectorDemo.axaml">
+      <Link>UserControl/Controls/ImageSelectorDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageSelectorDemo.axaml.cs">
+      <Link>UserControl/Controls/ImageSelectorDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageViewerDemo.axaml">
+      <Link>UserControl/Controls/ImageViewerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ImageViewerDemo.axaml.cs">
+      <Link>UserControl/Controls/ImageViewerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/LoadingDemo.axaml">
+      <Link>UserControl/Controls/LoadingDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/LoadingDemo.axaml.cs">
+      <Link>UserControl/Controls/LoadingDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/NotificationDemo.axaml">
+      <Link>UserControl/Controls/NotificationDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/NotificationDemo.axaml.cs">
+      <Link>UserControl/Controls/NotificationDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/NotifyIconDemo.axaml">
+      <Link>UserControl/Controls/NotifyIconDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/NotifyIconDemo.axaml.cs">
+      <Link>UserControl/Controls/NotifyIconDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/OutlineTextDemo.axaml">
+      <Link>UserControl/Controls/OutlineTextDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/OutlineTextDemo.axaml.cs">
+      <Link>UserControl/Controls/OutlineTextDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PaginationDemo.axaml">
+      <Link>UserControl/Controls/PaginationDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PaginationDemo.axaml.cs">
+      <Link>UserControl/Controls/PaginationDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PasswordBoxDemo.axaml">
+      <Link>UserControl/Controls/PasswordBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PasswordBoxDemo.axaml.cs">
+      <Link>UserControl/Controls/PasswordBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PinBoxDemo.axaml">
+      <Link>UserControl/Controls/PinBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PinBoxDemo.axaml.cs">
+      <Link>UserControl/Controls/PinBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PoptipDemo.axaml">
+      <Link>UserControl/Controls/PoptipDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PoptipDemo.axaml.cs">
+      <Link>UserControl/Controls/PoptipDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PreviewSliderDemo.axaml">
+      <Link>UserControl/Controls/PreviewSliderDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PreviewSliderDemo.axaml.cs">
+      <Link>UserControl/Controls/PreviewSliderDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ProgressBarDemo.axaml">
+      <Link>UserControl/Controls/ProgressBarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ProgressBarDemo.axaml.cs">
+      <Link>UserControl/Controls/ProgressBarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ProgressButtonDemo.axaml">
+      <Link>UserControl/Controls/ProgressButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ProgressButtonDemo.axaml.cs">
+      <Link>UserControl/Controls/ProgressButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PropertyGridDemo.axaml">
+      <Link>UserControl/Controls/PropertyGridDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/PropertyGridDemo.axaml.cs">
+      <Link>UserControl/Controls/PropertyGridDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RangeSliderDemo.axaml">
+      <Link>UserControl/Controls/RangeSliderDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RangeSliderDemo.axaml.cs">
+      <Link>UserControl/Controls/RangeSliderDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RateDemo.axaml">
+      <Link>UserControl/Controls/RateDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RateDemo.axaml.cs">
+      <Link>UserControl/Controls/RateDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RelativePanelDemo.axaml">
+      <Link>UserControl/Controls/RelativePanelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RelativePanelDemo.axaml.cs">
+      <Link>UserControl/Controls/RelativePanelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RibbonDemo.axaml">
+      <Link>UserControl/Controls/RibbonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RibbonDemo.axaml.cs">
+      <Link>UserControl/Controls/RibbonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RunningBlockDemo.axaml">
+      <Link>UserControl/Controls/RunningBlockDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/RunningBlockDemo.axaml.cs">
+      <Link>UserControl/Controls/RunningBlockDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ScreenshotDemo.axaml">
+      <Link>UserControl/Controls/ScreenshotDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ScreenshotDemo.axaml.cs">
+      <Link>UserControl/Controls/ScreenshotDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ScrollViewerDemo.axaml">
+      <Link>UserControl/Controls/ScrollViewerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ScrollViewerDemo.axaml.cs">
+      <Link>UserControl/Controls/ScrollViewerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/SearchBarDemo.axaml">
+      <Link>UserControl/Controls/SearchBarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/SearchBarDemo.axaml.cs">
+      <Link>UserControl/Controls/SearchBarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ShieldDemo.axaml">
+      <Link>UserControl/Controls/ShieldDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/ShieldDemo.axaml.cs">
+      <Link>UserControl/Controls/ShieldDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/SideMenuDemo.axaml">
+      <Link>UserControl/Controls/SideMenuDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/SideMenuDemo.axaml.cs">
+      <Link>UserControl/Controls/SideMenuDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/SpriteDemo.axaml">
+      <Link>UserControl/Controls/SpriteDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/SpriteDemo.axaml.cs">
+      <Link>UserControl/Controls/SpriteDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/StepBarDemo.axaml">
+      <Link>UserControl/Controls/StepBarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/StepBarDemo.axaml.cs">
+      <Link>UserControl/Controls/StepBarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TabControlDemo.axaml">
+      <Link>UserControl/Controls/TabControlDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TabControlDemo.axaml.cs">
+      <Link>UserControl/Controls/TabControlDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TagDemo.axaml">
+      <Link>UserControl/Controls/TagDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TagDemo.axaml.cs">
+      <Link>UserControl/Controls/TagDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TimeBarDemo.axaml">
+      <Link>UserControl/Controls/TimeBarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TimeBarDemo.axaml.cs">
+      <Link>UserControl/Controls/TimeBarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TransferDemo.axaml">
+      <Link>UserControl/Controls/TransferDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TransferDemo.axaml.cs">
+      <Link>UserControl/Controls/TransferDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TransitioningContentControlDemo.axaml">
+      <Link>UserControl/Controls/TransitioningContentControlDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/TransitioningContentControlDemo.axaml.cs">
+      <Link>UserControl/Controls/TransitioningContentControlDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/UniformSpacingPanelDemo.axaml">
+      <Link>UserControl/Controls/UniformSpacingPanelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/UniformSpacingPanelDemo.axaml.cs">
+      <Link>UserControl/Controls/UniformSpacingPanelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/WaterfallPanelDemo.axaml">
+      <Link>UserControl/Controls/WaterfallPanelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/WaterfallPanelDemo.axaml.cs">
+      <Link>UserControl/Controls/WaterfallPanelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/WatermarkDemo.axaml">
+      <Link>UserControl/Controls/WatermarkDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/WatermarkDemo.axaml.cs">
+      <Link>UserControl/Controls/WatermarkDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/WindowDemo.axaml">
+      <Link>UserControl/Controls/WindowDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Controls/WindowDemo.axaml.cs">
+      <Link>UserControl/Controls/WindowDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Main/LeftMainContent.axaml">
+      <Link>UserControl/Main/LeftMainContent.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Main/LeftMainContent.axaml.cs">
+      <Link>UserControl/Main/LeftMainContent.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Main/MainContent.axaml">
+      <Link>UserControl/Main/MainContent.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Main/MainContent.axaml.cs">
+      <Link>UserControl/Main/MainContent.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Main/MainWindowContent.axaml">
+      <Link>UserControl/Main/MainWindowContent.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Main/MainWindowContent.axaml.cs">
+      <Link>UserControl/Main/MainWindowContent.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/AutoCompleteBoxDemo.axaml">
+      <Link>UserControl/Styles/AutoCompleteBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/AutoCompleteBoxDemo.axaml.cs">
+      <Link>UserControl/Styles/AutoCompleteBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/BorderDemo.axaml">
+      <Link>UserControl/Styles/BorderDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/BorderDemo.axaml.cs">
+      <Link>UserControl/Styles/BorderDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/BrushDemo.axaml">
+      <Link>UserControl/Styles/BrushDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/BrushDemo.axaml.cs">
+      <Link>UserControl/Styles/BrushDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ButtonDemo.axaml">
+      <Link>UserControl/Styles/ButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/ButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/CalendarDatePickerDemo.axaml">
+      <Link>UserControl/Styles/CalendarDatePickerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/CalendarDatePickerDemo.axaml.cs">
+      <Link>UserControl/Styles/CalendarDatePickerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/CalendarDemo.axaml">
+      <Link>UserControl/Styles/CalendarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/CalendarDemo.axaml.cs">
+      <Link>UserControl/Styles/CalendarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/CheckBoxDemo.axaml">
+      <Link>UserControl/Styles/CheckBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/CheckBoxDemo.axaml.cs">
+      <Link>UserControl/Styles/CheckBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ComboBoxDemo.axaml">
+      <Link>UserControl/Styles/ComboBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ComboBoxDemo.axaml.cs">
+      <Link>UserControl/Styles/ComboBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/DatePickerDemo.axaml">
+      <Link>UserControl/Styles/DatePickerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/DatePickerDemo.axaml.cs">
+      <Link>UserControl/Styles/DatePickerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/DropDownButtonDemo.axaml">
+      <Link>UserControl/Styles/DropDownButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/DropDownButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/DropDownButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ExpanderDemo.axaml">
+      <Link>UserControl/Styles/ExpanderDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ExpanderDemo.axaml.cs">
+      <Link>UserControl/Styles/ExpanderDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/HyperlinkButtonDemo.axaml">
+      <Link>UserControl/Styles/HyperlinkButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/HyperlinkButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/HyperlinkButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/LabelDemo.axaml">
+      <Link>UserControl/Styles/LabelDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/LabelDemo.axaml.cs">
+      <Link>UserControl/Styles/LabelDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ListBoxDemo.axaml">
+      <Link>UserControl/Styles/ListBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ListBoxDemo.axaml.cs">
+      <Link>UserControl/Styles/ListBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/MaskedTextBoxDemo.axaml">
+      <Link>UserControl/Styles/MaskedTextBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/MaskedTextBoxDemo.axaml.cs">
+      <Link>UserControl/Styles/MaskedTextBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/MenuDemo.axaml">
+      <Link>UserControl/Styles/MenuDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/MenuDemo.axaml.cs">
+      <Link>UserControl/Styles/MenuDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NativeProgressBarDemo.axaml">
+      <Link>UserControl/Styles/NativeProgressBarDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NativeProgressBarDemo.axaml.cs">
+      <Link>UserControl/Styles/NativeProgressBarDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NativeScrollViewerDemo.axaml">
+      <Link>UserControl/Styles/NativeScrollViewerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NativeScrollViewerDemo.axaml.cs">
+      <Link>UserControl/Styles/NativeScrollViewerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NativeTabControlDemo.axaml">
+      <Link>UserControl/Styles/NativeTabControlDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NativeTabControlDemo.axaml.cs">
+      <Link>UserControl/Styles/NativeTabControlDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NumericUpDownDemo.axaml">
+      <Link>UserControl/Styles/NumericUpDownDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/NumericUpDownDemo.axaml.cs">
+      <Link>UserControl/Styles/NumericUpDownDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/RadioButtonDemo.axaml">
+      <Link>UserControl/Styles/RadioButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/RadioButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/RadioButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/RepeatButtonDemo.axaml">
+      <Link>UserControl/Styles/RepeatButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/RepeatButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/RepeatButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/SliderDemo.axaml">
+      <Link>UserControl/Styles/SliderDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/SliderDemo.axaml.cs">
+      <Link>UserControl/Styles/SliderDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/SplitButtonDemo.axaml">
+      <Link>UserControl/Styles/SplitButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/SplitButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/SplitButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TextBlockDemo.axaml">
+      <Link>UserControl/Styles/TextBlockDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TextBlockDemo.axaml.cs">
+      <Link>UserControl/Styles/TextBlockDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TextBoxDemo.axaml">
+      <Link>UserControl/Styles/TextBoxDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TextBoxDemo.axaml.cs">
+      <Link>UserControl/Styles/TextBoxDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TimePickerDemo.axaml">
+      <Link>UserControl/Styles/TimePickerDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TimePickerDemo.axaml.cs">
+      <Link>UserControl/Styles/TimePickerDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ToggleButtonDemo.axaml">
+      <Link>UserControl/Styles/ToggleButtonDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ToggleButtonDemo.axaml.cs">
+      <Link>UserControl/Styles/ToggleButtonDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ToggleSwitchDemo.axaml">
+      <Link>UserControl/Styles/ToggleSwitchDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/ToggleSwitchDemo.axaml.cs">
+      <Link>UserControl/Styles/ToggleSwitchDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TreeViewDemo.axaml">
+      <Link>UserControl/Styles/TreeViewDemo.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/UserControl/Styles/TreeViewDemo.axaml.cs">
+      <Link>UserControl/Styles/TreeViewDemo.axaml.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/Window/DialogDemoWindow.axaml">
+      <Link>Window/DialogDemoWindow.axaml</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\HandyControlDemo_Avalonia/Window/DialogDemoWindow.axaml.cs">
+      <Link>Window/DialogDemoWindow.axaml.cs</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/DemoViewModelBase`1.cs">
+      <Link>ViewModel/DemoViewModelBase`1.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/ViewModelLocator.cs">
+      <Link>ViewModel/ViewModelLocator.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Basic/InteractiveDialogViewModel.cs">
+      <Link>ViewModel/InteractiveDialogViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Common/InputElementDemoViewModel.cs">
+      <Link>ViewModel/InputElementDemoViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/CardDemoViewModel.cs">
+      <Link>ViewModel/CardDemoViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/CarouselViewModel.cs">
+      <Link>ViewModel/CarouselViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/ColorPickerViewModel.cs">
+      <Link>ViewModel/ColorPickerViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/CoverViewModel.cs">
+      <Link>ViewModel/CoverViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/DialogDemoViewModel.cs">
+      <Link>ViewModel/DialogDemoViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/GrowlDemoViewModel.cs">
+      <Link>ViewModel/GrowlDemoViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/PropertyGridViewModel.cs">
+      <Link>ViewModel/PropertyGridViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/SideMenuViewModel.cs">
+      <Link>ViewModel/SideMenuViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Controls/TransferViewModel.cs">
+      <Link>ViewModel/TransferViewModel.cs</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../HandyControlDemo_Avalonia/ViewModel/Main/MainViewModel.cs">
+      <Link>ViewModel/MainViewModel.cs</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

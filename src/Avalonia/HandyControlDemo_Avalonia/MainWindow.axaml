@@ -1,11 +1,13 @@
-<hc:Window
+﻿<hc:Window
   x:Class="HandyControlDemo.MainWindow"
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:hc="https://handyorg.github.io/handycontrol"
-  xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+  xmlns:langs="using:HandyControlDemo.Properties.Langs"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:vm="using:HandyControlDemo.ViewModel"
+  x:DataType="vm:MainViewModel"
   Title="HandyControlDemo"
   d:DesignHeight="800"
   d:DesignWidth="1400"
@@ -14,6 +16,9 @@
   ShowTitle="False"
   WindowStartupLocation="CenterScreen"
   mc:Ignorable="d">
+  <hc:Window.KeyBindings>
+    <KeyBinding Gesture="Ctrl+F12" Command="{Binding OpenCodeCommand}" />
+  </hc:Window.KeyBindings>
   <hc:Window.CustomTitleBarContent>
     <Grid Height="29" ColumnDefinitions="*,Auto">
       <StackPanel VerticalAlignment="Stretch" Orientation="Horizontal">
@@ -207,5 +212,28 @@
       </Button>
     </Grid>
   </hc:Window.CustomTitleBarContent>
-  <ContentControl Name="ControlMain" />
+  <Grid>
+    <ContentControl Name="ControlMain" />
+    <Border Name="CodeOverlay"
+            Background="#66000000"
+            IsVisible="False"
+            PointerPressed="CodeOverlay_OnPointerPressed" />
+    <Border Name="CodePanel"
+            Width="800"
+            Margin="0,32,0,32"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Stretch"
+            Background="Transparent"
+            IsVisible="False"
+            RenderTransformOrigin="1,0.5">
+      <Border.RenderTransform>
+        <TranslateTransform X="800" />
+      </Border.RenderTransform>
+      <Border Name="BorderCode"
+              Background="{DynamicResource RegionBrush}"
+              CornerRadius="10,0,0,10"
+              ClipToBounds="True"
+              Effect="{StaticResource EffectShadow4}" />
+    </Border>
+  </Grid>
 </hc:Window>

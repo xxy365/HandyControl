@@ -1,6 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.TagDemo"
              Background="{DynamicResource RegionBrush}">
@@ -9,11 +9,11 @@
                       BasedOn="{StaticResource {x:Type hc:Tag}}"
                       TargetType="hc:Tag">
             <Setter Property="Content"
-                    Value="{Binding Name}" />
+                    Value="{ReflectionBinding Name}" />
             <Setter Property="Margin"
                     Value="5" />
             <Setter Property="IsSelected"
-                    Value="{Binding IsSelected}" />
+                    Value="{ReflectionBinding IsSelected}" />
         </ControlTheme>
     </UserControl.Resources>
     <ScrollViewer>

@@ -20,7 +20,7 @@ public class LoadingLine : LoadingBase
 
     public LoadingLine()
     {
-        this.Bind(HeightProperty, new Binding(nameof(DotDiameter)) { Source = this });
+        this.Bind(HeightProperty, this.GetObservable(DotDiameterProperty));
     }
 
     protected sealed override void UpdateDots()

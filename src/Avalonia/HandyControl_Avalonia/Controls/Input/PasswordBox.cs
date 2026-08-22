@@ -157,6 +157,8 @@ public class PasswordBox : TemplatedControl
         _passwordBox = e.NameScope.Find<TextBox>(ElementPasswordBox);
     }
 
+    public event EventHandler? PasswordChanged;
+
     private void OnIsSafeEnabledChanged(AvaloniaPropertyChangedEventArgs e)
     {
         if ((bool) e.NewValue!)
@@ -191,5 +193,7 @@ public class PasswordBox : TemplatedControl
                 SetCurrentValue(UnsafePasswordProperty, value);
             }
         }
+
+        PasswordChanged?.Invoke(this, EventArgs.Empty);
     }
 }

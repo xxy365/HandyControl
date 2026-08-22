@@ -1,6 +1,11 @@
+using System;
+using System.Globalization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
+using Avalonia.Reactive;
+
+using HandyControl.Tools;
 
 namespace HandyControl.Controls;
 
@@ -37,13 +42,18 @@ public class ContentControlAttach
 
         contentControl.ClearValue(ContentControl.ContentProperty);
 
-        var binding = new Binding("(ContentControlAttach.Content)")
+        var stringFormat = contentControl.GetValue(ContentStringFormatProperty);
+        var source = contentControl.GetObservable(ContentProperty);
+        if (string.IsNullOrEmpty(stringFormat))
         {
-            Source = contentControl,
-            StringFormat = contentControl.GetValue(ContentStringFormatProperty),
-            TypeResolver = (_, _) => typeof(ContentControlAttach)
-        };
-
-        contentControl.Bind(ContentControl.ContentProperty, binding);
+            contentControl.Bind(ContentControl.ContentProperty, source);
+        }
+        else
+        {
+            var template = stringFormat.Contains('{') ? stringFormat : "{0:" + stringFormat + "}";
+            contentControl.Bind(ContentControl.ContentProperty,
+                source.Select(value =>
+                    value is string s ? s : string.Format(CultureInfo.CurrentCulture, template, value)));
+        }
     }
 }

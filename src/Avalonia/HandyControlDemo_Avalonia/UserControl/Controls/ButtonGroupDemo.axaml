@@ -1,8 +1,8 @@
-<UserControl x:Class="HandyControlDemo.UserControl.ButtonGroupDemo"
+﻿<UserControl x:Class="HandyControlDemo.UserControl.ButtonGroupDemo"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <ScrollViewer>

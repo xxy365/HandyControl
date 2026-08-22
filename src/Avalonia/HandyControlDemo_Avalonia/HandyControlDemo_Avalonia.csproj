@@ -7,7 +7,6 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AssemblyName>HandyControlDemo</AssemblyName>
     <RootNamespace>HandyControlDemo</RootNamespace>
-    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <NoWarn>1701;1702;NETSDK1138</NoWarn>
@@ -34,10 +33,14 @@
     <AvaloniaResource Include="Resources\Img\Album\*.jpg" />
     <AvaloniaResource Include="Resources\Img\b1.jpg" />
     <AvaloniaResource Include="Resources\Img\b2.jpg" />
+    <AvaloniaResource Include="Resources\xshd\XML-Dark.xshd" />
+    <AvaloniaResource Include="Resources\xshd\CSharp-Dark.xshd" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="12.0.0" />
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.11" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
@@ -46,6 +49,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HandyControl_Avalonia\HandyControl_Avalonia.csproj" />
+    <ProjectReference Include="..\HandyControlDemo_Code_Avalonia\HandyControlDemo_Code_Avalonia.csproj" />
   </ItemGroup>
 
   <ItemGroup>

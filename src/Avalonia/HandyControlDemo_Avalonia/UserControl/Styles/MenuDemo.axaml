@@ -1,8 +1,8 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             x:Class="HandyControlDemo.UserControl.MenuDemo">
+             x:Class="HandyControlDemo.UserControl.MenuDemo" xmlns:vm="using:HandyControlDemo.ViewModel" xmlns:data="using:HandyControlDemo.Data" x:DataType="vm:MainViewModel">
     <hc:UniformSpacingPanel Spacing="16"
                             Margin="32">
         <hc:DashedBorder Width="200"
@@ -15,7 +15,7 @@
             <hc:DashedBorder.ContextMenu>
                 <ContextMenu ItemsSource="{Binding DataList}">
                     <ContextMenu.ItemTemplate>
-                        <TreeDataTemplate ItemsSource="{Binding DataList}">
+                        <TreeDataTemplate x:DataType="data:DemoDataModel" ItemsSource="{Binding DataList}">
                             <TextBlock Text="{Binding Name}" />
                         </TreeDataTemplate>
                     </ContextMenu.ItemTemplate>
@@ -40,7 +40,7 @@
                 <ContextMenu ItemsSource="{Binding DataList}"
                              Theme="{StaticResource ContextMenu.Small}">
                     <ContextMenu.ItemTemplate>
-                        <TreeDataTemplate ItemsSource="{Binding DataList}">
+                        <TreeDataTemplate x:DataType="data:DemoDataModel" ItemsSource="{Binding DataList}">
                             <TextBlock Text="{Binding Name}" />
                         </TreeDataTemplate>
                     </ContextMenu.ItemTemplate>

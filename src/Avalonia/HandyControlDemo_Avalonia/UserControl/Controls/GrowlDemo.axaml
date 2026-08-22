@@ -1,11 +1,11 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              x:Class="HandyControlDemo.UserControl.GrowlDemo"
              x:DataType="vm:GrowlDemoViewModel"
-             DataContext="{Binding GrowlDemo, Source={x:Static vm:ViewModelLocator.Instance}}"
+             DataContext="{ReflectionBinding GrowlDemo, Source={x:Static vm:ViewModelLocator.Instance}}"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <ScrollViewer>

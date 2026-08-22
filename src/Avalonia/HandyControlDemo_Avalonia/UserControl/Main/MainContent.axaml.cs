@@ -4,6 +4,7 @@ using Avalonia.Layout;
 using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using HandyControlDemo.Data;
+using HandyControlDemo.ViewModel;
 
 namespace HandyControlDemo.UserControl;
 
@@ -20,11 +21,7 @@ public partial class MainContent : Avalonia.Controls.UserControl
 
     private void FullSwitch(bool isFull)
     {
-        if (_isFull == isFull)
-        {
-            return;
-        }
-
+        if (_isFull == isFull) return;
         _isFull = isFull;
 
         if (_isFull)
@@ -45,5 +42,11 @@ public partial class MainContent : Avalonia.Controls.UserControl
             PresenterMain.Margin = new Thickness(0, 0, 0, 10);
             BorderRoot.Margin = new Thickness(16);
         }
+    }
+
+    private void ButtonCode_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        HandyControlDemo.Tools.DebugLog.Log("MainContent: ButtonCode clicked");
+        ViewModelLocator.Instance.Main.IsCodeOpened = !ViewModelLocator.Instance.Main.IsCodeOpened;
     }
 }

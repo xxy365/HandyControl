@@ -1,6 +1,6 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              x:Class="HandyControlDemo.UserControl.DrawerDemo"
              Background="{DynamicResource RegionBrush}"
@@ -31,7 +31,7 @@
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
                                         HorizontalAlignment="Right"
-                                        Command="{Binding CloseCommand}"
+                                        Command="{Binding #DrawerLeft.CloseCommand}"
                                         Foreground="{DynamicResource PrimaryTextBrush}"
                                         Theme="{StaticResource ButtonIcon}"
                                         hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -56,7 +56,7 @@
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
                                         HorizontalAlignment="Right"
-                                        Command="{Binding CloseCommand}"
+                                        Command="{Binding #DrawerTop.CloseCommand}"
                                         Foreground="{DynamicResource PrimaryTextBrush}"
                                         Theme="{StaticResource ButtonIcon}"
                                         hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -80,7 +80,7 @@
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
                                         HorizontalAlignment="Right"
-                                        Command="{Binding CloseCommand}"
+                                        Command="{Binding #DrawerRight.CloseCommand}"
                                         Foreground="{DynamicResource PrimaryTextBrush}"
                                         Theme="{StaticResource ButtonIcon}"
                                         hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -105,7 +105,7 @@
                                            HorizontalAlignment="Left" />
                                 <Button Grid.Row="0"
                                         HorizontalAlignment="Right"
-                                        Command="{Binding CloseCommand}"
+                                        Command="{Binding #DrawerBottom.CloseCommand}"
                                         Foreground="{DynamicResource PrimaryTextBrush}"
                                         Theme="{StaticResource ButtonIcon}"
                                         hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -141,7 +141,7 @@
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
                                                 HorizontalAlignment="Right"
-                                                Command="{Binding CloseCommand}"
+                                                Command="{Binding #DrawerLeftInContainer.CloseCommand}"
                                                 Foreground="{DynamicResource PrimaryTextBrush}"
                                                 Theme="{StaticResource ButtonIcon}"
                                                 hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -165,7 +165,7 @@
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
                                                 HorizontalAlignment="Right"
-                                                Command="{Binding CloseCommand}"
+                                                Command="{Binding #DrawerTopInContainer.CloseCommand}"
                                                 Foreground="{DynamicResource PrimaryTextBrush}"
                                                 Theme="{StaticResource ButtonIcon}"
                                                 hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -188,7 +188,7 @@
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
                                                 HorizontalAlignment="Right"
-                                                Command="{Binding CloseCommand}"
+                                                Command="{Binding #DrawerRightInContainer.CloseCommand}"
                                                 Foreground="{DynamicResource PrimaryTextBrush}"
                                                 Theme="{StaticResource ButtonIcon}"
                                                 hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />
@@ -213,7 +213,7 @@
                                                    HorizontalAlignment="Left" />
                                         <Button Grid.Row="0"
                                                 HorizontalAlignment="Right"
-                                                Command="{Binding CloseCommand}"
+                                                Command="{Binding #DrawerBottomInContainer.CloseCommand}"
                                                 Foreground="{DynamicResource PrimaryTextBrush}"
                                                 Theme="{StaticResource ButtonIcon}"
                                                 hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" />

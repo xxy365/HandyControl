@@ -8,7 +8,11 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Reactive;
+using Avalonia.VisualTree;
 using HandyControl.Data;
+
+using HandyControl.Tools;
 
 namespace HandyControl.Controls;
 
@@ -43,16 +47,31 @@ public class SideMenuItem : HeaderedSimpleItemsControl, ISelectable
         set => SetValue(VerticalContentAlignmentProperty, value);
     }
 
+    private IDisposable? _expandModeSubscription;
+
     public SideMenuItem()
     {
-        var expandModeBinding = new Binding(SideMenu.ExpandModeProperty.Name)
+        AttachedToVisualTree += SideMenuItem_AttachedToVisualTree;
+        DetachedFromVisualTree += SideMenuItem_DetachedFromVisualTree;
+    }
+
+    private void SideMenuItem_AttachedToVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+    {
+        var sideMenu = this.GetSelfAndVisualAncestors().OfType<SideMenu>().FirstOrDefault();
+        if (sideMenu == null)
         {
-            RelativeSource = new RelativeSource(RelativeSourceMode.FindAncestor)
-            {
-                AncestorType = typeof(SideMenu)
-            }
-        };
-        Bind(ExpandModeProperty, expandModeBinding);
+            return;
+        }
+
+        _expandModeSubscription?.Dispose();
+        _expandModeSubscription = sideMenu.GetObservable(SideMenu.ExpandModeProperty)
+            .Subscribe(value => SetValue(ExpandModeProperty, value));
+    }
+
+    private void SideMenuItem_DetachedFromVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+    {
+        _expandModeSubscription?.Dispose();
+        _expandModeSubscription = null;
     }
 
     internal static readonly StyledProperty<ExpandMode> ExpandModeProperty =

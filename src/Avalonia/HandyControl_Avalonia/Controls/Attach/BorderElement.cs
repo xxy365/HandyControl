@@ -1,7 +1,11 @@
+using System.Globalization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
+using Avalonia.Reactive;
 using HandyControl.Tools.Converter;
+
+using HandyControl.Tools;
 
 namespace HandyControl.Controls;
 
@@ -36,12 +40,11 @@ public class BorderElement
 
         if (e.GetNewValue<bool>())
         {
-            var binding = new Binding(Visual.BoundsProperty.Name)
-            {
-                Converter = new BorderCircularConverter(),
-                Source = border,
-            };
-            border.Bind(Border.CornerRadiusProperty, binding);
+            var converter = new BorderCircularConverter();
+            border.Bind(Border.CornerRadiusProperty,
+                border.GetObservable(Visual.BoundsProperty).Select(rect =>
+                    (CornerRadius)(converter.Convert(rect, typeof(CornerRadius), null, CultureInfo.CurrentCulture)
+                        ?? new CornerRadius())));
         }
         else
         {

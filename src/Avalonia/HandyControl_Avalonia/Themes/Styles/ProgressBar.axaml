@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
-                    xmlns:hc="clr-namespace:HandyControl.Controls"
-                    xmlns:shapes="clr-namespace:Avalonia.Controls.Shapes;assembly=Avalonia.Controls">
+                    xmlns:hc="using:HandyControl.Controls"
+                    xmlns:shapes="using:Avalonia.Controls.Shapes">
     <ControlTheme x:Key="ProgressBarBaseStyle"
                   TargetType="ProgressBar">
         <Setter Property="hc:BorderElement.CornerRadius"

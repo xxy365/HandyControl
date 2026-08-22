@@ -2,6 +2,8 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Avalonia.Threading;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using HandyControlDemo.Data;
@@ -12,7 +14,7 @@ using HandyControlDemo.UserControl;
 
 namespace HandyControlDemo.ViewModel;
 
-public class MainViewModel : DemoViewModelBase<DemoDataModel>
+public partial class MainViewModel : DemoViewModelBase<DemoDataModel>
 {
     private readonly DataService _dataService;
 
@@ -30,6 +32,12 @@ public class MainViewModel : DemoViewModelBase<DemoDataModel>
     public DemoItemModel? DemoItemCurrent { get; private set; }
 
     public DemoInfoModel? DemoInfoCurrent { get; set; }
+
+    [ObservableProperty]
+    private bool _isCodeOpened;
+
+    [RelayCommand]
+    private void OpenCode() => IsCodeOpened = !IsCodeOpened;
 
     public object? SubContent
     {
@@ -98,6 +106,11 @@ public class MainViewModel : DemoViewModelBase<DemoDataModel>
 
             if (DemoInfoCollection.Any() && DemoInfoCollection.First().DemoItemList.Any())
             {
+                if (DemoInfoCurrent == null)
+                {
+                    DemoInfoCurrent = DemoInfoCollection.First();
+                    HandyControlDemo.Tools.DebugLog.Log($"MainViewModel: startup DemoInfoCurrent = {DemoInfoCurrent.Key}");
+                }
                 SwitchDemo(DemoInfoCollection.First().DemoItemList.First());
             }
         });

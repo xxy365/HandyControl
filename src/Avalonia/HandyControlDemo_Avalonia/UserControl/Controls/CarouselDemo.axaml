@@ -1,11 +1,11 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
-             xmlns:cv="clr-namespace:HandyControlDemo.Tools.Converter"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:cv="using:HandyControlDemo.Tools.Converter"
              x:Class="HandyControlDemo.UserControl.CarouselDemo"
              x:DataType="vm:CarouselViewModel"
-             DataContext="{Binding Carousel, Source={x:Static vm:ViewModelLocator.Instance}}"
+             DataContext="{ReflectionBinding Carousel, Source={x:Static vm:ViewModelLocator.Instance}}"
              Background="{DynamicResource RegionBrush}">
     <UserControl.Resources>
         <cv:StringToBitmapConverter x:Key="StringToBitmap" />

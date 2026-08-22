@@ -1,12 +1,12 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="HandyControlDemo.UserControl.ListBoxDemo">
+             x:Class="HandyControlDemo.UserControl.ListBoxDemo" xmlns:vm="using:HandyControlDemo.ViewModel" xmlns:data="using:HandyControlDemo.Data" x:DataType="vm:MainViewModel">
     <WrapPanel Margin="16">
         <ListBox Margin="16"
                  Width="200"
                  ItemsSource="{Binding DataList}">
             <ListBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="data:DemoDataModel">
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -16,7 +16,7 @@
                  ItemsSource="{Binding DataList}"
                  Theme="{StaticResource ListBox.Small}">
             <ListBox.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="data:DemoDataModel">
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>

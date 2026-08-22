@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl" x:ClassModifier="internal">
+                    xmlns:hc="using:HandyControl.Controls" x:ClassModifier="internal">
 
     <ControlTheme x:Key="{x:Type hc:ImageViewer}"
                   TargetType="hc:ImageViewer">

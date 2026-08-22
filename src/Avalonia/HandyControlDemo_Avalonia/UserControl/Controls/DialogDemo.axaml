@@ -1,11 +1,12 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
-             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:sys="using:System"
              x:Class="HandyControlDemo.UserControl.DialogDemo"
-             DataContext="{Binding DialogDemo, Source={x:Static vm:ViewModelLocator.Instance}}"
+             x:DataType="vm:DialogDemoViewModel"
+             DataContext="{ReflectionBinding DialogDemo, Source={x:Static vm:ViewModelLocator.Instance}}"
              Background="{DynamicResource RegionBrush}"
              MinWidth="500">
     <hc:DialogContainer>

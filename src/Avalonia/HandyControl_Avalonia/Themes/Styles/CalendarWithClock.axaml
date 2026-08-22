@@ -1,8 +1,8 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
-                    xmlns:hc="clr-namespace:HandyControl.Controls"
-                    xmlns:langs="clr-namespace:HandyControl.Properties.Langs">
+                    xmlns:hc="using:HandyControl.Controls"
+                    xmlns:langs="using:HandyControl.Properties.Langs">
 
     <ControlTheme x:Key="CalendarWithClockBaseStyle"
                   TargetType="hc:CalendarWithClock">

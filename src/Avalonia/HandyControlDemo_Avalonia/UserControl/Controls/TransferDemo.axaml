@@ -1,11 +1,11 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
-             xmlns:data="clr-namespace:HandyControlDemo.Data"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:data="using:HandyControlDemo.Data"
              x:Class="HandyControlDemo.UserControl.TransferDemo"
              x:DataType="vm:TransferViewModel"
-             DataContext="{Binding Transfer, Source={x:Static vm:ViewModelLocator.Instance}}"
+             DataContext="{ReflectionBinding Transfer, Source={x:Static vm:ViewModelLocator.Instance}}"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <ScrollViewer>

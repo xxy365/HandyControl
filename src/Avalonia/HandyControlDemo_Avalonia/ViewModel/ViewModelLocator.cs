@@ -18,7 +18,7 @@ public class ViewModelLocator
         var services = new ServiceCollection();
 
         services.AddSingleton<DataService>();
-        services.AddTransient<MainViewModel>();
+        services.AddSingleton<MainViewModel>();
         services.AddTransient<InputElementDemoViewModel>();
         services.AddTransient<CardDemoViewModel>();
         services.AddTransient<DialogDemoViewModel>();

@@ -1,12 +1,12 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:vm="clr-namespace:HandyControlDemo.ViewModel"
-             xmlns:data="clr-namespace:HandyControlDemo.Data"
-             xmlns:cv="clr-namespace:HandyControlDemo.Tools.Converter"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:data="using:HandyControlDemo.Data"
+             xmlns:cv="using:HandyControlDemo.Tools.Converter"
              x:Class="HandyControlDemo.UserControl.CardDemo"
              x:DataType="vm:CardDemoViewModel"
-             DataContext="{Binding CardDemo, Source={x:Static vm:ViewModelLocator.Instance}}">
+             DataContext="{ReflectionBinding CardDemo, Source={x:Static vm:ViewModelLocator.Instance}}">
     <UserControl.Resources>
         <cv:StringToBitmapConverter x:Key="StringToBitmap" />
     </UserControl.Resources>

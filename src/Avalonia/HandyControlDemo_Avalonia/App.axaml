@@ -3,7 +3,9 @@
              x:Class="HandyControlDemo.App"
              RequestedThemeVariant="Default">
     <Application.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.xaml" />
         <StyleInclude Source="avares://HandyControl/Themes/Theme.axaml" />
+        <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
         <StyleInclude Source="avares://HandyControlDemo/Resources/Themes/Theme.axaml" />
     </Application.Styles>
 </Application>

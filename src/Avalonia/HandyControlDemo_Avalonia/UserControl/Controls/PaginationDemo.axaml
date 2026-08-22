@@ -1,11 +1,14 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="HandyControlDemo.UserControl.PaginationDemo"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             xmlns:data="using:HandyControlDemo.Data"
+             x:DataType="vm:MainViewModel"
              Background="{DynamicResource RegionBrush}">
     <TransitioningContentControl>
         <Grid Margin="32"
@@ -30,7 +33,7 @@
                     <ListBox Grid.Row="1"
                              ItemsSource="{Binding DataList}">
                         <ListBox.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="data:DemoDataModel">
                                 <Grid ColumnDefinitions="60,160,90,*"
                                       Margin="0,4">
                                     <TextBlock Grid.Column="0"

@@ -1,39 +1,52 @@
-<UserControl x:Class="HandyControlDemo.UserControl.MainContent"
+﻿<UserControl x:Class="HandyControlDemo.UserControl.MainContent"
              xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Panel>
-        <Border Name="BorderRoot" Margin="16">
-            <Grid Name="GridMain"
-                  MinHeight="300"
-                  MinWidth="200"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                  RowDefinitions="Auto,*">
-                <Border Name="BorderEffect"
-                        Grid.RowSpan="2"
-                        Background="{DynamicResource RegionBrush}"
-                        CornerRadius="10"
-                        Effect="{StaticResource EffectShadow4}" />
-                <Border Name="BorderTitle"
-                        Height="32"
-                        Grid.Row="0"
-                        CornerRadius="10,10,0,0"
-                        Background="{DynamicResource TitleBrush}"
-                        Theme="{StaticResource BorderClip}">
-                    <Panel>
-                        <TextBlock Foreground="White"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Text="{Binding ContentTitle}" />
-                    </Panel>
-                </Border>
-                <Border Grid.Row="1"
-                        ClipToBounds="True">
-                    <ContentControl Name="PresenterMain"
-                                    Margin="0,0,0,10"
-                                    Content="{Binding SubContent}" />
-                </Border>
-            </Grid>
-        </Border>
-    </Panel>
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             x:DataType="vm:MainViewModel">
+    <Border Name="BorderRoot" Margin="16">
+        <Grid Name="GridMain"
+              MinHeight="300"
+              MinWidth="200"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              RowDefinitions="Auto,*">
+            <Border Name="BorderEffect"
+                    Grid.RowSpan="2"
+                    Background="{DynamicResource RegionBrush}"
+                    CornerRadius="10"
+                    Effect="{StaticResource EffectShadow4}" />
+            <Border Name="BorderTitle"
+                    Height="32"
+                    Grid.Row="0"
+                    CornerRadius="10,10,0,0"
+                    Background="{DynamicResource TitleBrush}"
+                    Theme="{StaticResource BorderClip}">
+                <Panel>
+                    <TextBlock Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="{Binding ContentTitle}" />
+                    <ToggleButton Name="ButtonCode"
+                                  Width="30"
+                                  Height="26"
+                                  Margin="0,0,6,0"
+                                  Background="Transparent"
+                                  BorderThickness="0"
+                                  Foreground="{DynamicResource TextIconBrush}"
+                                  HorizontalAlignment="Right"
+                                  Click="ButtonCode_OnClick"
+                                  hc:IconElement.Geometry="{StaticResource CodeGeometry}"
+                                  hc:IconElement.Width="16"
+                                  hc:IconElement.Height="16" />
+                </Panel>
+            </Border>
+            <Border Grid.Row="1"
+                    ClipToBounds="True">
+                <ContentControl Name="PresenterMain"
+                                Margin="0,0,0,10"
+                                Content="{Binding SubContent}" />
+            </Border>
+        </Grid>
+    </Border>
 </UserControl>

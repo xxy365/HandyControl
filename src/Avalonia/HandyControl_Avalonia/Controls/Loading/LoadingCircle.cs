@@ -168,8 +168,8 @@ public class LoadingCircle : LoadingBase
             RenderTransform = rotate,
             IsVisible = !needHidden
         };
-        border.Bind(WidthProperty, new Binding(nameof(Width)) { Source = this });
-        border.Bind(HeightProperty, new Binding(nameof(Height)) { Source = this });
+        border.Bind(WidthProperty, this.GetObservable(WidthProperty));
+        border.Bind(HeightProperty, this.GetObservable(HeightProperty));
 
         return border;
     }

@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
-                    xmlns:hc="clr-namespace:HandyControl.Controls"
-                    xmlns:data="clr-namespace:HandyControl.Data">
+                    xmlns:hc="using:HandyControl.Controls"
+                    xmlns:data="using:HandyControl.Data">
 
     <ControlTheme x:Key="SideMenuItemBaseStyle"
                   TargetType="hc:SideMenuItem">

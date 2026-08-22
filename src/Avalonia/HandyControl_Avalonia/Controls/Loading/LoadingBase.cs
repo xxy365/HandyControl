@@ -168,11 +168,11 @@ public abstract class LoadingBase : ContentControl
     protected virtual Ellipse CreateEllipse(int index)
     {
         var ellipse = new Ellipse();
-        ellipse.Bind(WidthProperty, new Binding(nameof(DotDiameter)) { Source = this });
-        ellipse.Bind(HeightProperty, new Binding(nameof(DotDiameter)) { Source = this });
-        ellipse.Bind(Shape.FillProperty, new Binding(nameof(Foreground)) { Source = this });
-        ellipse.Bind(Shape.StrokeThicknessProperty, new Binding(nameof(DotBorderThickness)) { Source = this });
-        ellipse.Bind(Shape.StrokeProperty, new Binding(nameof(DotBorderBrush)) { Source = this });
+        ellipse.Bind(WidthProperty, this.GetObservable(DotDiameterProperty));
+        ellipse.Bind(HeightProperty, this.GetObservable(DotDiameterProperty));
+        ellipse.Bind(Shape.FillProperty, this.GetObservable(ForegroundProperty));
+        ellipse.Bind(Shape.StrokeThicknessProperty, this.GetObservable(DotBorderThicknessProperty));
+        ellipse.Bind(Shape.StrokeProperty, this.GetObservable(DotBorderBrushProperty));
         return ellipse;
     }
 }

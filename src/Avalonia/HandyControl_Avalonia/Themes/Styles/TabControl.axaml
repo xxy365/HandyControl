@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal"
-                    xmlns:hc="clr-namespace:HandyControl.Controls"
-                    xmlns:tools="clr-namespace:HandyControl.Tools"
-                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+                    xmlns:hc="using:HandyControl.Controls"
+                    xmlns:tools="using:HandyControl.Tools"
+                    xmlns:system="using:System">
     <ControlTheme x:Key="TabItemStyle"
                   TargetType="TabItem">
         <Setter Property="Foreground"

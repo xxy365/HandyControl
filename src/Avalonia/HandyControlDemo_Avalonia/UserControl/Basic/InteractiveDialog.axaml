@@ -1,7 +1,9 @@
-<Border x:Class="HandyControlDemo.UserControl.InteractiveDialog"
+﻿<Border x:Class="HandyControlDemo.UserControl.InteractiveDialog"
+             xmlns:vm="using:HandyControlDemo.ViewModel"
+             x:DataType="vm:InteractiveDialogViewModel"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:langs="clr-namespace:HandyControlDemo.Properties.Langs"
+             xmlns:langs="using:HandyControlDemo.Properties.Langs"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         CornerRadius="10"
         Width="400"
@@ -18,6 +20,6 @@
                 Command="{Binding CloseCommand}"
                 Theme="{StaticResource ButtonPrimary}"
                 HorizontalAlignment="Center"
-                Content="{Binding OK, Source={x:Static langs:LangProvider.Instance}}" />
+                Content="{Binding Ok, Source={x:Static langs:LangProvider.Instance}}" />
     </StackPanel>
 </Border>
