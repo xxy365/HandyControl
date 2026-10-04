@@ -40,7 +40,6 @@ namespace HandyControl.Controls
         /// <summary>防止 <see cref="SyncTitleBarHeight"/> 与用户赋值之间互相触发。</summary>
         private bool _syncingTitleBarHeight;
 
-        private Thickness _actualBorderThickness;
         private WindowState _tempWindowState;
 
         #region props
@@ -256,23 +255,28 @@ namespace HandyControl.Controls
             if (_buttonClose != null) _buttonClose.IsVisible = !fullScreen;
         }
 
+        /// <summary>
+        /// 标题栏按钮高度同步。
+        /// 不能只依赖主题里对 CustomTitleBarHeight 的绑定：控件 IsVisible=false 时
+        /// Avalonia 会暂停该控件的布局与绑定求值，导致隐藏的按钮保留旧高度，
+        /// 还原时会短暂错位。
+        /// </summary>
+        private void SyncCaptionButtonHeight()
+        {
+            var height = CustomTitleBarHeight;
+
+            if (_buttonMin != null) _buttonMin.SetCurrentValue(Layoutable.HeightProperty, height);
+            if (_buttonMax != null) _buttonMax.SetCurrentValue(Layoutable.HeightProperty, height);
+            if (_buttonRestore != null) _buttonRestore.SetCurrentValue(Layoutable.HeightProperty, height);
+            if (_buttonClose != null) _buttonClose.SetCurrentValue(Layoutable.HeightProperty, height);
+        }
+
         private static void OnWindowStateChanged(Window w, AvaloniaPropertyChangedEventArgs e)
         {
             w.UpdateChromeButtons();
 
-            var oldState = e.OldValue is WindowState oldVal ? oldVal : WindowState.Normal;
-            var newState = e.NewValue is WindowState newVal ? newVal : WindowState.Normal;
-
-            if (newState == WindowState.Maximized && oldState != WindowState.Maximized)
-            {
-                w._actualBorderThickness = w.BorderThickness;
-                w.BorderThickness = new Thickness();
-            }
-            else if (newState != WindowState.Maximized && oldState == WindowState.Maximized)
-            {
-                w.BorderThickness = w._actualBorderThickness;
-            }
-
+            // Avalonia 12 已修复 ExtendClientAreaToDecorationsHint 在最大化时的边框问题，
+            // 迁移文档明确要求移除「最大化时增删 BorderThickness」这类早期变通做法。
             w.SyncTitleBarHeight();
         }
 
@@ -348,6 +352,8 @@ namespace HandyControl.Controls
 
             if (_customTitleBar != null)
                 _customTitleBar.IsVisible = height > 0;
+
+            SyncCaptionButtonHeight();
         }
 
         #endregion
