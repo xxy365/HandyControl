@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="HandyControlDemo.App"
              RequestedThemeVariant="Default">
+    <!-- 不依赖 FluentTheme：HandyControl 是自包含主题。
+         AvaloniaEdit 改用不依赖 Fluent 的 Simple 主题。 -->
     <Application.Styles>
-        <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.xaml" />
         <StyleInclude Source="avares://HandyControl/Themes/Theme.axaml" />
-        <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+        <StyleInclude Source="avares://AvaloniaEdit/Themes/Simple/AvaloniaEdit.xaml" />
         <StyleInclude Source="avares://HandyControlDemo/Resources/Themes/Theme.axaml" />
     </Application.Styles>
 </Application>
