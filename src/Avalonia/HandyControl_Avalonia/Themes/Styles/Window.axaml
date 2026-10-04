@@ -6,15 +6,15 @@
                   BasedOn="{StaticResource ButtonIcon}"
                   TargetType="Button">
         <Setter Property="Height"
-                Value="26" />
+                Value="{Binding $parent[hc:Window].CustomTitleBarHeight}" />
         <Setter Property="Width"
                 Value="46" />
+        <Setter Property="Padding"
+                Value="0" />
         <Setter Property="Background"
                 Value="{Binding $parent[hc:Window].OtherButtonBackground}" />
         <Setter Property="Foreground"
                 Value="{Binding $parent[hc:Window].OtherButtonForeground}" />
-        <Setter Property="BorderThickness"
-                Value="1,0,1,0" />
         <Setter Property="hc:IconElement.Width"
                 Value="10" />
         <Setter Property="hc:IconElement.Height"
@@ -32,15 +32,15 @@
                   BasedOn="{StaticResource ButtonIcon}"
                   TargetType="Button">
         <Setter Property="Height"
-                Value="26" />
+                Value="{Binding $parent[hc:Window].CustomTitleBarHeight}" />
         <Setter Property="Width"
                 Value="46" />
+        <Setter Property="Padding"
+                Value="0" />
         <Setter Property="Background"
                 Value="{Binding $parent[hc:Window].CloseButtonBackground}" />
         <Setter Property="Foreground"
                 Value="{Binding $parent[hc:Window].CloseButtonForeground}" />
-        <Setter Property="BorderThickness"
-                Value="1,0,0,0" />
         <Setter Property="hc:IconElement.Width"
                 Value="10" />
         <Setter Property="hc:IconElement.Height"
@@ -68,7 +68,9 @@
                 Value="BorderOnly" />
         <Setter Property="ExtendClientAreaToDecorationsHint"
                 Value="True" />
-        <Setter Property="ExtendClientAreaTitleBarHeightHint"
+        <!-- 标题栏高度由 CustomTitleBarHeight 单一来源驱动；
+             ExtendClientAreaTitleBarHeightHint 由 Window.SyncTitleBarHeight 同步设置 -->
+        <Setter Property="CustomTitleBarHeight"
                 Value="29" />
         <Setter Property="CustomTitleBarBackground"
                 Value="{DynamicResource RegionBrush}" />
@@ -103,6 +105,7 @@
 
                         <Grid x:Name="PART_CustomTitleBar"
                               Grid.Row="0"
+                              Height="{TemplateBinding CustomTitleBarHeight}"
                               Background="{TemplateBinding CustomTitleBarBackground}"
                               WindowDecorationProperties.ElementRole="TitleBar">
                             <Grid.ColumnDefinitions>
@@ -126,7 +129,7 @@
 
                             <StackPanel Grid.Column="1"
                                         Orientation="Horizontal"
-                                        VerticalAlignment="Center">
+                                        VerticalAlignment="Stretch">
                                 <Button x:Name="ButtonMin"
                                         Theme="{StaticResource WindowCaptionButtonOther}"
                                         WindowDecorationProperties.ElementRole="MinimizeButton"

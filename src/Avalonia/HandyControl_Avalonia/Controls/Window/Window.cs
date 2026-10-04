@@ -19,6 +19,12 @@ namespace HandyControl.Controls
 
         private const string ElementCustomTitleBar = "PART_CustomTitleBar";
 
+        /// <summary>标题栏默认高度，与主题中 ExtendClientAreaTitleBarHeightHint 保持一致。</summary>
+        private const double DefaultTitleBarHeight = 29d;
+
+        /// <summary>最大化时标题栏额外补偿的高度，与 WPF 版 NonClientArea 行为保持一致。</summary>
+        private const double MaximizedTitleBarHeightCompensation = 8d;
+
         private Control? _customTitleBar;
         private Button? _buttonMin;
         private Button? _buttonMax;
@@ -27,7 +33,13 @@ namespace HandyControl.Controls
 
         private bool _showCustomTitleBar = true;
         private bool _isFullScreen;
-        private double _tempCustomTitleBarHeight;
+
+        /// <summary>未被最大化补偿/隐藏逻辑污染的基础标题栏高度。</summary>
+        private double _baseTitleBarHeight;
+
+        /// <summary>防止 <see cref="SyncTitleBarHeight"/> 与用户赋值之间互相触发。</summary>
+        private bool _syncingTitleBarHeight;
+
         private Thickness _actualBorderThickness;
         private WindowState _tempWindowState;
 
@@ -133,7 +145,7 @@ namespace HandyControl.Controls
         }
 
         public static readonly StyledProperty<double> CustomTitleBarHeightProperty =
-            AvaloniaProperty.Register<Window, double>(nameof(CustomTitleBarHeight), 22.0);
+            AvaloniaProperty.Register<Window, double>(nameof(CustomTitleBarHeight), DefaultTitleBarHeight);
 
         public double CustomTitleBarHeight
         {
@@ -188,6 +200,7 @@ namespace HandyControl.Controls
             IsFullScreenProperty.Changed.AddClassHandler<Window>(OnIsFullScreenChanged);
             ShowCustomTitleBarProperty.Changed.AddClassHandler<Window>(OnShowCustomTitleBarChanged);
             WindowStateProperty.Changed.AddClassHandler<Window>(OnWindowStateChanged);
+            CustomTitleBarHeightProperty.Changed.AddClassHandler<Window>(OnCustomTitleBarHeightChanged);
         }
 
         #region methods
@@ -215,10 +228,13 @@ namespace HandyControl.Controls
 
             UpdateChromeButtons();
 
-            _tempCustomTitleBarHeight = CustomTitleBarHeight;
+            // 首次套用模板时以当前值作为基础高度（此时可能已被主题 Setter 覆盖为 29）
+            if (CustomTitleBarHeight > 0)
+                _baseTitleBarHeight = CustomTitleBarHeight;
 
-            SwitchIsFullScreen(IsFullScreen);
-            SwitchShowCustomTitleBar(ShowCustomTitleBar);
+            _isFullScreen = IsFullScreen;
+            _showCustomTitleBar = ShowCustomTitleBar;
+            SyncTitleBarHeight();
         }
 
         private void ButtonMin_OnClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
@@ -251,14 +267,13 @@ namespace HandyControl.Controls
             {
                 w._actualBorderThickness = w.BorderThickness;
                 w.BorderThickness = new Thickness();
-                w._tempCustomTitleBarHeight = w.CustomTitleBarHeight;
-                w.CustomTitleBarHeight += 8;
             }
             else if (newState != WindowState.Maximized && oldState == WindowState.Maximized)
             {
                 w.BorderThickness = w._actualBorderThickness;
-                w.CustomTitleBarHeight = w._tempCustomTitleBarHeight;
             }
+
+            w.SyncTitleBarHeight();
         }
 
         private static void OnShowCustomTitleBarChanged(Window w, AvaloniaPropertyChangedEventArgs e)
@@ -271,10 +286,19 @@ namespace HandyControl.Controls
             w.SwitchIsFullScreen((bool)(e.NewValue ?? false));
         }
 
+        private static void OnCustomTitleBarHeightChanged(Window w, AvaloniaPropertyChangedEventArgs e)
+        {
+            // SyncTitleBarHeight 内部的回写不视为用户改动，避免递归
+            if (w._syncingTitleBarHeight) return;
+
+            w._baseTitleBarHeight = Math.Max(0d, e.NewValue is double d ? d : 0d);
+            w.SyncTitleBarHeight();
+        }
+
         private void SwitchShowCustomTitleBar(bool showCustomTitleBar)
         {
             _showCustomTitleBar = showCustomTitleBar;
-            SetCustomTitleBarVisible(showCustomTitleBar && !_isFullScreen);
+            SyncTitleBarHeight();
         }
 
         private void SwitchIsFullScreen(bool isFullScreen)
@@ -284,27 +308,46 @@ namespace HandyControl.Controls
 
             if (isFullScreen)
             {
-                _tempCustomTitleBarHeight = CustomTitleBarHeight;
-                if (_customTitleBar != null) _customTitleBar.IsVisible = false;
-                CustomTitleBarHeight = 0;
-
-                _tempWindowState = WindowState;
-                WindowState = WindowState.FullScreen;
+                if (WindowState != WindowState.FullScreen)
+                {
+                    _tempWindowState = WindowState;
+                    WindowState = WindowState.FullScreen;
+                }
             }
-            else
+            else if (WindowState == WindowState.FullScreen)
             {
-                SetCustomTitleBarVisible(ShowCustomTitleBar);
-                CustomTitleBarHeight = _tempCustomTitleBarHeight;
-
-                WindowState = _tempWindowState;
+                WindowState = _tempWindowState == WindowState.FullScreen ? WindowState.Normal : _tempWindowState;
             }
+
+            SyncTitleBarHeight();
         }
 
-        private void SetCustomTitleBarVisible(bool visible)
+        /// <summary>
+        /// 依据当前窗口状态推导标题栏高度，并同步到模板与原生拖拽区。
+        /// 原实现里最大化补偿与隐藏逻辑各自缓存一份高度会互相覆盖，
+        /// 且 <see cref="CustomTitleBarHeight"/> 从未绑定到模板，导致属性形同虚设。
+        /// </summary>
+        private void SyncTitleBarHeight()
         {
-            if (_customTitleBar != null) _customTitleBar.IsVisible = visible;
-            _tempCustomTitleBarHeight = CustomTitleBarHeight;
-            CustomTitleBarHeight = visible ? _tempCustomTitleBarHeight : 0;
+            var height = !_showCustomTitleBar || _isFullScreen
+                ? 0d
+                : WindowState == WindowState.Maximized
+                    ? _baseTitleBarHeight + MaximizedTitleBarHeightCompensation
+                    : _baseTitleBarHeight;
+
+            _syncingTitleBarHeight = true;
+            try
+            {
+                SetCurrentValue(CustomTitleBarHeightProperty, height);
+                SetCurrentValue(Avalonia.Controls.Window.ExtendClientAreaTitleBarHeightHintProperty, height);
+            }
+            finally
+            {
+                _syncingTitleBarHeight = false;
+            }
+
+            if (_customTitleBar != null)
+                _customTitleBar.IsVisible = height > 0;
         }
 
         #endregion

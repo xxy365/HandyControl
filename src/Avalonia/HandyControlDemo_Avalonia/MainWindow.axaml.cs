@@ -131,6 +131,13 @@ public partial class MainWindow : HandyControl.Controls.Window
 
     private void AnimateCodePanel(double from, double to, Action? onComplete = null)
     {
+        var transform = _codePanelTransform;
+        if (transform == null)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+
         const int totalMs = 250;
         const int fps = 60;
         var interval = TimeSpan.FromMilliseconds(1000.0 / fps);
@@ -142,11 +149,11 @@ public partial class MainWindow : HandyControl.Controls.Window
             step++;
             var t = Math.Min(1.0, (double)step / steps);
             var eased = t * t * (3 - 2 * t);
-            _codePanelTransform.X = from + (to - from) * eased;
+            transform.X = from + (to - from) * eased;
 
             if (step >= steps)
             {
-                _codePanelTransform.X = to;
+                transform.X = to;
                 onComplete?.Invoke();
             }
             else

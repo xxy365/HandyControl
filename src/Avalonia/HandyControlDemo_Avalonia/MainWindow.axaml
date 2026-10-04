@@ -20,7 +20,7 @@
     <KeyBinding Gesture="Ctrl+F12" Command="{Binding OpenCodeCommand}" />
   </hc:Window.KeyBindings>
   <hc:Window.CustomTitleBarContent>
-    <Grid Height="29" ColumnDefinitions="*,Auto">
+    <Grid ColumnDefinitions="*,Auto">
       <StackPanel VerticalAlignment="Stretch" Orientation="Horizontal">
         <Menu
           Name="MainMenu"
@@ -162,25 +162,27 @@
           </MenuItem>
         </Menu>
         <Border
-          Margin="10,0,0,0"
-          Padding="10,4"
+          Margin="12,0,0,0"
+          Padding="6,2"
           VerticalAlignment="Center"
-          Background="{DynamicResource SecondaryRegionBrush}"
           CornerRadius="2">
           <TextBlock
             x:Name="VersionText"
             VerticalAlignment="Center"
-            FontWeight="Bold"
+            FontSize="12"
+            Opacity="0.65"
             Foreground="{DynamicResource PrimaryTextBrush}" />
         </Border>
       </StackPanel>
       <Button
         Name="ButtonConfig"
         Grid.Column="1"
-        Width="30"
-        Height="26"
-        Margin="6,0"
+        Width="40"
+        Height="29"
+        Padding="0"
         hc:IconElement.Geometry="{StaticResource ConfigGeometry}"
+        hc:IconElement.Width="12"
+        hc:IconElement.Height="12"
         Background="Transparent"
         BorderThickness="0"
         Click="ButtonConfig_OnClick"
