@@ -44,7 +44,7 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.11" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="ProDiagnostics" Version="12.1.0.2" />
+    <PackageReference Include="ProDiagnostics" Version="12.1.0.6" />
   </ItemGroup>
 
   <ItemGroup>
