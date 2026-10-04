@@ -35,7 +35,7 @@
         <Setter Property="SelectionBrush"
                 Value="{DynamicResource HighlightBrush}" />
         <Setter Property="SelectionForegroundBrush"
-                Value="{DynamicResource HighlightForegroundBrush}" />
+                Value="{DynamicResource PrimaryTextBrush}" />
         <Setter Property="CaretBrush"
                 Value="{DynamicResource PrimaryTextBrush}" />
         <Setter Property="ScrollViewer.IsScrollChainingEnabled"
@@ -126,7 +126,7 @@
         <Setter Property="SelectionBrush"
                 Value="{DynamicResource HighlightBrush}" />
         <Setter Property="SelectionForegroundBrush"
-                Value="{DynamicResource HighlightForegroundBrush}" />
+                Value="{DynamicResource PrimaryTextBrush}" />
         <Setter Property="Template">
             <ControlTemplate TargetType="hc:WatermarkTextBox">
                 <DataValidationErrors>
