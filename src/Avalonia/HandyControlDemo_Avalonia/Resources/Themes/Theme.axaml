@@ -7,6 +7,7 @@
                 <MergeResourceInclude Source="/Resources/Themes/Basic/Brushes.axaml" />
                 <MergeResourceInclude Source="/Resources/Themes/Basic/Geometries.axaml" />
                 <MergeResourceInclude Source="/Resources/Themes/Basic/Converters.axaml" />
+                <MergeResourceInclude Source="/Resources/Themes/AvaloniaEditCompat.axaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <ControlTheme x:Key="MessageBoxCustom"

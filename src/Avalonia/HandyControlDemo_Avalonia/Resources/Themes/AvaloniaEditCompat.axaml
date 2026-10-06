@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+      补 AvaloniaEdit 12.0.0 缺失的资源键。这些键被它的 TextEditor / SearchPanel
+      模板用 StaticResource 引用，但全仓库（含 WPF 原版）都没有定义，
+      该版本的任何主题里也没有：
+
+        只加载 Avalonia FluentTheme      NOT FOUND
+        AvaloniaEdit Themes/Simple       NOT FOUND   ← Demo 当前用的
+        AvaloniaEdit Themes/Fluent       NOT FOUND
+
+      运行时表现：创建 TextEditor 时在 MeasureCore -> ApplyStyling 阶段抛
+        KeyNotFoundException: Static resource 'FontSizeNormal' not found.
+      异常发生在布局过程中、UI 线程上，Avalonia 的 unhandled 路径不会恢复
+      dispatcher 状态，于是「查看代码」面板一点就卡死。
+
+      这不是 HandyControl 依赖 Fluent 的问题——上表第一行证明连 Avalonia 官方
+      FluentTheme 也没有这些键，属于 AvaloniaEdit 自身的缺陷。这里补齐，
+      让使用方无需引入 FluentTheme 即可正常使用代码查看功能。
+    -->
+
+    <x:Double x:Key="FontSizeNormal">14</x:Double>
+    <x:Double x:Key="SearchPanelFontSize">14</x:Double>
+
+    <!-- 字体族：留空表示跟随系统默认。HandyControl 未固定默认字体，
+         这里也不能写死具体字体名，否则会与 HandyControl 的继承链冲突。 -->
+    <FontFamily x:Key="ContentControlThemeFontFamily">$Default</FontFamily>
+    <FontFamily x:Key="SearchPanelFontFamily">$Default</FontFamily>
+
+</ResourceDictionary>
