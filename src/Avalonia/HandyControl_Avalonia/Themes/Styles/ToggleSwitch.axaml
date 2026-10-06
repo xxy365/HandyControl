@@ -72,22 +72,22 @@
                                 </Border.Transitions>
                             </Border>
                             <Panel x:Name="PART_MovingKnobs"
-                                   HorizontalAlignment="Left"
-                                   RenderTransform="translateX(0px)">
-                                <Panel.Transitions>
-                                    <Transitions>
-                                        <TransformOperationsTransition Property="RenderTransform"
-                                                                       Easing="CubicEaseInOut"
-                                                                       Duration="0:0:0.2" />
-                                    </Transitions>
-                                </Panel.Transitions>
+                                   HorizontalAlignment="Left">
                                 <Border Margin="2"
                                         x:Name="SwitchKnobBorder"
                                         CornerRadius="22"
                                         Effect="{StaticResource EffectShadow2}"
                                         Background="White"
                                         Width="44"
-                                        Height="44">
+                                        Height="44"
+                                        RenderTransform="translateX(0px)">
+                                    <Border.Transitions>
+                                        <Transitions>
+                                            <TransformOperationsTransition Property="RenderTransform"
+                                                                           Easing="CubicEaseInOut"
+                                                                           Duration="0:0:0.2" />
+                                        </Transitions>
+                                    </Border.Transitions>
                                     <Panel x:Name="PART_SwitchKnob" />
                                 </Border>
                             </Panel>
@@ -113,7 +113,7 @@
         </Setter>
 
         <Style Selector="^:checked">
-            <Style Selector="^ /template/ Panel#PART_MovingKnobs">
+            <Style Selector="^ /template/ Border#SwitchKnobBorder">
                 <Setter Property="RenderTransform"
                         Value="translateX(32px)" />
             </Style>
@@ -132,7 +132,7 @@
         </Style>
 
         <Style Selector="^:unchecked">
-            <Style Selector="^ /template/ Panel#PART_MovingKnobs">
+            <Style Selector="^ /template/ Border#SwitchKnobBorder">
                 <Setter Property="RenderTransform"
                         Value="translateX(0px)" />
             </Style>
