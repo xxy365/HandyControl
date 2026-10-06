@@ -1178,4 +1178,13 @@
   </data>
   <data name="NotificationCardText" xml:space="preserve">
     <value>这是一张通知卡片。悬停可暂停关闭计时。</value>
-  </data></root>
+  </data>  <data name="NativeScrollViewer" xml:space="preserve">
+    <value>原生滚动视图</value>
+  </data>
+  <data name="NativeProgressBar" xml:space="preserve">
+    <value>原生进度条</value>
+  </data>
+  <data name="NativeTabControl" xml:space="preserve">
+    <value>原生选项卡控件</value>
+  </data>
+</root>

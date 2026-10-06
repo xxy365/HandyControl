@@ -1172,4 +1172,13 @@
   </data>
   <data name="NotificationCardText" xml:space="preserve">
     <value>Esta es una tarjeta de notificación. Pasa el cursor para pausar el temporizador de cierre.</value>
-  </data></root>
+  </data>  <data name="NativeScrollViewer" xml:space="preserve">
+    <value>Native ScrollViewer</value>
+  </data>
+  <data name="NativeProgressBar" xml:space="preserve">
+    <value>Native ProgressBar</value>
+  </data>
+  <data name="NativeTabControl" xml:space="preserve">
+    <value>Native TabControl</value>
+  </data>
+</root>

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Globalization;
 
 namespace HandyControlDemo.Properties.Langs;
@@ -222,6 +222,9 @@ public string Rate => Lang.Rate;
     public string RunningBlock => Lang.RunningBlock;
     public string Screenshot => Lang.Screenshot;
     public string ScrollViewer => Lang.ScrollViewer;
+    public string NativeScrollViewer => Lang.NativeScrollViewer;
+    public string NativeProgressBar => Lang.NativeProgressBar;
+    public string NativeTabControl => Lang.NativeTabControl;
     public string SearchBar => Lang.SearchBar;
     public string Second => Lang.Second;
     public string Selected => Lang.Selected;

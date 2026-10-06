@@ -12,7 +12,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Border BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer hc:ScrollViewerAttach.Orientation="Horizontal"
+                          HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Hidden">
                     <StackPanel Orientation="Horizontal">
                         <Border Background="{DynamicResource PrimaryBrush}" Width="200" Height="200" Margin="10,10,32,10">
                             <TextBlock Text="1" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -33,7 +35,8 @@
                 </ScrollViewer>
             </Border>
             <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource BorderBrush}" Margin="0,16,0,0">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <ScrollViewer hc:ScrollViewerAttach.Orientation="Horizontal"
+                          HorizontalScrollBarVisibility="Auto">
                     <WrapPanel Orientation="Horizontal">
                         <Border Background="{DynamicResource SuccessBrush}" Width="200" Height="200" Margin="10,10,32,10">
                             <TextBlock Text="1" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
