@@ -28,13 +28,15 @@ public class ScrollViewerAttach
             return;
         }
 
+        // Detach first, then re-attach only when horizontal, so the subscription count is
+        // always 0 or 1 no matter how often the effective value changes.
+        // AddClassHandler currently only fires on real effective-value changes, which already
+        // keeps += and -= paired; making it idempotent removes the dependency on that.
+        scrollViewer.PointerWheelChanged -= ScrollViewerPointerWheelChanged;
+
         if (e.GetNewValue<Orientation>() == Orientation.Horizontal)
         {
             scrollViewer.PointerWheelChanged += ScrollViewerPointerWheelChanged;
-        }
-        else
-        {
-            scrollViewer.PointerWheelChanged -= ScrollViewerPointerWheelChanged;
         }
     }
 
