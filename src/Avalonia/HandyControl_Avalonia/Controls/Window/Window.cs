@@ -17,19 +17,11 @@ namespace HandyControl.Controls
     {
         protected override Type StyleKeyOverride => typeof(Window);
 
-        private const string ElementCustomTitleBar = "PART_CustomTitleBar";
-
-        /// <summary>标题栏默认高度，与主题中 ExtendClientAreaTitleBarHeightHint 保持一致。</summary>
+        /// <summary>标题栏默认高度。窗口已改用系统标题栏，此值仅作 <see cref="CustomTitleBarHeight"/> 的初始值。</summary>
         private const double DefaultTitleBarHeight = 29d;
 
-        /// <summary>最大化时标题栏额外补偿的高度，与 WPF 版 NonClientArea 行为保持一致。</summary>
+        /// <summary>最大化时标题栏额外补偿的高度。</summary>
         private const double MaximizedTitleBarHeightCompensation = 8d;
-
-        private Control? _customTitleBar;
-        private Button? _buttonMin;
-        private Button? _buttonMax;
-        private Button? _buttonRestore;
-        private Button? _buttonClose;
 
         private bool _showCustomTitleBar = true;
         private bool _isFullScreen;
@@ -208,25 +200,6 @@ namespace HandyControl.Controls
         {
             base.OnApplyTemplate(e);
 
-            _customTitleBar = e.NameScope.Find<Control>(ElementCustomTitleBar);
-
-            if (_buttonMin != null) _buttonMin.Click -= ButtonMin_OnClick;
-            if (_buttonMax != null) _buttonMax.Click -= ButtonMax_OnClick;
-            if (_buttonRestore != null) _buttonRestore.Click -= ButtonRestore_OnClick;
-            if (_buttonClose != null) _buttonClose.Click -= ButtonClose_OnClick;
-
-            _buttonMin = e.NameScope.Find<Button>("ButtonMin");
-            _buttonMax = e.NameScope.Find<Button>("ButtonMax");
-            _buttonRestore = e.NameScope.Find<Button>("ButtonRestore");
-            _buttonClose = e.NameScope.Find<Button>("ButtonClose");
-
-            if (_buttonMin != null) _buttonMin.Click += ButtonMin_OnClick;
-            if (_buttonMax != null) _buttonMax.Click += ButtonMax_OnClick;
-            if (_buttonRestore != null) _buttonRestore.Click += ButtonRestore_OnClick;
-            if (_buttonClose != null) _buttonClose.Click += ButtonClose_OnClick;
-
-            UpdateChromeButtons();
-
             // 首次套用模板时以当前值作为基础高度（此时可能已被主题 Setter 覆盖为 29）
             if (CustomTitleBarHeight > 0)
                 _baseTitleBarHeight = CustomTitleBarHeight;
@@ -236,45 +209,9 @@ namespace HandyControl.Controls
             SyncTitleBarHeight();
         }
 
-        private void ButtonMin_OnClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
-
-        private void ButtonMax_OnClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Maximized;
-
-        private void ButtonRestore_OnClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Normal;
-
-        private void ButtonClose_OnClick(object? sender, RoutedEventArgs e) => Close();
-
-        private void UpdateChromeButtons()
-        {
-            var maximized = WindowState == WindowState.Maximized;
-            var fullScreen = WindowState == WindowState.FullScreen;
-
-            if (_buttonMin != null) _buttonMin.IsVisible = !fullScreen;
-            if (_buttonMax != null) _buttonMax.IsVisible = !maximized && !fullScreen;
-            if (_buttonRestore != null) _buttonRestore.IsVisible = maximized && !fullScreen;
-            if (_buttonClose != null) _buttonClose.IsVisible = !fullScreen;
-        }
-
-        /// <summary>
-        /// 标题栏按钮高度同步。
-        /// 不能只依赖主题里对 CustomTitleBarHeight 的绑定：控件 IsVisible=false 时
-        /// Avalonia 会暂停该控件的布局与绑定求值，导致隐藏的按钮保留旧高度，
-        /// 还原时会短暂错位。
-        /// </summary>
-        private void SyncCaptionButtonHeight()
-        {
-            var height = CustomTitleBarHeight;
-
-            if (_buttonMin != null) _buttonMin.SetCurrentValue(Layoutable.HeightProperty, height);
-            if (_buttonMax != null) _buttonMax.SetCurrentValue(Layoutable.HeightProperty, height);
-            if (_buttonRestore != null) _buttonRestore.SetCurrentValue(Layoutable.HeightProperty, height);
-            if (_buttonClose != null) _buttonClose.SetCurrentValue(Layoutable.HeightProperty, height);
-        }
 
         private static void OnWindowStateChanged(Window w, AvaloniaPropertyChangedEventArgs e)
         {
-            w.UpdateChromeButtons();
-
             // Avalonia 12 已修复 ExtendClientAreaToDecorationsHint 在最大化时的边框问题，
             // 迁移文档明确要求移除「最大化时增删 BorderThickness」这类早期变通做法。
             w.SyncTitleBarHeight();
@@ -331,6 +268,14 @@ namespace HandyControl.Controls
         /// 原实现里最大化补偿与隐藏逻辑各自缓存一份高度会互相覆盖，
         /// 且 <see cref="CustomTitleBarHeight"/> 从未绑定到模板，导致属性形同虚设。
         /// </summary>
+        /// <summary>
+        /// 推导并同步 <see cref="CustomTitleBarHeight"/>。
+        /// 该属性已不再绑定到模板（窗口改用系统标题栏），仅作为对外兼容的
+        /// 「自定义标题栏高度」信息位保留，供使用方读取。
+        /// 刻意不再回写 ExtendClientAreaTitleBarHeightHint：该值非 0 时平台层会把
+        /// 客户端区顶部 N 像素当作非客户区（扩展标题栏），其中的子控件收不到点击，
+        /// 这正是之前菜单/齿轮点了没反应的原因之一。
+        /// </summary>
         private void SyncTitleBarHeight()
         {
             var height = !_showCustomTitleBar || _isFullScreen
@@ -343,17 +288,11 @@ namespace HandyControl.Controls
             try
             {
                 SetCurrentValue(CustomTitleBarHeightProperty, height);
-                SetCurrentValue(Avalonia.Controls.Window.ExtendClientAreaTitleBarHeightHintProperty, height);
             }
             finally
             {
                 _syncingTitleBarHeight = false;
             }
-
-            if (_customTitleBar != null)
-                _customTitleBar.IsVisible = height > 0;
-
-            SyncCaptionButtonHeight();
         }
 
         #endregion
